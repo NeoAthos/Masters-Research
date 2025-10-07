@@ -1,0 +1,313 @@
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.308050E-03      307.84     -4.129112E-05    0.92
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.266759E-03      310.61     -8.258224E-05    3.69
+  4.308050E-03      307.84     -4.129112E-05    0.92
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.306796E-03      307.90     -4.254514E-05    0.97
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.306202E-03      307.93     -4.313886E-05    1.00
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.390632E-03      307.85      4.129112E-05    0.92
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.431923E-03      310.52      8.258224E-05    3.59
+  4.390632E-03      307.85      4.129112E-05    0.92
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.391904E-03      307.90      4.256330E-05    0.97
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.392477E-03      307.93      4.313560E-05    1.00
+ Parameter   1    1 z   :   4.34934E-03 Errors:  -4.31389E-05 ,   4.31356E-05
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    3 is at lower limit. Suggestion: fit again
+   151.884          307.63      -12.5418        0.70
+ Parameter    3 is at lower limit. Suggestion: fit again
+   139.342          309.83      -25.0837        2.91
+   151.884          307.63      -12.5418        0.70
+ Parameter    3 is at lower limit. Suggestion: fit again
+   150.185          307.84      -14.2409        0.91
+ Parameter    3 is at lower limit. Suggestion: fit again
+   149.458          307.93      -14.9673        1.00
+ Parameter    3 is at lower limit. Suggestion: fit again
+   176.967          307.53       12.5418        0.60
+ Parameter    3 is at lower limit. Suggestion: fit again
+   189.509          309.22       25.0837        2.29
+   176.967          307.53       12.5418        0.60
+ Parameter    3 is at lower limit. Suggestion: fit again
+   179.939          307.84       15.5136        0.91
+ Parameter    3 is at lower limit. Suggestion: fit again
+   180.762          307.93       16.3363        1.00
+ Parameter   1    2 vrms:    164.43     Errors:   -14.967     ,    16.336
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.632058          307.36     -1.811361E-02    0.43
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.613944          308.71     -3.622723E-02    1.78
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.629806          307.48     -2.036566E-02    0.55
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.623992          307.84     -2.617902E-02    0.92
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.622779          307.93     -2.739203E-02    1.00
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.668285          307.34      1.811361E-02    0.41
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.686398          308.52      3.622723E-02    1.59
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.672903          307.57      2.273166E-02    0.64
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.678006          307.88      2.783501E-02    0.95
+ Parameter    3 is at lower limit. Suggestion: fit again
+  0.678736          307.93      2.856505E-02    1.00
+ Parameter   1    2 26  :   0.65017     Errors:  -2.73920E-02 ,   2.85650E-02
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+  3.944777E-03      204.47     -6.210757E-05    0.98
+  3.882670E-03      207.44     -1.242149E-04    3.95
+  3.944777E-03      204.47     -6.210757E-05    0.98
+  3.944156E-03      204.49     -6.272877E-05    1.00
+  4.068992E-03      204.44      6.210757E-05    0.95
+  4.131099E-03      207.30      1.242147E-04    3.81
+  4.068992E-03      204.44      6.210757E-05    0.95
+  4.069989E-03      204.47      6.310456E-05    0.99
+  4.070610E-03      204.49      6.372575E-05    1.00
+ Parameter   1    1 z   :   4.00688E-03 Errors:  -6.27288E-05 ,   6.37257E-05
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   109.509          204.35      -35.1654        0.86
+   74.3437          206.24      -70.3308        2.75
+   109.509          204.35      -35.1654        0.86
+   106.867          204.47      -37.8078        0.98
+   106.382          204.49      -38.2925        1.00
+   179.840          204.62       35.1654        1.13
+   175.854          204.37       31.1795        0.88
+   177.807          204.48       33.1322        1.00
+ Parameter   1    2 vrms:    144.67     Errors:   -38.292     ,    33.132
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   1.42556          204.44     -9.698832E-02    0.95
+   1.32857          207.61     -0.193977        4.12
+   1.42556          204.44     -9.698832E-02    0.95
+   1.42412          204.47     -9.842587E-02    0.98
+   1.42315          204.49     -9.939587E-02    1.00
+   1.61954          204.28      9.698832E-02    0.79
+   1.71652          206.33      0.193977        2.84
+   1.61954          204.28      9.698832E-02    0.79
+   1.62937          204.44      0.106819        0.95
+   1.63229          204.49      0.109740        1.00
+ Parameter   1    2 14  :    1.5225     Errors:  -9.93959E-02 ,   0.10974
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+  3.897264E-03      360.72     -4.155049E-05    0.99
+  3.855714E-03      363.72     -8.310098E-05    3.99
+  3.897264E-03      360.72     -4.155049E-05    0.99
+  3.896848E-03      360.74     -4.196633E-05    1.01
+  3.980365E-03      360.72      4.155049E-05    0.99
+  4.021916E-03      363.69      8.310098E-05    3.96
+  3.980365E-03      360.72      4.155049E-05    0.99
+  3.980781E-03      360.74      4.196633E-05    1.01
+ Parameter   1    1 z   :   3.93881E-03 Errors:  -4.19663E-05 ,   4.19663E-05
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   230.627          360.60      -14.5993        0.87
+   216.028          363.20      -29.1986        3.47
+   230.627          360.60      -14.5993        0.87
+   229.897          360.69      -15.3300        0.96
+   229.565          360.73      -15.6615        1.00
+   259.826          360.59       14.5993        0.87
+   274.425          363.17       29.1986        3.44
+   259.826          360.59       14.5993        0.87
+   260.583          360.69       15.3568        0.96
+   260.922          360.73       15.6949        1.00
+ Parameter   1    2 vrms:    245.23     Errors:   -15.661     ,    15.695
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   1.47160          361.12     -0.105542        1.39
+   1.50143          360.41     -7.570755E-02    0.68
+   1.48817          360.69     -8.896911E-02    0.97
+   1.48675          360.73     -9.039199E-02    1.00
+   1.68268          360.79      0.105542        1.06
+   1.67665          360.68      9.951365E-02    0.95
+   1.67930          360.73      0.102157        1.00
+ Parameter   1    2 16  :    1.5771     Errors:  -9.03920E-02 ,   0.10216
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.331302E-03      287.13     -6.215880E-05    0.98
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.269143E-03      290.18     -1.243181E-04    4.03
+  4.331302E-03      287.13     -6.215926E-05    0.98
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.330680E-03      287.15     -6.278092E-05    1.00
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.455620E-03      287.15      6.215880E-05    1.00
+ Parameter   1    1 z   :   4.39346E-03 Errors:  -6.27809E-05 ,   6.21588E-05
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    3 is at lower limit. Suggestion: fit again
+   244.056          287.07      -19.6803        0.93
+ Parameter    3 is at lower limit. Suggestion: fit again
+   224.376          289.91      -39.3607        3.76
+   244.056          287.07      -19.6803        0.93
+ Parameter    3 is at lower limit. Suggestion: fit again
+   243.546          287.12      -20.1903        0.98
+ Parameter    3 is at lower limit. Suggestion: fit again
+   243.298          287.15      -20.4391        1.00
+ Parameter    3 is at lower limit. Suggestion: fit again
+   283.417          287.05       19.6803        0.90
+ Parameter    3 is at lower limit. Suggestion: fit again
+   303.097          289.62       39.3607        3.48
+   283.417          287.05       19.6803        0.90
+ Parameter    3 is at lower limit. Suggestion: fit again
+   284.187          287.12       20.4498        0.97
+ Parameter    3 is at lower limit. Suggestion: fit again
+   284.518          287.15       20.7816        1.00
+ Parameter   1    2 vrms:    263.74     Errors:   -20.439     ,    20.782
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.25475          286.92     -6.809735E-02    0.78
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.18666          289.35     -0.136195        3.20
+   1.25475          286.92     -6.809735E-02    0.78
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.24852          287.08     -7.432842E-02    0.93
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.24571          287.15     -7.714140E-02    1.00
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.39095          286.88      6.809735E-02    0.73
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.45905          289.01      0.136195        2.87
+   1.39095          286.88      6.809735E-02    0.73
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.39943          287.07      7.657647E-02    0.93
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.40257          287.15      7.971644E-02    1.00
+ Parameter   1    2 18  :    1.3229     Errors:  -7.71414E-02 ,   7.97164E-02
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.190663E-03      378.71     -6.340398E-05    0.96
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.127259E-03      381.61     -1.268080E-04    3.87
+  4.190663E-03      378.71     -6.340398E-05    0.96
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.189867E-03      378.73     -6.420072E-05    0.99
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.189232E-03      378.75     -6.483495E-05    1.01
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.317471E-03      378.70      6.340398E-05    0.95
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.380875E-03      381.54      1.268080E-04    3.79
+  4.317471E-03      378.70      6.340398E-05    0.95
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.318529E-03      378.73      6.446149E-05    0.98
+ Parameter    2 is at lower limit. Suggestion: fit again
+  4.319163E-03      378.75      6.509572E-05    1.00
+ Parameter   1    1 z   :   4.25407E-03 Errors:  -6.48350E-05 ,   6.50957E-05
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    3 is at lower limit. Suggestion: fit again
+   173.838          378.62      -22.2335        0.87
+ Parameter    3 is at lower limit. Suggestion: fit again
+   151.605          381.24      -44.4669        3.49
+   173.838          378.62      -22.2335        0.87
+ Parameter    3 is at lower limit. Suggestion: fit again
+   172.753          378.71      -23.3185        0.96
+ Parameter    3 is at lower limit. Suggestion: fit again
+   172.260          378.75      -23.8123        1.00
+ Parameter    3 is at lower limit. Suggestion: fit again
+   218.305          378.59       22.2335        0.85
+ Parameter    3 is at lower limit. Suggestion: fit again
+   240.539          381.04       44.4669        3.30
+   218.305          378.59       22.2335        0.85
+ Parameter    3 is at lower limit. Suggestion: fit again
+   219.702          378.70       23.6302        0.95
+ Parameter    3 is at lower limit. Suggestion: fit again
+   220.281          378.75       24.2091        1.00
+ Parameter   1    2 vrms:    196.07     Errors:   -23.812     ,    24.209
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.33303          378.58     -7.767057E-02    0.83
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.25536          381.17     -0.155341        3.43
+   1.33303          378.58     -7.767057E-02    0.83
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.32799          378.69     -8.270967E-02    0.94
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1.32559          378.75     -8.510756E-02    1.00
+   1.48837          378.48      7.767057E-02    0.74
+   1.56604          380.17      0.155341        2.42
+   1.48837          378.48      7.767057E-02    0.74
+   1.50045          378.70      8.975482E-02    0.95
+   1.50323          378.75      9.253526E-02    1.00
+ Parameter   1    2 20  :    1.4107     Errors:  -8.51076E-02 ,   9.25353E-02
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+  4.432903E-03      206.24     -2.819151E-04    0.40
+  4.150987E-03      209.27     -5.638306E-04    3.43
+  4.432903E-03      206.24     -2.819151E-04    0.40
+  4.376831E-03      206.58     -3.379863E-04    0.73
+  4.336725E-03      206.90     -3.780932E-04    1.06
+  4.344066E-03      206.84     -3.707521E-04    0.99
+  4.341246E-03      206.86     -3.735716E-04    1.02
+  4.996733E-03      206.10      2.819151E-04    0.26
+  5.278648E-03      207.02      5.638306E-04    1.18
+  5.193144E-03      206.67      4.783263E-04    0.83
+  5.234970E-03      206.84      5.201520E-04    0.99
+  5.237789E-03      206.85      5.229716E-04    1.00
+ Parameter   1    1 z   :   4.71482E-03 Errors:  -3.73572E-04 ,   5.22972E-04
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   334.982          205.91      -72.5287        0.07
+   127.851          212.92      -279.659        7.08
+   267.681          206.23      -139.830        0.39
+   254.830          206.40      -152.681        0.55
+   223.216          207.11      -184.294        1.27
+   235.105          206.78      -172.405        0.94
+   232.962          206.84      -174.548        0.99
+   231.564          206.87      -175.947        1.03
+   480.039          205.96       72.5287        0.12
+   618.762          207.58       211.252        1.74
+   529.245          206.30       121.734        0.46
+   567.257          206.74       159.747        0.90
+   574.966          206.85       167.455        1.01
+   573.909          206.84       166.399        0.99
+ Parameter   1    2 vrms:    407.51     Errors:   -175.95     ,    166.40
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   2.04506          206.04     -0.444395        0.20
+   1.49388          207.80     -0.995568        1.95
+   1.97965          206.13     -0.509798        0.28
+   1.77088          206.58     -0.718567        0.74
+   1.67704          206.90     -0.812413        1.06
+   1.69472          206.84     -0.794731        0.99
+   1.68974          206.86     -0.799709        1.01
+   2.93385          206.16      0.444395        0.31
+   3.37824          207.22      0.888790        1.37
+   3.13613          206.55      0.646680        0.71
+   3.24183          206.82      0.752382        0.98
+   3.25076          206.84      0.761307        1.00
+ Parameter   1    2 28  :    2.4895     Errors:  -0.79971     ,   0.76131

@@ -1,0 +1,70 @@
+## Loading in data
+data 1 xa300014010rsl_p0px1000_cl4_Hp.pi
+resp 1:1 xa300014010rsl_p0px1000_cl4_Hp_X_comb.rmf
+arf 1:1 xa300014010rsl_p0px1000_ptsrc.arf
+resp 2:1 xa300014010rsl_p0px1000_cl4_Hp_X_comb.rmf
+arf 2:1 xa300014010rsl_p0px1000_ptsrc.arf
+
+
+# Verify setup
+show data
+show response
+
+## Ignoring outside bounds
+ignore **: **-1.7 10.-**
+ignore bad
+
+model 1:agn TBabs*(powerlaw) 
+/*
+newpar agn:1 0.129
+newpar agn:2 2.35
+newpar agn:3 0.002
+freeze agn:1 agn:2
+thaw agn:3
+
+model 2:bvapec1 TBabs*bvapec 
+/*
+newpar bvapec1:1 0.129
+newpar bvapec1:2 2.19
+newpar bvapec1:10 0.415431
+newpar bvapec1:11 0.415431
+newpar bvapec1:12 0.415431
+newpar bvapec1:13 0.415431
+newpar bvapec1:14 0.415431
+newpar bvapec1:15 0.415431
+newpar bvapec1:16 0.004283
+newpar bvapec1:17 150.
+newpar bvapec1:18 0.100602
+freeze bvapec1:1
+thaw bvapec1:2 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:14 bvapec1:15 bvapec1:16 bvapec1:17 bvapec1:18
+
+## Fitting
+abund lpgs
+statistic cstat
+query yes
+parallel leven 20
+log
+fit
+parallel leven 1
+
+## Calculating Error
+parallel error 20
+error 1. agn:3
+error 1. bvapec1:2,10-18
+parallel error 1
+
+## Saving & Plotting
+save model AGN_plus_TBabs
+show par
+cpd AGN_plus_TBabs.ps/cps
+setpl rebin 5 10
+setpl xlog off
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+/*
+#color 2 on 1
+#rescale y 0.001 10
+#quit
+#quit
