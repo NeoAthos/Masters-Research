@@ -1,0 +1,5 @@
+# ra,dec,nh,spec,specpar,flux,bpass,specfile,sform,sun,src_spec
+# a 1’-core elliptical beta-model distribution w/ temperature profile
+# based loosely on A1795 from Snowden et al. 2008 and Bautz et al. 2009
+# ra,dec,nh,spec,specpar,flux,bpass,specfile,sform,sun,src_spec
+49.9506954,41.5117240,1e22,user,0.0,0.0,0.0-0.0,btapec_nh0p00126_v100_T2p02_Ti1p73_Z0p614.qdp,2,2,image(evt2_summed_500_7000.fits,3909,4263,4231,3877)
