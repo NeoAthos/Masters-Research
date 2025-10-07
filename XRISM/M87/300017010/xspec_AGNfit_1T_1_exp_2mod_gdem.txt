@@ -1,0 +1,174 @@
+## Loading in data
+data 1 xa300017010rsl_p0px1000_cl4_Hp.pi
+resp 1:1 xa300017010rsl_p0px1000_cl4_Hp_X_comb.rmf
+arf 1:1 xa300017010rsl_p0px1000_ptsrc.arf
+resp 2:1 xa300017010rsl_p0px1000_cl4_Hp_X_comb.rmf
+arf 2:1 xa300017010rsl_p0px1000_ptsrc.arf
+
+
+# Verify setup
+show data
+show response
+
+## Ignoring outside bounds
+ignore **: **-1.7 10.-**
+ignore bad
+
+model 1:agn TBabs*(powerlaw) 
+/*
+newpar agn:1 0.129
+newpar agn:2 2.35
+newpar agn:3 0.002
+freeze agn:1 agn:2
+thaw agn:3
+
+model 2:bvapec1 TBabs*bvapec 
+/*
+newpar bvapec1:1 0.129
+newpar bvapec1:2 2.19
+newpar bvapec1:10 0.415431
+newpar bvapec1:11 0.415431
+newpar bvapec1:12 0.415431
+newpar bvapec1:13 0.415431
+newpar bvapec1:14 0.415431
+newpar bvapec1:15 0.415431
+newpar bvapec1:16 0.004283
+newpar bvapec1:17 150.
+newpar bvapec1:18 0.100602
+freeze bvapec1:1
+thaw bvapec1:2 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:14 bvapec1:15 bvapec1:16 bvapec1:17 bvapec1:18
+
+## Fitting
+abund lpgs
+statistic cstat
+cpd AGN_plus_TBabs_gdem.ps/cps
+query yes
+parallel leven 20
+log 300017010_full.log
+fit
+parallel leven 1
+
+## Calculating Error
+parallel error 20
+error 1. agn:3
+error 1. bvapec1:2,10-18
+parallel error 1
+
+
+## Saving & Plotting
+save model AGN_plus_TBabs_gdem
+show par
+setpl rebin 5 10
+setpl xlog on
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+
+#Fe
+cpd AGN_plus_TBabs_gdem_Fe.ps/cps
+notice all
+ignore **: **-6. 7.-**
+freeze agn:3 bvapec1:2 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:15 bvapec1:18
+#log 300017010_Fe
+fit
+parallel error 20
+error 1. bvapec1:14,16,17
+save model AGN_plus_TBabs_gdem_Fe
+setpl rebin 5 10
+setpl xlog on
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+
+#Si
+cpd AGN_plus_TBabs_gdem_Si.ps/cps
+notice all
+ignore **: **-1.8 2.4-**
+freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:15 bvapec1:18
+thaw bvapec1:10
+fit
+parallel error 20
+error 1. bvapec1:10,16,17
+save model AGN_plus_TBabs_gdem_Si
+setpl rebin 5 10
+setpl xlog on
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+
+#S
+cpd AGN_plus_TBabs_gdem_S.ps/cps
+notice all
+ignore **: **-2.4 3.0-**
+freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:12 bvapec1:13 bvapec1:15 bvapec1:18
+thaw bvapec1:11
+fit
+parallel error 20
+error 1. bvapec1:11,16,17
+save model AGN_plus_TBabs_gdem_S
+setpl rebin 5 10
+setpl xlog on
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+
+#Ar
+cpd AGN_plus_TBabs_gdem_Ar.ps/cps
+notice all
+ignore **: **-3.0 3.7-**
+freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:11 bvapec1:13 bvapec1:15 bvapec1:18
+thaw bvapec1:12
+fit
+parallel error 20
+error 1. bvapec1:12,16,17
+save model AGN_plus_TBabs_gdem_Ar
+setpl rebin 5 10
+setpl xlog on
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+
+#Ca
+cpd AGN_plus_TBabs_gdem_Ca.ps/cps
+notice all
+ignore **: **-3.7 4.7-**
+freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:15 bvapec1:18
+thaw bvapec1:13
+fit
+parallel error 20
+error 1. bvapec1:13,16,17
+save model AGN_plus_TBabs_gdem_Ca
+setpl rebin 5 10
+setpl xlog on
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+
+#Ni
+cpd AGN_plus_TBabs_gdem_Ni.ps/cps
+notice all
+ignore **: **-7.4 8.2-**
+freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:18
+thaw bvapec1:15
+fit
+parallel error 20
+error 1. bvapec1:15,16,17
+save model AGN_plus_TBabs_gdem_Ni
+setpl rebin 5 10
+setpl xlog on
+setpl ylog on
+setpl energy
+plot data resid
+iplot
+
+#/*
+#color 2 on 1
+#rescale y 0.001 10
+#quit
+#quit

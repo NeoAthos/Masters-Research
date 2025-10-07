@@ -1,0 +1,1693 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%For: neolnx
+%%Title: PGPLOT PostScript plot
+%%Creator: PGPLOT
+%%CreationDate: 10-Sep-2024 12:50
+%%BoundingBox: (atend)
+%%Orientation: Landscape
+%%Pages: (atend)
+%%EndComments
+%%BeginProlog
+/gs /gsave load def
+/gr /grestore  load def
+/L {moveto rlineto currentpoint stroke moveto} bind def
+/C {rlineto currentpoint stroke moveto} bind def
+/D {moveto 0 0 rlineto currentpoint stroke moveto} bind def
+/SLW {5 mul setlinewidth} bind def
+/SCF /pop load def
+/BP {newpath moveto} bind def
+/LP /rlineto load def
+/EP {rlineto closepath eofill} bind def
+/MB {gsave translate MFAC dup scale 1 setlinewidth 2 setlinecap 0 setlinejoin newpath} bind def
+/ME /grestore load def
+/CC {0 360 arc stroke} bind def
+/FC {0 360 arc fill} bind def
+% font stuff
+/pgscale 0.072 def
+% ISOLATIN encoding with built in linespacing definitions.
+% from tinydict by David Byram-Wigfield, http://www.capella.demon.co.uk
+% fontsize default setting.
+/FS	{ /fs exch def } def	 12 FS
+% linespacing ratio to fontsize: 1.3 is my default
+/LR {/lr exch def } def 1.3 LR
+/LG { /lg exch def } def   12 LG
+% calculate linespacing from chosen fontsize
+/F { exch dup lr mul LG dup FS exch findfont exch scalefont setfont } def
+/ISOFONT { findfont dup length dict begin { 1 index /FID ne {def} {pop pop}
+ifelse } forall /Encoding ISOLatin1Encoding def currentdict end /tmpfont
+exch definefont exch dup lr mul LG dup FS
+ scalefont setfont }  def
+/half { fs 2 div } bind def % half linespacing
+/quart { fs 4 div } bind def % quarter linespacing
+% vertical kerning: e.g. 5 v or -10 v
+/v { 0 exch rmoveto } def
+% horizontal kerning: e.g. 5 h or -10 h
+/h { 0 rmoveto } def
+% move up half the linespacing
+/up { half v } def
+% move down half the linespacing
+/dn { half neg v } def
+/TRL {/Times-Roman ISOFONT} bind def
+/TBL {/Times-Bold ISOFONT} bind def
+/TIL {/Times-Italic ISOFONT} bind def
+/TBIL {/Times-BoldItalic ISOFONT} bind def
+/HVL  {/Helvetica ISOFONT} bind def
+/HOL  {/Helvetica-Oblique ISOFONT} bind def
+/HNL  {/Helvetica-Narrow ISOFONT} bind def
+/HNBL  {/Helvetica-NarrowBold ISOFONT} bind def
+/HBL  {/Helvetica-Bold ISOFONT} bind def
+/ZL  {/Zapf-Chancery-MediumItalic ISOFONT} bind def
+/SL { /Symbol F } def
+/RS{findfont exch scalefont setfont moveto dup stringwidth neg exch neg exch rmoveto show} bind def
+/TR  { fs TRL   moveto rotate show currentpoint } def
+/TB  { fs TBL   moveto rotate show currentpoint } def
+/TI  { fs TIL   moveto rotate show currentpoint } def
+/TBI { fs TBIL  moveto rotate show currentpoint } def
+/HV  { fs HVL   moveto rotate show currentpoint } def
+/H0  { fs HOL   moveto rotate show currentpoint } def
+/HB  { fs HBL   moveto rotate show currentpoint } def
+/HN  { fs HNL   moveto rotate show currentpoint } def
+/HNB { fs HNBL  moveto rotate show currentpoint } def
+/Z   { fs ZL    moveto rotate show currentpoint } def
+/S   { fs SL    moveto rotate show currentpoint } def
+/TRC  { fs TRL   show currentpoint } def
+/TBC  { fs TBL   show currentpoint } def
+/TIC  { fs TIL   show currentpoint } def
+/TBIC { fs TBIL  show currentpoint } def
+/HVC  { fs HVL   show currentpoint } def
+/H0C  { fs HOL   show currentpoint } def
+/HNBC { fs HNBL  show currentpoint } def
+/HBC  { fs HBL   show currentpoint } def
+/HNC  { fs HNL   show currentpoint } def
+/ZC   { fs ZL    show currentpoint } def
+/SC   { fs SL    show currentpoint } def
+%%EndProlog
+%!PS-Adobe-3.0 EPSF-3.0
+%%For: neolnx
+%%Title: PGPLOT PostScript plot
+%%Creator: PGPLOT
+%%CreationDate: 10-Sep-2024 12:50
+%%BoundingBox: (atend)
+%%Orientation: Landscape
+%%Pages: (atend)
+%%EndComments
+%%BeginProlog
+/gs /gsave load def
+/gr /grestore  load def
+/L {moveto rlineto currentpoint stroke moveto} bind def
+/C {rlineto currentpoint stroke moveto} bind def
+/D {moveto 0 0 rlineto currentpoint stroke moveto} bind def
+/SLW {5 mul setlinewidth} bind def
+/SCF /pop load def
+/BP {newpath moveto} bind def
+/LP /rlineto load def
+/EP {rlineto closepath eofill} bind def
+/MB {gsave translate MFAC dup scale 1 setlinewidth 2 setlinecap 0 setlinejoin newpath} bind def
+/ME /grestore load def
+/CC {0 360 arc stroke} bind def
+/FC {0 360 arc fill} bind def
+% font stuff
+/pgscale 0.072 def
+% ISOLATIN encoding with built in linespacing definitions.
+% from tinydict by David Byram-Wigfield, http://www.capella.demon.co.uk
+% fontsize default setting.
+/FS	{ /fs exch def } def	 12 FS
+% linespacing ratio to fontsize: 1.3 is my default
+/LR {/lr exch def } def 1.3 LR
+/LG { /lg exch def } def   12 LG
+% calculate linespacing from chosen fontsize
+/F { exch dup lr mul LG dup FS exch findfont exch scalefont setfont } def
+/ISOFONT { findfont dup length dict begin { 1 index /FID ne {def} {pop pop}
+ifelse } forall /Encoding ISOLatin1Encoding def currentdict end /tmpfont
+exch definefont exch dup lr mul LG dup FS
+ scalefont setfont }  def
+/half { fs 2 div } bind def % half linespacing
+/quart { fs 4 div } bind def % quarter linespacing
+% vertical kerning: e.g. 5 v or -10 v
+/v { 0 exch rmoveto } def
+% horizontal kerning: e.g. 5 h or -10 h
+/h { 0 rmoveto } def
+% move up half the linespacing
+/up { half v } def
+% move down half the linespacing
+/dn { half neg v } def
+/TRL {/Times-Roman ISOFONT} bind def
+/TBL {/Times-Bold ISOFONT} bind def
+/TIL {/Times-Italic ISOFONT} bind def
+/TBIL {/Times-BoldItalic ISOFONT} bind def
+/HVL  {/Helvetica ISOFONT} bind def
+/HOL  {/Helvetica-Oblique ISOFONT} bind def
+/HNL  {/Helvetica-Narrow ISOFONT} bind def
+/HNBL  {/Helvetica-NarrowBold ISOFONT} bind def
+/HBL  {/Helvetica-Bold ISOFONT} bind def
+/ZL  {/Zapf-Chancery-MediumItalic ISOFONT} bind def
+/SL { /Symbol F } def
+/RS{findfont exch scalefont setfont moveto dup stringwidth neg exch neg exch rmoveto show} bind def
+/TR  { fs TRL   moveto rotate show currentpoint } def
+/TB  { fs TBL   moveto rotate show currentpoint } def
+/TI  { fs TIL   moveto rotate show currentpoint } def
+/TBI { fs TBIL  moveto rotate show currentpoint } def
+/HV  { fs HVL   moveto rotate show currentpoint } def
+/H0  { fs HOL   moveto rotate show currentpoint } def
+/HB  { fs HBL   moveto rotate show currentpoint } def
+/HN  { fs HNL   moveto rotate show currentpoint } def
+/HNB { fs HNBL  moveto rotate show currentpoint } def
+/Z   { fs ZL    moveto rotate show currentpoint } def
+/S   { fs SL    moveto rotate show currentpoint } def
+/TRC  { fs TRL   show currentpoint } def
+/TBC  { fs TBL   show currentpoint } def
+/TIC  { fs TIL   show currentpoint } def
+/TBIC { fs TBIL  show currentpoint } def
+/HVC  { fs HVL   show currentpoint } def
+/H0C  { fs HOL   show currentpoint } def
+/HNBC { fs HNBL  show currentpoint } def
+/HBC  { fs HBL   show currentpoint } def
+/HNC  { fs HNL   show currentpoint } def
+/ZC   { fs ZL    show currentpoint } def
+/SC   { fs SL    show currentpoint } def
+%%EndProlog
+%!PS-Adobe-3.0 EPSF-3.0
+%%For: neolnx
+%%Title: PGPLOT PostScript plot
+%%Creator: PGPLOT
+%%CreationDate: 10-Sep-2024 12:50
+%%BoundingBox: (atend)
+%%Orientation: Landscape
+%%Pages: (atend)
+%%EndComments
+%%BeginProlog
+/gs /gsave load def
+/gr /grestore  load def
+/L {moveto rlineto currentpoint stroke moveto} bind def
+/C {rlineto currentpoint stroke moveto} bind def
+/D {moveto 0 0 rlineto currentpoint stroke moveto} bind def
+/SLW {5 mul setlinewidth} bind def
+/SCF /pop load def
+/BP {newpath moveto} bind def
+/LP /rlineto load def
+/EP {rlineto closepath eofill} bind def
+/MB {gsave translate MFAC dup scale 1 setlinewidth 2 setlinecap 0 setlinejoin newpath} bind def
+/ME /grestore load def
+/CC {0 360 arc stroke} bind def
+/FC {0 360 arc fill} bind def
+% font stuff
+/pgscale 0.072 def
+% ISOLATIN encoding with built in linespacing definitions.
+% from tinydict by David Byram-Wigfield, http://www.capella.demon.co.uk
+% fontsize default setting.
+/FS	{ /fs exch def } def	 12 FS
+% linespacing ratio to fontsize: 1.3 is my default
+/LR {/lr exch def } def 1.3 LR
+/LG { /lg exch def } def   12 LG
+% calculate linespacing from chosen fontsize
+/F { exch dup lr mul LG dup FS exch findfont exch scalefont setfont } def
+/ISOFONT { findfont dup length dict begin { 1 index /FID ne {def} {pop pop}
+ifelse } forall /Encoding ISOLatin1Encoding def currentdict end /tmpfont
+exch definefont exch dup lr mul LG dup FS
+ scalefont setfont }  def
+/half { fs 2 div } bind def % half linespacing
+/quart { fs 4 div } bind def % quarter linespacing
+% vertical kerning: e.g. 5 v or -10 v
+/v { 0 exch rmoveto } def
+% horizontal kerning: e.g. 5 h or -10 h
+/h { 0 rmoveto } def
+% move up half the linespacing
+/up { half v } def
+% move down half the linespacing
+/dn { half neg v } def
+/TRL {/Times-Roman ISOFONT} bind def
+/TBL {/Times-Bold ISOFONT} bind def
+/TIL {/Times-Italic ISOFONT} bind def
+/TBIL {/Times-BoldItalic ISOFONT} bind def
+/HVL  {/Helvetica ISOFONT} bind def
+/HOL  {/Helvetica-Oblique ISOFONT} bind def
+/HNL  {/Helvetica-Narrow ISOFONT} bind def
+/HNBL  {/Helvetica-NarrowBold ISOFONT} bind def
+/HBL  {/Helvetica-Bold ISOFONT} bind def
+/ZL  {/Zapf-Chancery-MediumItalic ISOFONT} bind def
+/SL { /Symbol F } def
+/RS{findfont exch scalefont setfont moveto dup stringwidth neg exch neg exch rmoveto show} bind def
+/TR  { fs TRL   moveto rotate show currentpoint } def
+/TB  { fs TBL   moveto rotate show currentpoint } def
+/TI  { fs TIL   moveto rotate show currentpoint } def
+/TBI { fs TBIL  moveto rotate show currentpoint } def
+/HV  { fs HVL   moveto rotate show currentpoint } def
+/H0  { fs HOL   moveto rotate show currentpoint } def
+/HB  { fs HBL   moveto rotate show currentpoint } def
+/HN  { fs HNL   moveto rotate show currentpoint } def
+/HNB { fs HNBL  moveto rotate show currentpoint } def
+/Z   { fs ZL    moveto rotate show currentpoint } def
+/S   { fs SL    moveto rotate show currentpoint } def
+/TRC  { fs TRL   show currentpoint } def
+/TBC  { fs TBL   show currentpoint } def
+/TIC  { fs TIL   show currentpoint } def
+/TBIC { fs TBIL  show currentpoint } def
+/HVC  { fs HVL   show currentpoint } def
+/H0C  { fs HOL   show currentpoint } def
+/HNBC { fs HNBL  show currentpoint } def
+/HBC  { fs HBL   show currentpoint } def
+/HNC  { fs HNL   show currentpoint } def
+/ZC   { fs ZL    show currentpoint } def
+/SC   { fs SL    show currentpoint } def
+%%EndProlog
+%!PS-Adobe-3.0 EPSF-3.0
+%%For: neolnx
+%%Title: PGPLOT PostScript plot
+%%Creator: PGPLOT
+%%CreationDate: 10-Sep-2024 12:50
+%%BoundingBox: (atend)
+%%Orientation: Landscape
+%%Pages: (atend)
+%%EndComments
+%%BeginProlog
+/gs /gsave load def
+/gr /grestore  load def
+/L {moveto rlineto currentpoint stroke moveto} bind def
+/C {rlineto currentpoint stroke moveto} bind def
+/D {moveto 0 0 rlineto currentpoint stroke moveto} bind def
+/SLW {5 mul setlinewidth} bind def
+/SCF /pop load def
+/BP {newpath moveto} bind def
+/LP /rlineto load def
+/EP {rlineto closepath eofill} bind def
+/MB {gsave translate MFAC dup scale 1 setlinewidth 2 setlinecap 0 setlinejoin newpath} bind def
+/ME /grestore load def
+/CC {0 360 arc stroke} bind def
+/FC {0 360 arc fill} bind def
+% font stuff
+/pgscale 0.072 def
+% ISOLATIN encoding with built in linespacing definitions.
+% from tinydict by David Byram-Wigfield, http://www.capella.demon.co.uk
+% fontsize default setting.
+/FS	{ /fs exch def } def	 12 FS
+% linespacing ratio to fontsize: 1.3 is my default
+/LR {/lr exch def } def 1.3 LR
+/LG { /lg exch def } def   12 LG
+% calculate linespacing from chosen fontsize
+/F { exch dup lr mul LG dup FS exch findfont exch scalefont setfont } def
+/ISOFONT { findfont dup length dict begin { 1 index /FID ne {def} {pop pop}
+ifelse } forall /Encoding ISOLatin1Encoding def currentdict end /tmpfont
+exch definefont exch dup lr mul LG dup FS
+ scalefont setfont }  def
+/half { fs 2 div } bind def % half linespacing
+/quart { fs 4 div } bind def % quarter linespacing
+% vertical kerning: e.g. 5 v or -10 v
+/v { 0 exch rmoveto } def
+% horizontal kerning: e.g. 5 h or -10 h
+/h { 0 rmoveto } def
+% move up half the linespacing
+/up { half v } def
+% move down half the linespacing
+/dn { half neg v } def
+/TRL {/Times-Roman ISOFONT} bind def
+/TBL {/Times-Bold ISOFONT} bind def
+/TIL {/Times-Italic ISOFONT} bind def
+/TBIL {/Times-BoldItalic ISOFONT} bind def
+/HVL  {/Helvetica ISOFONT} bind def
+/HOL  {/Helvetica-Oblique ISOFONT} bind def
+/HNL  {/Helvetica-Narrow ISOFONT} bind def
+/HNBL  {/Helvetica-NarrowBold ISOFONT} bind def
+/HBL  {/Helvetica-Bold ISOFONT} bind def
+/ZL  {/Zapf-Chancery-MediumItalic ISOFONT} bind def
+/SL { /Symbol F } def
+/RS{findfont exch scalefont setfont moveto dup stringwidth neg exch neg exch rmoveto show} bind def
+/TR  { fs TRL   moveto rotate show currentpoint } def
+/TB  { fs TBL   moveto rotate show currentpoint } def
+/TI  { fs TIL   moveto rotate show currentpoint } def
+/TBI { fs TBIL  moveto rotate show currentpoint } def
+/HV  { fs HVL   moveto rotate show currentpoint } def
+/H0  { fs HOL   moveto rotate show currentpoint } def
+/HB  { fs HBL   moveto rotate show currentpoint } def
+/HN  { fs HNL   moveto rotate show currentpoint } def
+/HNB { fs HNBL  moveto rotate show currentpoint } def
+/Z   { fs ZL    moveto rotate show currentpoint } def
+/S   { fs SL    moveto rotate show currentpoint } def
+/TRC  { fs TRL   show currentpoint } def
+/TBC  { fs TBL   show currentpoint } def
+/TIC  { fs TIL   show currentpoint } def
+/TBIC { fs TBIL  show currentpoint } def
+/HVC  { fs HVL   show currentpoint } def
+/H0C  { fs HOL   show currentpoint } def
+/HNBC { fs HNBL  show currentpoint } def
+/HBC  { fs HBL   show currentpoint } def
+/HNC  { fs HNL   show currentpoint } def
+/ZC   { fs ZL    show currentpoint } def
+/SC   { fs SL    show currentpoint } def
+%%EndProlog
+0.000 0.000 0.000 setrgbcolor
+
+%%Page: 1 1
+%%BeginPageSetup
+/PGPLOT save def
+pgscale pgscale scale
+8149 250 translate 90 rotate
+1 setlinejoin 1 setlinecap 1 SLW 1 SCF
+%%EndPageSetup
+%%PageBoundingBox: (atend)
+0.000 0.000 0.000 setrgbcolor 2 SLW 8399 0 1050 3120 L 0 3899 C -8399 0 C 0 -3899 C 0 38 7429 3120 L 0 38 7429 6981 L
+38 0 1050 3131 L 38 0 1050 3192 L 38 0 1050 3239 L 38 0 1050 3277 L 38 0 1050 3310 L 38 0 1050 3338 L 38 0 1050 3363 L
+76 0 1050 3386 L 38 0 1050 3532 L 38 0 1050 3618 L 38 0 1050 3679 L 38 0 1050 3726 L 38 0 1050 3765 L 38 0 1050 3798 L
+38 0 1050 3826 L 38 0 1050 3851 L 76 0 1050 3873 L 38 0 1050 4020 L 38 0 1050 4106 L 38 0 1050 4166 L 38 0 1050 4214 L
+38 0 1050 4252 L 38 0 1050 4285 L 38 0 1050 4313 L 38 0 1050 4338 L 76 0 1050 4360 L 38 0 1050 4507 L 38 0 1050 4593 L
+38 0 1050 4654 L 38 0 1050 4701 L 38 0 1050 4740 L 38 0 1050 4772 L 38 0 1050 4801 L 38 0 1050 4826 L 76 0 1050 4848 L
+38 0 1050 4995 L 38 0 1050 5080 L 38 0 1050 5141 L 38 0 1050 5189 L 38 0 1050 5227 L 38 0 1050 5260 L 38 0 1050 5288 L
+38 0 1050 5313 L 76 0 1050 5335 L 38 0 1050 5482 L 38 0 1050 5568 L 38 0 1050 5629 L 38 0 1050 5676 L 38 0 1050 5715 L
+38 0 1050 5747 L 38 0 1050 5776 L 38 0 1050 5800 L 76 0 1050 5823 L 38 0 1050 5970 L 38 0 1050 6055 L 38 0 1050 6116 L
+38 0 1050 6163 L 38 0 1050 6202 L 38 0 1050 6235 L 38 0 1050 6263 L 38 0 1050 6288 L 76 0 1050 6310 L 38 0 1050 6457 L
+38 0 1050 6543 L 38 0 1050 6604 L 38 0 1050 6651 L 38 0 1050 6690 L 38 0 1050 6722 L 38 0 1050 6750 L 38 0 1050 6775 L
+76 0 1050 6798 L 38 0 1050 6944 L 38 0 9411 3131 L 38 0 9411 3192 L 38 0 9411 3239 L 38 0 9411 3277 L 38 0 9411 3310 L
+38 0 9411 3338 L 38 0 9411 3363 L 76 0 9373 3386 L 38 0 9411 3532 L 38 0 9411 3618 L 38 0 9411 3679 L 38 0 9411 3726 L
+38 0 9411 3765 L 38 0 9411 3798 L 38 0 9411 3826 L 38 0 9411 3851 L 76 0 9373 3873 L 38 0 9411 4020 L 38 0 9411 4106 L
+38 0 9411 4166 L 38 0 9411 4214 L 38 0 9411 4252 L 38 0 9411 4285 L 38 0 9411 4313 L 38 0 9411 4338 L 76 0 9373 4360 L
+38 0 9411 4507 L 38 0 9411 4593 L 38 0 9411 4654 L 38 0 9411 4701 L 38 0 9411 4740 L 38 0 9411 4772 L 38 0 9411 4801 L
+38 0 9411 4826 L 76 0 9373 4848 L 38 0 9411 4995 L 38 0 9411 5080 L 38 0 9411 5141 L 38 0 9411 5189 L 38 0 9411 5227 L
+38 0 9411 5260 L 38 0 9411 5288 L 38 0 9411 5313 L 76 0 9373 5335 L 38 0 9411 5482 L 38 0 9411 5568 L 38 0 9411 5629 L
+38 0 9411 5676 L 38 0 9411 5715 L 38 0 9411 5747 L 38 0 9411 5776 L 38 0 9411 5800 L 76 0 9373 5823 L 38 0 9411 5970 L
+38 0 9411 6055 L 38 0 9411 6116 L 38 0 9411 6163 L 38 0 9411 6202 L 38 0 9411 6235 L 38 0 9411 6263 L 38 0 9411 6288 L
+76 0 9373 6310 L 38 0 9411 6457 L 38 0 9411 6543 L 38 0 9411 6604 L 38 0 9411 6651 L 38 0 9411 6690 L 38 0 9411 6722 L
+38 0 9411 6750 L 38 0 9411 6775 L 76 0 9373 6798 L 38 0 9411 6944 L
+ 13.26  pgscale div FS gs     0.00        604.341       3335.876 moveto rotate (10) HVC   7.95 pgscale div FS up (-9) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.341       3823.314 moveto rotate (10) HVC   7.95 pgscale div FS up (-8) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.341       4310.751 moveto rotate (10) HVC   7.95 pgscale div FS up (-7) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.341       4798.189 moveto rotate (10) HVC   7.95 pgscale div FS up (-6) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.341       5285.626 moveto rotate (10) HVC   7.95 pgscale div FS up (-5) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.341       5773.063 moveto rotate (10) HVC   7.95 pgscale div FS up (-4) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.341       6260.501 moveto rotate (10) HVC   7.95 pgscale div FS up (-3) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        575.916       6747.938 moveto rotate (0.01) HVC gr
+1 SLW
+/M1 {MB 0 0 1 FC ME} bind def
+/MFAC      5.999 def
+1078 6808 M1 55 0 1050 6808 L 0 232 1078 6662 L 1298 6515 M1 55 0 1271 6515 L 0 3542 1298 3120 L 1408 6515 M1 55 0 1381 6515 L
+0 3542 1408 3120 L 1463 6515 M1 55 0 1436 6515 L 0 3542 1463 3120 L 1573 6662 M1 55 0 1546 6662 L 0 373 1573 6402 L 1628 6515 M1
+55 0 1601 6515 L 0 3542 1628 3120 L 1738 6515 M1 54 0 1711 6515 L 0 3542 1738 3120 L 1793 6515 M1 55 0 1765 6515 L
+0 3542 1793 3120 L 1848 6747 M1 55 0 1820 6747 L 0 279 1848 6565 L 1902 6808 M1 55 0 1875 6808 L 0 232 1902 6662 L 1957 6515 M1
+54 0 1930 6515 L 0 3542 1957 3120 L 2121 6515 M1 54 0 2094 6515 L 0 3542 2121 3120 L 2230 6662 M1 54 0 2203 6662 L 0 373 2230 6402 L
+2284 6662 M1 55 0 2257 6662 L 0 373 2284 6402 L 2339 6808 M1 54 0 2312 6808 L 0 232 2339 6662 L 2393 6662 M1 54 0 2366 6662 L
+0 373 2393 6402 L 2448 6662 M1 55 0 2420 6662 L 0 373 2448 6402 L 2502 6515 M1 54 0 2475 6515 L 0 3542 2502 3120 L 2556 6515 M1
+54 0 2529 6515 L 0 3542 2556 3120 L 2719 6747 M1 54 0 2692 6747 L 0 279 2719 6565 L 2773 6747 M1 54 0 2746 6747 L 0 279 2773 6565 L
+2827 6515 M1 54 0 2800 6515 L 0 3542 2827 3120 L 2881 6662 M1 54 0 2854 6662 L 0 373 2881 6402 L 2935 6662 M1 54 0 2908 6662 L
+0 373 2935 6402 L 3043 6662 M1 54 0 3016 6662 L 0 373 3043 6402 L 3097 6515 M1 54 0 3070 6515 L 0 3542 3097 3120 L 3151 6515 M1
+54 0 3124 6515 L 0 3542 3151 3120 L 3205 6515 M1 54 0 3178 6515 L 0 3542 3205 3120 L 3366 6747 M1 53 0 3340 6747 L 0 279 3366 6565 L
+3420 6662 M1 54 0 3393 6662 L 0 373 3420 6402 L 3581 6515 M1 54 0 3554 6515 L 0 3542 3581 3120 L 3635 6662 M1 53 0 3608 6662 L
+0 373 3635 6402 L 3688 6662 M1 54 0 3661 6662 L 0 373 3688 6402 L 3795 6515 M1 54 0 3768 6515 L 0 3542 3795 3120 L 3849 6808 M1
+53 0 3822 6808 L 0 232 3849 6662 L 3902 6515 M1 54 0 3875 6515 L 0 3542 3902 3120 L 3955 6515 M1 53 0 3929 6515 L 0 3542 3955 3120 L
+4009 6747 M1 53 0 3982 6747 L 0 279 4009 6565 L 4062 6662 M1 54 0 4035 6662 L 0 373 4062 6402 L 4115 6662 M1 53 0 4089 6662 L
+0 373 4115 6402 L 4169 6515 M1 53 0 4142 6515 L 0 3542 4169 3120 L 4222 6855 M1 53 0 4195 6855 L 0 204 4222 6730 L 4275 6662 M1
+53 0 4248 6662 L 0 373 4275 6402 L 4328 6515 M1 54 0 4301 6515 L 0 3542 4328 3120 L 4381 6515 M1 53 0 4355 6515 L 0 3542 4381 3120 L
+4434 6747 M1 53 0 4408 6747 L 0 279 4434 6565 L 4487 6515 M1 53 0 4461 6515 L 0 3542 4487 3120 L 4540 6515 M1 53 0 4514 6515 L
+0 3542 4540 3120 L 4593 6662 M1 53 0 4567 6662 L 0 373 4593 6402 L 4646 6662 M1 53 0 4620 6662 L 0 373 4646 6402 L 4699 6747 M1
+52 0 4673 6747 L 0 279 4699 6565 L 4752 6747 M1 53 0 4725 6747 L 0 279 4752 6565 L 4805 6808 M1 53 0 4778 6808 L 0 232 4805 6662 L
+4857 6808 M1 53 0 4831 6808 L 0 232 4857 6662 L 4910 6662 M1 53 0 4884 6662 L 0 373 4910 6402 L 4963 6955 M1 52 0 4937 6955 L
+0 156 4963 6863 L 5016 6662 M1 53 0 4989 6662 L 0 373 5016 6402 L 5068 6515 M1 53 0 5042 6515 L 0 3542 5068 3120 L 5121 6808 M1
+52 0 5095 6808 L 0 232 5121 6662 L 5173 6808 M1 53 0 5147 6808 L 0 232 5173 6662 L 5279 6747 M1 53 0 5252 6747 L 0 279 5279 6565 L
+5331 6515 M1 52 0 5305 6515 L 0 3542 5331 3120 L 5383 6662 M1 53 0 5357 6662 L 0 373 5383 6402 L 5436 6515 M1 52 0 5410 6515 L
+0 3542 5436 3120 L 5541 6662 M1 53 0 5514 6662 L 0 373 5541 6402 L 5645 6515 M1 52 0 5619 6515 L 0 3542 5645 3120 L 5750 6662 M1
+52 0 5724 6662 L 0 373 5750 6402 L 5802 6662 M1 52 0 5776 6662 L 0 373 5802 6402 L 5854 6894 M1 52 0 5828 6894 L 0 184 5854 6783 L
+5906 6808 M1 52 0 5880 6808 L 0 232 5906 6662 L 5958 6662 M1 52 0 5932 6662 L 0 373 5958 6402 L 6114 6515 M1 52 0 6088 6515 L
+0 3542 6114 3120 L 6166 6662 M1 52 0 6140 6662 L 0 373 6166 6402 L 6218 6662 M1 52 0 6192 6662 L 0 373 6218 6402 L 6270 6662 M1
+52 0 6244 6662 L 0 373 6270 6402 L 6322 6515 M1 52 0 6296 6515 L 0 3542 6322 3120 L 6374 6662 M1 52 0 6348 6662 L 0 373 6374 6402 L
+6425 6747 M1 51 0 6400 6747 L 0 279 6425 6565 L 6529 6515 M1 52 0 6503 6515 L 0 3542 6529 3120 L 6684 6662 M1 52 0 6658 6662 L
+0 373 6684 6402 L 6735 6747 M1 51 0 6710 6747 L 0 279 6735 6565 L 6787 6662 M1 52 0 6761 6662 L 0 373 6787 6402 L 6839 6747 M1
+51 0 6813 6747 L 0 279 6839 6565 L 6941 6515 M1 51 0 6916 6515 L 0 3542 6941 3120 L 6993 6515 M1 52 0 6967 6515 L 0 3542 6993 3120 L
+7044 6515 M1 51 0 7019 6515 L 0 3542 7044 3120 L 7198 6662 M1 51 0 7173 6662 L 0 373 7198 6402 L 7250 6515 M1 51 0 7224 6515 L
+0 3542 7250 3120 L 7301 6662 M1 51 0 7275 6662 L 0 373 7301 6402 L 7352 6662 M1 52 0 7326 6662 L 0 373 7352 6402 L 7403 6515 M1
+51 0 7378 6515 L 0 3542 7403 3120 L 7454 6515 M1 51 0 7429 6515 L 0 3542 7454 3120 L 7505 6515 M1 51 0 7480 6515 L
+0 3542 7505 3120 L 7557 6515 M1 51 0 7531 6515 L 0 3542 7557 3120 L 7608 6515 M1 51 0 7582 6515 L 0 3542 7608 3120 L 7659 6515 M1
+51 0 7633 6515 L 0 3542 7659 3120 L 7710 6515 M1 51 0 7684 6515 L 0 3542 7710 3120 L 7811 6515 M1 51 0 7786 6515 L
+0 3542 7811 3120 L 7862 6515 M1 51 0 7837 6515 L 0 3542 7862 3120 L 7913 6662 M1 51 0 7888 6662 L 0 373 7913 6402 L 7964 6747 M1
+50 0 7939 6747 L 0 279 7964 6565 L 8065 6515 M1 51 0 8040 6515 L 0 3542 8065 3120 L 8116 6662 M1 51 0 8091 6662 L 0 373 8116 6402 L
+8218 6662 M1 51 0 8192 6662 L 0 373 8218 6402 L 8268 6662 M1 51 0 8243 6662 L 0 373 8268 6402 L 8319 6662 M1 50 0 8294 6662 L
+0 373 8319 6402 L 8369 6515 M1 51 0 8344 6515 L 0 3542 8369 3120 L 8420 6515 M1 50 0 8395 6515 L 0 3542 8420 3120 L 8470 6515 M1
+51 0 8445 6515 L 0 3542 8470 3120 L 8521 6662 M1 50 0 8496 6662 L 0 373 8521 6402 L 8622 6662 M1 50 0 8597 6662 L 0 373 8622 6402 L
+8672 6515 M1 50 0 8647 6515 L 0 3542 8672 3120 L 8722 6515 M1 51 0 8697 6515 L 0 3542 8722 3120 L 8773 6662 M1 50 0 8748 6662 L
+0 373 8773 6402 L 8823 6662 M1 50 0 8798 6662 L 0 373 8823 6402 L 8924 6662 M1 51 0 8898 6662 L 0 373 8924 6402 L 8974 6515 M1
+50 0 8949 6515 L 0 3542 8974 3120 L 9124 6515 M1 50 0 9099 6515 L 0 3542 9124 3120 L 9174 6515 M1 50 0 9149 6515 L
+0 3542 9174 3120 L 9274 6747 M1 50 0 9249 6747 L 0 279 9274 6565 L 9324 6515 M1 50 0 9299 6515 L 0 3542 9324 3120 L 9424 6662 M1
+50 0 9399 6662 L 0 373 9424 6402 L 2 SLW 55 0 1050 6594 L 55 0 C 0 -1 C 56 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C
+0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 55 0 C 55 0 C
+0 3 C 54 0 C 0 -5 C 55 0 C 0 -1 C 54 0 C 0 1 C 55 0 C 0 -2 C 54 0 C 0 -1 C 54 0 C 0 2 C 55 0 C 0 -2 C 54 0 C 0 -2 C 54 0 C 55 0 C
+0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -2 C 54 0 C 0 -1 C 54 0 C 0 1 C 54 0 C 0 9 C 54 0 C 0 -9 C 54 0 C
+0 -2 C 54 0 C 0 1 C 54 0 C 0 11 C 54 0 C 0 -6 C 53 0 C 0 -5 C 54 0 C 0 -4 C 54 0 C 0 -2 C 53 0 C 0 2 C 54 0 C 0 -3 C 53 0 C 0 -1 C
+54 0 C 0 5 C 53 0 C 0 15 C 54 0 C 0 -17 C 53 0 C 0 2 C 54 0 C 0 -9 C 53 0 C 0 5 C 53 0 C 0 15 C 54 0 C 0 37 C 53 0 C 0 -23 C 53 0 C
+0 -24 C 53 0 C 0 116 C 53 0 C 0 6 C 54 0 C 0 -66 C 53 0 C 0 80 C 53 0 C 0 -59 C 53 0 C 0 20 C 53 0 C 0 28 C 53 0 C 0 12 C 53 0 C
+0 -26 C 52 0 C 0 -2 C 53 0 C 0 145 C 53 0 C 0 -30 C 53 0 C 0 -113 C 53 0 C 0 -20 C 52 0 C 0 10 C 53 0 C 0 99 C 53 0 C 0 -97 C 52 0 C
+0 -115 C 53 0 C 0 29 C 52 0 C 0 -21 C 53 0 C 0 -3 C 52 0 C 0 -6 C 53 0 C 0 -17 C 52 0 C 0 -2 C 52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C
+52 0 C 0 5 C 53 0 C 0 84 C 52 0 C 0 31 C 52 0 C 0 182 C 52 0 C 0 -42 C 52 0 C 0 -244 C 52 0 C 0 -22 C 52 0 C 52 0 C 0 -1 C 52 0 C
+0 -1 C 52 0 C 52 0 C 52 0 C 0 -2 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C
+51 0 C 0 -1 C 52 0 C 0 1 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 51 0 C
+0 -1 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C
+0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 1 C 51 0 C 0 3 C 51 0 C 0 -6 C 50 0 C 51 0 C 51 0 C 0 -2 C 50 0 C 0 1 C 51 0 C
+50 0 C 0 -3 C 51 0 C 0 1 C 50 0 C 0 -2 C 51 0 C 50 0 C 0 -1 C 50 0 C 0 33 C 51 0 C 0 134 C 50 0 C 0 -18 C 50 0 C 0 -139 C 50 0 C
+0 9 C 51 0 C 0 25 C 50 0 C 0 -43 C 50 0 C 0 -6 C 50 0 C 0 8 C 50 0 C 0 -10 C 50 0 C 0 26 C 50 0 C 0 29 C 50 0 C 0 -49 C 50 0 C
+0 -9 C 50 0 C 0 -2 C 50 0 C 55 0 1050 6594 L 0 0 1078 6594 L 55 0 1105 6594 L 0 0 1133 6594 L 56 0 1160 6593 L 0 0 1188 6593 L
+55 0 1216 6592 L 0 0 1243 6592 L 55 0 1271 6591 L 0 0 1298 6591 L 55 0 1326 6591 L 0 0 1353 6591 L 55 0 1381 6590 L 0 0 1408 6590 L
+55 0 1436 6589 L 0 0 1463 6589 L 55 0 1491 6589 L 0 0 1518 6589 L 55 0 1546 6588 L 0 0 1573 6588 L 55 0 1601 6588 L 0 0 1628 6588 L
+55 0 1656 6587 L 0 0 1683 6587 L 54 0 1711 6586 L 0 0 1738 6586 L 55 0 1765 6585 L 0 0 1793 6585 L 55 0 1820 6585 L 0 0 1848 6585 L
+55 0 1875 6584 L 0 0 1902 6584 L 54 0 1930 6583 L 0 0 1957 6583 L 55 0 1984 6583 L 0 0 2012 6583 L 55 0 2039 6583 L 0 0 2066 6583 L
+54 0 2094 6586 L 0 0 2121 6586 L 55 0 2148 6581 L 0 0 2175 6581 L 54 0 2203 6580 L 0 0 2230 6580 L 55 0 2257 6581 L 0 0 2284 6581 L
+54 0 2312 6579 L 0 0 2339 6579 L 54 0 2366 6578 L 0 0 2393 6578 L 55 0 2420 6580 L 0 0 2448 6580 L 54 0 2475 6578 L 0 0 2502 6578 L
+54 0 2529 6576 L 0 0 2556 6576 L 55 0 2583 6576 L 0 0 2611 6576 L 54 0 2638 6575 L 0 0 2665 6575 L 54 0 2692 6574 L 0 0 2719 6574 L
+54 0 2746 6573 L 0 0 2773 6573 L 54 0 2800 6572 L 0 0 2827 6572 L 54 0 2854 6572 L 0 0 2881 6572 L 54 0 2908 6570 L 0 0 2935 6570 L
+54 0 2962 6569 L 0 0 2989 6569 L 54 0 3016 6570 L 0 0 3043 6570 L 54 0 3070 6579 L 0 0 3097 6579 L 54 0 3124 6570 L 0 0 3151 6570 L
+54 0 3178 6568 L 0 0 3205 6568 L 54 0 3232 6569 L 0 0 3259 6569 L 54 0 3286 6580 L 0 0 3313 6580 L 53 0 3340 6574 L 0 0 3366 6574 L
+54 0 3393 6569 L 0 0 3420 6569 L 54 0 3447 6565 L 0 0 3474 6565 L 53 0 3501 6563 L 0 0 3527 6563 L 54 0 3554 6565 L 0 0 3581 6565 L
+53 0 3608 6562 L 0 0 3635 6562 L 54 0 3661 6561 L 0 0 3688 6561 L 53 0 3715 6566 L 0 0 3742 6566 L 54 0 3768 6581 L 0 0 3795 6581 L
+53 0 3822 6564 L 0 0 3849 6564 L 54 0 3875 6566 L 0 0 3902 6566 L 53 0 3929 6557 L 0 0 3955 6557 L 53 0 3982 6562 L 0 0 4009 6562 L
+54 0 4035 6577 L 0 0 4062 6577 L 53 0 4089 6614 L 0 0 4115 6614 L 53 0 4142 6591 L 0 0 4169 6591 L 53 0 4195 6567 L 0 0 4222 6567 L
+53 0 4248 6683 L 0 0 4275 6683 L 54 0 4301 6689 L 0 0 4328 6689 L 53 0 4355 6623 L 0 0 4381 6623 L 53 0 4408 6703 L 0 0 4434 6703 L
+53 0 4461 6644 L 0 0 4487 6644 L 53 0 4514 6664 L 0 0 4540 6664 L 53 0 4567 6692 L 0 0 4593 6692 L 53 0 4620 6704 L 0 0 4646 6704 L
+52 0 4673 6678 L 0 0 4699 6678 L 53 0 4725 6676 L 0 0 4752 6676 L 53 0 4778 6821 L 0 0 4805 6821 L 53 0 4831 6791 L 0 0 4857 6791 L
+53 0 4884 6678 L 0 0 4910 6678 L 52 0 4937 6658 L 0 0 4963 6658 L 53 0 4989 6668 L 0 0 5016 6668 L 53 0 5042 6767 L 0 0 5068 6767 L
+52 0 5095 6670 L 0 0 5121 6670 L 53 0 5147 6555 L 0 0 5173 6555 L 52 0 5200 6584 L 0 0 5226 6584 L 53 0 5252 6563 L 0 0 5279 6563 L
+52 0 5305 6560 L 0 0 5331 6560 L 53 0 5357 6554 L 0 0 5383 6554 L 52 0 5410 6537 L 0 0 5436 6537 L 52 0 5462 6535 L 0 0 5488 6535 L
+53 0 5514 6534 L 0 0 5541 6534 L 52 0 5567 6533 L 0 0 5593 6533 L 52 0 5619 6533 L 0 0 5645 6533 L 53 0 5671 6538 L 0 0 5697 6538 L
+52 0 5724 6622 L 0 0 5750 6622 L 52 0 5776 6653 L 0 0 5802 6653 L 52 0 5828 6835 L 0 0 5854 6835 L 52 0 5880 6793 L 0 0 5906 6793 L
+52 0 5932 6549 L 0 0 5958 6549 L 52 0 5984 6527 L 0 0 6010 6527 L 52 0 6036 6527 L 0 0 6062 6527 L 52 0 6088 6526 L 0 0 6114 6526 L
+52 0 6140 6525 L 0 0 6166 6525 L 52 0 6192 6525 L 0 0 6218 6525 L 52 0 6244 6525 L 0 0 6270 6525 L 52 0 6296 6523 L 0 0 6322 6523 L
+52 0 6348 6522 L 0 0 6374 6522 L 51 0 6400 6521 L 0 0 6425 6521 L 52 0 6451 6521 L 0 0 6477 6521 L 52 0 6503 6520 L 0 0 6529 6520 L
+51 0 6555 6519 L 0 0 6581 6519 L 52 0 6606 6518 L 0 0 6632 6518 L 52 0 6658 6518 L 0 0 6684 6518 L 51 0 6710 6517 L 0 0 6735 6517 L
+52 0 6761 6516 L 0 0 6787 6516 L 51 0 6813 6517 L 0 0 6839 6517 L 52 0 6864 6515 L 0 0 6890 6515 L 51 0 6916 6514 L 0 0 6941 6514 L
+52 0 6967 6513 L 0 0 6993 6513 L 51 0 7019 6513 L 0 0 7044 6513 L 51 0 7070 6512 L 0 0 7096 6512 L 52 0 7121 6511 L 0 0 7147 6511 L
+51 0 7173 6510 L 0 0 7198 6510 L 51 0 7224 6510 L 0 0 7250 6510 L 51 0 7275 6509 L 0 0 7301 6509 L 52 0 7326 6508 L 0 0 7352 6508 L
+51 0 7378 6508 L 0 0 7403 6508 L 51 0 7429 6507 L 0 0 7454 6507 L 51 0 7480 6507 L 0 0 7505 6507 L 51 0 7531 6506 L 0 0 7557 6506 L
+51 0 7582 6505 L 0 0 7608 6505 L 51 0 7633 6504 L 0 0 7659 6504 L 51 0 7684 6504 L 0 0 7710 6504 L 51 0 7735 6503 L 0 0 7760 6503 L
+51 0 7786 6502 L 0 0 7811 6502 L 51 0 7837 6501 L 0 0 7862 6501 L 51 0 7888 6500 L 0 0 7913 6500 L 50 0 7939 6499 L 0 0 7964 6499 L
+51 0 7989 6499 L 0 0 8015 6499 L 51 0 8040 6500 L 0 0 8065 6500 L 51 0 8091 6503 L 0 0 8116 6503 L 50 0 8142 6497 L 0 0 8167 6497 L
+51 0 8192 6497 L 0 0 8218 6497 L 51 0 8243 6497 L 0 0 8268 6497 L 50 0 8294 6495 L 0 0 8319 6495 L 51 0 8344 6496 L 0 0 8369 6496 L
+50 0 8395 6496 L 0 0 8420 6496 L 51 0 8445 6493 L 0 0 8470 6493 L 50 0 8496 6494 L 0 0 8521 6494 L 51 0 8546 6492 L 0 0 8571 6492 L
+50 0 8597 6492 L 0 0 8622 6492 L 50 0 8647 6491 L 0 0 8672 6491 L 51 0 8697 6524 L 0 0 8722 6524 L 50 0 8748 6658 L 0 0 8773 6658 L
+50 0 8798 6640 L 0 0 8823 6640 L 50 0 8848 6501 L 0 0 8873 6501 L 51 0 8898 6510 L 0 0 8924 6510 L 50 0 8949 6535 L 0 0 8974 6535 L
+50 0 8999 6492 L 0 0 9024 6492 L 50 0 9049 6486 L 0 0 9074 6486 L 50 0 9099 6494 L 0 0 9124 6494 L 50 0 9149 6484 L 0 0 9174 6484 L
+50 0 9199 6510 L 0 0 9224 6510 L 50 0 9249 6539 L 0 0 9274 6539 L 50 0 9299 6490 L 0 0 9324 6490 L 50 0 9349 6481 L 0 0 9374 6481 L
+50 0 9399 6479 L 0 0 9424 6479 L 55 0 1050 6416 L 0 -1 C 55 0 C 56 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C
+55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 54 0 C 55 0 C
+0 -1 C 54 0 C 55 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 55 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C
+54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C
+53 0 C 54 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 53 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 53 0 C 53 0 C
+0 -1 C 53 0 C 53 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 53 0 C
+53 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C
+52 0 C 53 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 52 0 C
+0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 51 0 C
+52 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C
+51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C
+51 0 C 51 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 51 0 C 50 0 C
+0 -1 C 50 0 C 51 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C
+0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C 50 0 C 55 0 1050 6416 L 0 0 1078 6416 L 55 0 1105 6415 L 0 0 1133 6415 L 56 0 1160 6415 L
+0 0 1188 6415 L 55 0 1216 6414 L 0 0 1243 6414 L 55 0 1271 6414 L 0 0 1298 6414 L 55 0 1326 6413 L 0 0 1353 6413 L 55 0 1381 6413 L
+0 0 1408 6413 L 55 0 1436 6412 L 0 0 1463 6412 L 55 0 1491 6412 L 0 0 1518 6412 L 55 0 1546 6411 L 0 0 1573 6411 L 55 0 1601 6411 L
+0 0 1628 6411 L 55 0 1656 6410 L 0 0 1683 6410 L 54 0 1711 6410 L 0 0 1738 6410 L 55 0 1765 6409 L 0 0 1793 6409 L 55 0 1820 6409 L
+0 0 1848 6409 L 55 0 1875 6408 L 0 0 1902 6408 L 54 0 1930 6408 L 0 0 1957 6408 L 55 0 1984 6407 L 0 0 2012 6407 L 55 0 2039 6407 L
+0 0 2066 6407 L 54 0 2094 6406 L 0 0 2121 6406 L 55 0 2148 6406 L 0 0 2175 6406 L 54 0 2203 6405 L 0 0 2230 6405 L 55 0 2257 6405 L
+0 0 2284 6405 L 54 0 2312 6404 L 0 0 2339 6404 L 54 0 2366 6403 L 0 0 2393 6403 L 55 0 2420 6403 L 0 0 2448 6403 L 54 0 2475 6402 L
+0 0 2502 6402 L 54 0 2529 6402 L 0 0 2556 6402 L 55 0 2583 6401 L 0 0 2611 6401 L 54 0 2638 6401 L 0 0 2665 6401 L 54 0 2692 6400 L
+0 0 2719 6400 L 54 0 2746 6400 L 0 0 2773 6400 L 54 0 2800 6399 L 0 0 2827 6399 L 54 0 2854 6399 L 0 0 2881 6399 L 54 0 2908 6398 L
+0 0 2935 6398 L 54 0 2962 6398 L 0 0 2989 6398 L 54 0 3016 6397 L 0 0 3043 6397 L 54 0 3070 6396 L 0 0 3097 6396 L 54 0 3124 6396 L
+0 0 3151 6396 L 54 0 3178 6395 L 0 0 3205 6395 L 54 0 3232 6395 L 0 0 3259 6395 L 54 0 3286 6394 L 0 0 3313 6394 L 53 0 3340 6394 L
+0 0 3366 6394 L 54 0 3393 6393 L 0 0 3420 6393 L 54 0 3447 6393 L 0 0 3474 6393 L 53 0 3501 6392 L 0 0 3527 6392 L 54 0 3554 6392 L
+0 0 3581 6392 L 53 0 3608 6391 L 0 0 3635 6391 L 54 0 3661 6391 L 0 0 3688 6391 L 53 0 3715 6390 L 0 0 3742 6390 L 54 0 3768 6390 L
+0 0 3795 6390 L 53 0 3822 6389 L 0 0 3849 6389 L 54 0 3875 6388 L 0 0 3902 6388 L 53 0 3929 6388 L 0 0 3955 6388 L 53 0 3982 6387 L
+0 0 4009 6387 L 54 0 4035 6387 L 0 0 4062 6387 L 53 0 4089 6386 L 0 0 4115 6386 L 53 0 4142 6386 L 0 0 4169 6386 L 53 0 4195 6385 L
+0 0 4222 6385 L 53 0 4248 6385 L 0 0 4275 6385 L 54 0 4301 6384 L 0 0 4328 6384 L 53 0 4355 6384 L 0 0 4381 6384 L 53 0 4408 6383 L
+0 0 4434 6383 L 53 0 4461 6383 L 0 0 4487 6383 L 53 0 4514 6382 L 0 0 4540 6382 L 53 0 4567 6382 L 0 0 4593 6382 L 53 0 4620 6381 L
+0 0 4646 6381 L 52 0 4673 6380 L 0 0 4699 6380 L 53 0 4725 6380 L 0 0 4752 6380 L 53 0 4778 6379 L 0 0 4805 6379 L 53 0 4831 6379 L
+0 0 4857 6379 L 53 0 4884 6378 L 0 0 4910 6378 L 52 0 4937 6378 L 0 0 4963 6378 L 53 0 4989 6377 L 0 0 5016 6377 L 53 0 5042 6377 L
+0 0 5068 6377 L 52 0 5095 6376 L 0 0 5121 6376 L 53 0 5147 6376 L 0 0 5173 6376 L 52 0 5200 6375 L 0 0 5226 6375 L 53 0 5252 6375 L
+0 0 5279 6375 L 52 0 5305 6374 L 0 0 5331 6374 L 53 0 5357 6373 L 0 0 5383 6373 L 52 0 5410 6373 L 0 0 5436 6373 L 52 0 5462 6372 L
+0 0 5488 6372 L 53 0 5514 6372 L 0 0 5541 6372 L 52 0 5567 6371 L 0 0 5593 6371 L 52 0 5619 6371 L 0 0 5645 6371 L 53 0 5671 6370 L
+0 0 5697 6370 L 52 0 5724 6370 L 0 0 5750 6370 L 52 0 5776 6369 L 0 0 5802 6369 L 52 0 5828 6368 L 0 0 5854 6368 L 52 0 5880 6368 L
+0 0 5906 6368 L 52 0 5932 6367 L 0 0 5958 6367 L 52 0 5984 6367 L 0 0 6010 6367 L 52 0 6036 6366 L 0 0 6062 6366 L 52 0 6088 6366 L
+0 0 6114 6366 L 52 0 6140 6365 L 0 0 6166 6365 L 52 0 6192 6365 L 0 0 6218 6365 L 52 0 6244 6364 L 0 0 6270 6364 L 52 0 6296 6364 L
+0 0 6322 6364 L 52 0 6348 6363 L 0 0 6374 6363 L 51 0 6400 6362 L 0 0 6425 6362 L 52 0 6451 6362 L 0 0 6477 6362 L 52 0 6503 6361 L
+0 0 6529 6361 L 51 0 6555 6361 L 0 0 6581 6361 L 52 0 6606 6360 L 0 0 6632 6360 L 52 0 6658 6360 L 0 0 6684 6360 L 51 0 6710 6359 L
+0 0 6735 6359 L 52 0 6761 6359 L 0 0 6787 6359 L 51 0 6813 6358 L 0 0 6839 6358 L 52 0 6864 6358 L 0 0 6890 6358 L 51 0 6916 6357 L
+0 0 6941 6357 L 52 0 6967 6356 L 0 0 6993 6356 L 51 0 7019 6356 L 0 0 7044 6356 L 51 0 7070 6355 L 0 0 7096 6355 L 52 0 7121 6355 L
+0 0 7147 6355 L 51 0 7173 6354 L 0 0 7198 6354 L 51 0 7224 6354 L 0 0 7250 6354 L 51 0 7275 6353 L 0 0 7301 6353 L 52 0 7326 6353 L
+0 0 7352 6353 L 51 0 7378 6352 L 0 0 7403 6352 L 51 0 7429 6351 L 0 0 7454 6351 L 51 0 7480 6351 L 0 0 7505 6351 L 51 0 7531 6350 L
+0 0 7557 6350 L 51 0 7582 6350 L 0 0 7608 6350 L 51 0 7633 6349 L 0 0 7659 6349 L 51 0 7684 6349 L 0 0 7710 6349 L 51 0 7735 6348 L
+0 0 7760 6348 L 51 0 7786 6348 L 0 0 7811 6348 L 51 0 7837 6347 L 0 0 7862 6347 L 51 0 7888 6346 L 0 0 7913 6346 L 50 0 7939 6346 L
+0 0 7964 6346 L 51 0 7989 6345 L 0 0 8015 6345 L 51 0 8040 6345 L 0 0 8065 6345 L 51 0 8091 6344 L 0 0 8116 6344 L 50 0 8142 6344 L
+0 0 8167 6344 L 51 0 8192 6343 L 0 0 8218 6343 L 51 0 8243 6343 L 0 0 8268 6343 L 50 0 8294 6342 L 0 0 8319 6342 L 51 0 8344 6341 L
+0 0 8369 6341 L 50 0 8395 6341 L 0 0 8420 6341 L 51 0 8445 6340 L 0 0 8470 6340 L 50 0 8496 6340 L 0 0 8521 6340 L 51 0 8546 6339 L
+0 0 8571 6339 L 50 0 8597 6339 L 0 0 8622 6339 L 50 0 8647 6338 L 0 0 8672 6338 L 51 0 8697 6338 L 0 0 8722 6338 L 50 0 8748 6337 L
+0 0 8773 6337 L 50 0 8798 6336 L 0 0 8823 6336 L 50 0 8848 6336 L 0 0 8873 6336 L 51 0 8898 6335 L 0 0 8924 6335 L 50 0 8949 6335 L
+0 0 8974 6335 L 50 0 8999 6334 L 0 0 9024 6334 L 50 0 9049 6334 L 0 0 9074 6334 L 50 0 9099 6333 L 0 0 9124 6333 L 50 0 9149 6333 L
+0 0 9174 6333 L 50 0 9199 6332 L 0 0 9224 6332 L 50 0 9249 6331 L 0 0 9274 6331 L 50 0 9299 6331 L 0 0 9324 6331 L 50 0 9349 6330 L
+0 0 9374 6330 L 50 0 9399 6330 L 0 0 9424 6330 L 55 0 1050 6475 L 0 -1 C 55 0 C 0 -1 C 56 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C
+0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -2 C 54 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C
+0 -1 C 55 0 C 0 2 C 55 0 C 0 5 C 54 0 C 0 -8 C 55 0 C 0 -1 C 54 0 C 0 1 C 55 0 C 0 -2 C 54 0 C 0 -1 C 54 0 C 0 3 C 55 0 C 0 -3 C
+54 0 C 0 -3 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -2 C 54 0 C 0 -2 C 54 0 C 54 0 C 0 -1 C 54 0 C 0 -2 C 54 0 C 0 -1 C 54 0 C 0 2 C 54 0 C
+0 16 C 54 0 C 0 -16 C 54 0 C 0 -2 C 54 0 C 0 2 C 54 0 C 0 19 C 54 0 C 0 -10 C 53 0 C 0 -8 C 54 0 C 0 -6 C 54 0 C 0 -3 C 53 0 C 0 3 C
+54 0 C 0 -5 C 53 0 C 0 -2 C 54 0 C 0 10 C 53 0 C 0 26 C 54 0 C 0 -28 C 53 0 C 0 4 C 54 0 C 0 -17 C 53 0 C 0 10 C 53 0 C 0 26 C
+54 0 C 0 60 C 53 0 C 0 -36 C 53 0 C 0 -39 C 53 0 C 0 172 C 53 0 C 0 9 C 54 0 C 0 -92 C 53 0 C 0 111 C 53 0 C 0 -80 C 53 0 C 0 29 C
+53 0 C 0 36 C 53 0 C 0 16 C 53 0 C 0 -33 C 52 0 C 0 -3 C 53 0 C 0 177 C 53 0 C 0 -34 C 53 0 C 0 -140 C 53 0 C 0 -26 C 52 0 C 0 14 C
+53 0 C 0 124 C 53 0 C 0 -121 C 52 0 C 0 -174 C 53 0 C 0 49 C 52 0 C 0 -35 C 53 0 C 0 -4 C 52 0 C 0 -10 C 53 0 C 0 -29 C 52 0 C
+0 -4 C 52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 10 C 53 0 C 0 135 C 52 0 C 0 44 C 52 0 C 0 221 C 52 0 C 0 -47 C 52 0 C
+0 -331 C 52 0 C 0 -38 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 2 C 52 0 C 0 -3 C 52 0 C 0 -2 C 52 0 C
+0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 0 1 C 51 0 C 0 -2 C 52 0 C
+0 -2 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 51 0 C 0 -2 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 51 0 C
+51 0 C 0 -2 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -2 C 51 0 C 51 0 C 0 -2 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 2 C
+51 0 C 0 6 C 51 0 C 0 -10 C 50 0 C 51 0 C 0 1 C 51 0 C 0 -4 C 50 0 C 0 3 C 51 0 C 50 0 C 0 -5 C 51 0 C 0 3 C 50 0 C 0 -3 C 51 0 C
+0 -1 C 50 0 C 50 0 C 0 60 C 51 0 C 0 194 C 50 0 C 0 -23 C 50 0 C 0 -211 C 50 0 C 0 17 C 51 0 C 0 43 C 50 0 C 0 -76 C 50 0 C 0 -10 C
+50 0 C 0 16 C 50 0 C 0 -19 C 50 0 C 0 49 C 50 0 C 0 48 C 50 0 C 0 -84 C 50 0 C 0 -18 C 50 0 C 0 -2 C 50 0 C 55 0 1050 6475 L
+0 0 1078 6475 L 55 0 1105 6474 L 0 0 1133 6474 L 56 0 1160 6473 L 0 0 1188 6473 L 55 0 1216 6473 L 0 0 1243 6473 L 55 0 1271 6472 L
+0 0 1298 6472 L 55 0 1326 6471 L 0 0 1353 6471 L 55 0 1381 6470 L 0 0 1408 6470 L 55 0 1436 6469 L 0 0 1463 6469 L 55 0 1491 6468 L
+0 0 1518 6468 L 55 0 1546 6468 L 0 0 1573 6468 L 55 0 1601 6467 L 0 0 1628 6467 L 55 0 1656 6467 L 0 0 1683 6467 L 54 0 1711 6465 L
+0 0 1738 6465 L 55 0 1765 6464 L 0 0 1793 6464 L 55 0 1820 6464 L 0 0 1848 6464 L 55 0 1875 6463 L 0 0 1902 6463 L 54 0 1930 6462 L
+0 0 1957 6462 L 55 0 1984 6461 L 0 0 2012 6461 L 55 0 2039 6463 L 0 0 2066 6463 L 54 0 2094 6468 L 0 0 2121 6468 L 55 0 2148 6460 L
+0 0 2175 6460 L 54 0 2203 6459 L 0 0 2230 6459 L 55 0 2257 6460 L 0 0 2284 6460 L 54 0 2312 6458 L 0 0 2339 6458 L 54 0 2366 6457 L
+0 0 2393 6457 L 55 0 2420 6460 L 0 0 2448 6460 L 54 0 2475 6457 L 0 0 2502 6457 L 54 0 2529 6454 L 0 0 2556 6454 L 55 0 2583 6453 L
+0 0 2611 6453 L 54 0 2638 6453 L 0 0 2665 6453 L 54 0 2692 6451 L 0 0 2719 6451 L 54 0 2746 6449 L 0 0 2773 6449 L 54 0 2800 6449 L
+0 0 2827 6449 L 54 0 2854 6448 L 0 0 2881 6448 L 54 0 2908 6446 L 0 0 2935 6446 L 54 0 2962 6445 L 0 0 2989 6445 L 54 0 3016 6447 L
+0 0 3043 6447 L 54 0 3070 6463 L 0 0 3097 6463 L 54 0 3124 6447 L 0 0 3151 6447 L 54 0 3178 6445 L 0 0 3205 6445 L 54 0 3232 6447 L
+0 0 3259 6447 L 54 0 3286 6466 L 0 0 3313 6466 L 53 0 3340 6456 L 0 0 3366 6456 L 54 0 3393 6448 L 0 0 3420 6448 L 54 0 3447 6442 L
+0 0 3474 6442 L 53 0 3501 6439 L 0 0 3527 6439 L 54 0 3554 6442 L 0 0 3581 6442 L 53 0 3608 6437 L 0 0 3635 6437 L 54 0 3661 6435 L
+0 0 3688 6435 L 53 0 3715 6445 L 0 0 3742 6445 L 54 0 3768 6471 L 0 0 3795 6471 L 53 0 3822 6443 L 0 0 3849 6443 L 54 0 3875 6447 L
+0 0 3902 6447 L 53 0 3929 6430 L 0 0 3955 6430 L 53 0 3982 6440 L 0 0 4009 6440 L 54 0 4035 6466 L 0 0 4062 6466 L 53 0 4089 6526 L
+0 0 4115 6526 L 53 0 4142 6490 L 0 0 4169 6490 L 53 0 4195 6451 L 0 0 4222 6451 L 53 0 4248 6623 L 0 0 4275 6623 L 54 0 4301 6632 L
+0 0 4328 6632 L 53 0 4355 6540 L 0 0 4381 6540 L 53 0 4408 6651 L 0 0 4434 6651 L 53 0 4461 6571 L 0 0 4487 6571 L 53 0 4514 6600 L
+0 0 4540 6600 L 53 0 4567 6636 L 0 0 4593 6636 L 53 0 4620 6652 L 0 0 4646 6652 L 52 0 4673 6619 L 0 0 4699 6619 L 53 0 4725 6616 L
+0 0 4752 6616 L 53 0 4778 6793 L 0 0 4805 6793 L 53 0 4831 6759 L 0 0 4857 6759 L 53 0 4884 6619 L 0 0 4910 6619 L 52 0 4937 6593 L
+0 0 4963 6593 L 53 0 4989 6607 L 0 0 5016 6607 L 53 0 5042 6731 L 0 0 5068 6731 L 52 0 5095 6610 L 0 0 5121 6610 L 53 0 5147 6436 L
+0 0 5173 6436 L 52 0 5200 6485 L 0 0 5226 6485 L 53 0 5252 6450 L 0 0 5279 6450 L 52 0 5305 6446 L 0 0 5331 6446 L 53 0 5357 6436 L
+0 0 5383 6436 L 52 0 5410 6407 L 0 0 5436 6407 L 52 0 5462 6403 L 0 0 5488 6403 L 53 0 5514 6402 L 0 0 5541 6402 L 52 0 5567 6401 L
+0 0 5593 6401 L 52 0 5619 6400 L 0 0 5645 6400 L 53 0 5671 6410 L 0 0 5697 6410 L 52 0 5724 6545 L 0 0 5750 6545 L 52 0 5776 6589 L
+0 0 5802 6589 L 52 0 5828 6810 L 0 0 5854 6810 L 52 0 5880 6763 L 0 0 5906 6763 L 52 0 5932 6432 L 0 0 5958 6432 L 52 0 5984 6394 L
+0 0 6010 6394 L 52 0 6036 6393 L 0 0 6062 6393 L 52 0 6088 6392 L 0 0 6114 6392 L 52 0 6140 6391 L 0 0 6166 6391 L 52 0 6192 6390 L
+0 0 6218 6390 L 52 0 6244 6392 L 0 0 6270 6392 L 52 0 6296 6389 L 0 0 6322 6389 L 52 0 6348 6387 L 0 0 6374 6387 L 51 0 6400 6386 L
+0 0 6425 6386 L 52 0 6451 6385 L 0 0 6477 6385 L 52 0 6503 6384 L 0 0 6529 6384 L 51 0 6555 6383 L 0 0 6581 6383 L 52 0 6606 6382 L
+0 0 6632 6382 L 52 0 6658 6381 L 0 0 6684 6381 L 51 0 6710 6381 L 0 0 6735 6381 L 52 0 6761 6380 L 0 0 6787 6380 L 51 0 6813 6381 L
+0 0 6839 6381 L 52 0 6864 6379 L 0 0 6890 6379 L 51 0 6916 6377 L 0 0 6941 6377 L 52 0 6967 6376 L 0 0 6993 6376 L 51 0 7019 6375 L
+0 0 7044 6375 L 51 0 7070 6374 L 0 0 7096 6374 L 52 0 7121 6374 L 0 0 7147 6374 L 51 0 7173 6373 L 0 0 7198 6373 L 51 0 7224 6373 L
+0 0 7250 6373 L 51 0 7275 6371 L 0 0 7301 6371 L 52 0 7326 6370 L 0 0 7352 6370 L 51 0 7378 6369 L 0 0 7403 6369 L 51 0 7429 6369 L
+0 0 7454 6369 L 51 0 7480 6369 L 0 0 7505 6369 L 51 0 7531 6367 L 0 0 7557 6367 L 51 0 7582 6366 L 0 0 7608 6366 L 51 0 7633 6365 L
+0 0 7659 6365 L 51 0 7684 6365 L 0 0 7710 6365 L 51 0 7735 6364 L 0 0 7760 6364 L 51 0 7786 6362 L 0 0 7811 6362 L 51 0 7837 6362 L
+0 0 7862 6362 L 51 0 7888 6360 L 0 0 7913 6360 L 50 0 7939 6359 L 0 0 7964 6359 L 51 0 7989 6359 L 0 0 8015 6359 L 51 0 8040 6361 L
+0 0 8065 6361 L 51 0 8091 6367 L 0 0 8116 6367 L 50 0 8142 6357 L 0 0 8167 6357 L 51 0 8192 6357 L 0 0 8218 6357 L 51 0 8243 6358 L
+0 0 8268 6358 L 50 0 8294 6354 L 0 0 8319 6354 L 51 0 8344 6357 L 0 0 8369 6357 L 50 0 8395 6357 L 0 0 8420 6357 L 51 0 8445 6352 L
+0 0 8470 6352 L 50 0 8496 6355 L 0 0 8521 6355 L 51 0 8546 6352 L 0 0 8571 6352 L 50 0 8597 6351 L 0 0 8622 6351 L 50 0 8647 6351 L
+0 0 8672 6351 L 51 0 8697 6411 L 0 0 8722 6411 L 50 0 8748 6605 L 0 0 8773 6605 L 50 0 8798 6582 L 0 0 8823 6582 L 50 0 8848 6371 L
+0 0 8873 6371 L 51 0 8898 6388 L 0 0 8924 6388 L 50 0 8949 6431 L 0 0 8974 6431 L 50 0 8999 6355 L 0 0 9024 6355 L 50 0 9049 6345 L
+0 0 9074 6345 L 50 0 9099 6361 L 0 0 9124 6361 L 50 0 9149 6342 L 0 0 9174 6342 L 50 0 9199 6391 L 0 0 9224 6391 L 50 0 9249 6439 L
+0 0 9274 6439 L 50 0 9299 6355 L 0 0 9324 6355 L 50 0 9349 6337 L 0 0 9374 6337 L 50 0 9399 6335 L 0 0 9424 6335 L
+1.000 0.000 1.000 setrgbcolor 1.000 1.000 0.000 setrgbcolor 1.000 0.500 0.000 setrgbcolor 0.000 0.000 0.000 setrgbcolor
+ 13.26  pgscale div FS gs    90.00        157.500       4422.729 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00       4250.354       7317.411 moveto rotate (data and folded model) TBC gr
+8399 0 1050 780 L 0 2340 C -8399 0 C 0 -2340 C 0 38 7429 780 L 0 39 7429 3081 L 38 0 1050 839 L 76 0 1050 941 L 38 0 1050 1043 L
+38 0 1050 1145 L 38 0 1050 1246 L 38 0 1050 1348 L 76 0 1050 1450 L 38 0 1050 1552 L 38 0 1050 1654 L 38 0 1050 1756 L
+38 0 1050 1857 L 76 0 1050 1959 L 38 0 1050 2061 L 38 0 1050 2163 L 38 0 1050 2265 L 38 0 1050 2367 L 76 0 1050 2468 L
+38 0 1050 2570 L 38 0 1050 2672 L 38 0 1050 2774 L 38 0 1050 2876 L 76 0 1050 2977 L 38 0 1050 3079 L 38 0 9411 839 L
+76 0 9373 941 L 38 0 9411 1043 L 38 0 9411 1145 L 38 0 9411 1246 L 38 0 9411 1348 L 76 0 9373 1450 L 38 0 9411 1552 L
+38 0 9411 1654 L 38 0 9411 1756 L 38 0 9411 1857 L 76 0 9373 1959 L 38 0 9411 2061 L 38 0 9411 2163 L 38 0 9411 2265 L
+38 0 9411 2367 L 76 0 9373 2468 L 38 0 9411 2570 L 38 0 9411 2672 L 38 0 9411 2774 L 38 0 9411 2876 L 76 0 9373 2977 L
+38 0 9411 3079 L
+ 13.26  pgscale div FS gs     0.00        264.133        891.223 moveto rotate (-5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        831.801       1400.351 moveto rotate (0) HVC gr
+ 13.26  pgscale div FS gs     0.00        370.995       1909.480 moveto rotate (5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        575.916       2418.608 moveto rotate (0.01) HVC gr
+ 13.26  pgscale div FS gs     0.00        473.827       2927.736 moveto rotate (0.015) HVC gr
+1 SLW 1078 2131 M1 55 0 1050 2131 L 0 1070 1078 1596 L 1133 1062 M1 55 0 1105 1062 L 0 0 1133 1062 L 1188 1063 M1 56 0 1160 1063 L
+0 0 1188 1063 L 1243 1064 M1 55 0 1216 1064 L 0 0 1243 1064 L 1298 1333 M1 55 0 1271 1333 L 0 535 1298 1066 L 1353 1067 M1
+55 0 1326 1067 L 0 0 1353 1067 L 1408 1336 M1 55 0 1381 1336 L 0 535 1408 1068 L 1463 1337 M1 55 0 1436 1337 L 0 536 1463 1069 L
+1518 1071 M1 55 0 1491 1071 L 0 0 1518 1071 L 1573 1607 M1 55 0 1546 1607 L 0 757 1573 1228 L 1628 1340 M1 55 0 1601 1340 L
+0 535 1628 1073 L 1683 1074 M1 55 0 1656 1074 L 0 0 1683 1074 L 1738 1343 M1 54 0 1711 1343 L 0 536 1738 1075 L 1793 1344 M1
+55 0 1765 1344 L 0 535 1793 1077 L 1848 1881 M1 55 0 1820 1881 L 0 927 1848 1417 L 1902 2150 M1 55 0 1875 2150 L 0 1071 1902 1614 L
+1957 1348 M1 54 0 1930 1348 L 0 536 1957 1080 L 2012 1081 M1 55 0 1984 1081 L 0 0 2012 1081 L 2066 1080 M1 55 0 2039 1080 L
+0 0 2066 1080 L 2121 1343 M1 54 0 2094 1343 L 0 536 2121 1075 L 2175 1084 M1 55 0 2148 1084 L 0 0 2175 1084 L 2230 1621 M1
+54 0 2203 1621 L 0 757 2230 1242 L 2284 1620 M1 55 0 2257 1620 L 0 757 2284 1241 L 2339 2158 M1 54 0 2312 2158 L 0 1070 2339 1623 L
+2393 1624 M1 54 0 2366 1624 L 0 757 2393 1245 L 2448 1621 M1 55 0 2420 1621 L 0 757 2448 1242 L 2502 1357 M1 54 0 2475 1357 L
+0 535 2502 1089 L 2556 1360 M1 54 0 2529 1360 L 0 535 2556 1092 L 2611 1093 M1 55 0 2583 1093 L 0 0 2611 1093 L 2665 1094 M1
+54 0 2638 1094 L 0 0 2665 1094 L 2719 1899 M1 54 0 2692 1899 L 0 928 2719 1435 L 2773 1901 M1 54 0 2746 1901 L 0 927 2773 1438 L
+2827 1366 M1 54 0 2800 1366 L 0 535 2827 1099 L 2881 1635 M1 54 0 2854 1635 L 0 757 2881 1257 L 2935 1637 M1 54 0 2908 1637 L
+0 757 2935 1259 L 2989 1104 M1 54 0 2962 1104 L 0 0 2989 1104 L 3043 1637 M1 54 0 3016 1637 L 0 757 3043 1259 L 3097 1355 M1
+54 0 3070 1355 L 0 535 3097 1087 L 3151 1370 M1 54 0 3124 1370 L 0 535 3151 1103 L 3205 1373 M1 54 0 3178 1373 L 0 536 3205 1105 L
+3259 1104 M1 54 0 3232 1104 L 0 0 3259 1104 L 3313 1086 M1 54 0 3286 1086 L 0 0 3313 1086 L 3366 1899 M1 53 0 3340 1899 L
+0 927 3366 1436 L 3420 1639 M1 54 0 3393 1639 L 0 757 3420 1261 L 3474 1110 M1 54 0 3447 1110 L 0 0 3474 1110 L 3527 1113 M1
+53 0 3501 1113 L 0 0 3527 1113 L 3581 1378 M1 54 0 3554 1378 L 0 535 3581 1111 L 3635 1651 M1 53 0 3608 1651 L 0 757 3635 1272 L
+3688 1653 M1 54 0 3661 1653 L 0 757 3688 1274 L 3742 1109 M1 53 0 3715 1109 L 0 0 3742 1109 L 3795 1352 M1 54 0 3768 1352 L
+0 536 3795 1084 L 3849 2183 M1 53 0 3822 2183 L 0 1071 3849 1647 L 3902 1376 M1 54 0 3875 1376 L 0 535 3902 1109 L 3955 1392 M1
+53 0 3929 1392 L 0 535 3955 1124 L 4009 1918 M1 53 0 3982 1918 L 0 927 4009 1455 L 4062 1627 M1 54 0 4035 1627 L 0 758 4062 1248 L
+4115 1557 M1 53 0 4089 1557 L 0 757 4115 1178 L 4169 1334 M1 53 0 4142 1334 L 0 535 4169 1067 L 4222 2446 M1 53 0 4195 2446 L
+0 1197 4222 1847 L 4275 1394 M1 53 0 4248 1394 L 0 757 4275 1015 L 4328 1108 M1 54 0 4301 1108 L 0 536 4328 840 L 4381 1272 M1
+53 0 4355 1272 L 0 535 4381 1004 L 4434 1601 M1 53 0 4408 1601 L 0 927 4434 1137 L 4487 1226 M1 53 0 4461 1226 L 0 536 4487 958 L
+4540 1175 M1 53 0 4514 1175 L 0 535 4540 908 L 4593 1368 M1 53 0 4567 1368 L 0 757 4593 990 L 4646 1331 M1 53 0 4620 1331 L
+0 757 4646 953 L 4699 1674 M1 52 0 4673 1674 L 0 928 4699 1210 L 4752 1681 M1 53 0 4725 1681 L 0 927 4752 1217 L 4805 1385 M1
+53 0 4778 1385 L 0 1071 4805 850 L 4857 1533 M1 53 0 4831 1533 L 0 1070 4857 998 L 4910 1407 M1 53 0 4884 1407 L 0 757 4910 1028 L
+4963 3064 M1 52 0 4937 3064 L 0 813 4963 2307 L 5016 1433 M1 53 0 4989 1433 L 0 757 5016 1054 L 5068 836 M1 53 0 5042 836 L
+0 323 5068 780 L 5121 1962 M1 52 0 5095 1962 L 0 1071 5121 1427 L 5173 2197 M1 53 0 5147 2197 L 0 1071 5173 1662 L 5226 1079 M1
+52 0 5200 1079 L 0 0 5226 1079 L 5279 1918 M1 53 0 5252 1918 L 0 927 5279 1454 L 5331 1387 M1 52 0 5305 1387 L 0 535 5331 1119 L
+5383 1663 M1 53 0 5357 1663 L 0 757 5383 1285 L 5436 1420 M1 52 0 5410 1420 L 0 536 5436 1152 L 5488 1156 M1 52 0 5462 1156 L
+0 0 5488 1156 L 5541 1692 M1 53 0 5514 1692 L 0 757 5541 1313 L 5593 1158 M1 52 0 5567 1158 L 0 0 5593 1158 L 5645 1426 M1
+52 0 5619 1426 L 0 535 5645 1159 L 5697 1152 M1 53 0 5671 1152 L 0 0 5697 1152 L 5750 1542 M1 52 0 5724 1542 L 0 757 5750 1164 L
+5802 1470 M1 52 0 5776 1470 L 0 757 5802 1092 L 5854 1842 M1 52 0 5828 1842 L 0 1311 5854 1186 L 5906 1522 M1 52 0 5880 1522 L
+0 1071 5906 987 L 5958 1671 M1 52 0 5932 1671 L 0 757 5958 1292 L 6010 1166 M1 52 0 5984 1166 L 0 0 6010 1166 L 6062 1167 M1
+52 0 6036 1167 L 0 0 6062 1167 L 6114 1436 M1 52 0 6088 1436 L 0 535 6114 1168 L 6166 1704 M1 52 0 6140 1704 L 0 757 6166 1326 L
+6218 1705 M1 52 0 6192 1705 L 0 757 6218 1326 L 6270 1704 M1 52 0 6244 1704 L 0 757 6270 1326 L 6322 1439 M1 52 0 6296 1439 L
+0 535 6322 1172 L 6374 1708 M1 52 0 6348 1708 L 0 757 6374 1330 L 6425 1977 M1 51 0 6400 1977 L 0 928 6425 1513 L 6477 1175 M1
+52 0 6451 1175 L 0 0 6477 1175 L 6529 1444 M1 52 0 6503 1444 L 0 535 6529 1176 L 6581 1177 M1 51 0 6555 1177 L 0 0 6581 1177 L
+6632 1178 M1 52 0 6606 1178 L 0 0 6632 1178 L 6684 1714 M1 52 0 6658 1714 L 0 757 6684 1336 L 6735 1983 M1 51 0 6710 1983 L
+0 927 6735 1519 L 6787 1716 M1 52 0 6761 1716 L 0 757 6787 1337 L 6839 1983 M1 51 0 6813 1983 L 0 927 6839 1520 L 6890 1182 M1
+52 0 6864 1182 L 0 0 6890 1182 L 6941 1451 M1 51 0 6916 1451 L 0 536 6941 1183 L 6993 1452 M1 52 0 6967 1452 L 0 536 6993 1184 L
+7044 1453 M1 51 0 7019 1453 L 0 535 7044 1185 L 7096 1186 M1 51 0 7070 1186 L 0 0 7096 1186 L 7147 1187 M1 52 0 7121 1187 L
+0 0 7147 1187 L 7198 1723 M1 51 0 7173 1723 L 0 757 7198 1345 L 7250 1456 M1 51 0 7224 1456 L 0 535 7250 1188 L 7301 1725 M1
+51 0 7275 1725 L 0 757 7301 1346 L 7352 1726 M1 52 0 7326 1726 L 0 757 7352 1347 L 7403 1459 M1 51 0 7378 1459 L 0 536 7403 1191 L
+7454 1460 M1 51 0 7429 1460 L 0 535 7454 1192 L 7505 1460 M1 51 0 7480 1460 L 0 536 7505 1192 L 7557 1461 M1 51 0 7531 1461 L
+0 535 7557 1194 L 7608 1463 M1 51 0 7582 1463 L 0 535 7608 1195 L 7659 1463 M1 51 0 7633 1463 L 0 535 7659 1196 L 7710 1463 M1
+51 0 7684 1463 L 0 535 7710 1196 L 7760 1197 M1 51 0 7735 1197 L 0 0 7760 1197 L 7811 1466 M1 51 0 7786 1466 L 0 536 7811 1198 L
+7862 1467 M1 51 0 7837 1467 L 0 535 7862 1199 L 7913 1736 M1 51 0 7888 1736 L 0 757 7913 1357 L 7964 2004 M1 50 0 7939 2004 L
+0 927 7964 1541 L 8015 1202 M1 51 0 7989 1202 L 0 0 8015 1202 L 8065 1468 M1 51 0 8040 1468 L 0 535 8065 1201 L 8116 1732 M1
+51 0 8091 1732 L 0 757 8116 1354 L 8167 1204 M1 50 0 8142 1204 L 0 0 8167 1204 L 8218 1740 M1 51 0 8192 1740 L 0 757 8218 1361 L
+8268 1739 M1 51 0 8243 1739 L 0 757 8268 1360 L 8319 1742 M1 50 0 8294 1742 L 0 757 8319 1363 L 8369 1472 M1 51 0 8344 1472 L
+0 535 8369 1205 L 8420 1473 M1 50 0 8395 1473 L 0 535 8420 1205 L 8470 1476 M1 51 0 8445 1476 L 0 535 8470 1209 L 8521 1742 M1
+50 0 8496 1742 L 0 757 8521 1364 L 8571 1209 M1 51 0 8546 1209 L 0 0 8571 1209 L 8622 1745 M1 50 0 8597 1745 L 0 757 8622 1367 L
+8672 1478 M1 50 0 8647 1478 L 0 536 8672 1210 L 8722 1438 M1 51 0 8697 1438 L 0 535 8722 1170 L 8773 1460 M1 50 0 8748 1460 L
+0 757 8773 1081 L 8823 1502 M1 50 0 8798 1502 L 0 757 8823 1123 L 8873 1200 M1 50 0 8848 1200 L 0 0 8873 1200 L 8924 1723 M1
+51 0 8898 1723 L 0 757 8924 1345 L 8974 1423 M1 50 0 8949 1423 L 0 535 8974 1156 L 9024 1210 M1 50 0 8999 1210 L 0 0 9024 1210 L
+9074 1216 M1 50 0 9049 1216 L 0 0 9074 1216 L 9124 1475 M1 50 0 9099 1475 L 0 535 9124 1207 L 9174 1486 M1 50 0 9149 1486 L
+0 536 9174 1218 L 9224 1188 M1 50 0 9199 1188 L 0 0 9224 1188 L 9274 1953 M1 50 0 9249 1953 L 0 928 9274 1489 L 9324 1479 M1
+50 0 9299 1479 L 0 535 9324 1212 L 9374 1222 M1 50 0 9349 1222 L 0 0 9374 1222 L 9424 1759 M1 50 0 9399 1759 L 0 757 9424 1381 L
+2 SLW
+ 13.26  pgscale div FS gs    90.00        157.500       1303.129 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00       4727.156        365.578 moveto rotate (Energy \(keV\)) HVC gr
+0.000 1.000 0.000 setrgbcolor 8399 0 1050 1450 L 0.000 0.000 0.000 setrgbcolor 1 SLW
+  9.36  pgscale div FS gs     0.00       8909.748         61.992 moveto rotate (neolnx 10-Sep-2024 12:50) HVC gr
+0.000 1.000 0.000 setrgbcolor 2 SLW
+PGPLOT restore showpage
+%%PageTrailer
+%%PageBoundingBox: 41 -18 585 791
+
+%%Page: 2 2
+%%BeginPageSetup
+/PGPLOT save def
+pgscale pgscale scale
+8148 250 translate 90 rotate
+1 setlinejoin 1 setlinecap 1 SLW 1 SCF
+%%EndPageSetup
+%%PageBoundingBox: (atend)
+0.000 0.000 0.000 setrgbcolor 2 SLW 8398 0 1050 3119 L 0 3899 C -8398 0 C 0 -3899 C 0 38 7428 3119 L 0 38 7428 6980 L
+38 0 1050 3130 L 38 0 1050 3191 L 38 0 1050 3238 L 38 0 1050 3277 L 38 0 1050 3310 L 38 0 1050 3338 L 38 0 1050 3363 L
+76 0 1050 3385 L 38 0 1050 3532 L 38 0 1050 3618 L 38 0 1050 3679 L 38 0 1050 3726 L 38 0 1050 3764 L 38 0 1050 3797 L
+38 0 1050 3825 L 38 0 1050 3850 L 76 0 1050 3873 L 38 0 1050 4019 L 38 0 1050 4105 L 38 0 1050 4166 L 38 0 1050 4213 L
+38 0 1050 4252 L 38 0 1050 4284 L 38 0 1050 4313 L 38 0 1050 4338 L 76 0 1050 4360 L 38 0 1050 4507 L 38 0 1050 4592 L
+38 0 1050 4653 L 38 0 1050 4701 L 38 0 1050 4739 L 38 0 1050 4772 L 38 0 1050 4800 L 38 0 1050 4825 L 76 0 1050 4847 L
+38 0 1050 4994 L 38 0 1050 5080 L 38 0 1050 5141 L 38 0 1050 5188 L 38 0 1050 5227 L 38 0 1050 5259 L 38 0 1050 5287 L
+38 0 1050 5312 L 76 0 1050 5335 L 38 0 1050 5481 L 38 0 1050 5567 L 38 0 1050 5628 L 38 0 1050 5675 L 38 0 1050 5714 L
+38 0 1050 5747 L 38 0 1050 5775 L 38 0 1050 5800 L 76 0 1050 5822 L 38 0 1050 5969 L 38 0 1050 6055 L 38 0 1050 6115 L
+38 0 1050 6163 L 38 0 1050 6201 L 38 0 1050 6234 L 38 0 1050 6262 L 38 0 1050 6287 L 76 0 1050 6309 L 38 0 1050 6456 L
+38 0 1050 6542 L 38 0 1050 6603 L 38 0 1050 6650 L 38 0 1050 6689 L 38 0 1050 6721 L 38 0 1050 6750 L 38 0 1050 6774 L
+76 0 1050 6797 L 38 0 1050 6944 L 38 0 9410 3130 L 38 0 9410 3191 L 38 0 9410 3238 L 38 0 9410 3277 L 38 0 9410 3310 L
+38 0 9410 3338 L 38 0 9410 3363 L 76 0 9372 3385 L 38 0 9410 3532 L 38 0 9410 3618 L 38 0 9410 3679 L 38 0 9410 3726 L
+38 0 9410 3764 L 38 0 9410 3797 L 38 0 9410 3825 L 38 0 9410 3850 L 76 0 9372 3873 L 38 0 9410 4019 L 38 0 9410 4105 L
+38 0 9410 4166 L 38 0 9410 4213 L 38 0 9410 4252 L 38 0 9410 4284 L 38 0 9410 4313 L 38 0 9410 4338 L 76 0 9372 4360 L
+38 0 9410 4507 L 38 0 9410 4592 L 38 0 9410 4653 L 38 0 9410 4701 L 38 0 9410 4739 L 38 0 9410 4772 L 38 0 9410 4800 L
+38 0 9410 4825 L 76 0 9372 4847 L 38 0 9410 4994 L 38 0 9410 5080 L 38 0 9410 5141 L 38 0 9410 5188 L 38 0 9410 5227 L
+38 0 9410 5259 L 38 0 9410 5287 L 38 0 9410 5312 L 76 0 9372 5335 L 38 0 9410 5481 L 38 0 9410 5567 L 38 0 9410 5628 L
+38 0 9410 5675 L 38 0 9410 5714 L 38 0 9410 5747 L 38 0 9410 5775 L 38 0 9410 5800 L 76 0 9372 5822 L 38 0 9410 5969 L
+38 0 9410 6055 L 38 0 9410 6115 L 38 0 9410 6163 L 38 0 9410 6201 L 38 0 9410 6234 L 38 0 9410 6262 L 38 0 9410 6287 L
+76 0 9372 6309 L 38 0 9410 6456 L 38 0 9410 6542 L 38 0 9410 6603 L 38 0 9410 6650 L 38 0 9410 6689 L 38 0 9410 6721 L
+38 0 9410 6750 L 38 0 9410 6774 L 76 0 9372 6797 L 38 0 9410 6944 L
+ 13.26  pgscale div FS gs     0.00        604.299       3335.449 moveto rotate (10) HVC   7.95 pgscale div FS up (-9) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.299       3822.824 moveto rotate (10) HVC   7.95 pgscale div FS up (-8) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.299       4310.199 moveto rotate (10) HVC   7.95 pgscale div FS up (-7) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.299       4797.574 moveto rotate (10) HVC   7.95 pgscale div FS up (-6) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.299       5284.949 moveto rotate (10) HVC   7.95 pgscale div FS up (-5) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.299       5772.324 moveto rotate (10) HVC   7.95 pgscale div FS up (-4) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        604.299       6259.699 moveto rotate (10) HVC   7.95 pgscale div FS up (-3) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        575.877       6747.074 moveto rotate (0.01) HVC gr
+1 SLW
+/M1 {MB 0 0 1 FC ME} bind def
+/MFAC      5.998 def
+1077 6807 M1 55 0 1050 6807 L 0 232 1077 6661 L 1298 6514 M1 55 0 1271 6514 L 0 3542 1298 3119 L 1408 6514 M1 55 0 1381 6514 L
+0 3542 1408 3119 L 1463 6514 M1 55 0 1436 6514 L 0 3542 1463 3119 L 1573 6661 M1 55 0 1546 6661 L 0 373 1573 6401 L 1628 6514 M1
+55 0 1601 6514 L 0 3542 1628 3119 L 1738 6514 M1 55 0 1710 6514 L 0 3542 1738 3119 L 1793 6514 M1 55 0 1765 6514 L
+0 3542 1793 3119 L 1847 6746 M1 55 0 1820 6746 L 0 279 1847 6564 L 1902 6807 M1 55 0 1875 6807 L 0 232 1902 6661 L 1957 6514 M1
+54 0 1930 6514 L 0 3542 1957 3119 L 2121 6514 M1 55 0 2093 6514 L 0 3542 2121 3119 L 2230 6661 M1 54 0 2203 6661 L 0 373 2230 6401 L
+2284 6661 M1 54 0 2257 6661 L 0 373 2284 6401 L 2339 6807 M1 55 0 2311 6807 L 0 232 2339 6661 L 2393 6661 M1 54 0 2366 6661 L
+0 373 2393 6401 L 2447 6661 M1 55 0 2420 6661 L 0 373 2447 6401 L 2502 6514 M1 54 0 2475 6514 L 0 3542 2502 3119 L 2556 6514 M1
+54 0 2529 6514 L 0 3542 2556 3119 L 2719 6747 M1 54 0 2692 6747 L 0 279 2719 6564 L 2773 6746 M1 54 0 2746 6746 L 0 279 2773 6564 L
+2827 6514 M1 54 0 2800 6514 L 0 3542 2827 3119 L 2881 6661 M1 54 0 2854 6661 L 0 373 2881 6401 L 2935 6661 M1 54 0 2908 6661 L
+0 373 2935 6401 L 3043 6661 M1 54 0 3016 6661 L 0 373 3043 6401 L 3097 6514 M1 54 0 3070 6514 L 0 3542 3097 3119 L 3151 6514 M1
+54 0 3124 6514 L 0 3542 3151 3119 L 3205 6514 M1 54 0 3178 6514 L 0 3542 3205 3119 L 3366 6747 M1 54 0 3339 6747 L 0 279 3366 6564 L
+3420 6661 M1 54 0 3393 6661 L 0 373 3420 6401 L 3581 6514 M1 54 0 3554 6514 L 0 3542 3581 3119 L 3634 6661 M1 53 0 3608 6661 L
+0 373 3634 6401 L 3688 6661 M1 54 0 3661 6661 L 0 373 3688 6401 L 3795 6514 M1 54 0 3768 6514 L 0 3542 3795 3119 L 3848 6807 M1
+53 0 3822 6807 L 0 232 3848 6661 L 3902 6514 M1 53 0 3875 6514 L 0 3542 3902 3119 L 3955 6514 M1 54 0 3928 6514 L 0 3542 3955 3119 L
+4008 6746 M1 53 0 3982 6746 L 0 279 4008 6564 L 4062 6661 M1 53 0 4035 6661 L 0 373 4062 6401 L 4115 6661 M1 54 0 4088 6661 L
+0 373 4115 6401 L 4168 6514 M1 53 0 4142 6514 L 0 3542 4168 3119 L 4221 6855 M1 53 0 4195 6855 L 0 204 4221 6729 L 4274 6661 M1
+53 0 4248 6661 L 0 373 4274 6401 L 4328 6514 M1 53 0 4301 6514 L 0 3542 4328 3119 L 4381 6514 M1 53 0 4354 6514 L 0 3542 4381 3119 L
+4434 6746 M1 53 0 4407 6746 L 0 279 4434 6564 L 4487 6514 M1 53 0 4460 6514 L 0 3542 4487 3119 L 4540 6514 M1 53 0 4513 6514 L
+0 3542 4540 3119 L 4593 6661 M1 53 0 4566 6661 L 0 373 4593 6401 L 4646 6661 M1 53 0 4619 6661 L 0 373 4646 6401 L 4699 6747 M1
+53 0 4672 6747 L 0 279 4699 6564 L 4751 6746 M1 53 0 4725 6746 L 0 279 4751 6564 L 4804 6807 M1 53 0 4778 6807 L 0 232 4804 6661 L
+4857 6807 M1 52 0 4831 6807 L 0 232 4857 6661 L 4910 6661 M1 53 0 4883 6661 L 0 373 4910 6401 L 4962 6954 M1 53 0 4936 6954 L
+0 156 4962 6862 L 5015 6661 M1 52 0 4989 6661 L 0 373 5015 6401 L 5068 6514 M1 53 0 5041 6514 L 0 3542 5068 3119 L 5120 6807 M1
+53 0 5094 6807 L 0 232 5120 6661 L 5173 6807 M1 52 0 5147 6807 L 0 232 5173 6661 L 5278 6746 M1 52 0 5252 6746 L 0 279 5278 6564 L
+5331 6514 M1 53 0 5304 6514 L 0 3542 5331 3119 L 5383 6661 M1 52 0 5357 6661 L 0 373 5383 6401 L 5435 6514 M1 53 0 5409 6514 L
+0 3542 5435 3119 L 5540 6661 M1 52 0 5514 6661 L 0 373 5540 6401 L 5645 6514 M1 52 0 5619 6514 L 0 3542 5645 3119 L 5749 6661 M1
+52 0 5723 6661 L 0 373 5749 6401 L 5801 6661 M1 52 0 5775 6661 L 0 373 5801 6401 L 5853 6893 M1 52 0 5827 6893 L 0 184 5853 6782 L
+5906 6807 M1 53 0 5879 6807 L 0 232 5906 6661 L 5958 6661 M1 52 0 5932 6661 L 0 373 5958 6401 L 6114 6514 M1 52 0 6088 6514 L
+0 3542 6114 3119 L 6166 6661 M1 52 0 6140 6661 L 0 373 6166 6401 L 6218 6661 M1 51 0 6192 6661 L 0 373 6218 6401 L 6269 6661 M1
+52 0 6243 6661 L 0 373 6269 6401 L 6321 6514 M1 52 0 6295 6514 L 0 3542 6321 3119 L 6373 6661 M1 52 0 6347 6661 L 0 373 6373 6401 L
+6425 6746 M1 52 0 6399 6746 L 0 279 6425 6564 L 6528 6514 M1 52 0 6502 6514 L 0 3542 6528 3119 L 6683 6661 M1 52 0 6657 6661 L
+0 373 6683 6401 L 6735 6746 M1 52 0 6709 6746 L 0 279 6735 6564 L 6786 6661 M1 51 0 6761 6661 L 0 373 6786 6401 L 6838 6746 M1
+52 0 6812 6746 L 0 279 6838 6564 L 6941 6514 M1 52 0 6915 6514 L 0 3542 6941 3119 L 6992 6514 M1 51 0 6967 6514 L 0 3542 6992 3119 L
+7044 6514 M1 51 0 7018 6514 L 0 3542 7044 3119 L 7198 6661 M1 51 0 7172 6661 L 0 373 7198 6401 L 7249 6514 M1 52 0 7223 6514 L
+0 3542 7249 3119 L 7300 6661 M1 51 0 7275 6661 L 0 373 7300 6401 L 7351 6661 M1 51 0 7326 6661 L 0 373 7351 6401 L 7402 6514 M1
+51 0 7377 6514 L 0 3542 7402 3119 L 7454 6514 M1 51 0 7428 6514 L 0 3542 7454 3119 L 7505 6514 M1 51 0 7479 6514 L
+0 3542 7505 3119 L 7556 6514 M1 51 0 7530 6514 L 0 3542 7556 3119 L 7607 6514 M1 51 0 7581 6514 L 0 3542 7607 3119 L 7658 6514 M1
+51 0 7632 6514 L 0 3542 7658 3119 L 7709 6514 M1 51 0 7683 6514 L 0 3542 7709 3119 L 7811 6514 M1 51 0 7785 6514 L
+0 3542 7811 3119 L 7862 6514 M1 51 0 7836 6514 L 0 3542 7862 3119 L 7912 6661 M1 51 0 7887 6661 L 0 373 7912 6401 L 7963 6746 M1
+51 0 7938 6746 L 0 279 7963 6564 L 8065 6514 M1 51 0 8039 6514 L 0 3542 8065 3119 L 8115 6661 M1 51 0 8090 6661 L 0 373 8115 6401 L
+8217 6661 M1 51 0 8191 6661 L 0 373 8217 6401 L 8267 6661 M1 51 0 8242 6661 L 0 373 8267 6401 L 8318 6661 M1 50 0 8293 6661 L
+0 373 8318 6401 L 8369 6514 M1 51 0 8343 6514 L 0 3542 8369 3119 L 8419 6514 M1 50 0 8394 6514 L 0 3542 8419 3119 L 8470 6514 M1
+51 0 8444 6514 L 0 3542 8470 3119 L 8520 6661 M1 50 0 8495 6661 L 0 373 8520 6401 L 8621 6661 M1 50 0 8596 6661 L 0 373 8621 6401 L
+8671 6514 M1 50 0 8646 6514 L 0 3542 8671 3119 L 8722 6514 M1 51 0 8696 6514 L 0 3542 8722 3119 L 8772 6661 M1 50 0 8747 6661 L
+0 373 8772 6401 L 8822 6661 M1 50 0 8797 6661 L 0 373 8822 6401 L 8923 6661 M1 50 0 8898 6661 L 0 373 8923 6401 L 8973 6514 M1
+50 0 8948 6514 L 0 3542 8973 3119 L 9123 6514 M1 50 0 9098 6514 L 0 3542 9123 3119 L 9173 6514 M1 50 0 9148 6514 L
+0 3542 9173 3119 L 9273 6746 M1 50 0 9248 6746 L 0 279 9273 6564 L 9323 6514 M1 50 0 9298 6514 L 0 3542 9323 3119 L 9423 6661 M1
+50 0 9398 6661 L 0 373 9423 6401 L 2 SLW 55 0 1050 6593 L 55 0 C 0 -1 C 55 0 C 0 -1 C 56 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C
+55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 55 0 C 0 1 C
+54 0 C 0 2 C 55 0 C 0 -5 C 55 0 C 0 -1 C 54 0 C 0 1 C 54 0 C 0 -2 C 55 0 C 54 0 C 0 2 C 55 0 C 0 -3 C 54 0 C 0 -2 C 54 0 C 54 0 C
+0 -1 C 55 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 1 C 54 0 C 0 8 C 54 0 C 0 -9 C 54 0 C
+0 -1 C 54 0 C 0 1 C 53 0 C 0 10 C 54 0 C 0 -6 C 54 0 C 0 -5 C 54 0 C 0 -3 C 53 0 C 0 -2 C 54 0 C 0 1 C 54 0 C 0 -3 C 53 0 C 0 -1 C
+54 0 C 0 5 C 53 0 C 0 15 C 54 0 C 0 -17 C 53 0 C 0 2 C 53 0 C 0 -9 C 54 0 C 0 5 C 53 0 C 0 15 C 53 0 C 0 38 C 54 0 C 0 -24 C 53 0 C
+0 -24 C 53 0 C 0 116 C 53 0 C 0 6 C 53 0 C 0 -66 C 53 0 C 0 81 C 53 0 C 0 -60 C 53 0 C 0 20 C 53 0 C 0 28 C 53 0 C 0 12 C 53 0 C
+0 -26 C 53 0 C 0 -2 C 53 0 C 0 145 C 53 0 C 0 -30 C 52 0 C 0 -113 C 53 0 C 0 -19 C 53 0 C 0 9 C 52 0 C 0 99 C 53 0 C 0 -96 C 53 0 C
+0 -116 C 52 0 C 0 29 C 53 0 C 0 -21 C 52 0 C 0 -3 C 53 0 C 0 -6 C 52 0 C 0 -17 C 53 0 C 0 -2 C 52 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C
+52 0 C 0 5 C 52 0 C 0 84 C 52 0 C 0 32 C 52 0 C 0 181 C 52 0 C 0 -41 C 53 0 C 0 -245 C 52 0 C 0 -21 C 52 0 C 0 -1 C 52 0 C 0 -1 C
+52 0 C 0 -1 C 52 0 C 51 0 C 52 0 C 0 -2 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C
+0 -1 C 52 0 C 0 -1 C 51 0 C 0 1 C 52 0 C 0 -1 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 51 0 C 52 0 C
+0 -2 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C
+0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 50 0 C 0 1 C 51 0 C 0 3 C 51 0 C 0 -6 C 50 0 C 51 0 C 51 0 C 0 -2 C 50 0 C 0 1 C 51 0 C
+50 0 C 0 -3 C 51 0 C 0 1 C 50 0 C 0 -2 C 51 0 C 50 0 C 50 0 C 0 32 C 51 0 C 0 134 C 50 0 C 0 -18 C 50 0 C 0 -139 C 51 0 C 0 9 C
+50 0 C 0 25 C 50 0 C 0 -43 C 50 0 C 0 -6 C 50 0 C 0 8 C 50 0 C 0 -10 C 50 0 C 0 27 C 50 0 C 0 28 C 50 0 C 0 -49 C 50 0 C 0 -9 C
+50 0 C 0 -2 C 50 0 C 55 0 1050 6593 L 0 0 1077 6593 L 55 0 1105 6593 L 0 0 1133 6593 L 55 0 1160 6592 L 0 0 1188 6592 L
+56 0 1215 6591 L 0 0 1243 6591 L 55 0 1271 6591 L 0 0 1298 6591 L 55 0 1326 6590 L 0 0 1353 6590 L 55 0 1381 6589 L 0 0 1408 6589 L
+55 0 1436 6589 L 0 0 1463 6589 L 55 0 1491 6588 L 0 0 1518 6588 L 55 0 1546 6587 L 0 0 1573 6587 L 55 0 1601 6587 L 0 0 1628 6587 L
+54 0 1656 6586 L 0 0 1683 6586 L 55 0 1710 6585 L 0 0 1738 6585 L 55 0 1765 6584 L 0 0 1793 6584 L 55 0 1820 6584 L 0 0 1847 6584 L
+55 0 1875 6583 L 0 0 1902 6583 L 54 0 1930 6582 L 0 0 1957 6582 L 55 0 1984 6582 L 0 0 2012 6582 L 54 0 2039 6583 L 0 0 2066 6583 L
+55 0 2093 6585 L 0 0 2121 6585 L 55 0 2148 6580 L 0 0 2175 6580 L 54 0 2203 6579 L 0 0 2230 6579 L 54 0 2257 6580 L 0 0 2284 6580 L
+55 0 2311 6578 L 0 0 2339 6578 L 54 0 2366 6578 L 0 0 2393 6578 L 55 0 2420 6580 L 0 0 2447 6580 L 54 0 2475 6577 L 0 0 2502 6577 L
+54 0 2529 6575 L 0 0 2556 6575 L 54 0 2583 6575 L 0 0 2610 6575 L 55 0 2637 6574 L 0 0 2664 6574 L 54 0 2692 6573 L 0 0 2719 6573 L
+54 0 2746 6572 L 0 0 2773 6572 L 54 0 2800 6572 L 0 0 2827 6572 L 54 0 2854 6571 L 0 0 2881 6571 L 54 0 2908 6570 L 0 0 2935 6570 L
+54 0 2962 6569 L 0 0 2989 6569 L 54 0 3016 6570 L 0 0 3043 6570 L 54 0 3070 6578 L 0 0 3097 6578 L 54 0 3124 6569 L 0 0 3151 6569 L
+54 0 3178 6568 L 0 0 3205 6568 L 53 0 3232 6569 L 0 0 3259 6569 L 54 0 3285 6579 L 0 0 3312 6579 L 54 0 3339 6573 L 0 0 3366 6573 L
+54 0 3393 6568 L 0 0 3420 6568 L 53 0 3447 6565 L 0 0 3473 6565 L 54 0 3500 6563 L 0 0 3527 6563 L 54 0 3554 6564 L 0 0 3581 6564 L
+53 0 3608 6561 L 0 0 3634 6561 L 54 0 3661 6560 L 0 0 3688 6560 L 53 0 3715 6565 L 0 0 3741 6565 L 54 0 3768 6580 L 0 0 3795 6580 L
+53 0 3822 6563 L 0 0 3848 6563 L 53 0 3875 6565 L 0 0 3902 6565 L 54 0 3928 6556 L 0 0 3955 6556 L 53 0 3982 6561 L 0 0 4008 6561 L
+53 0 4035 6576 L 0 0 4062 6576 L 54 0 4088 6614 L 0 0 4115 6614 L 53 0 4142 6590 L 0 0 4168 6590 L 53 0 4195 6566 L 0 0 4221 6566 L
+53 0 4248 6682 L 0 0 4274 6682 L 53 0 4301 6688 L 0 0 4328 6688 L 53 0 4354 6622 L 0 0 4381 6622 L 53 0 4407 6703 L 0 0 4434 6703 L
+53 0 4460 6643 L 0 0 4487 6643 L 53 0 4513 6663 L 0 0 4540 6663 L 53 0 4566 6691 L 0 0 4593 6691 L 53 0 4619 6703 L 0 0 4646 6703 L
+53 0 4672 6677 L 0 0 4699 6677 L 53 0 4725 6675 L 0 0 4751 6675 L 53 0 4778 6820 L 0 0 4804 6820 L 52 0 4831 6790 L 0 0 4857 6790 L
+53 0 4883 6677 L 0 0 4910 6677 L 53 0 4936 6658 L 0 0 4962 6658 L 52 0 4989 6667 L 0 0 5015 6667 L 53 0 5041 6766 L 0 0 5068 6766 L
+53 0 5094 6670 L 0 0 5120 6670 L 52 0 5147 6554 L 0 0 5173 6554 L 53 0 5199 6583 L 0 0 5226 6583 L 52 0 5252 6562 L 0 0 5278 6562 L
+53 0 5304 6559 L 0 0 5331 6559 L 52 0 5357 6553 L 0 0 5383 6553 L 53 0 5409 6536 L 0 0 5435 6536 L 52 0 5462 6534 L 0 0 5488 6534 L
+52 0 5514 6533 L 0 0 5540 6533 L 53 0 5566 6533 L 0 0 5592 6533 L 52 0 5619 6532 L 0 0 5645 6532 L 52 0 5671 6537 L 0 0 5697 6537 L
+52 0 5723 6621 L 0 0 5749 6621 L 52 0 5775 6653 L 0 0 5801 6653 L 52 0 5827 6834 L 0 0 5853 6834 L 53 0 5879 6793 L 0 0 5906 6793 L
+52 0 5932 6548 L 0 0 5958 6548 L 52 0 5984 6527 L 0 0 6010 6527 L 52 0 6036 6526 L 0 0 6062 6526 L 52 0 6088 6525 L 0 0 6114 6525 L
+52 0 6140 6524 L 0 0 6166 6524 L 51 0 6192 6524 L 0 0 6218 6524 L 52 0 6243 6524 L 0 0 6269 6524 L 52 0 6295 6522 L 0 0 6321 6522 L
+52 0 6347 6521 L 0 0 6373 6521 L 52 0 6399 6520 L 0 0 6425 6520 L 51 0 6451 6520 L 0 0 6477 6520 L 52 0 6502 6519 L 0 0 6528 6519 L
+52 0 6554 6518 L 0 0 6580 6518 L 51 0 6606 6518 L 0 0 6632 6518 L 52 0 6657 6517 L 0 0 6683 6517 L 52 0 6709 6516 L 0 0 6735 6516 L
+51 0 6761 6515 L 0 0 6786 6515 L 52 0 6812 6516 L 0 0 6838 6516 L 51 0 6864 6515 L 0 0 6889 6515 L 52 0 6915 6513 L 0 0 6941 6513 L
+51 0 6967 6512 L 0 0 6992 6512 L 51 0 7018 6512 L 0 0 7044 6512 L 52 0 7069 6511 L 0 0 7095 6511 L 51 0 7121 6510 L 0 0 7146 6510 L
+51 0 7172 6510 L 0 0 7198 6510 L 52 0 7223 6510 L 0 0 7249 6510 L 51 0 7275 6508 L 0 0 7300 6508 L 51 0 7326 6507 L 0 0 7351 6507 L
+51 0 7377 6507 L 0 0 7402 6507 L 51 0 7428 6506 L 0 0 7454 6506 L 51 0 7479 6506 L 0 0 7505 6506 L 51 0 7530 6505 L 0 0 7556 6505 L
+51 0 7581 6504 L 0 0 7607 6504 L 51 0 7632 6503 L 0 0 7658 6503 L 51 0 7683 6503 L 0 0 7709 6503 L 51 0 7734 6502 L 0 0 7760 6502 L
+51 0 7785 6501 L 0 0 7811 6501 L 51 0 7836 6500 L 0 0 7862 6500 L 51 0 7887 6499 L 0 0 7912 6499 L 51 0 7938 6499 L 0 0 7963 6499 L
+50 0 7989 6498 L 0 0 8014 6498 L 51 0 8039 6499 L 0 0 8065 6499 L 51 0 8090 6502 L 0 0 8115 6502 L 50 0 8141 6496 L 0 0 8166 6496 L
+51 0 8191 6496 L 0 0 8217 6496 L 51 0 8242 6496 L 0 0 8267 6496 L 50 0 8293 6494 L 0 0 8318 6494 L 51 0 8343 6495 L 0 0 8369 6495 L
+50 0 8394 6495 L 0 0 8419 6495 L 51 0 8444 6492 L 0 0 8470 6492 L 50 0 8495 6493 L 0 0 8520 6493 L 51 0 8545 6491 L 0 0 8571 6491 L
+50 0 8596 6491 L 0 0 8621 6491 L 50 0 8646 6491 L 0 0 8671 6491 L 51 0 8696 6523 L 0 0 8722 6523 L 50 0 8747 6657 L 0 0 8772 6657 L
+50 0 8797 6639 L 0 0 8822 6639 L 51 0 8847 6500 L 0 0 8873 6500 L 50 0 8898 6509 L 0 0 8923 6509 L 50 0 8948 6534 L 0 0 8973 6534 L
+50 0 8998 6491 L 0 0 9023 6491 L 50 0 9048 6485 L 0 0 9073 6485 L 50 0 9098 6493 L 0 0 9123 6493 L 50 0 9148 6483 L 0 0 9173 6483 L
+50 0 9198 6510 L 0 0 9223 6510 L 50 0 9248 6538 L 0 0 9273 6538 L 50 0 9298 6489 L 0 0 9323 6489 L 50 0 9348 6480 L 0 0 9373 6480 L
+50 0 9398 6478 L 0 0 9423 6478 L 55 0 1050 6415 L 0 -1 C 55 0 C 55 0 C 0 -1 C 56 0 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C
+55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 54 0 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 55 0 C
+0 -1 C 54 0 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 55 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C
+54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 53 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C
+54 0 C 54 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 53 0 C
+0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C
+52 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 53 0 C 52 0 C
+0 -1 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 52 0 C
+0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 52 0 C
+51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C
+51 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C
+50 0 C 51 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 50 0 C
+0 -1 C 50 0 C 51 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C
+50 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C 55 0 1050 6415 L 0 0 1077 6415 L 55 0 1105 6414 L 0 0 1133 6414 L 55 0 1160 6414 L
+0 0 1188 6414 L 56 0 1215 6413 L 0 0 1243 6413 L 55 0 1271 6413 L 0 0 1298 6413 L 55 0 1326 6412 L 0 0 1353 6412 L 55 0 1381 6412 L
+0 0 1408 6412 L 55 0 1436 6411 L 0 0 1463 6411 L 55 0 1491 6411 L 0 0 1518 6411 L 55 0 1546 6410 L 0 0 1573 6410 L 55 0 1601 6410 L
+0 0 1628 6410 L 54 0 1656 6409 L 0 0 1683 6409 L 55 0 1710 6409 L 0 0 1738 6409 L 55 0 1765 6408 L 0 0 1793 6408 L 55 0 1820 6408 L
+0 0 1847 6408 L 55 0 1875 6407 L 0 0 1902 6407 L 54 0 1930 6407 L 0 0 1957 6407 L 55 0 1984 6406 L 0 0 2012 6406 L 54 0 2039 6406 L
+0 0 2066 6406 L 55 0 2093 6405 L 0 0 2121 6405 L 55 0 2148 6405 L 0 0 2175 6405 L 54 0 2203 6404 L 0 0 2230 6404 L 54 0 2257 6404 L
+0 0 2284 6404 L 55 0 2311 6403 L 0 0 2339 6403 L 54 0 2366 6403 L 0 0 2393 6403 L 55 0 2420 6402 L 0 0 2447 6402 L 54 0 2475 6402 L
+0 0 2502 6402 L 54 0 2529 6401 L 0 0 2556 6401 L 54 0 2583 6400 L 0 0 2610 6400 L 55 0 2637 6400 L 0 0 2664 6400 L 54 0 2692 6399 L
+0 0 2719 6399 L 54 0 2746 6399 L 0 0 2773 6399 L 54 0 2800 6398 L 0 0 2827 6398 L 54 0 2854 6398 L 0 0 2881 6398 L 54 0 2908 6397 L
+0 0 2935 6397 L 54 0 2962 6397 L 0 0 2989 6397 L 54 0 3016 6396 L 0 0 3043 6396 L 54 0 3070 6396 L 0 0 3097 6396 L 54 0 3124 6395 L
+0 0 3151 6395 L 54 0 3178 6395 L 0 0 3205 6395 L 53 0 3232 6394 L 0 0 3259 6394 L 54 0 3285 6393 L 0 0 3312 6393 L 54 0 3339 6393 L
+0 0 3366 6393 L 54 0 3393 6392 L 0 0 3420 6392 L 53 0 3447 6392 L 0 0 3473 6392 L 54 0 3500 6391 L 0 0 3527 6391 L 54 0 3554 6391 L
+0 0 3581 6391 L 53 0 3608 6390 L 0 0 3634 6390 L 54 0 3661 6390 L 0 0 3688 6390 L 53 0 3715 6389 L 0 0 3741 6389 L 54 0 3768 6389 L
+0 0 3795 6389 L 53 0 3822 6388 L 0 0 3848 6388 L 53 0 3875 6388 L 0 0 3902 6388 L 54 0 3928 6387 L 0 0 3955 6387 L 53 0 3982 6387 L
+0 0 4008 6387 L 53 0 4035 6386 L 0 0 4062 6386 L 54 0 4088 6386 L 0 0 4115 6386 L 53 0 4142 6385 L 0 0 4168 6385 L 53 0 4195 6384 L
+0 0 4221 6384 L 53 0 4248 6384 L 0 0 4274 6384 L 53 0 4301 6383 L 0 0 4328 6383 L 53 0 4354 6383 L 0 0 4381 6383 L 53 0 4407 6382 L
+0 0 4434 6382 L 53 0 4460 6382 L 0 0 4487 6382 L 53 0 4513 6381 L 0 0 4540 6381 L 53 0 4566 6381 L 0 0 4593 6381 L 53 0 4619 6380 L
+0 0 4646 6380 L 53 0 4672 6380 L 0 0 4699 6380 L 53 0 4725 6379 L 0 0 4751 6379 L 53 0 4778 6379 L 0 0 4804 6379 L 52 0 4831 6378 L
+0 0 4857 6378 L 53 0 4883 6377 L 0 0 4910 6377 L 53 0 4936 6377 L 0 0 4962 6377 L 52 0 4989 6376 L 0 0 5015 6376 L 53 0 5041 6376 L
+0 0 5068 6376 L 53 0 5094 6375 L 0 0 5120 6375 L 52 0 5147 6375 L 0 0 5173 6375 L 53 0 5199 6374 L 0 0 5226 6374 L 52 0 5252 6374 L
+0 0 5278 6374 L 53 0 5304 6373 L 0 0 5331 6373 L 52 0 5357 6373 L 0 0 5383 6373 L 53 0 5409 6372 L 0 0 5435 6372 L 52 0 5462 6372 L
+0 0 5488 6372 L 52 0 5514 6371 L 0 0 5540 6371 L 53 0 5566 6370 L 0 0 5592 6370 L 52 0 5619 6370 L 0 0 5645 6370 L 52 0 5671 6369 L
+0 0 5697 6369 L 52 0 5723 6369 L 0 0 5749 6369 L 52 0 5775 6368 L 0 0 5801 6368 L 52 0 5827 6368 L 0 0 5853 6368 L 53 0 5879 6367 L
+0 0 5906 6367 L 52 0 5932 6367 L 0 0 5958 6367 L 52 0 5984 6366 L 0 0 6010 6366 L 52 0 6036 6365 L 0 0 6062 6365 L 52 0 6088 6365 L
+0 0 6114 6365 L 52 0 6140 6364 L 0 0 6166 6364 L 51 0 6192 6364 L 0 0 6218 6364 L 52 0 6243 6363 L 0 0 6269 6363 L 52 0 6295 6363 L
+0 0 6321 6363 L 52 0 6347 6362 L 0 0 6373 6362 L 52 0 6399 6362 L 0 0 6425 6362 L 51 0 6451 6361 L 0 0 6477 6361 L 52 0 6502 6361 L
+0 0 6528 6361 L 52 0 6554 6360 L 0 0 6580 6360 L 51 0 6606 6359 L 0 0 6632 6359 L 52 0 6657 6359 L 0 0 6683 6359 L 52 0 6709 6358 L
+0 0 6735 6358 L 51 0 6761 6358 L 0 0 6786 6358 L 52 0 6812 6357 L 0 0 6838 6357 L 51 0 6864 6357 L 0 0 6889 6357 L 52 0 6915 6356 L
+0 0 6941 6356 L 51 0 6967 6356 L 0 0 6992 6356 L 51 0 7018 6355 L 0 0 7044 6355 L 52 0 7069 6355 L 0 0 7095 6355 L 51 0 7121 6354 L
+0 0 7146 6354 L 51 0 7172 6353 L 0 0 7198 6353 L 52 0 7223 6353 L 0 0 7249 6353 L 51 0 7275 6352 L 0 0 7300 6352 L 51 0 7326 6352 L
+0 0 7351 6352 L 51 0 7377 6351 L 0 0 7402 6351 L 51 0 7428 6351 L 0 0 7454 6351 L 51 0 7479 6350 L 0 0 7505 6350 L 51 0 7530 6350 L
+0 0 7556 6350 L 51 0 7581 6349 L 0 0 7607 6349 L 51 0 7632 6348 L 0 0 7658 6348 L 51 0 7683 6348 L 0 0 7709 6348 L 51 0 7734 6347 L
+0 0 7760 6347 L 51 0 7785 6347 L 0 0 7811 6347 L 51 0 7836 6346 L 0 0 7862 6346 L 51 0 7887 6346 L 0 0 7912 6346 L 51 0 7938 6345 L
+0 0 7963 6345 L 50 0 7989 6344 L 0 0 8014 6344 L 51 0 8039 6344 L 0 0 8065 6344 L 51 0 8090 6343 L 0 0 8115 6343 L 50 0 8141 6343 L
+0 0 8166 6343 L 51 0 8191 6342 L 0 0 8217 6342 L 51 0 8242 6342 L 0 0 8267 6342 L 50 0 8293 6341 L 0 0 8318 6341 L 51 0 8343 6341 L
+0 0 8369 6341 L 50 0 8394 6340 L 0 0 8419 6340 L 51 0 8444 6340 L 0 0 8470 6340 L 50 0 8495 6339 L 0 0 8520 6339 L 51 0 8545 6338 L
+0 0 8571 6338 L 50 0 8596 6338 L 0 0 8621 6338 L 50 0 8646 6337 L 0 0 8671 6337 L 51 0 8696 6337 L 0 0 8722 6337 L 50 0 8747 6336 L
+0 0 8772 6336 L 50 0 8797 6336 L 0 0 8822 6336 L 51 0 8847 6335 L 0 0 8873 6335 L 50 0 8898 6335 L 0 0 8923 6335 L 50 0 8948 6334 L
+0 0 8973 6334 L 50 0 8998 6333 L 0 0 9023 6333 L 50 0 9048 6333 L 0 0 9073 6333 L 50 0 9098 6332 L 0 0 9123 6332 L 50 0 9148 6332 L
+0 0 9173 6332 L 50 0 9198 6331 L 0 0 9223 6331 L 50 0 9248 6331 L 0 0 9273 6331 L 50 0 9298 6330 L 0 0 9323 6330 L 50 0 9348 6330 L
+0 0 9373 6330 L 50 0 9398 6329 L 0 0 9423 6329 L 55 0 1050 6474 L 55 0 C 0 -1 C 55 0 C 0 -1 C 56 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C
+0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 54 0 C 0 -2 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C
+0 -1 C 55 0 C 0 2 C 54 0 C 0 5 C 55 0 C 0 -8 C 55 0 C 0 -1 C 54 0 C 0 1 C 54 0 C 0 -2 C 55 0 C 0 -1 C 54 0 C 0 4 C 55 0 C 0 -4 C
+54 0 C 0 -3 C 54 0 C 54 0 C 0 -1 C 55 0 C 0 -2 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -2 C 54 0 C 0 -2 C 54 0 C 0 2 C 54 0 C
+0 17 C 54 0 C 0 -16 C 54 0 C 0 -3 C 54 0 C 0 3 C 53 0 C 0 18 C 54 0 C 0 -10 C 54 0 C 0 -8 C 54 0 C 0 -6 C 53 0 C 0 -3 C 54 0 C 0 3 C
+54 0 C 0 -5 C 53 0 C 0 -1 C 54 0 C 0 9 C 53 0 C 0 26 C 54 0 C 0 -28 C 53 0 C 0 4 C 53 0 C 0 -17 C 54 0 C 0 10 C 53 0 C 0 26 C 53 0 C
+0 61 C 54 0 C 0 -37 C 53 0 C 0 -39 C 53 0 C 0 172 C 53 0 C 0 9 C 53 0 C 0 -92 C 53 0 C 0 111 C 53 0 C 0 -80 C 53 0 C 0 29 C 53 0 C
+0 36 C 53 0 C 0 16 C 53 0 C 0 -33 C 53 0 C 0 -3 C 53 0 C 0 177 C 53 0 C 0 -34 C 52 0 C 0 -140 C 53 0 C 0 -26 C 53 0 C 0 14 C 52 0 C
+0 124 C 53 0 C 0 -121 C 53 0 C 0 -174 C 52 0 C 0 49 C 53 0 C 0 -34 C 52 0 C 0 -5 C 53 0 C 0 -9 C 52 0 C 0 -30 C 53 0 C 0 -4 C 52 0 C
+0 -1 C 52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 10 C 52 0 C 0 135 C 52 0 C 0 44 C 52 0 C 0 221 C 52 0 C 0 -47 C 53 0 C 0 -331 C 52 0 C
+0 -38 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 51 0 C 0 1 C 52 0 C 0 -3 C 52 0 C 0 -2 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C
+0 -1 C 52 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 1 C 52 0 C 0 -1 C 51 0 C 0 -3 C 52 0 C 0 -1 C 51 0 C
+51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -2 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -2 C
+51 0 C 0 -1 C 51 0 C 0 1 C 51 0 C 0 -2 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -2 C 51 0 C 50 0 C 0 2 C 51 0 C 0 7 C
+51 0 C 0 -11 C 50 0 C 51 0 C 0 1 C 51 0 C 0 -4 C 50 0 C 0 4 C 51 0 C 50 0 C 0 -6 C 51 0 C 0 3 C 50 0 C 0 -3 C 51 0 C 0 -1 C 50 0 C
+50 0 C 0 60 C 51 0 C 0 194 C 50 0 C 0 -22 C 50 0 C 0 -212 C 51 0 C 0 18 C 50 0 C 0 42 C 50 0 C 0 -76 C 50 0 C 0 -10 C 50 0 C 0 16 C
+50 0 C 0 -19 C 50 0 C 0 49 C 50 0 C 0 49 C 50 0 C 0 -85 C 50 0 C 0 -17 C 50 0 C 0 -3 C 50 0 C 55 0 1050 6474 L 0 0 1077 6474 L
+55 0 1105 6474 L 0 0 1133 6474 L 55 0 1160 6473 L 0 0 1188 6473 L 56 0 1215 6472 L 0 0 1243 6472 L 55 0 1271 6471 L 0 0 1298 6471 L
+55 0 1326 6470 L 0 0 1353 6470 L 55 0 1381 6469 L 0 0 1408 6469 L 55 0 1436 6469 L 0 0 1463 6469 L 55 0 1491 6468 L 0 0 1518 6468 L
+55 0 1546 6467 L 0 0 1573 6467 L 55 0 1601 6466 L 0 0 1628 6466 L 54 0 1656 6466 L 0 0 1683 6466 L 55 0 1710 6464 L 0 0 1738 6464 L
+55 0 1765 6464 L 0 0 1793 6464 L 55 0 1820 6463 L 0 0 1847 6463 L 55 0 1875 6462 L 0 0 1902 6462 L 54 0 1930 6461 L 0 0 1957 6461 L
+55 0 1984 6460 L 0 0 2012 6460 L 54 0 2039 6462 L 0 0 2066 6462 L 55 0 2093 6467 L 0 0 2121 6467 L 55 0 2148 6459 L 0 0 2175 6459 L
+54 0 2203 6458 L 0 0 2230 6458 L 54 0 2257 6459 L 0 0 2284 6459 L 55 0 2311 6457 L 0 0 2339 6457 L 54 0 2366 6456 L 0 0 2393 6456 L
+55 0 2420 6460 L 0 0 2447 6460 L 54 0 2475 6456 L 0 0 2502 6456 L 54 0 2529 6453 L 0 0 2556 6453 L 54 0 2583 6453 L 0 0 2610 6453 L
+55 0 2637 6452 L 0 0 2664 6452 L 54 0 2692 6450 L 0 0 2719 6450 L 54 0 2746 6449 L 0 0 2773 6449 L 54 0 2800 6448 L 0 0 2827 6448 L
+54 0 2854 6448 L 0 0 2881 6448 L 54 0 2908 6446 L 0 0 2935 6446 L 54 0 2962 6444 L 0 0 2989 6444 L 54 0 3016 6446 L 0 0 3043 6446 L
+54 0 3070 6463 L 0 0 3097 6463 L 54 0 3124 6447 L 0 0 3151 6447 L 54 0 3178 6444 L 0 0 3205 6444 L 53 0 3232 6447 L 0 0 3259 6447 L
+54 0 3285 6465 L 0 0 3312 6465 L 54 0 3339 6455 L 0 0 3366 6455 L 54 0 3393 6447 L 0 0 3420 6447 L 53 0 3447 6441 L 0 0 3473 6441 L
+54 0 3500 6438 L 0 0 3527 6438 L 54 0 3554 6441 L 0 0 3581 6441 L 53 0 3608 6436 L 0 0 3634 6436 L 54 0 3661 6435 L 0 0 3688 6435 L
+53 0 3715 6444 L 0 0 3741 6444 L 54 0 3768 6470 L 0 0 3795 6470 L 53 0 3822 6442 L 0 0 3848 6442 L 53 0 3875 6446 L 0 0 3902 6446 L
+54 0 3928 6429 L 0 0 3955 6429 L 53 0 3982 6439 L 0 0 4008 6439 L 53 0 4035 6465 L 0 0 4062 6465 L 54 0 4088 6526 L 0 0 4115 6526 L
+53 0 4142 6489 L 0 0 4168 6489 L 53 0 4195 6450 L 0 0 4221 6450 L 53 0 4248 6622 L 0 0 4274 6622 L 53 0 4301 6631 L 0 0 4328 6631 L
+53 0 4354 6539 L 0 0 4381 6539 L 53 0 4407 6650 L 0 0 4434 6650 L 53 0 4460 6570 L 0 0 4487 6570 L 53 0 4513 6599 L 0 0 4540 6599 L
+53 0 4566 6635 L 0 0 4593 6635 L 53 0 4619 6651 L 0 0 4646 6651 L 53 0 4672 6618 L 0 0 4699 6618 L 53 0 4725 6615 L 0 0 4751 6615 L
+53 0 4778 6792 L 0 0 4804 6792 L 52 0 4831 6758 L 0 0 4857 6758 L 53 0 4883 6618 L 0 0 4910 6618 L 53 0 4936 6592 L 0 0 4962 6592 L
+52 0 4989 6606 L 0 0 5015 6606 L 53 0 5041 6730 L 0 0 5068 6730 L 53 0 5094 6609 L 0 0 5120 6609 L 52 0 5147 6435 L 0 0 5173 6435 L
+53 0 5199 6484 L 0 0 5226 6484 L 52 0 5252 6450 L 0 0 5278 6450 L 53 0 5304 6445 L 0 0 5331 6445 L 52 0 5357 6436 L 0 0 5383 6436 L
+53 0 5409 6406 L 0 0 5435 6406 L 52 0 5462 6402 L 0 0 5488 6402 L 52 0 5514 6401 L 0 0 5540 6401 L 53 0 5566 6400 L 0 0 5592 6400 L
+52 0 5619 6399 L 0 0 5645 6399 L 52 0 5671 6409 L 0 0 5697 6409 L 52 0 5723 6544 L 0 0 5749 6544 L 52 0 5775 6588 L 0 0 5801 6588 L
+52 0 5827 6809 L 0 0 5853 6809 L 53 0 5879 6762 L 0 0 5906 6762 L 52 0 5932 6431 L 0 0 5958 6431 L 52 0 5984 6393 L 0 0 6010 6393 L
+52 0 6036 6392 L 0 0 6062 6392 L 52 0 6088 6391 L 0 0 6114 6391 L 52 0 6140 6390 L 0 0 6166 6390 L 51 0 6192 6390 L 0 0 6218 6390 L
+52 0 6243 6391 L 0 0 6269 6391 L 52 0 6295 6388 L 0 0 6321 6388 L 52 0 6347 6386 L 0 0 6373 6386 L 52 0 6399 6385 L 0 0 6425 6385 L
+51 0 6451 6384 L 0 0 6477 6384 L 52 0 6502 6383 L 0 0 6528 6383 L 52 0 6554 6382 L 0 0 6580 6382 L 51 0 6606 6382 L 0 0 6632 6382 L
+52 0 6657 6381 L 0 0 6683 6381 L 52 0 6709 6380 L 0 0 6735 6380 L 51 0 6761 6379 L 0 0 6786 6379 L 52 0 6812 6380 L 0 0 6838 6380 L
+51 0 6864 6379 L 0 0 6889 6379 L 52 0 6915 6376 L 0 0 6941 6376 L 51 0 6967 6375 L 0 0 6992 6375 L 51 0 7018 6375 L 0 0 7044 6375 L
+52 0 7069 6374 L 0 0 7095 6374 L 51 0 7121 6373 L 0 0 7146 6373 L 51 0 7172 6372 L 0 0 7198 6372 L 52 0 7223 6372 L 0 0 7249 6372 L
+51 0 7275 6370 L 0 0 7300 6370 L 51 0 7326 6369 L 0 0 7351 6369 L 51 0 7377 6368 L 0 0 7402 6368 L 51 0 7428 6368 L 0 0 7454 6368 L
+51 0 7479 6368 L 0 0 7505 6368 L 51 0 7530 6367 L 0 0 7556 6367 L 51 0 7581 6365 L 0 0 7607 6365 L 51 0 7632 6364 L 0 0 7658 6364 L
+51 0 7683 6365 L 0 0 7709 6365 L 51 0 7734 6363 L 0 0 7760 6363 L 51 0 7785 6362 L 0 0 7811 6362 L 51 0 7836 6361 L 0 0 7862 6361 L
+51 0 7887 6360 L 0 0 7912 6360 L 51 0 7938 6358 L 0 0 7963 6358 L 50 0 7989 6358 L 0 0 8014 6358 L 51 0 8039 6360 L 0 0 8065 6360 L
+51 0 8090 6367 L 0 0 8115 6367 L 50 0 8141 6356 L 0 0 8166 6356 L 51 0 8191 6356 L 0 0 8217 6356 L 51 0 8242 6357 L 0 0 8267 6357 L
+50 0 8293 6353 L 0 0 8318 6353 L 51 0 8343 6357 L 0 0 8369 6357 L 50 0 8394 6357 L 0 0 8419 6357 L 51 0 8444 6351 L 0 0 8470 6351 L
+50 0 8495 6354 L 0 0 8520 6354 L 51 0 8545 6351 L 0 0 8571 6351 L 50 0 8596 6350 L 0 0 8621 6350 L 50 0 8646 6350 L 0 0 8671 6350 L
+51 0 8696 6410 L 0 0 8722 6410 L 50 0 8747 6604 L 0 0 8772 6604 L 50 0 8797 6582 L 0 0 8822 6582 L 51 0 8847 6370 L 0 0 8873 6370 L
+50 0 8898 6388 L 0 0 8923 6388 L 50 0 8948 6430 L 0 0 8973 6430 L 50 0 8998 6354 L 0 0 9023 6354 L 50 0 9048 6344 L 0 0 9073 6344 L
+50 0 9098 6360 L 0 0 9123 6360 L 50 0 9148 6341 L 0 0 9173 6341 L 50 0 9198 6390 L 0 0 9223 6390 L 50 0 9248 6439 L 0 0 9273 6439 L
+50 0 9298 6354 L 0 0 9323 6354 L 50 0 9348 6337 L 0 0 9373 6337 L 50 0 9398 6334 L 0 0 9423 6334 L 1.000 0.000 1.000 setrgbcolor
+1.000 1.000 0.000 setrgbcolor 1.000 0.500 0.000 setrgbcolor 0.000 0.000 0.000 setrgbcolor
+ 13.26  pgscale div FS gs    90.00        157.469       4422.163 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00       4249.982       7316.474 moveto rotate (data and folded model) TBC gr
+8398 0 1050 780 L 0 2339 C -8398 0 C 0 -2339 C 0 38 7428 780 L 0 38 7428 3081 L 38 0 1050 839 L 76 0 1050 941 L 38 0 1050 1043 L
+38 0 1050 1144 L 38 0 1050 1246 L 38 0 1050 1348 L 76 0 1050 1450 L 38 0 1050 1552 L 38 0 1050 1654 L 38 0 1050 1755 L
+38 0 1050 1857 L 76 0 1050 1959 L 38 0 1050 2061 L 38 0 1050 2163 L 38 0 1050 2264 L 38 0 1050 2366 L 76 0 1050 2468 L
+38 0 1050 2570 L 38 0 1050 2672 L 38 0 1050 2773 L 38 0 1050 2875 L 76 0 1050 2977 L 38 0 1050 3079 L 38 0 9410 839 L
+76 0 9372 941 L 38 0 9410 1043 L 38 0 9410 1144 L 38 0 9410 1246 L 38 0 9410 1348 L 76 0 9372 1450 L 38 0 9410 1552 L
+38 0 9410 1654 L 38 0 9410 1755 L 38 0 9410 1857 L 76 0 9372 1959 L 38 0 9410 2061 L 38 0 9410 2163 L 38 0 9410 2264 L
+38 0 9410 2366 L 76 0 9372 2468 L 38 0 9410 2570 L 38 0 9410 2672 L 38 0 9410 2773 L 38 0 9410 2875 L 76 0 9372 2977 L
+38 0 9410 3079 L
+ 13.26  pgscale div FS gs     0.00        264.134        891.109 moveto rotate (-5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        831.729       1400.172 moveto rotate (0) HVC gr
+ 13.26  pgscale div FS gs     0.00        370.983       1909.235 moveto rotate (5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00        575.877       2418.298 moveto rotate (0.01) HVC gr
+ 13.26  pgscale div FS gs     0.00        473.801       2927.361 moveto rotate (0.015) HVC gr
+1 SLW 1077 2131 M1 55 0 1050 2131 L 0 1070 1077 1596 L 1133 1061 M1 55 0 1105 1061 L 0 0 1133 1061 L 1188 1063 M1 55 0 1160 1063 L
+0 0 1188 1063 L 1243 1064 M1 56 0 1215 1064 L 0 0 1243 1064 L 1298 1333 M1 55 0 1271 1333 L 0 536 1298 1065 L 1353 1067 M1
+55 0 1326 1067 L 0 0 1353 1067 L 1408 1335 M1 55 0 1381 1335 L 0 535 1408 1068 L 1463 1337 M1 55 0 1436 1337 L 0 535 1463 1069 L
+1518 1071 M1 55 0 1491 1071 L 0 0 1518 1071 L 1573 1607 M1 55 0 1546 1607 L 0 757 1573 1228 L 1628 1340 M1 55 0 1601 1340 L
+0 535 1628 1073 L 1683 1073 M1 54 0 1656 1073 L 0 0 1683 1073 L 1738 1343 M1 55 0 1710 1343 L 0 535 1738 1075 L 1793 1344 M1
+55 0 1765 1344 L 0 536 1793 1076 L 1847 1881 M1 55 0 1820 1881 L 0 927 1847 1417 L 1902 2149 M1 55 0 1875 2149 L 0 1071 1902 1614 L
+1957 1348 M1 54 0 1930 1348 L 0 535 1957 1080 L 2012 1081 M1 55 0 1984 1081 L 0 0 2012 1081 L 2066 1080 M1 54 0 2039 1080 L
+0 0 2066 1080 L 2121 1343 M1 55 0 2093 1343 L 0 535 2121 1075 L 2175 1084 M1 55 0 2148 1084 L 0 0 2175 1084 L 2230 1621 M1
+54 0 2203 1621 L 0 757 2230 1242 L 2284 1619 M1 54 0 2257 1619 L 0 757 2284 1241 L 2339 2158 M1 55 0 2311 2158 L 0 1071 2339 1622 L
+2393 1624 M1 54 0 2366 1624 L 0 757 2393 1245 L 2447 1620 M1 55 0 2420 1620 L 0 757 2447 1242 L 2502 1357 M1 54 0 2475 1357 L
+0 535 2502 1089 L 2556 1360 M1 54 0 2529 1360 L 0 535 2556 1092 L 2610 1093 M1 54 0 2583 1093 L 0 0 2610 1093 L 2664 1094 M1
+55 0 2637 1094 L 0 0 2664 1094 L 2719 1899 M1 54 0 2692 1899 L 0 927 2719 1435 L 2773 1901 M1 54 0 2746 1901 L 0 927 2773 1437 L
+2827 1366 M1 54 0 2800 1366 L 0 535 2827 1099 L 2881 1635 M1 54 0 2854 1635 L 0 756 2881 1257 L 2935 1637 M1 54 0 2908 1637 L
+0 757 2935 1259 L 2989 1103 M1 54 0 2962 1103 L 0 0 2989 1103 L 3043 1637 M1 54 0 3016 1637 L 0 757 3043 1259 L 3097 1355 M1
+54 0 3070 1355 L 0 535 3097 1087 L 3151 1370 M1 54 0 3124 1370 L 0 535 3151 1103 L 3205 1373 M1 54 0 3178 1373 L 0 535 3205 1105 L
+3259 1103 M1 53 0 3232 1103 L 0 0 3259 1103 L 3312 1086 M1 54 0 3285 1086 L 0 0 3312 1086 L 3366 1899 M1 54 0 3339 1899 L
+0 928 3366 1435 L 3420 1639 M1 54 0 3393 1639 L 0 757 3420 1261 L 3473 1110 M1 53 0 3447 1110 L 0 0 3473 1110 L 3527 1113 M1
+54 0 3500 1113 L 0 0 3527 1113 L 3581 1378 M1 54 0 3554 1378 L 0 536 3581 1110 L 3634 1651 M1 53 0 3608 1651 L 0 757 3634 1272 L
+3688 1652 M1 54 0 3661 1652 L 0 757 3688 1274 L 3741 1109 M1 53 0 3715 1109 L 0 0 3741 1109 L 3795 1352 M1 54 0 3768 1352 L
+0 535 3795 1084 L 3848 2182 M1 53 0 3822 2182 L 0 1071 3848 1647 L 3902 1376 M1 53 0 3875 1376 L 0 535 3902 1109 L 3955 1391 M1
+54 0 3928 1391 L 0 535 3955 1124 L 4008 1918 M1 53 0 3982 1918 L 0 927 4008 1454 L 4062 1627 M1 53 0 4035 1627 L 0 757 4062 1248 L
+4115 1557 M1 54 0 4088 1557 L 0 757 4115 1178 L 4168 1334 M1 53 0 4142 1334 L 0 535 4168 1067 L 4221 2445 M1 53 0 4195 2445 L
+0 1197 4221 1847 L 4274 1394 M1 53 0 4248 1394 L 0 757 4274 1015 L 4328 1108 M1 53 0 4301 1108 L 0 535 4328 840 L 4381 1272 M1
+53 0 4354 1272 L 0 535 4381 1004 L 4434 1600 M1 53 0 4407 1600 L 0 927 4434 1137 L 4487 1226 M1 53 0 4460 1226 L 0 536 4487 958 L
+4540 1175 M1 53 0 4513 1175 L 0 535 4540 908 L 4593 1368 M1 53 0 4566 1368 L 0 757 4593 990 L 4646 1331 M1 53 0 4619 1331 L
+0 757 4646 953 L 4699 1674 M1 53 0 4672 1674 L 0 927 4699 1210 L 4751 1680 M1 53 0 4725 1680 L 0 927 4751 1217 L 4804 1385 M1
+53 0 4778 1385 L 0 1070 4804 850 L 4857 1533 M1 52 0 4831 1533 L 0 1070 4857 998 L 4910 1407 M1 53 0 4883 1407 L 0 757 4910 1028 L
+4962 3064 M1 53 0 4936 3064 L 0 812 4962 2307 L 5015 1432 M1 52 0 4989 1432 L 0 757 5015 1054 L 5068 836 M1 53 0 5041 836 L
+0 323 5068 780 L 5120 1962 M1 53 0 5094 1962 L 0 1070 5120 1427 L 5173 2197 M1 52 0 5147 2197 L 0 1070 5173 1662 L 5226 1079 M1
+53 0 5199 1079 L 0 0 5226 1079 L 5278 1917 M1 52 0 5252 1917 L 0 927 5278 1454 L 5331 1386 M1 53 0 5304 1386 L 0 535 5331 1119 L
+5383 1663 M1 52 0 5357 1663 L 0 757 5383 1285 L 5435 1420 M1 53 0 5409 1420 L 0 536 5435 1152 L 5488 1156 M1 52 0 5462 1156 L
+0 0 5488 1156 L 5540 1692 M1 52 0 5514 1692 L 0 757 5540 1313 L 5592 1158 M1 53 0 5566 1158 L 0 0 5592 1158 L 5645 1426 M1
+52 0 5619 1426 L 0 535 5645 1159 L 5697 1152 M1 52 0 5671 1152 L 0 0 5697 1152 L 5749 1542 M1 52 0 5723 1542 L 0 756 5749 1164 L
+5801 1470 M1 52 0 5775 1470 L 0 757 5801 1092 L 5853 1842 M1 52 0 5827 1842 L 0 1311 5853 1186 L 5906 1522 M1 53 0 5879 1522 L
+0 1070 5906 987 L 5958 1671 M1 52 0 5932 1671 L 0 757 5958 1292 L 6010 1166 M1 52 0 5984 1166 L 0 0 6010 1166 L 6062 1167 M1
+52 0 6036 1167 L 0 0 6062 1167 L 6114 1436 M1 52 0 6088 1436 L 0 535 6114 1168 L 6166 1704 M1 52 0 6140 1704 L 0 757 6166 1326 L
+6218 1705 M1 51 0 6192 1705 L 0 757 6218 1326 L 6269 1704 M1 52 0 6243 1704 L 0 757 6269 1325 L 6321 1439 M1 52 0 6295 1439 L
+0 535 6321 1172 L 6373 1708 M1 52 0 6347 1708 L 0 757 6373 1330 L 6425 1977 M1 52 0 6399 1977 L 0 927 6425 1513 L 6477 1175 M1
+51 0 6451 1175 L 0 0 6477 1175 L 6528 1443 M1 52 0 6502 1443 L 0 535 6528 1176 L 6580 1177 M1 52 0 6554 1177 L 0 0 6580 1177 L
+6632 1178 M1 51 0 6606 1178 L 0 0 6632 1178 L 6683 1714 M1 52 0 6657 1714 L 0 757 6683 1335 L 6735 1982 M1 52 0 6709 1982 L
+0 927 6735 1519 L 6786 1716 M1 51 0 6761 1716 L 0 757 6786 1337 L 6838 1983 M1 52 0 6812 1983 L 0 927 6838 1519 L 6889 1181 M1
+51 0 6864 1181 L 0 0 6889 1181 L 6941 1451 M1 52 0 6915 1451 L 0 535 6941 1183 L 6992 1452 M1 51 0 6967 1452 L 0 535 6992 1184 L
+7044 1453 M1 51 0 7018 1453 L 0 535 7044 1185 L 7095 1186 M1 52 0 7069 1186 L 0 0 7095 1186 L 7146 1187 M1 51 0 7121 1187 L
+0 0 7146 1187 L 7198 1723 M1 51 0 7172 1723 L 0 757 7198 1344 L 7249 1455 M1 52 0 7223 1455 L 0 535 7249 1188 L 7300 1725 M1
+51 0 7275 1725 L 0 757 7300 1346 L 7351 1726 M1 51 0 7326 1726 L 0 757 7351 1347 L 7402 1459 M1 51 0 7377 1459 L 0 535 7402 1191 L
+7454 1459 M1 51 0 7428 1459 L 0 535 7454 1192 L 7505 1460 M1 51 0 7479 1460 L 0 535 7505 1192 L 7556 1461 M1 51 0 7530 1461 L
+0 536 7556 1193 L 7607 1462 M1 51 0 7581 1462 L 0 535 7607 1195 L 7658 1463 M1 51 0 7632 1463 L 0 536 7658 1195 L 7709 1463 M1
+51 0 7683 1463 L 0 535 7709 1196 L 7760 1197 M1 51 0 7734 1197 L 0 0 7760 1197 L 7811 1466 M1 51 0 7785 1466 L 0 535 7811 1198 L
+7862 1466 M1 51 0 7836 1466 L 0 535 7862 1199 L 7912 1735 M1 51 0 7887 1735 L 0 757 7912 1357 L 7963 2004 M1 51 0 7938 2004 L
+0 927 7963 1540 L 8014 1202 M1 50 0 7989 1202 L 0 0 8014 1202 L 8065 1468 M1 51 0 8039 1468 L 0 536 8065 1200 L 8115 1732 M1
+51 0 8090 1732 L 0 757 8115 1354 L 8166 1204 M1 50 0 8141 1204 L 0 0 8166 1204 L 8217 1739 M1 51 0 8191 1739 L 0 757 8217 1361 L
+8267 1739 M1 51 0 8242 1739 L 0 757 8267 1360 L 8318 1742 M1 50 0 8293 1742 L 0 757 8318 1363 L 8369 1472 M1 51 0 8343 1472 L
+0 535 8369 1205 L 8419 1473 M1 50 0 8394 1473 L 0 535 8419 1205 L 8470 1476 M1 51 0 8444 1476 L 0 536 8470 1208 L 8520 1742 M1
+50 0 8495 1742 L 0 757 8520 1364 L 8571 1209 M1 51 0 8545 1209 L 0 0 8571 1209 L 8621 1745 M1 50 0 8596 1745 L 0 757 8621 1367 L
+8671 1478 M1 50 0 8646 1478 L 0 536 8671 1210 L 8722 1438 M1 51 0 8696 1438 L 0 535 8722 1170 L 8772 1459 M1 50 0 8747 1459 L
+0 757 8772 1081 L 8822 1502 M1 50 0 8797 1502 L 0 757 8822 1123 L 8873 1199 M1 51 0 8847 1199 L 0 0 8873 1199 L 8923 1723 M1
+50 0 8898 1723 L 0 757 8923 1345 L 8973 1423 M1 50 0 8948 1423 L 0 535 8973 1156 L 9023 1210 M1 50 0 8998 1210 L 0 0 9023 1210 L
+9073 1216 M1 50 0 9048 1216 L 0 0 9073 1216 L 9123 1475 M1 50 0 9098 1475 L 0 535 9123 1207 L 9173 1486 M1 50 0 9148 1486 L
+0 536 9173 1218 L 9223 1188 M1 50 0 9198 1188 L 0 0 9223 1188 L 9273 1953 M1 50 0 9248 1953 L 0 927 9273 1489 L 9323 1479 M1
+50 0 9298 1479 L 0 535 9323 1212 L 9373 1222 M1 50 0 9348 1222 L 0 0 9373 1222 L 9423 1759 M1 50 0 9398 1759 L 0 757 9423 1380 L
+2 SLW
+ 13.26  pgscale div FS gs    90.00        157.469       1302.962 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.26 pgscale div FS gr
+ 13.26  pgscale div FS gs     0.00       4726.723        365.531 moveto rotate (Energy \(keV\)) HVC gr
+0.000 1.000 0.000 setrgbcolor 8398 0 1050 1450 L 0.000 0.000 0.000 setrgbcolor 1 SLW
+  9.36  pgscale div FS gs     0.00       8908.951         61.985 moveto rotate (neolnx 10-Sep-2024 12:50) HVC gr
+0.000 1.000 0.000 setrgbcolor 2 SLW
+PGPLOT restore showpage
+%%PageTrailer
+%%PageBoundingBox: 41 -18 585 791
+
+%%Page: 3 3
+%%BeginPageSetup
+/PGPLOT save def
+pgscale pgscale scale
+8147 250 translate 90 rotate
+1 setlinejoin 1 setlinecap 1 SLW 1 SCF
+%%EndPageSetup
+%%PageBoundingBox: (atend)
+0.000 0.000 0.000 setrgbcolor 2 SLW 8397 0 1050 3119 L 0 3898 C -8397 0 C 0 -3898 C 0 38 7427 3119 L 0 38 7427 6979 L
+38 0 1050 3130 L 38 0 1050 3191 L 38 0 1050 3238 L 38 0 1050 3277 L 38 0 1050 3309 L 38 0 1050 3338 L 38 0 1050 3362 L
+76 0 1050 3385 L 38 0 1050 3531 L 38 0 1050 3617 L 38 0 1050 3678 L 38 0 1050 3725 L 38 0 1050 3764 L 38 0 1050 3797 L
+38 0 1050 3825 L 38 0 1050 3850 L 76 0 1050 3872 L 38 0 1050 4019 L 38 0 1050 4105 L 38 0 1050 4165 L 38 0 1050 4213 L
+38 0 1050 4251 L 38 0 1050 4284 L 38 0 1050 4312 L 38 0 1050 4337 L 76 0 1050 4359 L 38 0 1050 4506 L 38 0 1050 4592 L
+38 0 1050 4653 L 38 0 1050 4700 L 38 0 1050 4739 L 38 0 1050 4771 L 38 0 1050 4799 L 38 0 1050 4824 L 76 0 1050 4847 L
+38 0 1050 4993 L 38 0 1050 5079 L 38 0 1050 5140 L 38 0 1050 5187 L 38 0 1050 5226 L 38 0 1050 5258 L 38 0 1050 5287 L
+38 0 1050 5312 L 76 0 1050 5334 L 38 0 1050 5481 L 38 0 1050 5566 L 38 0 1050 5627 L 38 0 1050 5675 L 38 0 1050 5713 L
+38 0 1050 5746 L 38 0 1050 5774 L 38 0 1050 5799 L 76 0 1050 5821 L 38 0 1050 5968 L 38 0 1050 6054 L 38 0 1050 6115 L
+38 0 1050 6162 L 38 0 1050 6200 L 38 0 1050 6233 L 38 0 1050 6261 L 38 0 1050 6286 L 76 0 1050 6309 L 38 0 1050 6455 L
+38 0 1050 6541 L 38 0 1050 6602 L 38 0 1050 6649 L 38 0 1050 6688 L 38 0 1050 6720 L 38 0 1050 6749 L 38 0 1050 6774 L
+76 0 1050 6796 L 38 0 1050 6943 L 38 0 9409 3130 L 38 0 9409 3191 L 38 0 9409 3238 L 38 0 9409 3277 L 38 0 9409 3309 L
+38 0 9409 3338 L 38 0 9409 3362 L 76 0 9371 3385 L 38 0 9409 3531 L 38 0 9409 3617 L 38 0 9409 3678 L 38 0 9409 3725 L
+38 0 9409 3764 L 38 0 9409 3797 L 38 0 9409 3825 L 38 0 9409 3850 L 76 0 9371 3872 L 38 0 9409 4019 L 38 0 9409 4105 L
+38 0 9409 4165 L 38 0 9409 4213 L 38 0 9409 4251 L 38 0 9409 4284 L 38 0 9409 4312 L 38 0 9409 4337 L 76 0 9371 4359 L
+38 0 9409 4506 L 38 0 9409 4592 L 38 0 9409 4653 L 38 0 9409 4700 L 38 0 9409 4739 L 38 0 9409 4771 L 38 0 9409 4799 L
+38 0 9409 4824 L 76 0 9371 4847 L 38 0 9409 4993 L 38 0 9409 5079 L 38 0 9409 5140 L 38 0 9409 5187 L 38 0 9409 5226 L
+38 0 9409 5258 L 38 0 9409 5287 L 38 0 9409 5312 L 76 0 9371 5334 L 38 0 9409 5481 L 38 0 9409 5566 L 38 0 9409 5627 L
+38 0 9409 5675 L 38 0 9409 5713 L 38 0 9409 5746 L 38 0 9409 5774 L 38 0 9409 5799 L 76 0 9371 5821 L 38 0 9409 5968 L
+38 0 9409 6054 L 38 0 9409 6115 L 38 0 9409 6162 L 38 0 9409 6200 L 38 0 9409 6233 L 38 0 9409 6261 L 38 0 9409 6286 L
+76 0 9371 6309 L 38 0 9409 6455 L 38 0 9409 6541 L 38 0 9409 6602 L 38 0 9409 6649 L 38 0 9409 6688 L 38 0 9409 6720 L
+38 0 9409 6749 L 38 0 9409 6774 L 76 0 9371 6796 L 38 0 9409 6943 L
+ 13.25  pgscale div FS gs     0.00        604.256       3335.021 moveto rotate (10) HVC   7.95 pgscale div FS up (-9) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        604.256       3822.333 moveto rotate (10) HVC   7.95 pgscale div FS up (-8) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        604.256       4309.646 moveto rotate (10) HVC   7.95 pgscale div FS up (-7) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        604.256       4796.958 moveto rotate (10) HVC   7.95 pgscale div FS up (-6) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        604.256       5284.271 moveto rotate (10) HVC   7.95 pgscale div FS up (-5) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        604.256       5771.583 moveto rotate (10) HVC   7.95 pgscale div FS up (-4) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        604.256       6258.896 moveto rotate (10) HVC   7.95 pgscale div FS up (-3) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        575.837       6746.208 moveto rotate (0.01) HVC gr
+1 SLW
+/M1 {MB 0 0 1 FC ME} bind def
+/MFAC      5.998 def
+1077 6807 M1 55 0 1050 6807 L 0 232 1077 6660 L 1298 6513 M1 55 0 1271 6513 L 0 3541 1298 3119 L 1408 6513 M1 55 0 1381 6513 L
+0 3541 1408 3119 L 1463 6513 M1 55 0 1436 6513 L 0 3541 1463 3119 L 1573 6660 M1 55 0 1546 6660 L 0 373 1573 6400 L 1628 6513 M1
+54 0 1601 6513 L 0 3541 1628 3119 L 1738 6513 M1 55 0 1710 6513 L 0 3541 1738 3119 L 1793 6513 M1 55 0 1765 6513 L
+0 3541 1793 3119 L 1847 6746 M1 55 0 1820 6746 L 0 279 1847 6563 L 1902 6807 M1 54 0 1875 6807 L 0 232 1902 6660 L 1957 6513 M1
+55 0 1929 6513 L 0 3541 1957 3119 L 2121 6513 M1 55 0 2093 6513 L 0 3541 2121 3119 L 2230 6660 M1 55 0 2202 6660 L 0 373 2230 6400 L
+2284 6660 M1 54 0 2257 6660 L 0 373 2284 6400 L 2338 6807 M1 55 0 2311 6807 L 0 232 2338 6660 L 2393 6660 M1 54 0 2366 6660 L
+0 373 2393 6400 L 2447 6660 M1 54 0 2420 6660 L 0 373 2447 6400 L 2502 6513 M1 55 0 2474 6513 L 0 3541 2502 3119 L 2556 6513 M1
+54 0 2529 6513 L 0 3541 2556 3119 L 2718 6746 M1 54 0 2691 6746 L 0 279 2718 6563 L 2773 6746 M1 54 0 2746 6746 L 0 279 2773 6563 L
+2827 6513 M1 54 0 2800 6513 L 0 3541 2827 3119 L 2881 6660 M1 54 0 2854 6660 L 0 373 2881 6400 L 2935 6660 M1 54 0 2908 6660 L
+0 373 2935 6400 L 3043 6660 M1 54 0 3016 6660 L 0 373 3043 6400 L 3097 6513 M1 54 0 3070 6513 L 0 3541 3097 3119 L 3151 6513 M1
+53 0 3124 6513 L 0 3541 3151 3119 L 3204 6513 M1 54 0 3177 6513 L 0 3541 3204 3119 L 3366 6746 M1 54 0 3339 6746 L 0 279 3366 6563 L
+3419 6660 M1 53 0 3393 6660 L 0 373 3419 6400 L 3580 6513 M1 53 0 3554 6513 L 0 3541 3580 3119 L 3634 6660 M1 54 0 3607 6660 L
+0 373 3634 6400 L 3687 6660 M1 53 0 3661 6660 L 0 373 3687 6400 L 3794 6513 M1 53 0 3768 6513 L 0 3541 3794 3119 L 3848 6807 M1
+54 0 3821 6807 L 0 232 3848 6660 L 3901 6513 M1 53 0 3875 6513 L 0 3541 3901 3119 L 3955 6513 M1 53 0 3928 6513 L 0 3541 3955 3119 L
+4008 6746 M1 54 0 3981 6746 L 0 279 4008 6563 L 4061 6660 M1 53 0 4035 6660 L 0 373 4061 6400 L 4115 6660 M1 53 0 4088 6660 L
+0 373 4115 6400 L 4168 6513 M1 53 0 4141 6513 L 0 3541 4168 3119 L 4221 6854 M1 54 0 4194 6854 L 0 204 4221 6728 L 4274 6660 M1
+53 0 4248 6660 L 0 373 4274 6400 L 4327 6513 M1 53 0 4301 6513 L 0 3541 4327 3119 L 4380 6513 M1 53 0 4354 6513 L 0 3541 4380 3119 L
+4433 6746 M1 53 0 4407 6746 L 0 279 4433 6563 L 4486 6513 M1 53 0 4460 6513 L 0 3541 4486 3119 L 4539 6513 M1 53 0 4513 6513 L
+0 3541 4539 3119 L 4592 6660 M1 53 0 4566 6660 L 0 373 4592 6400 L 4645 6660 M1 53 0 4619 6660 L 0 373 4645 6400 L 4698 6746 M1
+53 0 4672 6746 L 0 279 4698 6563 L 4751 6746 M1 52 0 4725 6746 L 0 279 4751 6563 L 4804 6807 M1 53 0 4777 6807 L 0 232 4804 6660 L
+4857 6807 M1 53 0 4830 6807 L 0 232 4857 6660 L 4909 6660 M1 53 0 4883 6660 L 0 373 4909 6400 L 4962 6953 M1 52 0 4936 6953 L
+0 156 4962 6861 L 5015 6660 M1 53 0 4988 6660 L 0 373 5015 6400 L 5067 6513 M1 53 0 5041 6513 L 0 3541 5067 3119 L 5120 6807 M1
+52 0 5094 6807 L 0 232 5120 6660 L 5172 6807 M1 53 0 5146 6807 L 0 232 5172 6660 L 5278 6746 M1 53 0 5251 6746 L 0 279 5278 6563 L
+5330 6513 M1 52 0 5304 6513 L 0 3541 5330 3119 L 5382 6660 M1 53 0 5356 6660 L 0 373 5382 6400 L 5435 6513 M1 52 0 5409 6513 L
+0 3541 5435 3119 L 5540 6660 M1 53 0 5513 6660 L 0 373 5540 6400 L 5644 6513 M1 52 0 5618 6513 L 0 3541 5644 3119 L 5749 6660 M1
+53 0 5722 6660 L 0 373 5749 6400 L 5801 6660 M1 52 0 5775 6660 L 0 373 5801 6400 L 5853 6892 M1 52 0 5827 6892 L 0 184 5853 6781 L
+5905 6807 M1 52 0 5879 6807 L 0 232 5905 6660 L 5957 6660 M1 52 0 5931 6660 L 0 373 5957 6400 L 6113 6513 M1 52 0 6087 6513 L
+0 3541 6113 3119 L 6165 6660 M1 52 0 6139 6660 L 0 373 6165 6400 L 6217 6660 M1 52 0 6191 6660 L 0 373 6217 6400 L 6269 6660 M1
+52 0 6243 6660 L 0 373 6269 6400 L 6321 6513 M1 52 0 6295 6513 L 0 3541 6321 3119 L 6372 6660 M1 51 0 6347 6660 L 0 373 6372 6400 L
+6424 6746 M1 52 0 6398 6746 L 0 279 6424 6563 L 6528 6513 M1 52 0 6502 6513 L 0 3541 6528 3119 L 6683 6660 M1 51 0 6657 6660 L
+0 373 6683 6400 L 6734 6746 M1 52 0 6708 6746 L 0 279 6734 6563 L 6786 6660 M1 51 0 6760 6660 L 0 373 6786 6400 L 6837 6746 M1
+52 0 6811 6746 L 0 279 6837 6563 L 6940 6513 M1 52 0 6914 6513 L 0 3541 6940 3119 L 6992 6513 M1 51 0 6966 6513 L 0 3541 6992 3119 L
+7043 6513 M1 52 0 7017 6513 L 0 3541 7043 3119 L 7197 6660 M1 52 0 7171 6660 L 0 373 7197 6400 L 7248 6513 M1 51 0 7223 6513 L
+0 3541 7248 3119 L 7299 6660 M1 51 0 7274 6660 L 0 373 7299 6400 L 7351 6660 M1 51 0 7325 6660 L 0 373 7351 6400 L 7402 6513 M1
+51 0 7376 6513 L 0 3541 7402 3119 L 7453 6513 M1 51 0 7427 6513 L 0 3541 7453 3119 L 7504 6513 M1 52 0 7478 6513 L
+0 3541 7504 3119 L 7555 6513 M1 51 0 7530 6513 L 0 3541 7555 3119 L 7606 6513 M1 51 0 7581 6513 L 0 3541 7606 3119 L 7657 6513 M1
+51 0 7632 6513 L 0 3541 7657 3119 L 7708 6513 M1 51 0 7683 6513 L 0 3541 7708 3119 L 7810 6513 M1 51 0 7784 6513 L
+0 3541 7810 3119 L 7861 6513 M1 51 0 7835 6513 L 0 3541 7861 3119 L 7912 6660 M1 51 0 7886 6660 L 0 373 7912 6400 L 7962 6746 M1
+51 0 7937 6746 L 0 279 7962 6563 L 8064 6513 M1 50 0 8039 6513 L 0 3541 8064 3119 L 8115 6660 M1 51 0 8089 6660 L 0 373 8115 6400 L
+8216 6660 M1 50 0 8191 6660 L 0 373 8216 6400 L 8267 6660 M1 51 0 8241 6660 L 0 373 8267 6400 L 8317 6660 M1 51 0 8292 6660 L
+0 373 8317 6400 L 8368 6513 M1 50 0 8343 6513 L 0 3541 8368 3119 L 8418 6513 M1 51 0 8393 6513 L 0 3541 8418 3119 L 8469 6513 M1
+50 0 8444 6513 L 0 3541 8469 3119 L 8519 6660 M1 51 0 8494 6660 L 0 373 8519 6400 L 8620 6660 M1 50 0 8595 6660 L 0 373 8620 6400 L
+8670 6513 M1 51 0 8645 6513 L 0 3541 8670 3119 L 8721 6513 M1 50 0 8696 6513 L 0 3541 8721 3119 L 8771 6660 M1 50 0 8746 6660 L
+0 373 8771 6400 L 8821 6660 M1 51 0 8796 6660 L 0 373 8821 6400 L 8922 6660 M1 50 0 8897 6660 L 0 373 8922 6400 L 8972 6513 M1
+50 0 8947 6513 L 0 3541 8972 3119 L 9122 6513 M1 50 0 9097 6513 L 0 3541 9122 3119 L 9173 6513 M1 51 0 9147 6513 L
+0 3541 9173 3119 L 9273 6746 M1 50 0 9248 6746 L 0 279 9273 6563 L 9323 6513 M1 49 0 9298 6513 L 0 3541 9323 3119 L 9422 6660 M1
+50 0 9397 6660 L 0 373 9422 6400 L 2 SLW 55 0 1050 6593 L 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 56 0 C 55 0 C 0 -1 C 55 0 C 55 0 C
+0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 55 0 C 0 -1 C 55 0 C
+0 1 C 54 0 C 0 2 C 55 0 C 0 -4 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -2 C 55 0 C 54 0 C 0 2 C 54 0 C 0 -3 C 55 0 C 0 -1 C 54 0 C 0 -1 C
+54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 1 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 1 C 54 0 C 0 9 C 54 0 C 0 -10 C
+53 0 C 0 -1 C 54 0 C 0 1 C 54 0 C 0 10 C 54 0 C 0 -6 C 54 0 C 0 -5 C 53 0 C 0 -3 C 54 0 C 0 -2 C 54 0 C 0 1 C 53 0 C 0 -3 C 54 0 C
+0 -1 C 53 0 C 0 5 C 54 0 C 0 15 C 53 0 C 0 -16 C 54 0 C 0 2 C 53 0 C 0 -10 C 53 0 C 0 5 C 54 0 C 0 15 C 53 0 C 0 38 C 53 0 C 0 -24 C
+53 0 C 0 -24 C 54 0 C 0 116 C 53 0 C 0 6 C 53 0 C 0 -66 C 53 0 C 0 81 C 53 0 C 0 -60 C 53 0 C 0 21 C 53 0 C 0 27 C 53 0 C 0 12 C
+53 0 C 0 -26 C 53 0 C 0 -2 C 52 0 C 0 145 C 53 0 C 0 -30 C 53 0 C 0 -113 C 53 0 C 0 -19 C 52 0 C 0 10 C 53 0 C 0 99 C 53 0 C 0 -97 C
+52 0 C 0 -116 C 53 0 C 0 29 C 52 0 C 0 -21 C 53 0 C 0 -3 C 52 0 C 0 -6 C 53 0 C 0 -16 C 52 0 C 0 -3 C 52 0 C 53 0 C 0 -1 C 52 0 C
+0 -1 C 52 0 C 0 5 C 52 0 C 0 84 C 53 0 C 0 32 C 52 0 C 0 181 C 52 0 C 0 -41 C 52 0 C 0 -245 C 52 0 C 0 -21 C 52 0 C 0 -1 C 52 0 C
+0 -1 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 1 C 52 0 C 0 -3 C 52 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 52 0 C
+0 -1 C 51 0 C 0 -1 C 52 0 C 51 0 C 52 0 C 0 -1 C 51 0 C 0 -2 C 52 0 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 52 0 C 51 0 C
+0 -2 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C
+51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 1 C 50 0 C 0 3 C 51 0 C 0 -5 C 51 0 C 0 -1 C 50 0 C 0 1 C 51 0 C 0 -3 C 51 0 C
+0 2 C 50 0 C 0 -1 C 51 0 C 0 -3 C 50 0 C 0 2 C 51 0 C -1 -2 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 33 C 50 0 C 0 133 C 50 0 C 0 -18 C
+51 0 C 0 -139 C 50 0 C 0 10 C 50 0 C 0 24 C 50 0 C 0 -43 C 50 0 C 0 -6 C 50 0 C 0 9 C 50 0 C 0 -10 C 51 0 C 0 26 C 50 0 C 0 28 C
+50 0 C 0 -48 C 49 0 C 0 -10 C 50 0 C 0 -1 C 50 0 C 55 0 1050 6593 L 0 0 1077 6593 L 55 0 1105 6592 L 0 0 1133 6592 L
+55 0 1160 6591 L 0 0 1188 6591 L 56 0 1215 6590 L 0 0 1243 6590 L 55 0 1271 6590 L 0 0 1298 6590 L 55 0 1326 6589 L 0 0 1353 6589 L
+55 0 1381 6589 L 0 0 1408 6589 L 55 0 1436 6588 L 0 0 1463 6588 L 55 0 1491 6587 L 0 0 1518 6587 L 55 0 1546 6586 L 0 0 1573 6586 L
+54 0 1601 6586 L 0 0 1628 6586 L 55 0 1655 6585 L 0 0 1683 6585 L 55 0 1710 6584 L 0 0 1738 6584 L 55 0 1765 6584 L 0 0 1793 6584 L
+55 0 1820 6583 L 0 0 1847 6583 L 54 0 1875 6582 L 0 0 1902 6582 L 55 0 1929 6582 L 0 0 1957 6582 L 55 0 1984 6581 L 0 0 2011 6581 L
+54 0 2039 6582 L 0 0 2066 6582 L 55 0 2093 6584 L 0 0 2121 6584 L 54 0 2148 6580 L 0 0 2175 6580 L 55 0 2202 6579 L 0 0 2230 6579 L
+54 0 2257 6579 L 0 0 2284 6579 L 55 0 2311 6577 L 0 0 2338 6577 L 54 0 2366 6577 L 0 0 2393 6577 L 54 0 2420 6579 L 0 0 2447 6579 L
+55 0 2474 6576 L 0 0 2502 6576 L 54 0 2529 6575 L 0 0 2556 6575 L 54 0 2583 6574 L 0 0 2610 6574 L 54 0 2637 6573 L 0 0 2664 6573 L
+54 0 2691 6572 L 0 0 2718 6572 L 54 0 2746 6571 L 0 0 2773 6571 L 54 0 2800 6571 L 0 0 2827 6571 L 54 0 2854 6570 L 0 0 2881 6570 L
+54 0 2908 6569 L 0 0 2935 6569 L 54 0 2962 6568 L 0 0 2989 6568 L 54 0 3016 6569 L 0 0 3043 6569 L 54 0 3070 6578 L 0 0 3097 6578 L
+53 0 3124 6568 L 0 0 3151 6568 L 54 0 3177 6567 L 0 0 3204 6567 L 54 0 3231 6568 L 0 0 3258 6568 L 54 0 3285 6578 L 0 0 3312 6578 L
+54 0 3339 6572 L 0 0 3366 6572 L 53 0 3393 6567 L 0 0 3419 6567 L 54 0 3446 6564 L 0 0 3473 6564 L 54 0 3500 6562 L 0 0 3527 6562 L
+53 0 3554 6563 L 0 0 3580 6563 L 54 0 3607 6560 L 0 0 3634 6560 L 53 0 3661 6559 L 0 0 3687 6559 L 54 0 3714 6564 L 0 0 3741 6564 L
+53 0 3768 6579 L 0 0 3794 6579 L 54 0 3821 6563 L 0 0 3848 6563 L 53 0 3875 6565 L 0 0 3901 6565 L 53 0 3928 6555 L 0 0 3955 6555 L
+54 0 3981 6560 L 0 0 4008 6560 L 53 0 4035 6575 L 0 0 4061 6575 L 53 0 4088 6613 L 0 0 4115 6613 L 53 0 4141 6589 L 0 0 4168 6589 L
+54 0 4194 6565 L 0 0 4221 6565 L 53 0 4248 6681 L 0 0 4274 6681 L 53 0 4301 6687 L 0 0 4327 6687 L 53 0 4354 6621 L 0 0 4380 6621 L
+53 0 4407 6702 L 0 0 4433 6702 L 53 0 4460 6642 L 0 0 4486 6642 L 53 0 4513 6663 L 0 0 4539 6663 L 53 0 4566 6690 L 0 0 4592 6690 L
+53 0 4619 6702 L 0 0 4645 6702 L 53 0 4672 6676 L 0 0 4698 6676 L 52 0 4725 6674 L 0 0 4751 6674 L 53 0 4777 6819 L 0 0 4804 6819 L
+53 0 4830 6789 L 0 0 4857 6789 L 53 0 4883 6676 L 0 0 4909 6676 L 52 0 4936 6657 L 0 0 4962 6657 L 53 0 4988 6667 L 0 0 5015 6667 L
+53 0 5041 6766 L 0 0 5067 6766 L 52 0 5094 6669 L 0 0 5120 6669 L 53 0 5146 6553 L 0 0 5172 6553 L 52 0 5199 6582 L 0 0 5225 6582 L
+53 0 5251 6561 L 0 0 5278 6561 L 52 0 5304 6558 L 0 0 5330 6558 L 53 0 5356 6552 L 0 0 5382 6552 L 52 0 5409 6536 L 0 0 5435 6536 L
+52 0 5461 6533 L 0 0 5487 6533 L 53 0 5513 6533 L 0 0 5540 6533 L 52 0 5566 6532 L 0 0 5592 6532 L 52 0 5618 6531 L 0 0 5644 6531 L
+52 0 5670 6536 L 0 0 5696 6536 L 53 0 5722 6620 L 0 0 5749 6620 L 52 0 5775 6652 L 0 0 5801 6652 L 52 0 5827 6833 L 0 0 5853 6833 L
+52 0 5879 6792 L 0 0 5905 6792 L 52 0 5931 6547 L 0 0 5957 6547 L 52 0 5983 6526 L 0 0 6009 6526 L 52 0 6035 6525 L 0 0 6061 6525 L
+52 0 6087 6524 L 0 0 6113 6524 L 52 0 6139 6523 L 0 0 6165 6523 L 52 0 6191 6523 L 0 0 6217 6523 L 52 0 6243 6524 L 0 0 6269 6524 L
+52 0 6295 6521 L 0 0 6321 6521 L 51 0 6347 6520 L 0 0 6372 6520 L 52 0 6398 6520 L 0 0 6424 6520 L 52 0 6450 6519 L 0 0 6476 6519 L
+52 0 6502 6518 L 0 0 6528 6518 L 51 0 6554 6517 L 0 0 6579 6517 L 52 0 6605 6517 L 0 0 6631 6517 L 51 0 6657 6516 L 0 0 6683 6516 L
+52 0 6708 6515 L 0 0 6734 6515 L 51 0 6760 6515 L 0 0 6786 6515 L 52 0 6811 6515 L 0 0 6837 6515 L 51 0 6863 6514 L 0 0 6889 6514 L
+52 0 6914 6512 L 0 0 6940 6512 L 51 0 6966 6512 L 0 0 6992 6512 L 52 0 7017 6511 L 0 0 7043 6511 L 51 0 7069 6510 L 0 0 7094 6510 L
+51 0 7120 6509 L 0 0 7146 6509 L 52 0 7171 6509 L 0 0 7197 6509 L 51 0 7223 6509 L 0 0 7248 6509 L 51 0 7274 6507 L 0 0 7299 6507 L
+51 0 7325 6507 L 0 0 7351 6507 L 51 0 7376 6506 L 0 0 7402 6506 L 51 0 7427 6505 L 0 0 7453 6505 L 52 0 7478 6505 L 0 0 7504 6505 L
+51 0 7530 6504 L 0 0 7555 6504 L 51 0 7581 6503 L 0 0 7606 6503 L 51 0 7632 6502 L 0 0 7657 6502 L 51 0 7683 6502 L 0 0 7708 6502 L
+50 0 7734 6501 L 0 0 7759 6501 L 51 0 7784 6500 L 0 0 7810 6500 L 51 0 7835 6500 L 0 0 7861 6500 L 51 0 7886 6499 L 0 0 7912 6499 L
+51 0 7937 6498 L 0 0 7962 6498 L 51 0 7988 6497 L 0 0 8013 6497 L 50 0 8039 6498 L 0 0 8064 6498 L 51 0 8089 6501 L 0 0 8115 6501 L
+51 0 8140 6496 L 0 0 8165 6496 L 50 0 8191 6495 L 0 0 8216 6495 L 51 0 8241 6496 L 0 0 8267 6496 L 51 0 8292 6493 L 0 0 8317 6493 L
+50 0 8343 6495 L 0 0 8368 6495 L 51 0 8393 6494 L 0 0 8418 6494 L 50 0 8444 6491 L 0 0 8469 6491 L 51 0 8494 6493 L 0 0 8519 6493 L
+51 0 8544 6491 L 0 0 8570 6491 L 50 0 8595 6490 L 0 0 8620 6490 L 51 0 8645 6490 L 0 0 8670 6490 L 50 0 8696 6523 L 0 0 8721 6523 L
+50 0 8746 6656 L 0 0 8771 6656 L 51 0 8796 6638 L 0 0 8821 6638 L 50 0 8847 6499 L 0 0 8872 6499 L 50 0 8897 6509 L 0 0 8922 6509 L
+50 0 8947 6533 L 0 0 8972 6533 L 50 0 8997 6490 L 0 0 9022 6490 L 50 0 9047 6484 L 0 0 9072 6484 L 50 0 9097 6493 L 0 0 9122 6493 L
+51 0 9147 6483 L 0 0 9173 6483 L 50 0 9198 6509 L 0 0 9223 6509 L 50 0 9248 6537 L 0 0 9273 6537 L 49 0 9298 6489 L 0 0 9323 6489 L
+50 0 9347 6479 L 0 0 9372 6479 L 50 0 9397 6478 L 0 0 9422 6478 L 55 0 1050 6414 L 55 0 C 0 -1 C 55 0 C 56 0 C 0 -1 C 55 0 C 55 0 C
+0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 54 0 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C
+54 0 C 55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 55 0 C 54 0 C 0 -1 C 54 0 C 55 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 54 0 C
+1 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 54 0 C
+53 0 C 0 -1 C 54 0 C 54 0 C 0 -1 C 53 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C 54 0 C 53 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C
+53 0 C 53 0 C 0 -1 C 53 0 C 54 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 53 0 C 53 0 C
+0 -1 C 52 0 C 53 0 C 0 -1 C 53 0 C 53 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 52 0 C
+53 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 53 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C
+52 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 51 0 C 52 0 C
+0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C
+51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 52 0 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 -1 C 51 0 C
+51 0 C 0 -1 C 51 0 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C
+51 0 C -1 0 C 51 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 50 0 C 0 -1 C 50 0 C 51 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 50 0 C
+50 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 50 0 C 0 -1 C 49 0 C 50 0 C 0 -1 C 50 0 C 55 0 1050 6414 L 0 0 1077 6414 L 55 0 1105 6414 L
+0 0 1133 6414 L 55 0 1160 6413 L 0 0 1188 6413 L 56 0 1215 6413 L 0 0 1243 6413 L 55 0 1271 6412 L 0 0 1298 6412 L 55 0 1326 6412 L
+0 0 1353 6412 L 55 0 1381 6411 L 0 0 1408 6411 L 55 0 1436 6411 L 0 0 1463 6411 L 55 0 1491 6410 L 0 0 1518 6410 L 55 0 1546 6410 L
+0 0 1573 6410 L 54 0 1601 6409 L 0 0 1628 6409 L 55 0 1655 6409 L 0 0 1683 6409 L 55 0 1710 6408 L 0 0 1738 6408 L 55 0 1765 6408 L
+0 0 1793 6408 L 55 0 1820 6407 L 0 0 1847 6407 L 54 0 1875 6407 L 0 0 1902 6407 L 55 0 1929 6406 L 0 0 1957 6406 L 55 0 1984 6406 L
+0 0 2011 6406 L 54 0 2039 6405 L 0 0 2066 6405 L 55 0 2093 6405 L 0 0 2121 6405 L 54 0 2148 6404 L 0 0 2175 6404 L 55 0 2202 6403 L
+0 0 2230 6403 L 54 0 2257 6403 L 0 0 2284 6403 L 55 0 2311 6402 L 0 0 2338 6402 L 54 0 2366 6402 L 0 0 2393 6402 L 54 0 2420 6401 L
+0 0 2447 6401 L 55 0 2474 6401 L 0 0 2502 6401 L 54 0 2529 6400 L 0 0 2556 6400 L 54 0 2583 6400 L 0 0 2610 6400 L 54 0 2637 6399 L
+0 0 2664 6399 L 54 0 2691 6399 L 0 0 2718 6399 L 54 0 2746 6398 L 0 0 2773 6398 L 54 0 2800 6398 L 0 0 2827 6398 L 54 0 2854 6397 L
+0 0 2881 6397 L 54 0 2908 6396 L 0 0 2935 6396 L 54 0 2962 6396 L 0 0 2989 6396 L 54 0 3016 6395 L 0 0 3043 6395 L 54 0 3070 6395 L
+0 0 3097 6395 L 53 0 3124 6394 L 0 0 3151 6394 L 54 0 3177 6394 L 0 0 3204 6394 L 54 0 3231 6393 L 0 0 3258 6393 L 54 0 3285 6393 L
+0 0 3312 6393 L 54 0 3339 6392 L 0 0 3366 6392 L 53 0 3393 6392 L 0 0 3419 6392 L 54 0 3446 6391 L 0 0 3473 6391 L 54 0 3500 6391 L
+0 0 3527 6391 L 53 0 3554 6390 L 0 0 3580 6390 L 54 0 3607 6389 L 0 0 3634 6389 L 53 0 3661 6389 L 0 0 3687 6389 L 54 0 3714 6388 L
+0 0 3741 6388 L 53 0 3768 6388 L 0 0 3794 6388 L 54 0 3821 6387 L 0 0 3848 6387 L 53 0 3875 6387 L 0 0 3901 6387 L 53 0 3928 6386 L
+0 0 3955 6386 L 54 0 3981 6386 L 0 0 4008 6386 L 53 0 4035 6385 L 0 0 4061 6385 L 53 0 4088 6385 L 0 0 4115 6385 L 53 0 4141 6384 L
+0 0 4168 6384 L 54 0 4194 6384 L 0 0 4221 6384 L 53 0 4248 6383 L 0 0 4274 6383 L 53 0 4301 6383 L 0 0 4327 6383 L 53 0 4354 6382 L
+0 0 4380 6382 L 53 0 4407 6381 L 0 0 4433 6381 L 53 0 4460 6381 L 0 0 4486 6381 L 53 0 4513 6380 L 0 0 4539 6380 L 53 0 4566 6380 L
+0 0 4592 6380 L 53 0 4619 6379 L 0 0 4645 6379 L 53 0 4672 6379 L 0 0 4698 6379 L 52 0 4725 6378 L 0 0 4751 6378 L 53 0 4777 6378 L
+0 0 4804 6378 L 53 0 4830 6377 L 0 0 4857 6377 L 53 0 4883 6377 L 0 0 4909 6377 L 52 0 4936 6376 L 0 0 4962 6376 L 53 0 4988 6376 L
+0 0 5015 6376 L 53 0 5041 6375 L 0 0 5067 6375 L 52 0 5094 6374 L 0 0 5120 6374 L 53 0 5146 6374 L 0 0 5172 6374 L 52 0 5199 6373 L
+0 0 5225 6373 L 53 0 5251 6373 L 0 0 5278 6373 L 52 0 5304 6372 L 0 0 5330 6372 L 53 0 5356 6372 L 0 0 5382 6372 L 52 0 5409 6371 L
+0 0 5435 6371 L 52 0 5461 6371 L 0 0 5487 6371 L 53 0 5513 6370 L 0 0 5540 6370 L 52 0 5566 6370 L 0 0 5592 6370 L 52 0 5618 6369 L
+0 0 5644 6369 L 52 0 5670 6368 L 0 0 5696 6368 L 53 0 5722 6368 L 0 0 5749 6368 L 52 0 5775 6367 L 0 0 5801 6367 L 52 0 5827 6367 L
+0 0 5853 6367 L 52 0 5879 6366 L 0 0 5905 6366 L 52 0 5931 6366 L 0 0 5957 6366 L 52 0 5983 6365 L 0 0 6009 6365 L 52 0 6035 6365 L
+0 0 6061 6365 L 52 0 6087 6364 L 0 0 6113 6364 L 52 0 6139 6364 L 0 0 6165 6364 L 52 0 6191 6363 L 0 0 6217 6363 L 52 0 6243 6362 L
+0 0 6269 6362 L 52 0 6295 6362 L 0 0 6321 6362 L 51 0 6347 6361 L 0 0 6372 6361 L 52 0 6398 6361 L 0 0 6424 6361 L 52 0 6450 6360 L
+0 0 6476 6360 L 52 0 6502 6360 L 0 0 6528 6360 L 51 0 6554 6359 L 0 0 6579 6359 L 52 0 6605 6359 L 0 0 6631 6359 L 51 0 6657 6358 L
+0 0 6683 6358 L 52 0 6708 6358 L 0 0 6734 6358 L 51 0 6760 6357 L 0 0 6786 6357 L 52 0 6811 6356 L 0 0 6837 6356 L 51 0 6863 6356 L
+0 0 6889 6356 L 52 0 6914 6355 L 0 0 6940 6355 L 51 0 6966 6355 L 0 0 6992 6355 L 52 0 7017 6354 L 0 0 7043 6354 L 51 0 7069 6354 L
+0 0 7094 6354 L 51 0 7120 6353 L 0 0 7146 6353 L 52 0 7171 6353 L 0 0 7197 6353 L 51 0 7223 6352 L 0 0 7248 6352 L 51 0 7274 6352 L
+0 0 7299 6352 L 51 0 7325 6351 L 0 0 7351 6351 L 51 0 7376 6350 L 0 0 7402 6350 L 51 0 7427 6350 L 0 0 7453 6350 L 52 0 7478 6349 L
+0 0 7504 6349 L 51 0 7530 6349 L 0 0 7555 6349 L 51 0 7581 6348 L 0 0 7606 6348 L 51 0 7632 6348 L 0 0 7657 6348 L 51 0 7683 6347 L
+0 0 7708 6347 L 50 0 7734 6346 L 0 0 7759 6346 L 51 0 7784 6346 L 0 0 7810 6346 L 51 0 7835 6345 L 0 0 7861 6345 L 51 0 7886 6345 L
+0 0 7912 6345 L 51 0 7937 6344 L 0 0 7962 6344 L 51 0 7988 6344 L 0 0 8013 6344 L 50 0 8039 6343 L 0 0 8064 6343 L 51 0 8089 6343 L
+0 0 8115 6343 L 51 0 8140 6342 L 0 0 8165 6342 L 50 0 8191 6341 L 0 0 8216 6341 L 51 0 8241 6341 L 0 0 8267 6341 L 51 0 8292 6340 L
+0 0 8317 6340 L 50 0 8343 6340 L 0 0 8368 6340 L 51 0 8393 6339 L 0 0 8418 6339 L 50 0 8444 6339 L 0 0 8469 6339 L 51 0 8494 6338 L
+0 0 8519 6338 L 51 0 8544 6338 L 0 0 8570 6338 L 50 0 8595 6337 L 0 0 8620 6337 L 51 0 8645 6336 L 0 0 8670 6336 L 50 0 8696 6336 L
+0 0 8721 6336 L 50 0 8746 6335 L 0 0 8771 6335 L 51 0 8796 6335 L 0 0 8821 6335 L 50 0 8847 6334 L 0 0 8872 6334 L 50 0 8897 6334 L
+0 0 8922 6334 L 50 0 8947 6333 L 0 0 8972 6333 L 50 0 8997 6333 L 0 0 9022 6333 L 50 0 9047 6332 L 0 0 9072 6332 L 50 0 9097 6332 L
+0 0 9122 6332 L 51 0 9147 6331 L 0 0 9173 6331 L 50 0 9198 6330 L 0 0 9223 6330 L 50 0 9248 6330 L 0 0 9273 6330 L 49 0 9298 6329 L
+0 0 9323 6329 L 50 0 9347 6329 L 0 0 9372 6329 L 50 0 9397 6328 L 0 0 9422 6328 L 55 0 1050 6474 L 0 -1 C 55 0 C 0 -1 C 55 0 C
+0 -1 C 56 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 55 0 C 0 -1 C 55 0 C 0 -1 C
+55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 2 C 54 0 C 0 5 C 55 0 C 0 -8 C 54 0 C 0 -1 C 55 0 C 0 1 C 54 0 C
+0 -2 C 55 0 C 0 -1 C 54 0 C 0 4 C 54 0 C 0 -4 C 55 0 C 0 -3 C 54 0 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 1 -2 C 54 0 C 0 -1 C 54 0 C
+54 0 C 0 -2 C 54 0 C 0 -1 C 54 0 C 0 2 C 54 0 C 0 16 C 54 0 C 0 -16 C 53 0 C 0 -3 C 54 0 C 0 3 C 54 0 C 0 19 C 54 0 C 0 -11 C 54 0 C
+0 -8 C 53 0 C 0 -6 C 54 0 C 0 -3 C 54 0 C 0 4 C 53 0 C 0 -6 C 54 0 C 0 -1 C 53 0 C 0 9 C 54 0 C 0 26 C 53 0 C 0 -28 C 54 0 C 0 4 C
+53 0 C 0 -17 C 53 0 C 0 11 C 54 0 C 0 25 C 53 0 C 0 61 C 53 0 C 0 -37 C 53 0 C 0 -39 C 54 0 C 0 173 C 53 0 C 0 8 C 53 0 C 0 -91 C
+53 0 C 0 110 C 53 0 C 0 -80 C 53 0 C 0 29 C 53 0 C 0 36 C 53 0 C 0 16 C 53 0 C 0 -33 C 53 0 C 0 -3 C 52 0 C 0 177 C 53 0 C 0 -34 C
+53 0 C 0 -140 C 53 0 C 0 -26 C 52 0 C 0 14 C 53 0 C 0 124 C 53 0 C 0 -121 C 52 0 C 0 -174 C 53 0 C 0 49 C 52 0 C 0 -34 C 53 0 C
+0 -4 C 52 0 C 0 -10 C 53 0 C 0 -30 C 52 0 C 0 -4 C 52 0 C 0 -1 C 53 0 C 52 0 C 0 -1 C 52 0 C 0 9 C 52 0 C 0 135 C 53 0 C 0 45 C
+52 0 C 0 220 C 52 0 C 0 -47 C 52 0 C 0 -331 C 52 0 C 0 -38 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 52 0 C 0 1 C 52 0 C
+0 -3 C 52 0 C 0 -2 C 51 0 C 0 -1 C 52 0 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C
+0 1 C 52 0 C 0 -1 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 1 C 51 0 C 0 -2 C
+51 0 C 0 -2 C 51 0 C 51 0 C 0 -1 C 51 0 C 52 0 C 0 -1 C 51 0 C 0 -2 C 51 0 C 51 0 C 51 0 C 0 -2 C 50 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C
+0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 3 C 50 0 C 0 6 C 51 0 C 0 -10 C 51 0 C 0 -1 C 50 0 C 0 2 C 51 0 C 0 -5 C 51 0 C 0 4 C
+50 0 C 51 0 C 0 -6 C 50 0 C 0 3 C 51 0 C -1 -3 C 51 0 C 0 -1 C 50 0 C 51 0 C 0 61 C 50 0 C 0 193 C 50 0 C 0 -22 C 51 0 C 0 -212 C
+50 0 C 0 18 C 50 0 C 0 42 C 50 0 C 0 -76 C 50 0 C 0 -10 C 50 0 C 0 16 C 50 0 C 0 -18 C 51 0 C 0 48 C 50 0 C 0 49 C 50 0 C 0 -84 C
+49 0 C 0 -18 C 50 0 C 0 -2 C 50 0 C 55 0 1050 6474 L 0 0 1077 6474 L 55 0 1105 6473 L 0 0 1133 6473 L 55 0 1160 6472 L
+0 0 1188 6472 L 56 0 1215 6471 L 0 0 1243 6471 L 55 0 1271 6470 L 0 0 1298 6470 L 55 0 1326 6469 L 0 0 1353 6469 L 55 0 1381 6469 L
+0 0 1408 6469 L 55 0 1436 6468 L 0 0 1463 6468 L 55 0 1491 6467 L 0 0 1518 6467 L 55 0 1546 6466 L 0 0 1573 6466 L 54 0 1601 6465 L
+0 0 1628 6465 L 55 0 1655 6465 L 0 0 1683 6465 L 55 0 1710 6464 L 0 0 1738 6464 L 55 0 1765 6463 L 0 0 1793 6463 L 55 0 1820 6462 L
+0 0 1847 6462 L 54 0 1875 6461 L 0 0 1902 6461 L 55 0 1929 6460 L 0 0 1957 6460 L 55 0 1984 6459 L 0 0 2011 6459 L 54 0 2039 6461 L
+0 0 2066 6461 L 55 0 2093 6466 L 0 0 2121 6466 L 54 0 2148 6458 L 0 0 2175 6458 L 55 0 2202 6457 L 0 0 2230 6457 L 54 0 2257 6458 L
+0 0 2284 6458 L 55 0 2311 6456 L 0 0 2338 6456 L 54 0 2366 6455 L 0 0 2393 6455 L 54 0 2420 6459 L 0 0 2447 6459 L 55 0 2474 6455 L
+0 0 2502 6455 L 54 0 2529 6452 L 0 0 2556 6452 L 54 0 2583 6452 L 0 0 2610 6452 L 54 0 2637 6451 L 0 0 2664 6451 L 54 0 2691 6450 L
+0 0 2718 6450 L 54 0 2746 6448 L 0 0 2773 6448 L 54 0 2800 6447 L 0 0 2827 6447 L 54 0 2854 6447 L 0 0 2881 6447 L 54 0 2908 6445 L
+0 0 2935 6445 L 54 0 2962 6444 L 0 0 2989 6444 L 54 0 3016 6446 L 0 0 3043 6446 L 54 0 3070 6462 L 0 0 3097 6462 L 53 0 3124 6446 L
+0 0 3151 6446 L 54 0 3177 6443 L 0 0 3204 6443 L 54 0 3231 6446 L 0 0 3258 6446 L 54 0 3285 6465 L 0 0 3312 6465 L 54 0 3339 6454 L
+0 0 3366 6454 L 53 0 3393 6446 L 0 0 3419 6446 L 54 0 3446 6440 L 0 0 3473 6440 L 54 0 3500 6437 L 0 0 3527 6437 L 53 0 3554 6441 L
+0 0 3580 6441 L 54 0 3607 6435 L 0 0 3634 6435 L 53 0 3661 6434 L 0 0 3687 6434 L 54 0 3714 6443 L 0 0 3741 6443 L 53 0 3768 6469 L
+0 0 3794 6469 L 54 0 3821 6441 L 0 0 3848 6441 L 53 0 3875 6445 L 0 0 3901 6445 L 53 0 3928 6428 L 0 0 3955 6428 L 54 0 3981 6439 L
+0 0 4008 6439 L 53 0 4035 6464 L 0 0 4061 6464 L 53 0 4088 6525 L 0 0 4115 6525 L 53 0 4141 6488 L 0 0 4168 6488 L 54 0 4194 6449 L
+0 0 4221 6449 L 53 0 4248 6622 L 0 0 4274 6622 L 53 0 4301 6630 L 0 0 4327 6630 L 53 0 4354 6539 L 0 0 4380 6539 L 53 0 4407 6649 L
+0 0 4433 6649 L 53 0 4460 6569 L 0 0 4486 6569 L 53 0 4513 6598 L 0 0 4539 6598 L 53 0 4566 6634 L 0 0 4592 6634 L 53 0 4619 6650 L
+0 0 4645 6650 L 53 0 4672 6617 L 0 0 4698 6617 L 52 0 4725 6614 L 0 0 4751 6614 L 53 0 4777 6791 L 0 0 4804 6791 L 53 0 4830 6757 L
+0 0 4857 6757 L 53 0 4883 6617 L 0 0 4909 6617 L 52 0 4936 6591 L 0 0 4962 6591 L 53 0 4988 6605 L 0 0 5015 6605 L 53 0 5041 6729 L
+0 0 5067 6729 L 52 0 5094 6608 L 0 0 5120 6608 L 53 0 5146 6434 L 0 0 5172 6434 L 52 0 5199 6483 L 0 0 5225 6483 L 53 0 5251 6449 L
+0 0 5278 6449 L 52 0 5304 6445 L 0 0 5330 6445 L 53 0 5356 6435 L 0 0 5382 6435 L 52 0 5409 6405 L 0 0 5435 6405 L 52 0 5461 6401 L
+0 0 5487 6401 L 53 0 5513 6400 L 0 0 5540 6400 L 52 0 5566 6400 L 0 0 5592 6400 L 52 0 5618 6399 L 0 0 5644 6399 L 52 0 5670 6408 L
+0 0 5696 6408 L 53 0 5722 6543 L 0 0 5749 6543 L 52 0 5775 6588 L 0 0 5801 6588 L 52 0 5827 6808 L 0 0 5853 6808 L 52 0 5879 6761 L
+0 0 5905 6761 L 52 0 5931 6430 L 0 0 5957 6430 L 52 0 5983 6392 L 0 0 6009 6392 L 52 0 6035 6391 L 0 0 6061 6391 L 52 0 6087 6390 L
+0 0 6113 6390 L 52 0 6139 6389 L 0 0 6165 6389 L 52 0 6191 6389 L 0 0 6217 6389 L 52 0 6243 6390 L 0 0 6269 6390 L 52 0 6295 6387 L
+0 0 6321 6387 L 51 0 6347 6385 L 0 0 6372 6385 L 52 0 6398 6384 L 0 0 6424 6384 L 52 0 6450 6384 L 0 0 6476 6384 L 52 0 6502 6383 L
+0 0 6528 6383 L 51 0 6554 6382 L 0 0 6579 6382 L 52 0 6605 6381 L 0 0 6631 6381 L 51 0 6657 6380 L 0 0 6683 6380 L 52 0 6708 6379 L
+0 0 6734 6379 L 51 0 6760 6378 L 0 0 6786 6378 L 52 0 6811 6379 L 0 0 6837 6379 L 51 0 6863 6378 L 0 0 6889 6378 L 52 0 6914 6376 L
+0 0 6940 6376 L 51 0 6966 6375 L 0 0 6992 6375 L 52 0 7017 6374 L 0 0 7043 6374 L 51 0 7069 6373 L 0 0 7094 6373 L 51 0 7120 6372 L
+0 0 7146 6372 L 52 0 7171 6371 L 0 0 7197 6371 L 51 0 7223 6372 L 0 0 7248 6372 L 51 0 7274 6370 L 0 0 7299 6370 L 51 0 7325 6368 L
+0 0 7351 6368 L 51 0 7376 6368 L 0 0 7402 6368 L 51 0 7427 6367 L 0 0 7453 6367 L 52 0 7478 6367 L 0 0 7504 6367 L 51 0 7530 6366 L
+0 0 7555 6366 L 51 0 7581 6364 L 0 0 7606 6364 L 51 0 7632 6364 L 0 0 7657 6364 L 51 0 7683 6364 L 0 0 7708 6364 L 50 0 7734 6362 L
+0 0 7759 6362 L 51 0 7784 6361 L 0 0 7810 6361 L 51 0 7835 6360 L 0 0 7861 6360 L 51 0 7886 6359 L 0 0 7912 6359 L 51 0 7937 6358 L
+0 0 7962 6358 L 51 0 7988 6357 L 0 0 8013 6357 L 50 0 8039 6360 L 0 0 8064 6360 L 51 0 8089 6366 L 0 0 8115 6366 L 51 0 8140 6356 L
+0 0 8165 6356 L 50 0 8191 6355 L 0 0 8216 6355 L 51 0 8241 6357 L 0 0 8267 6357 L 51 0 8292 6352 L 0 0 8317 6352 L 50 0 8343 6356 L
+0 0 8368 6356 L 51 0 8393 6356 L 0 0 8418 6356 L 50 0 8444 6350 L 0 0 8469 6350 L 51 0 8494 6353 L 0 0 8519 6353 L 51 0 8544 6350 L
+0 0 8570 6350 L 50 0 8595 6349 L 0 0 8620 6349 L 51 0 8645 6349 L 0 0 8670 6349 L 50 0 8696 6410 L 0 0 8721 6410 L 50 0 8746 6603 L
+0 0 8771 6603 L 51 0 8796 6581 L 0 0 8821 6581 L 50 0 8847 6369 L 0 0 8872 6369 L 50 0 8897 6387 L 0 0 8922 6387 L 50 0 8947 6429 L
+0 0 8972 6429 L 50 0 8997 6353 L 0 0 9022 6353 L 50 0 9047 6343 L 0 0 9072 6343 L 50 0 9097 6359 L 0 0 9122 6359 L 51 0 9147 6341 L
+0 0 9173 6341 L 50 0 9198 6389 L 0 0 9223 6389 L 50 0 9248 6438 L 0 0 9273 6438 L 49 0 9298 6354 L 0 0 9323 6354 L 50 0 9347 6336 L
+0 0 9372 6336 L 50 0 9397 6334 L 0 0 9422 6334 L 1.000 0.000 1.000 setrgbcolor 1.000 1.000 0.000 setrgbcolor
+1.000 0.500 0.000 setrgbcolor 0.000 0.000 0.000 setrgbcolor
+ 13.25  pgscale div FS gs    90.00        157.469       4421.595 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00       4249.611       7315.535 moveto rotate (data and folded model) TBC gr
+8397 0 1050 780 L 0 2339 C -8397 0 C 0 -2339 C 0 38 7427 780 L 0 38 7427 3081 L 38 0 1050 839 L 76 0 1050 941 L 38 0 1050 1042 L
+38 0 1050 1144 L 38 0 1050 1246 L 38 0 1050 1348 L 76 0 1050 1450 L 38 0 1050 1551 L 38 0 1050 1653 L 38 0 1050 1755 L
+38 0 1050 1857 L 76 0 1050 1959 L 38 0 1050 2060 L 38 0 1050 2162 L 38 0 1050 2264 L 38 0 1050 2366 L 76 0 1050 2468 L
+38 0 1050 2569 L 38 0 1050 2671 L 38 0 1050 2773 L 38 0 1050 2875 L 76 0 1050 2977 L 38 0 1050 3078 L 38 0 9409 839 L
+76 0 9371 941 L 38 0 9409 1042 L 38 0 9409 1144 L 38 0 9409 1246 L 38 0 9409 1348 L 76 0 9371 1450 L 38 0 9409 1551 L
+38 0 9409 1653 L 38 0 9409 1755 L 38 0 9409 1857 L 76 0 9371 1959 L 38 0 9409 2060 L 38 0 9409 2162 L 38 0 9409 2264 L
+38 0 9409 2366 L 76 0 9371 2468 L 38 0 9409 2569 L 38 0 9409 2671 L 38 0 9409 2773 L 38 0 9409 2875 L 76 0 9371 2977 L
+38 0 9409 3078 L
+ 13.25  pgscale div FS gs     0.00        264.135        890.994 moveto rotate (-5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        831.657       1399.992 moveto rotate (0) HVC gr
+ 13.25  pgscale div FS gs     0.00        370.970       1908.990 moveto rotate (5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        575.837       2417.988 moveto rotate (0.01) HVC gr
+ 13.25  pgscale div FS gs     0.00        473.775       2926.986 moveto rotate (0.015) HVC gr
+1 SLW 1077 2130 M1 55 0 1050 2130 L 0 1071 1077 1595 L 1133 1061 M1 55 0 1105 1061 L 0 0 1133 1061 L 1188 1063 M1 55 0 1160 1063 L
+0 0 1188 1063 L 1243 1064 M1 56 0 1215 1064 L 0 0 1243 1064 L 1298 1333 M1 55 0 1271 1333 L 0 535 1298 1065 L 1353 1066 M1
+55 0 1326 1066 L 0 0 1353 1066 L 1408 1335 M1 55 0 1381 1335 L 0 535 1408 1068 L 1463 1337 M1 55 0 1436 1337 L 0 535 1463 1069 L
+1518 1070 M1 55 0 1491 1070 L 0 0 1518 1070 L 1573 1607 M1 55 0 1546 1607 L 0 757 1573 1228 L 1628 1340 M1 54 0 1601 1340 L
+0 536 1628 1072 L 1683 1073 M1 55 0 1655 1073 L 0 0 1683 1073 L 1738 1343 M1 55 0 1710 1343 L 0 535 1738 1075 L 1793 1344 M1
+55 0 1765 1344 L 0 536 1793 1076 L 1847 1880 M1 55 0 1820 1880 L 0 927 1847 1417 L 1902 2149 M1 54 0 1875 2149 L 0 1070 1902 1614 L
+1957 1348 M1 55 0 1929 1348 L 0 535 1957 1080 L 2011 1081 M1 55 0 1984 1081 L 0 0 2011 1081 L 2066 1080 M1 54 0 2039 1080 L
+0 0 2066 1080 L 2121 1343 M1 55 0 2093 1343 L 0 535 2121 1075 L 2175 1083 M1 54 0 2148 1083 L 0 0 2175 1083 L 2230 1620 M1
+55 0 2202 1620 L 0 757 2230 1242 L 2284 1619 M1 54 0 2257 1619 L 0 757 2284 1241 L 2338 2157 M1 55 0 2311 2157 L 0 1070 2338 1622 L
+2393 1623 M1 54 0 2366 1623 L 0 757 2393 1245 L 2447 1620 M1 54 0 2420 1620 L 0 757 2447 1242 L 2502 1356 M1 55 0 2474 1356 L
+0 535 2502 1089 L 2556 1359 M1 54 0 2529 1359 L 0 535 2556 1092 L 2610 1093 M1 54 0 2583 1093 L 0 0 2610 1093 L 2664 1094 M1
+54 0 2637 1094 L 0 0 2664 1094 L 2718 1899 M1 54 0 2691 1899 L 0 927 2718 1435 L 2773 1901 M1 54 0 2746 1901 L 0 927 2773 1437 L
+2827 1366 M1 54 0 2800 1366 L 0 535 2827 1099 L 2881 1635 M1 54 0 2854 1635 L 0 757 2881 1256 L 2935 1637 M1 54 0 2908 1637 L
+0 756 2935 1259 L 2989 1103 M1 54 0 2962 1103 L 0 0 2989 1103 L 3043 1637 M1 54 0 3016 1637 L 0 756 3043 1259 L 3097 1354 M1
+54 0 3070 1354 L 0 535 3097 1087 L 3151 1370 M1 53 0 3124 1370 L 0 536 3151 1102 L 3204 1373 M1 54 0 3177 1373 L 0 535 3204 1105 L
+3258 1103 M1 54 0 3231 1103 L 0 0 3258 1103 L 3312 1085 M1 54 0 3285 1085 L 0 0 3312 1085 L 3366 1899 M1 54 0 3339 1899 L
+0 927 3366 1435 L 3419 1639 M1 53 0 3393 1639 L 0 756 3419 1261 L 3473 1110 M1 54 0 3446 1110 L 0 0 3473 1110 L 3527 1113 M1
+54 0 3500 1113 L 0 0 3527 1113 L 3580 1378 M1 53 0 3554 1378 L 0 535 3580 1110 L 3634 1651 M1 54 0 3607 1651 L 0 757 3634 1272 L
+3687 1652 M1 53 0 3661 1652 L 0 757 3687 1274 L 3741 1109 M1 54 0 3714 1109 L 0 0 3741 1109 L 3794 1352 M1 53 0 3768 1352 L
+0 535 3794 1084 L 3848 2182 M1 54 0 3821 2182 L 0 1070 3848 1647 L 3901 1376 M1 53 0 3875 1376 L 0 535 3901 1109 L 3955 1391 M1
+53 0 3928 1391 L 0 535 3955 1124 L 4008 1918 M1 54 0 3981 1918 L 0 927 4008 1454 L 4061 1627 M1 53 0 4035 1627 L 0 757 4061 1248 L
+4115 1556 M1 53 0 4088 1556 L 0 757 4115 1178 L 4168 1334 M1 53 0 4141 1334 L 0 536 4168 1066 L 4221 2445 M1 54 0 4194 2445 L
+0 1196 4221 1847 L 4274 1393 M1 53 0 4248 1393 L 0 757 4274 1015 L 4327 1108 M1 53 0 4301 1108 L 0 535 4327 840 L 4380 1272 M1
+53 0 4354 1272 L 0 535 4380 1004 L 4433 1600 M1 53 0 4407 1600 L 0 927 4433 1137 L 4486 1226 M1 53 0 4460 1226 L 0 535 4486 958 L
+4539 1175 M1 53 0 4513 1175 L 0 535 4539 908 L 4592 1368 M1 53 0 4566 1368 L 0 756 4592 990 L 4645 1331 M1 53 0 4619 1331 L
+0 756 4645 953 L 4698 1674 M1 53 0 4672 1674 L 0 927 4698 1210 L 4751 1680 M1 52 0 4725 1680 L 0 927 4751 1217 L 4804 1385 M1
+53 0 4777 1385 L 0 1070 4804 850 L 4857 1533 M1 53 0 4830 1533 L 0 1071 4857 997 L 4909 1406 M1 53 0 4883 1406 L 0 757 4909 1028 L
+4962 3063 M1 52 0 4936 3063 L 0 813 4962 2306 L 5015 1432 M1 53 0 4988 1432 L 0 757 5015 1054 L 5067 835 M1 53 0 5041 835 L
+0 323 5067 780 L 5120 1962 M1 52 0 5094 1962 L 0 1070 5120 1427 L 5172 2197 M1 53 0 5146 2197 L 0 1070 5172 1662 L 5225 1079 M1
+52 0 5199 1079 L 0 0 5225 1079 L 5278 1917 M1 53 0 5251 1917 L 0 927 5278 1454 L 5330 1386 M1 52 0 5304 1386 L 0 535 5330 1119 L
+5382 1663 M1 53 0 5356 1663 L 0 757 5382 1284 L 5435 1420 M1 52 0 5409 1420 L 0 535 5435 1152 L 5487 1155 M1 52 0 5461 1155 L
+0 0 5487 1155 L 5540 1692 M1 53 0 5513 1692 L 0 757 5540 1313 L 5592 1157 M1 52 0 5566 1157 L 0 0 5592 1157 L 5644 1426 M1
+52 0 5618 1426 L 0 535 5644 1159 L 5696 1151 M1 52 0 5670 1151 L 0 0 5696 1151 L 5749 1542 M1 53 0 5722 1542 L 0 757 5749 1163 L
+5801 1470 M1 52 0 5775 1470 L 0 756 5801 1092 L 5853 1841 M1 52 0 5827 1841 L 0 1311 5853 1186 L 5905 1522 M1 52 0 5879 1522 L
+0 1070 5905 987 L 5957 1670 M1 52 0 5931 1670 L 0 757 5957 1292 L 6009 1166 M1 52 0 5983 1166 L 0 0 6009 1166 L 6061 1167 M1
+52 0 6035 1167 L 0 0 6061 1167 L 6113 1435 M1 52 0 6087 1435 L 0 535 6113 1168 L 6165 1704 M1 52 0 6139 1704 L 0 756 6165 1326 L
+6217 1705 M1 52 0 6191 1705 L 0 757 6217 1326 L 6269 1704 M1 52 0 6243 1704 L 0 757 6269 1325 L 6321 1439 M1 52 0 6295 1439 L
+0 536 6321 1171 L 6372 1708 M1 51 0 6347 1708 L 0 756 6372 1330 L 6424 1976 M1 52 0 6398 1976 L 0 927 6424 1513 L 6476 1175 M1
+52 0 6450 1175 L 0 0 6476 1175 L 6528 1443 M1 52 0 6502 1443 L 0 535 6528 1176 L 6579 1177 M1 51 0 6554 1177 L 0 0 6579 1177 L
+6631 1178 M1 52 0 6605 1178 L 0 0 6631 1178 L 6683 1714 M1 51 0 6657 1714 L 0 757 6683 1335 L 6734 1982 M1 52 0 6708 1982 L
+0 927 6734 1519 L 6786 1715 M1 51 0 6760 1715 L 0 757 6786 1337 L 6837 1983 M1 52 0 6811 1983 L 0 927 6837 1519 L 6889 1181 M1
+51 0 6863 1181 L 0 0 6889 1181 L 6940 1451 M1 52 0 6914 1451 L 0 535 6940 1183 L 6992 1452 M1 51 0 6966 1452 L 0 535 6992 1184 L
+7043 1452 M1 52 0 7017 1452 L 0 535 7043 1185 L 7094 1186 M1 51 0 7069 1186 L 0 0 7094 1186 L 7146 1187 M1 51 0 7120 1187 L
+0 0 7146 1187 L 7197 1723 M1 52 0 7171 1723 L 0 757 7197 1344 L 7248 1455 M1 51 0 7223 1455 L 0 535 7248 1188 L 7299 1724 M1
+51 0 7274 1724 L 0 757 7299 1346 L 7351 1725 M1 51 0 7325 1725 L 0 757 7351 1347 L 7402 1459 M1 51 0 7376 1459 L 0 535 7402 1191 L
+7453 1459 M1 51 0 7427 1459 L 0 535 7453 1192 L 7504 1460 M1 52 0 7478 1460 L 0 535 7504 1192 L 7555 1461 M1 51 0 7530 1461 L
+0 535 7555 1193 L 7606 1462 M1 51 0 7581 1462 L 0 535 7606 1195 L 7657 1463 M1 51 0 7632 1463 L 0 535 7657 1195 L 7708 1463 M1
+51 0 7683 1463 L 0 535 7708 1196 L 7759 1197 M1 50 0 7734 1197 L 0 0 7759 1197 L 7810 1466 M1 51 0 7784 1466 L 0 535 7810 1198 L
+7861 1466 M1 51 0 7835 1466 L 0 535 7861 1199 L 7912 1735 M1 51 0 7886 1735 L 0 756 7912 1357 L 7962 2004 M1 51 0 7937 2004 L
+0 927 7962 1540 L 8013 1202 M1 51 0 7988 1202 L 0 0 8013 1202 L 8064 1468 M1 50 0 8039 1468 L 0 536 8064 1200 L 8115 1732 M1
+51 0 8089 1732 L 0 756 8115 1354 L 8165 1203 M1 51 0 8140 1203 L 0 0 8165 1203 L 8216 1739 M1 50 0 8191 1739 L 0 757 8216 1361 L
+8267 1739 M1 51 0 8241 1739 L 0 757 8267 1360 L 8317 1741 M1 51 0 8292 1741 L 0 757 8317 1363 L 8368 1472 M1 50 0 8343 1472 L
+0 536 8368 1204 L 8418 1472 M1 51 0 8393 1472 L 0 535 8418 1205 L 8469 1476 M1 50 0 8444 1476 L 0 536 8469 1208 L 8519 1742 M1
+51 0 8494 1742 L 0 756 8519 1364 L 8570 1209 M1 51 0 8544 1209 L 0 0 8570 1209 L 8620 1745 M1 50 0 8595 1745 L 0 756 8620 1367 L
+8670 1478 M1 51 0 8645 1478 L 0 535 8670 1210 L 8721 1437 M1 50 0 8696 1437 L 0 535 8721 1170 L 8771 1459 M1 50 0 8746 1459 L
+0 757 8771 1081 L 8821 1501 M1 51 0 8796 1501 L 0 757 8821 1123 L 8872 1199 M1 50 0 8847 1199 L 0 0 8872 1199 L 8922 1723 M1
+50 0 8897 1723 L 0 756 8922 1345 L 8972 1423 M1 50 0 8947 1423 L 0 536 8972 1155 L 9022 1210 M1 50 0 8997 1210 L 0 0 9022 1210 L
+9072 1216 M1 50 0 9047 1216 L 0 0 9072 1216 L 9122 1474 M1 50 0 9097 1474 L 0 535 9122 1207 L 9173 1486 M1 51 0 9147 1486 L
+0 535 9173 1218 L 9223 1188 M1 50 0 9198 1188 L 0 0 9223 1188 L 9273 1953 M1 50 0 9248 1953 L 0 927 9273 1489 L 9323 1479 M1
+49 0 9298 1479 L 0 536 9323 1211 L 9372 1222 M1 50 0 9347 1222 L 0 0 9372 1222 L 9422 1759 M1 50 0 9397 1759 L 0 757 9422 1380 L
+2 SLW
+ 13.25  pgscale div FS gs    90.00        157.469       1302.795 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00       4726.290        365.484 moveto rotate (Energy \(keV\)) HVC gr
+0.000 1.000 0.000 setrgbcolor 8397 0 1050 1450 L 0.000 0.000 0.000 setrgbcolor 1 SLW
+  9.36  pgscale div FS gs     0.00       8908.154         61.977 moveto rotate (neolnx 10-Sep-2024 12:50) HVC gr
+0.000 1.000 0.000 setrgbcolor 2 SLW
+PGPLOT restore showpage
+%%PageTrailer
+%%PageBoundingBox: 41 -18 584 791
+
+%%Page: 4 4
+%%BeginPageSetup
+/PGPLOT save def
+pgscale pgscale scale
+8146 250 translate 90 rotate
+1 setlinejoin 1 setlinecap 1 SLW 1 SCF
+%%EndPageSetup
+%%PageBoundingBox: (atend)
+0.000 0.000 0.000 setrgbcolor 2 SLW 8396 0 1050 3118 L 0 3898 C -8396 0 C 0 -3898 C 0 39 7427 3118 L 0 38 7427 6978 L
+76 0 1050 3118 L 38 0 1050 3412 L 38 0 1050 3583 L 38 0 1050 3705 L 38 0 1050 3800 L 38 0 1050 3877 L 38 0 1050 3942 L
+38 0 1050 3998 L 38 0 1050 4048 L 76 0 1050 4093 L 38 0 1050 4386 L 38 0 1050 4558 L 38 0 1050 4680 L 38 0 1050 4774 L
+38 0 1050 4851 L 38 0 1050 4916 L 38 0 1050 4973 L 38 0 1050 5023 L 76 0 1050 5067 L 38 0 1050 5361 L 38 0 1050 5532 L
+38 0 1050 5654 L 38 0 1050 5749 L 38 0 1050 5826 L 38 0 1050 5891 L 38 0 1050 5947 L 38 0 1050 5997 L 76 0 1050 6042 L
+38 0 1050 6335 L 38 0 1050 6507 L 38 0 1050 6629 L 38 0 1050 6723 L 38 0 1050 6800 L 38 0 1050 6865 L 38 0 1050 6922 L
+38 0 1050 6972 L 76 0 1050 7016 L 76 0 9370 3118 L 38 0 9408 3412 L 38 0 9408 3583 L 38 0 9408 3705 L 38 0 9408 3800 L
+38 0 9408 3877 L 38 0 9408 3942 L 38 0 9408 3998 L 38 0 9408 4048 L 76 0 9370 4093 L 38 0 9408 4386 L 38 0 9408 4558 L
+38 0 9408 4680 L 38 0 9408 4774 L 38 0 9408 4851 L 38 0 9408 4916 L 38 0 9408 4973 L 38 0 9408 5023 L 76 0 9370 5067 L
+38 0 9408 5361 L 38 0 9408 5532 L 38 0 9408 5654 L 38 0 9408 5749 L 38 0 9408 5826 L 38 0 9408 5891 L 38 0 9408 5947 L
+38 0 9408 5997 L 76 0 9370 6042 L 38 0 9408 6335 L 38 0 9408 6507 L 38 0 9408 6629 L 38 0 9408 6723 L 38 0 9408 6800 L
+38 0 9408 6865 L 38 0 9408 6922 L 38 0 9408 6972 L 76 0 9370 7016 L
+ 13.25  pgscale div FS gs     0.00        604.213       3068.701 moveto rotate (10) HVC   7.95 pgscale div FS up (-3) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        575.798       4043.201 moveto rotate (0.01) HVC gr
+ 13.25  pgscale div FS gs     0.00        677.848       5017.700 moveto rotate (0.1) HVC gr
+ 13.25  pgscale div FS gs     0.00        831.585       5992.200 moveto rotate (1) HVC gr
+ 13.25  pgscale div FS gs     0.00        729.535       6966.700 moveto rotate (10) HVC gr
+1 SLW 1.000 0.000 0.000 setrgbcolor
+/M1 {MB 0 0 1 FC ME} bind def
+/MFAC      5.997 def
+1077 4114 M1 55 0 1050 4114 L 0 465 1077 3821 L 1298 3527 M1 55 0 1270 3527 L 0 703 1298 3118 L 1408 3527 M1 55 0 1381 3527 L
+0 703 1408 3118 L 1463 3527 M1 55 0 1436 3527 L 0 703 1463 3118 L 1573 3821 M1 54 0 1546 3821 L 0 746 1573 3301 L 1628 3527 M1
+55 0 1600 3527 L 0 703 1628 3118 L 1738 3527 M1 55 0 1710 3527 L 0 703 1738 3118 L 1792 3527 M1 55 0 1765 3527 L 0 703 1792 3118 L
+1847 3992 M1 54 0 1820 3992 L 0 557 1847 3628 L 1902 4114 M1 55 0 1874 4114 L 0 465 1902 3821 L 1956 3527 M1 55 0 1929 3527 L
+0 703 1956 3118 L 2120 3527 M1 55 0 2093 3527 L 0 703 2120 3118 L 2229 3821 M1 55 0 2202 3821 L 0 746 2229 3301 L 2284 3821 M1
+54 0 2257 3821 L 0 746 2284 3301 L 2338 4114 M1 54 0 2311 4114 L 0 465 2338 3821 L 2393 3821 M1 55 0 2365 3821 L 0 746 2393 3301 L
+2447 3821 M1 54 0 2420 3821 L 0 746 2447 3301 L 2501 3527 M1 54 0 2474 3527 L 0 703 2501 3118 L 2556 3527 M1 55 0 2528 3527 L
+0 703 2556 3118 L 2718 3992 M1 54 0 2691 3992 L 0 557 2718 3628 L 2772 3992 M1 54 0 2745 3992 L 0 557 2772 3628 L 2826 3527 M1
+54 0 2799 3527 L 0 703 2826 3118 L 2880 3821 M1 54 0 2853 3821 L 0 746 2880 3301 L 2934 3821 M1 54 0 2907 3821 L 0 746 2934 3301 L
+3042 3821 M1 54 0 3015 3821 L 0 746 3042 3301 L 3096 3527 M1 54 0 3069 3527 L 0 703 3096 3118 L 3150 3527 M1 54 0 3123 3527 L
+0 703 3150 3118 L 3204 3527 M1 54 0 3177 3527 L 0 703 3204 3118 L 3365 3992 M1 53 0 3339 3992 L 0 557 3365 3628 L 3419 3821 M1
+54 0 3392 3821 L 0 746 3419 3301 L 3580 3527 M1 54 0 3553 3527 L 0 703 3580 3118 L 3634 3821 M1 53 0 3607 3821 L 0 746 3634 3301 L
+3687 3821 M1 54 0 3660 3821 L 0 746 3687 3301 L 3794 3527 M1 54 0 3767 3527 L 0 703 3794 3118 L 3848 4114 M1 53 0 3821 4114 L
+0 465 3848 3821 L 3901 3527 M1 54 0 3874 3527 L 0 703 3901 3118 L 3954 3527 M1 53 0 3928 3527 L 0 703 3954 3118 L 4008 3992 M1
+53 0 3981 3992 L 0 557 4008 3628 L 4061 3821 M1 54 0 4034 3821 L 0 746 4061 3301 L 4114 3821 M1 53 0 4088 3821 L 0 746 4114 3301 L
+4167 3527 M1 53 0 4141 3527 L 0 703 4167 3118 L 4221 4209 M1 53 0 4194 4209 L 0 407 4221 3958 L 4274 3821 M1 53 0 4247 3821 L
+0 746 4274 3301 L 4327 3527 M1 53 0 4300 3527 L 0 703 4327 3118 L 4380 3527 M1 53 0 4353 3527 L 0 703 4380 3118 L 4433 3992 M1
+53 0 4406 3992 L 0 557 4433 3628 L 4486 3527 M1 53 0 4459 3527 L 0 703 4486 3118 L 4539 3527 M1 53 0 4512 3527 L 0 703 4539 3118 L
+4592 3821 M1 53 0 4565 3821 L 0 746 4592 3301 L 4645 3821 M1 53 0 4618 3821 L 0 746 4645 3301 L 4698 3992 M1 53 0 4671 3992 L
+0 557 4698 3628 L 4750 3992 M1 53 0 4724 3992 L 0 557 4750 3628 L 4803 4114 M1 53 0 4777 4114 L 0 465 4803 3821 L 4856 4114 M1
+52 0 4830 4114 L 0 465 4856 3821 L 4909 3821 M1 53 0 4882 3821 L 0 746 4909 3301 L 4962 4407 M1 53 0 4935 4407 L 0 313 4962 4223 L
+5014 3821 M1 53 0 4988 3821 L 0 746 5014 3301 L 5067 3527 M1 52 0 5041 3527 L 0 703 5067 3118 L 5119 4114 M1 53 0 5093 4114 L
+0 465 5119 3821 L 5172 4114 M1 52 0 5146 4114 L 0 465 5172 3821 L 5277 3992 M1 52 0 5251 3992 L 0 557 5277 3628 L 5329 3527 M1
+53 0 5303 3527 L 0 703 5329 3118 L 5382 3821 M1 52 0 5356 3821 L 0 746 5382 3301 L 5434 3527 M1 53 0 5408 3527 L 0 703 5434 3118 L
+5539 3821 M1 52 0 5513 3821 L 0 746 5539 3301 L 5644 3527 M1 53 0 5617 3527 L 0 703 5644 3118 L 5748 3821 M1 52 0 5722 3821 L
+0 746 5748 3301 L 5800 3821 M1 52 0 5774 3821 L 0 746 5800 3301 L 5852 4286 M1 52 0 5826 4286 L 0 367 5852 4064 L 5904 4114 M1
+52 0 5878 4114 L 0 465 5904 3821 L 5956 3821 M1 53 0 5930 3821 L 0 746 5956 3301 L 6112 3527 M1 51 0 6087 3527 L 0 703 6112 3118 L
+6164 3821 M1 52 0 6138 3821 L 0 746 6164 3301 L 6216 3821 M1 52 0 6190 3821 L 0 746 6216 3301 L 6268 3821 M1 52 0 6242 3821 L
+0 746 6268 3301 L 6320 3527 M1 52 0 6294 3527 L 0 703 6320 3118 L 6372 3821 M1 52 0 6346 3821 L 0 746 6372 3301 L 6424 3992 M1
+51 0 6398 3992 L 0 557 6424 3628 L 6527 3527 M1 52 0 6501 3527 L 0 703 6527 3118 L 6682 3821 M1 52 0 6656 3821 L 0 746 6682 3301 L
+6734 3992 M1 51 0 6708 3992 L 0 557 6734 3628 L 6785 3821 M1 52 0 6759 3821 L 0 746 6785 3301 L 6837 3992 M1 51 0 6811 3992 L
+0 557 6837 3628 L 6940 3527 M1 51 0 6914 3527 L 0 703 6940 3118 L 6991 3527 M1 52 0 6965 3527 L 0 703 6991 3118 L 7042 3527 M1
+51 0 7017 3527 L 0 703 7042 3118 L 7196 3821 M1 51 0 7171 3821 L 0 746 7196 3301 L 7248 3527 M1 51 0 7222 3527 L 0 703 7248 3118 L
+7299 3821 M1 51 0 7273 3821 L 0 746 7299 3301 L 7350 3821 M1 51 0 7324 3821 L 0 746 7350 3301 L 7401 3527 M1 52 0 7375 3527 L
+0 703 7401 3118 L 7452 3527 M1 51 0 7427 3527 L 0 703 7452 3118 L 7503 3527 M1 51 0 7478 3527 L 0 703 7503 3118 L 7554 3527 M1
+51 0 7529 3527 L 0 703 7554 3118 L 7605 3527 M1 51 0 7580 3527 L 0 703 7605 3118 L 7656 3527 M1 51 0 7631 3527 L 0 703 7656 3118 L
+7707 3527 M1 51 0 7682 3527 L 0 703 7707 3118 L 7809 3527 M1 51 0 7784 3527 L 0 703 7809 3118 L 7860 3527 M1 50 0 7835 3527 L
+0 703 7860 3118 L 7911 3821 M1 51 0 7885 3821 L 0 746 7911 3301 L 7962 3992 M1 51 0 7936 3992 L 0 557 7962 3628 L 8063 3527 M1
+51 0 8038 3527 L 0 703 8063 3118 L 8114 3821 M1 50 0 8089 3821 L 0 746 8114 3301 L 8215 3821 M1 51 0 8190 3821 L 0 746 8215 3301 L
+8266 3821 M1 50 0 8241 3821 L 0 746 8266 3301 L 8316 3821 M1 51 0 8291 3821 L 0 746 8316 3301 L 8367 3527 M1 50 0 8342 3527 L
+0 703 8367 3118 L 8418 3527 M1 51 0 8392 3527 L 0 703 8418 3118 L 8468 3527 M1 50 0 8443 3527 L 0 703 8468 3118 L 8518 3821 M1
+51 0 8493 3821 L 0 746 8518 3301 L 8619 3821 M1 50 0 8594 3821 L 0 746 8619 3301 L 8670 3527 M1 51 0 8644 3527 L 0 703 8670 3118 L
+8720 3527 M1 50 0 8695 3527 L 0 703 8720 3118 L 8770 3821 M1 50 0 8745 3821 L 0 746 8770 3301 L 8821 3821 M1 51 0 8795 3821 L
+0 746 8821 3301 L 8921 3821 M1 50 0 8896 3821 L 0 746 8921 3301 L 8971 3527 M1 50 0 8946 3527 L 0 703 8971 3118 L 9122 3527 M1
+50 0 9097 3527 L 0 703 9122 3118 L 9172 3527 M1 50 0 9147 3527 L 0 703 9172 3118 L 9272 3992 M1 50 0 9247 3992 L 0 557 9272 3628 L
+9322 3527 M1 50 0 9297 3527 L 0 703 9322 3118 L 9421 3821 M1 49 0 9397 3821 L 0 746 9421 3301 L 2 SLW 0.000 0.000 0.000 setrgbcolor
+55 0 1050 3686 L 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -2 C 55 0 C 0 -1 C 55 0 C 0 -2 C 56 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -2 C 55 0 C
+0 -1 C 54 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -2 C 55 0 C 0 -2 C 55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 0 -2 C 55 0 C 0 -1 C 54 0 C 0 2 C
+55 0 C 0 5 C 55 0 C 0 -10 C 54 0 C 0 -2 C 55 0 C 0 2 C 54 0 C 0 -4 C 54 0 C 0 -1 C 55 0 C 0 3 C 54 0 C 0 -4 C 54 0 C 0 -4 C 55 0 C
+0 -1 C 54 0 C 0 -1 C 54 0 C 0 -2 C 54 0 C 0 -3 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -3 C 54 0 C 0 -1 C 54 0 C 0 1 C 54 0 C 0 18 C
+54 0 C 0 -18 C 54 0 C 0 -3 C 54 0 C 0 2 C 54 0 C 0 21 C 54 0 C 0 -13 C 53 0 C 0 -9 C 54 0 C 0 -7 C 54 0 C 0 -4 C 53 0 C 0 3 C 54 0 C
+0 -6 C 53 0 C 0 -2 C 54 0 C 0 9 C 53 0 C 0 30 C 54 0 C 0 -33 C 53 0 C 0 4 C 54 0 C 0 -19 C 53 0 C 0 11 C 53 0 C 0 29 C 54 0 C 0 76 C
+53 0 C 0 -48 C 53 0 C 0 -47 C 53 0 C 0 231 C 53 0 C 0 13 C 53 0 C 0 -133 C 53 0 C 0 161 C 53 0 C 0 -119 C 53 0 C 0 41 C 53 0 C
+0 55 C 53 0 C 0 25 C 53 0 C 0 -52 C 53 0 C 0 -5 C 53 0 C 0 290 C 53 0 C 0 -59 C 52 0 C 0 -226 C 53 0 C 0 -39 C 53 0 C 0 19 C 53 0 C
+0 198 C 52 0 C 0 -193 C 53 0 C 0 -232 C 52 0 C 0 59 C 53 0 C 0 -43 C 52 0 C 0 -5 C 53 0 C 0 -12 C 52 0 C 0 -34 C 53 0 C 0 -4 C
+52 0 C 0 -2 C 52 0 C 0 -1 C 52 0 C 0 -2 C 53 0 C 0 10 C 52 0 C 0 168 C 52 0 C 0 63 C 52 0 C 0 363 C 52 0 C 0 -82 C 52 0 C 0 -489 C
+53 0 C 0 -43 C 52 0 C 0 -2 C 52 0 C 0 -2 C 51 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 1 C 52 0 C 0 -4 C 52 0 C 0 -2 C 52 0 C 0 -2 C 51 0 C
+0 -1 C 52 0 C 0 -2 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 0 -2 C 52 0 C 0 1 C 51 0 C 0 -2 C 52 0 C 0 -3 C
+51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 51 0 C 0 -3 C 51 0 C 0 -2 C 51 0 C 0 -1 C 52 0 C 0 -1 C
+51 0 C 51 0 C 0 -3 C 51 0 C 0 -2 C 51 0 C 0 -1 C 51 0 C 51 0 C 0 -3 C 51 0 C 0 -2 C 51 0 C 0 -1 C 50 0 C 0 -2 C 51 0 C 0 -1 C 51 0 C
+0 -2 C 51 0 C 0 3 C 51 0 C 0 5 C 50 0 C 0 -11 C 51 0 C 0 -1 C 51 0 C 0 1 C 50 0 C 0 -5 C 51 0 C 0 3 C 50 0 C 51 0 C 0 -6 C 50 0 C
+0 2 C 51 0 C 0 -4 C 50 0 C 0 -1 C 50 0 C 51 0 C 0 65 C 50 0 C 0 267 C 50 0 C 0 -35 C 51 0 C 0 -279 C 50 0 C 0 19 C 50 0 C 0 50 C
+50 0 C 0 -87 C 50 0 C 0 -11 C 51 0 C 0 16 C 50 0 C 0 -20 C 50 0 C 0 53 C 50 0 C 0 57 C 50 0 C 0 -98 C 50 0 C 0 -19 C 50 0 C 0 -3 C
+49 0 C 55 0 1050 3686 L 0 0 1077 3686 L 55 0 1105 3685 L 0 0 1132 3685 L 55 0 1160 3684 L 0 0 1188 3684 L 55 0 1215 3682 L
+0 0 1243 3682 L 55 0 1270 3681 L 0 0 1298 3681 L 56 0 1325 3679 L 0 0 1353 3679 L 55 0 1381 3678 L 0 0 1408 3678 L 55 0 1436 3677 L
+0 0 1463 3677 L 55 0 1491 3675 L 0 0 1518 3675 L 54 0 1546 3674 L 0 0 1573 3674 L 55 0 1600 3673 L 0 0 1628 3673 L 55 0 1655 3672 L
+0 0 1683 3672 L 55 0 1710 3670 L 0 0 1738 3670 L 55 0 1765 3668 L 0 0 1792 3668 L 54 0 1820 3667 L 0 0 1847 3667 L 55 0 1874 3666 L
+0 0 1902 3666 L 55 0 1929 3664 L 0 0 1956 3664 L 54 0 1984 3663 L 0 0 2011 3663 L 55 0 2038 3665 L 0 0 2066 3665 L 55 0 2093 3670 L
+0 0 2120 3670 L 54 0 2148 3660 L 0 0 2175 3660 L 55 0 2202 3658 L 0 0 2229 3658 L 54 0 2257 3660 L 0 0 2284 3660 L 54 0 2311 3656 L
+0 0 2338 3656 L 55 0 2365 3655 L 0 0 2393 3655 L 54 0 2420 3658 L 0 0 2447 3658 L 54 0 2474 3654 L 0 0 2501 3654 L 55 0 2528 3650 L
+0 0 2556 3650 L 54 0 2583 3649 L 0 0 2610 3649 L 54 0 2637 3648 L 0 0 2664 3648 L 54 0 2691 3646 L 0 0 2718 3646 L 54 0 2745 3643 L
+0 0 2772 3643 L 54 0 2799 3642 L 0 0 2826 3642 L 54 0 2853 3641 L 0 0 2880 3641 L 54 0 2907 3638 L 0 0 2934 3638 L 54 0 2961 3637 L
+0 0 2988 3637 L 54 0 3015 3638 L 0 0 3042 3638 L 54 0 3069 3656 L 0 0 3096 3656 L 54 0 3123 3638 L 0 0 3150 3638 L 54 0 3177 3635 L
+0 0 3204 3635 L 54 0 3231 3637 L 0 0 3258 3637 L 54 0 3285 3658 L 0 0 3312 3658 L 53 0 3339 3645 L 0 0 3365 3645 L 54 0 3392 3636 L
+0 0 3419 3636 L 54 0 3446 3629 L 0 0 3473 3629 L 53 0 3500 3625 L 0 0 3526 3625 L 54 0 3553 3628 L 0 0 3580 3628 L 53 0 3607 3622 L
+0 0 3634 3622 L 54 0 3660 3620 L 0 0 3687 3620 L 53 0 3714 3629 L 0 0 3741 3629 L 54 0 3767 3659 L 0 0 3794 3659 L 53 0 3821 3626 L
+0 0 3848 3626 L 54 0 3874 3630 L 0 0 3901 3630 L 53 0 3928 3611 L 0 0 3954 3611 L 53 0 3981 3622 L 0 0 4008 3622 L 54 0 4034 3651 L
+0 0 4061 3651 L 53 0 4088 3727 L 0 0 4114 3727 L 53 0 4141 3679 L 0 0 4167 3679 L 53 0 4194 3632 L 0 0 4221 3632 L 53 0 4247 3863 L
+0 0 4274 3863 L 53 0 4300 3876 L 0 0 4327 3876 L 53 0 4353 3743 L 0 0 4380 3743 L 53 0 4406 3904 L 0 0 4433 3904 L 53 0 4459 3785 L
+0 0 4486 3785 L 53 0 4512 3826 L 0 0 4539 3826 L 53 0 4565 3881 L 0 0 4592 3881 L 53 0 4618 3906 L 0 0 4645 3906 L 53 0 4671 3854 L
+0 0 4698 3854 L 53 0 4724 3849 L 0 0 4750 3849 L 53 0 4777 4139 L 0 0 4803 4139 L 52 0 4830 4080 L 0 0 4856 4080 L 53 0 4882 3854 L
+0 0 4909 3854 L 53 0 4935 3815 L 0 0 4962 3815 L 53 0 4988 3834 L 0 0 5014 3834 L 52 0 5041 4032 L 0 0 5067 4032 L 53 0 5093 3839 L
+0 0 5119 3839 L 52 0 5146 3607 L 0 0 5172 3607 L 53 0 5198 3666 L 0 0 5225 3666 L 52 0 5251 3623 L 0 0 5277 3623 L 53 0 5303 3618 L
+0 0 5329 3618 L 52 0 5356 3606 L 0 0 5382 3606 L 53 0 5408 3572 L 0 0 5434 3572 L 52 0 5461 3568 L 0 0 5487 3568 L 52 0 5513 3566 L
+0 0 5539 3566 L 52 0 5565 3565 L 0 0 5591 3565 L 53 0 5617 3563 L 0 0 5644 3563 L 52 0 5670 3573 L 0 0 5696 3573 L 52 0 5722 3741 L
+0 0 5748 3741 L 52 0 5774 3804 L 0 0 5800 3804 L 52 0 5826 4167 L 0 0 5852 4167 L 52 0 5878 4085 L 0 0 5904 4085 L 53 0 5930 3596 L
+0 0 5956 3596 L 52 0 5983 3553 L 0 0 6009 3553 L 52 0 6035 3551 L 0 0 6061 3551 L 51 0 6087 3549 L 0 0 6112 3549 L 52 0 6138 3548 L
+0 0 6164 3548 L 52 0 6190 3547 L 0 0 6216 3547 L 52 0 6242 3548 L 0 0 6268 3548 L 52 0 6294 3544 L 0 0 6320 3544 L 52 0 6346 3542 L
+0 0 6372 3542 L 51 0 6398 3540 L 0 0 6424 3540 L 52 0 6449 3539 L 0 0 6475 3539 L 52 0 6501 3537 L 0 0 6527 3537 L 52 0 6553 3536 L
+0 0 6579 3536 L 51 0 6605 3535 L 0 0 6630 3535 L 52 0 6656 3533 L 0 0 6682 3533 L 51 0 6708 3532 L 0 0 6734 3532 L 52 0 6759 3530 L
+0 0 6785 3530 L 51 0 6811 3531 L 0 0 6837 3531 L 52 0 6862 3529 L 0 0 6888 3529 L 51 0 6914 3526 L 0 0 6940 3526 L 52 0 6965 3524 L
+0 0 6991 3524 L 51 0 7017 3523 L 0 0 7042 3523 L 51 0 7068 3522 L 0 0 7094 3522 L 52 0 7119 3520 L 0 0 7145 3520 L 51 0 7171 3519 L
+0 0 7196 3519 L 51 0 7222 3519 L 0 0 7248 3519 L 51 0 7273 3516 L 0 0 7299 3516 L 51 0 7324 3514 L 0 0 7350 3514 L 52 0 7375 3513 L
+0 0 7401 3513 L 51 0 7427 3512 L 0 0 7452 3512 L 51 0 7478 3512 L 0 0 7503 3512 L 51 0 7529 3509 L 0 0 7554 3509 L 51 0 7580 3507 L
+0 0 7605 3507 L 51 0 7631 3506 L 0 0 7656 3506 L 51 0 7682 3506 L 0 0 7707 3506 L 51 0 7733 3503 L 0 0 7758 3503 L 51 0 7784 3501 L
+0 0 7809 3501 L 50 0 7835 3500 L 0 0 7860 3500 L 51 0 7885 3498 L 0 0 7911 3498 L 51 0 7936 3497 L 0 0 7962 3497 L 51 0 7987 3495 L
+0 0 8012 3495 L 51 0 8038 3498 L 0 0 8063 3498 L 50 0 8089 3503 L 0 0 8114 3503 L 51 0 8139 3492 L 0 0 8165 3492 L 51 0 8190 3491 L
+0 0 8215 3491 L 50 0 8241 3492 L 0 0 8266 3492 L 51 0 8291 3487 L 0 0 8316 3487 L 50 0 8342 3490 L 0 0 8367 3490 L 51 0 8392 3490 L
+0 0 8418 3490 L 50 0 8443 3484 L 0 0 8468 3484 L 51 0 8493 3486 L 0 0 8518 3486 L 50 0 8544 3482 L 0 0 8569 3482 L 50 0 8594 3481 L
+0 0 8619 3481 L 51 0 8644 3481 L 0 0 8670 3481 L 50 0 8695 3546 L 0 0 8720 3546 L 50 0 8745 3813 L 0 0 8770 3813 L 51 0 8795 3778 L
+0 0 8821 3778 L 50 0 8846 3499 L 0 0 8871 3499 L 50 0 8896 3518 L 0 0 8921 3518 L 50 0 8946 3568 L 0 0 8971 3568 L 50 0 8996 3481 L
+0 0 9021 3481 L 51 0 9046 3470 L 0 0 9071 3470 L 50 0 9097 3486 L 0 0 9122 3486 L 50 0 9147 3466 L 0 0 9172 3466 L 50 0 9197 3519 L
+0 0 9222 3519 L 50 0 9247 3576 L 0 0 9272 3576 L 50 0 9297 3478 L 0 0 9322 3478 L 50 0 9347 3459 L 0 0 9372 3459 L 49 0 9397 3456 L
+0 0 9421 3456 L 55 0 1050 3329 L 55 0 C 0 -2 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 56 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C
+55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C
+0 -1 C 55 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 55 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C
+55 0 C 0 -1 C 54 0 C 0 -2 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C
+0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -2 C 53 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -1 C 53 0 C 0 -1 C
+54 0 C 0 -1 C 53 0 C 0 -1 C 54 0 C 0 -1 C 53 0 C 0 -1 C 54 0 C 0 -1 C 53 0 C 0 -1 C 54 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 54 0 C
+0 -1 C 53 0 C 0 -2 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C
+53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 -2 C 53 0 C 0 -1 C 53 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C
+0 -1 C 53 0 C 0 -1 C 52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 -2 C 52 0 C 0 -1 C
+52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 53 0 C 0 -1 C 52 0 C 0 -2 C 52 0 C
+0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 52 0 C 0 -2 C
+52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C
+0 -1 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 52 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C
+51 0 C 0 -2 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C
+0 -1 C 51 0 C 0 -2 C 50 0 C 0 -1 C 51 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 0 -2 C
+51 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C
+0 -2 C 50 0 C 0 -1 C 51 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 50 0 C 0 -1 C 49 0 C
+55 0 1050 3329 L 0 0 1077 3329 L 55 0 1105 3329 L 0 0 1132 3329 L 55 0 1160 3327 L 0 0 1188 3327 L 55 0 1215 3326 L 0 0 1243 3326 L
+55 0 1270 3325 L 0 0 1298 3325 L 56 0 1325 3324 L 0 0 1353 3324 L 55 0 1381 3323 L 0 0 1408 3323 L 55 0 1436 3322 L 0 0 1463 3322 L
+55 0 1491 3321 L 0 0 1518 3321 L 54 0 1546 3320 L 0 0 1573 3320 L 55 0 1600 3319 L 0 0 1628 3319 L 55 0 1655 3318 L 0 0 1683 3318 L
+55 0 1710 3317 L 0 0 1738 3317 L 55 0 1765 3316 L 0 0 1792 3316 L 54 0 1820 3315 L 0 0 1847 3315 L 55 0 1874 3314 L 0 0 1902 3314 L
+55 0 1929 3313 L 0 0 1956 3313 L 54 0 1984 3312 L 0 0 2011 3312 L 55 0 2038 3311 L 0 0 2066 3311 L 55 0 2093 3310 L 0 0 2120 3310 L
+54 0 2148 3309 L 0 0 2175 3309 L 55 0 2202 3308 L 0 0 2229 3308 L 54 0 2257 3307 L 0 0 2284 3307 L 54 0 2311 3306 L 0 0 2338 3306 L
+55 0 2365 3305 L 0 0 2393 3305 L 54 0 2420 3304 L 0 0 2447 3304 L 54 0 2474 3303 L 0 0 2501 3303 L 55 0 2528 3302 L 0 0 2556 3302 L
+54 0 2583 3301 L 0 0 2610 3301 L 54 0 2637 3299 L 0 0 2664 3299 L 54 0 2691 3298 L 0 0 2718 3298 L 54 0 2745 3297 L 0 0 2772 3297 L
+54 0 2799 3296 L 0 0 2826 3296 L 54 0 2853 3295 L 0 0 2880 3295 L 54 0 2907 3294 L 0 0 2934 3294 L 54 0 2961 3293 L 0 0 2988 3293 L
+54 0 3015 3292 L 0 0 3042 3292 L 54 0 3069 3291 L 0 0 3096 3291 L 54 0 3123 3290 L 0 0 3150 3290 L 54 0 3177 3289 L 0 0 3204 3289 L
+54 0 3231 3288 L 0 0 3258 3288 L 54 0 3285 3287 L 0 0 3312 3287 L 53 0 3339 3285 L 0 0 3365 3285 L 54 0 3392 3284 L 0 0 3419 3284 L
+54 0 3446 3283 L 0 0 3473 3283 L 53 0 3500 3282 L 0 0 3526 3282 L 54 0 3553 3281 L 0 0 3580 3281 L 53 0 3607 3280 L 0 0 3634 3280 L
+54 0 3660 3279 L 0 0 3687 3279 L 53 0 3714 3278 L 0 0 3741 3278 L 54 0 3767 3277 L 0 0 3794 3277 L 53 0 3821 3276 L 0 0 3848 3276 L
+54 0 3874 3275 L 0 0 3901 3275 L 53 0 3928 3274 L 0 0 3954 3274 L 53 0 3981 3273 L 0 0 4008 3273 L 54 0 4034 3272 L 0 0 4061 3272 L
+53 0 4088 3271 L 0 0 4114 3271 L 53 0 4141 3269 L 0 0 4167 3269 L 53 0 4194 3268 L 0 0 4221 3268 L 53 0 4247 3267 L 0 0 4274 3267 L
+53 0 4300 3266 L 0 0 4327 3266 L 53 0 4353 3265 L 0 0 4380 3265 L 53 0 4406 3264 L 0 0 4433 3264 L 53 0 4459 3263 L 0 0 4486 3263 L
+53 0 4512 3262 L 0 0 4539 3262 L 53 0 4565 3261 L 0 0 4592 3261 L 53 0 4618 3260 L 0 0 4645 3260 L 53 0 4671 3259 L 0 0 4698 3259 L
+53 0 4724 3258 L 0 0 4750 3258 L 53 0 4777 3257 L 0 0 4803 3257 L 52 0 4830 3256 L 0 0 4856 3256 L 53 0 4882 3254 L 0 0 4909 3254 L
+53 0 4935 3253 L 0 0 4962 3253 L 53 0 4988 3252 L 0 0 5014 3252 L 52 0 5041 3251 L 0 0 5067 3251 L 53 0 5093 3250 L 0 0 5119 3250 L
+52 0 5146 3249 L 0 0 5172 3249 L 53 0 5198 3248 L 0 0 5225 3248 L 52 0 5251 3247 L 0 0 5277 3247 L 53 0 5303 3246 L 0 0 5329 3246 L
+52 0 5356 3245 L 0 0 5382 3245 L 53 0 5408 3244 L 0 0 5434 3244 L 52 0 5461 3243 L 0 0 5487 3243 L 52 0 5513 3241 L 0 0 5539 3241 L
+52 0 5565 3240 L 0 0 5591 3240 L 53 0 5617 3239 L 0 0 5644 3239 L 52 0 5670 3238 L 0 0 5696 3238 L 52 0 5722 3237 L 0 0 5748 3237 L
+52 0 5774 3236 L 0 0 5800 3236 L 52 0 5826 3235 L 0 0 5852 3235 L 52 0 5878 3234 L 0 0 5904 3234 L 53 0 5930 3233 L 0 0 5956 3233 L
+52 0 5983 3232 L 0 0 6009 3232 L 52 0 6035 3230 L 0 0 6061 3230 L 51 0 6087 3229 L 0 0 6112 3229 L 52 0 6138 3228 L 0 0 6164 3228 L
+52 0 6190 3227 L 0 0 6216 3227 L 52 0 6242 3226 L 0 0 6268 3226 L 52 0 6294 3225 L 0 0 6320 3225 L 52 0 6346 3224 L 0 0 6372 3224 L
+51 0 6398 3223 L 0 0 6424 3223 L 52 0 6449 3222 L 0 0 6475 3222 L 52 0 6501 3221 L 0 0 6527 3221 L 52 0 6553 3219 L 0 0 6579 3219 L
+51 0 6605 3218 L 0 0 6630 3218 L 52 0 6656 3217 L 0 0 6682 3217 L 51 0 6708 3216 L 0 0 6734 3216 L 52 0 6759 3215 L 0 0 6785 3215 L
+51 0 6811 3214 L 0 0 6837 3214 L 52 0 6862 3213 L 0 0 6888 3213 L 51 0 6914 3212 L 0 0 6940 3212 L 52 0 6965 3211 L 0 0 6991 3211 L
+51 0 7017 3210 L 0 0 7042 3210 L 51 0 7068 3209 L 0 0 7094 3209 L 52 0 7119 3207 L 0 0 7145 3207 L 51 0 7171 3206 L 0 0 7196 3206 L
+51 0 7222 3205 L 0 0 7248 3205 L 51 0 7273 3204 L 0 0 7299 3204 L 51 0 7324 3203 L 0 0 7350 3203 L 52 0 7375 3202 L 0 0 7401 3202 L
+51 0 7427 3201 L 0 0 7452 3201 L 51 0 7478 3200 L 0 0 7503 3200 L 51 0 7529 3199 L 0 0 7554 3199 L 51 0 7580 3197 L 0 0 7605 3197 L
+51 0 7631 3196 L 0 0 7656 3196 L 51 0 7682 3195 L 0 0 7707 3195 L 51 0 7733 3194 L 0 0 7758 3194 L 51 0 7784 3193 L 0 0 7809 3193 L
+50 0 7835 3192 L 0 0 7860 3192 L 51 0 7885 3191 L 0 0 7911 3191 L 51 0 7936 3190 L 0 0 7962 3190 L 51 0 7987 3189 L 0 0 8012 3189 L
+51 0 8038 3188 L 0 0 8063 3188 L 50 0 8089 3186 L 0 0 8114 3186 L 51 0 8139 3185 L 0 0 8165 3185 L 51 0 8190 3184 L 0 0 8215 3184 L
+50 0 8241 3183 L 0 0 8266 3183 L 51 0 8291 3182 L 0 0 8316 3182 L 50 0 8342 3181 L 0 0 8367 3181 L 51 0 8392 3180 L 0 0 8418 3180 L
+50 0 8443 3179 L 0 0 8468 3179 L 51 0 8493 3177 L 0 0 8518 3177 L 50 0 8544 3176 L 0 0 8569 3176 L 50 0 8594 3175 L 0 0 8619 3175 L
+51 0 8644 3174 L 0 0 8670 3174 L 50 0 8695 3173 L 0 0 8720 3173 L 50 0 8745 3172 L 0 0 8770 3172 L 51 0 8795 3171 L 0 0 8821 3171 L
+50 0 8846 3170 L 0 0 8871 3170 L 50 0 8896 3169 L 0 0 8921 3169 L 50 0 8946 3168 L 0 0 8971 3168 L 50 0 8996 3166 L 0 0 9021 3166 L
+51 0 9046 3165 L 0 0 9071 3165 L 50 0 9097 3164 L 0 0 9122 3164 L 50 0 9147 3163 L 0 0 9172 3163 L 50 0 9197 3162 L 0 0 9222 3162 L
+50 0 9247 3161 L 0 0 9272 3161 L 50 0 9297 3160 L 0 0 9322 3160 L 50 0 9347 3159 L 0 0 9372 3159 L 49 0 9397 3158 L 0 0 9421 3158 L
+55 0 1050 3448 L 0 -1 C 55 0 C 0 -2 C 55 0 C 0 -2 C 55 0 C 0 -2 C 55 0 C 0 -1 C 56 0 C 0 -2 C 55 0 C 0 -1 C 55 0 C 0 -2 C 55 0 C
+0 -2 C 54 0 C 0 -1 C 55 0 C 0 -1 C 55 0 C 0 -3 C 55 0 C 0 -1 C 55 0 C 0 -2 C 54 0 C 0 -2 C 55 0 C 0 -1 C 55 0 C 0 -2 C 54 0 C 0 4 C
+55 0 C 0 10 C 55 0 C 0 -16 C 54 0 C 0 -3 C 55 0 C 0 3 C 54 0 C 0 -5 C 54 0 C 0 -2 C 55 0 C 0 8 C 54 0 C 0 -8 C 54 0 C 0 -5 C 55 0 C
+0 -1 C 54 0 C 0 -2 C 54 0 C 0 -3 C 54 0 C 0 -3 C 54 0 C 0 -1 C 54 0 C 0 -1 C 54 0 C 0 -4 C 54 0 C 0 -3 C 54 0 C 0 4 C 54 0 C 0 33 C
+54 0 C 0 -32 C 54 0 C 0 -5 C 54 0 C 0 5 C 54 0 C 0 37 C 54 0 C 0 -20 C 53 0 C 0 -16 C 54 0 C 0 -12 C 54 0 C 0 -7 C 53 0 C 0 7 C
+54 0 C 0 -10 C 53 0 C 0 -3 C 54 0 C 0 18 C 53 0 C 0 53 C 54 0 C 0 -57 C 53 0 C 0 8 C 54 0 C 0 -33 C 53 0 C 0 20 C 53 0 C 0 51 C
+54 0 C 0 122 C 53 0 C 0 -74 C 53 0 C 0 -78 C 53 0 C 0 345 C 53 0 C 0 18 C 53 0 C 0 -184 C 53 0 C 0 221 C 53 0 C 0 -160 C 53 0 C
+0 58 C 53 0 C 0 73 C 53 0 C 0 32 C 53 0 C 0 -67 C 53 0 C 0 -6 C 53 0 C 0 354 C 53 0 C 0 -68 C 52 0 C 0 -279 C 53 0 C 0 -52 C 53 0 C
+0 27 C 53 0 C 0 248 C 52 0 C 0 -242 C 53 0 C 0 -347 C 52 0 C 0 98 C 53 0 C 0 -69 C 52 0 C 0 -9 C 53 0 C 0 -19 C 52 0 C 0 -59 C
+53 0 C 0 -8 C 52 0 C 0 -2 C 52 0 C 0 -2 C 52 0 C 0 -2 C 53 0 C 0 20 C 52 0 C 0 269 C 52 0 C 0 89 C 52 0 C 0 442 C 52 0 C 0 -94 C
+52 0 C 0 -662 C 53 0 C 0 -77 C 52 0 C 0 -2 C 52 0 C 0 -2 C 51 0 C 0 -2 C 52 0 C 52 0 C 0 3 C 52 0 C 0 -7 C 52 0 C 0 -3 C 52 0 C
+0 -2 C 51 0 C 0 -2 C 52 0 C 0 -2 C 52 0 C 0 -1 C 52 0 C 0 -2 C 51 0 C 0 -2 C 52 0 C 0 -2 C 51 0 C 0 -1 C 52 0 C 0 2 C 51 0 C 0 -3 C
+52 0 C 0 -5 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 0 -2 C 51 0 C 0 -2 C 52 0 C 0 -1 C 51 0 C 51 0 C 0 -4 C 51 0 C 0 -2 C 51 0 C 0 -2 C
+52 0 C 51 0 C 51 0 C 0 -3 C 51 0 C 0 -4 C 51 0 C 0 -1 C 51 0 C 0 1 C 51 0 C 0 -4 C 51 0 C 0 -2 C 51 0 C 0 -1 C 50 0 C 0 -3 C 51 0 C
+0 -2 C 51 0 C 0 -2 C 51 0 C 0 5 C 51 0 C 0 13 C 50 0 C 0 -21 C 51 0 C 0 -1 C 51 0 C 0 4 C 50 0 C 0 -9 C 51 0 C 0 7 C 50 0 C 51 0 C
+0 -11 C 50 0 C 0 6 C 51 0 C 0 -7 C 50 0 C 0 -1 C 50 0 C 51 0 C 0 120 C 50 0 C 0 388 C 50 0 C 0 -45 C 51 0 C 0 -424 C 50 0 C 0 36 C
+50 0 C 0 84 C 50 0 C 0 -151 C 50 0 C 0 -21 C 51 0 C 0 33 C 50 0 C 0 -38 C 50 0 C 0 98 C 50 0 C 0 97 C 50 0 C 0 -169 C 50 0 C 0 -35 C
+50 0 C 0 -5 C 49 0 C 55 0 1050 3448 L 0 0 1077 3448 L 55 0 1105 3447 L 0 0 1132 3447 L 55 0 1160 3445 L 0 0 1188 3445 L
+55 0 1215 3443 L 0 0 1243 3443 L 55 0 1270 3441 L 0 0 1298 3441 L 56 0 1325 3440 L 0 0 1353 3440 L 55 0 1381 3438 L 0 0 1408 3438 L
+55 0 1436 3437 L 0 0 1463 3437 L 55 0 1491 3435 L 0 0 1518 3435 L 54 0 1546 3433 L 0 0 1573 3433 L 55 0 1600 3432 L 0 0 1628 3432 L
+55 0 1655 3431 L 0 0 1683 3431 L 55 0 1710 3428 L 0 0 1738 3428 L 55 0 1765 3427 L 0 0 1792 3427 L 54 0 1820 3425 L 0 0 1847 3425 L
+55 0 1874 3423 L 0 0 1902 3423 L 55 0 1929 3422 L 0 0 1956 3422 L 54 0 1984 3420 L 0 0 2011 3420 L 55 0 2038 3424 L 0 0 2066 3424 L
+55 0 2093 3434 L 0 0 2120 3434 L 54 0 2148 3418 L 0 0 2175 3418 L 55 0 2202 3415 L 0 0 2229 3415 L 54 0 2257 3418 L 0 0 2284 3418 L
+54 0 2311 3413 L 0 0 2338 3413 L 55 0 2365 3411 L 0 0 2393 3411 L 54 0 2420 3419 L 0 0 2447 3419 L 54 0 2474 3411 L 0 0 2501 3411 L
+55 0 2528 3406 L 0 0 2556 3406 L 54 0 2583 3405 L 0 0 2610 3405 L 54 0 2637 3403 L 0 0 2664 3403 L 54 0 2691 3400 L 0 0 2718 3400 L
+54 0 2745 3397 L 0 0 2772 3397 L 54 0 2799 3396 L 0 0 2826 3396 L 54 0 2853 3395 L 0 0 2880 3395 L 54 0 2907 3391 L 0 0 2934 3391 L
+54 0 2961 3388 L 0 0 2988 3388 L 54 0 3015 3392 L 0 0 3042 3392 L 54 0 3069 3425 L 0 0 3096 3425 L 54 0 3123 3393 L 0 0 3150 3393 L
+54 0 3177 3388 L 0 0 3204 3388 L 54 0 3231 3393 L 0 0 3258 3393 L 54 0 3285 3430 L 0 0 3312 3430 L 53 0 3339 3410 L 0 0 3365 3410 L
+54 0 3392 3394 L 0 0 3419 3394 L 54 0 3446 3382 L 0 0 3473 3382 L 53 0 3500 3375 L 0 0 3526 3375 L 54 0 3553 3382 L 0 0 3580 3382 L
+53 0 3607 3372 L 0 0 3634 3372 L 54 0 3660 3369 L 0 0 3687 3369 L 53 0 3714 3387 L 0 0 3741 3387 L 54 0 3767 3440 L 0 0 3794 3440 L
+53 0 3821 3383 L 0 0 3848 3383 L 54 0 3874 3391 L 0 0 3901 3391 L 53 0 3928 3358 L 0 0 3954 3358 L 53 0 3981 3378 L 0 0 4008 3378 L
+54 0 4034 3429 L 0 0 4061 3429 L 53 0 4088 3551 L 0 0 4114 3551 L 53 0 4141 3477 L 0 0 4167 3477 L 53 0 4194 3399 L 0 0 4221 3399 L
+53 0 4247 3744 L 0 0 4274 3744 L 53 0 4300 3762 L 0 0 4327 3762 L 53 0 4353 3578 L 0 0 4380 3578 L 53 0 4406 3799 L 0 0 4433 3799 L
+53 0 4459 3639 L 0 0 4486 3639 L 53 0 4512 3697 L 0 0 4539 3697 L 53 0 4565 3770 L 0 0 4592 3770 L 53 0 4618 3802 L 0 0 4645 3802 L
+53 0 4671 3735 L 0 0 4698 3735 L 53 0 4724 3729 L 0 0 4750 3729 L 53 0 4777 4083 L 0 0 4803 4083 L 52 0 4830 4015 L 0 0 4856 4015 L
+53 0 4882 3736 L 0 0 4909 3736 L 53 0 4935 3684 L 0 0 4962 3684 L 53 0 4988 3711 L 0 0 5014 3711 L 52 0 5041 3959 L 0 0 5067 3959 L
+53 0 5093 3717 L 0 0 5119 3717 L 52 0 5146 3370 L 0 0 5172 3370 L 53 0 5198 3468 L 0 0 5225 3468 L 52 0 5251 3399 L 0 0 5277 3399 L
+53 0 5303 3390 L 0 0 5329 3390 L 52 0 5356 3371 L 0 0 5382 3371 L 53 0 5408 3312 L 0 0 5434 3312 L 52 0 5461 3304 L 0 0 5487 3304 L
+52 0 5513 3302 L 0 0 5539 3302 L 52 0 5565 3300 L 0 0 5591 3300 L 53 0 5617 3298 L 0 0 5644 3298 L 52 0 5670 3318 L 0 0 5696 3318 L
+52 0 5722 3587 L 0 0 5748 3587 L 52 0 5774 3676 L 0 0 5800 3676 L 52 0 5826 4118 L 0 0 5852 4118 L 52 0 5878 4024 L 0 0 5904 4024 L
+53 0 5930 3362 L 0 0 5956 3362 L 52 0 5983 3285 L 0 0 6009 3285 L 52 0 6035 3283 L 0 0 6061 3283 L 51 0 6087 3281 L 0 0 6112 3281 L
+52 0 6138 3279 L 0 0 6164 3279 L 52 0 6190 3279 L 0 0 6216 3279 L 52 0 6242 3282 L 0 0 6268 3282 L 52 0 6294 3275 L 0 0 6320 3275 L
+52 0 6346 3272 L 0 0 6372 3272 L 51 0 6398 3270 L 0 0 6424 3270 L 52 0 6449 3268 L 0 0 6475 3268 L 52 0 6501 3266 L 0 0 6527 3266 L
+52 0 6553 3265 L 0 0 6579 3265 L 51 0 6605 3263 L 0 0 6630 3263 L 52 0 6656 3261 L 0 0 6682 3261 L 51 0 6708 3259 L 0 0 6734 3259 L
+52 0 6759 3258 L 0 0 6785 3258 L 51 0 6811 3260 L 0 0 6837 3260 L 52 0 6862 3257 L 0 0 6888 3257 L 51 0 6914 3252 L 0 0 6940 3252 L
+52 0 6965 3250 L 0 0 6991 3250 L 51 0 7017 3249 L 0 0 7042 3249 L 51 0 7068 3247 L 0 0 7094 3247 L 52 0 7119 3245 L 0 0 7145 3245 L
+51 0 7171 3244 L 0 0 7196 3244 L 51 0 7222 3244 L 0 0 7248 3244 L 51 0 7273 3240 L 0 0 7299 3240 L 51 0 7324 3238 L 0 0 7350 3238 L
+52 0 7375 3236 L 0 0 7401 3236 L 51 0 7427 3236 L 0 0 7452 3236 L 51 0 7478 3236 L 0 0 7503 3236 L 51 0 7529 3233 L 0 0 7554 3233 L
+51 0 7580 3229 L 0 0 7605 3229 L 51 0 7631 3228 L 0 0 7656 3228 L 51 0 7682 3229 L 0 0 7707 3229 L 51 0 7733 3225 L 0 0 7758 3225 L
+51 0 7784 3223 L 0 0 7809 3223 L 50 0 7835 3222 L 0 0 7860 3222 L 51 0 7885 3219 L 0 0 7911 3219 L 51 0 7936 3217 L 0 0 7962 3217 L
+51 0 7987 3215 L 0 0 8012 3215 L 51 0 8038 3220 L 0 0 8063 3220 L 50 0 8089 3233 L 0 0 8114 3233 L 51 0 8139 3212 L 0 0 8165 3212 L
+51 0 8190 3211 L 0 0 8215 3211 L 50 0 8241 3215 L 0 0 8266 3215 L 51 0 8291 3206 L 0 0 8316 3206 L 50 0 8342 3213 L 0 0 8367 3213 L
+51 0 8392 3213 L 0 0 8418 3213 L 50 0 8443 3202 L 0 0 8468 3202 L 51 0 8493 3208 L 0 0 8518 3208 L 50 0 8544 3201 L 0 0 8569 3201 L
+50 0 8594 3200 L 0 0 8619 3200 L 51 0 8644 3200 L 0 0 8670 3200 L 50 0 8695 3320 L 0 0 8720 3320 L 50 0 8745 3708 L 0 0 8770 3708 L
+51 0 8795 3663 L 0 0 8821 3663 L 50 0 8846 3239 L 0 0 8871 3239 L 50 0 8896 3275 L 0 0 8921 3275 L 50 0 8946 3359 L 0 0 8971 3359 L
+50 0 8996 3208 L 0 0 9021 3208 L 51 0 9046 3187 L 0 0 9071 3187 L 50 0 9097 3220 L 0 0 9122 3220 L 50 0 9147 3182 L 0 0 9172 3182 L
+50 0 9197 3280 L 0 0 9222 3280 L 50 0 9247 3377 L 0 0 9272 3377 L 50 0 9297 3208 L 0 0 9322 3208 L 50 0 9347 3173 L 0 0 9372 3173 L
+49 0 9397 3168 L 0 0 9421 3168 L 1.000 0.000 1.000 setrgbcolor 1.000 1.000 0.000 setrgbcolor 1.000 0.500 0.000 setrgbcolor
+0.000 0.000 0.000 setrgbcolor
+ 13.25  pgscale div FS gs    90.00        157.437       4421.028 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00       4249.239       7314.597 moveto rotate (data and folded model) TBC gr
+8396 0 1050 780 L 0 2338 C -8396 0 C 0 -2338 C 0 38 7427 780 L 0 38 7427 3080 L 38 0 1050 839 L 76 0 1050 941 L 38 0 1050 1042 L
+38 0 1050 1144 L 38 0 1050 1246 L 38 0 1050 1348 L 76 0 1050 1450 L 38 0 1050 1551 L 38 0 1050 1653 L 38 0 1050 1755 L
+38 0 1050 1857 L 76 0 1050 1958 L 38 0 1050 2060 L 38 0 1050 2162 L 38 0 1050 2264 L 38 0 1050 2366 L 76 0 1050 2467 L
+38 0 1050 2569 L 38 0 1050 2671 L 38 0 1050 2773 L 38 0 1050 2875 L 76 0 1050 2976 L 38 0 1050 3078 L 38 0 9408 839 L
+76 0 9370 941 L 38 0 9408 1042 L 38 0 9408 1144 L 38 0 9408 1246 L 38 0 9408 1348 L 76 0 9370 1450 L 38 0 9408 1551 L
+38 0 9408 1653 L 38 0 9408 1755 L 38 0 9408 1857 L 76 0 9370 1958 L 38 0 9408 2060 L 38 0 9408 2162 L 38 0 9408 2264 L
+38 0 9408 2366 L 76 0 9370 2467 L 38 0 9408 2569 L 38 0 9408 2671 L 38 0 9408 2773 L 38 0 9408 2875 L 76 0 9370 2976 L
+38 0 9408 3078 L
+ 13.25  pgscale div FS gs     0.00        264.136        890.880 moveto rotate (-5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        831.585       1399.813 moveto rotate (0) HVC gr
+ 13.25  pgscale div FS gs     0.00        370.957       1908.745 moveto rotate (5) HVC (\32710) HVC   7.95 pgscale div FS up (-3) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00        575.798       2417.678 moveto rotate (0.01) HVC gr
+ 13.25  pgscale div FS gs     0.00        473.748       2926.611 moveto rotate (0.015) HVC gr
+1 SLW 1077 2130 M1 55 0 1050 2130 L 0 1070 1077 1595 L 1132 1061 M1 55 0 1105 1061 L 0 0 1132 1061 L 1188 1063 M1 55 0 1160 1063 L
+0 0 1188 1063 L 1243 1064 M1 55 0 1215 1064 L 0 0 1243 1064 L 1298 1333 M1 55 0 1270 1333 L 0 535 1298 1065 L 1353 1066 M1
+56 0 1325 1066 L 0 0 1353 1066 L 1408 1335 M1 55 0 1381 1335 L 0 536 1408 1067 L 1463 1336 M1 55 0 1436 1336 L 0 535 1463 1069 L
+1518 1070 M1 55 0 1491 1070 L 0 0 1518 1070 L 1573 1606 M1 54 0 1546 1606 L 0 757 1573 1228 L 1628 1340 M1 55 0 1600 1340 L
+0 535 1628 1072 L 1683 1073 M1 55 0 1655 1073 L 0 0 1683 1073 L 1738 1342 M1 55 0 1710 1342 L 0 535 1738 1075 L 1792 1344 M1
+55 0 1765 1344 L 0 535 1792 1076 L 1847 1880 M1 54 0 1820 1880 L 0 926 1847 1417 L 1902 2149 M1 55 0 1874 2149 L 0 1070 1902 1614 L
+1956 1347 M1 55 0 1929 1347 L 0 535 1956 1080 L 2011 1081 M1 54 0 1984 1081 L 0 0 2011 1081 L 2066 1079 M1 55 0 2038 1079 L
+0 0 2066 1079 L 2120 1342 M1 55 0 2093 1342 L 0 535 2120 1075 L 2175 1083 M1 54 0 2148 1083 L 0 0 2175 1083 L 2229 1620 M1
+55 0 2202 1620 L 0 757 2229 1242 L 2284 1619 M1 54 0 2257 1619 L 0 756 2284 1241 L 2338 2157 M1 54 0 2311 2157 L 0 1070 2338 1622 L
+2393 1623 M1 55 0 2365 1623 L 0 757 2393 1245 L 2447 1620 M1 54 0 2420 1620 L 0 756 2447 1242 L 2501 1356 M1 54 0 2474 1356 L
+0 535 2501 1089 L 2556 1359 M1 55 0 2528 1359 L 0 535 2556 1092 L 2610 1093 M1 54 0 2583 1093 L 0 0 2610 1093 L 2664 1094 M1
+54 0 2637 1094 L 0 0 2664 1094 L 2718 1898 M1 54 0 2691 1898 L 0 927 2718 1435 L 2772 1900 M1 54 0 2745 1900 L 0 927 2772 1437 L
+2826 1366 M1 54 0 2799 1366 L 0 535 2826 1098 L 2880 1635 M1 54 0 2853 1635 L 0 757 2880 1256 L 2934 1637 M1 54 0 2907 1637 L
+0 757 2934 1258 L 2988 1103 M1 54 0 2961 1103 L 0 0 2988 1103 L 3042 1637 M1 54 0 3015 1637 L 0 757 3042 1258 L 3096 1354 M1
+54 0 3069 1354 L 0 535 3096 1087 L 3150 1370 M1 54 0 3123 1370 L 0 535 3150 1102 L 3204 1372 M1 54 0 3177 1372 L 0 535 3204 1105 L
+3258 1103 M1 54 0 3231 1103 L 0 0 3258 1103 L 3312 1085 M1 54 0 3285 1085 L 0 0 3312 1085 L 3365 1899 M1 53 0 3339 1899 L
+0 927 3365 1435 L 3419 1639 M1 54 0 3392 1639 L 0 757 3419 1260 L 3473 1110 M1 54 0 3446 1110 L 0 0 3473 1110 L 3526 1113 M1
+53 0 3500 1113 L 0 0 3526 1113 L 3580 1378 M1 54 0 3553 1378 L 0 535 3580 1110 L 3634 1650 M1 53 0 3607 1650 L 0 757 3634 1272 L
+3687 1652 M1 54 0 3660 1652 L 0 756 3687 1274 L 3741 1109 M1 53 0 3714 1109 L 0 0 3741 1109 L 3794 1352 M1 54 0 3767 1352 L
+0 535 3794 1084 L 3848 2182 M1 53 0 3821 2182 L 0 1070 3848 1647 L 3901 1376 M1 54 0 3874 1376 L 0 535 3901 1108 L 3954 1391 M1
+53 0 3928 1391 L 0 536 3954 1123 L 4008 1918 M1 53 0 3981 1918 L 0 927 4008 1454 L 4061 1626 M1 54 0 4034 1626 L 0 757 4061 1248 L
+4114 1556 M1 53 0 4088 1556 L 0 757 4114 1178 L 4167 1334 M1 53 0 4141 1334 L 0 535 4167 1066 L 4221 2445 M1 53 0 4194 2445 L
+0 1197 4221 1846 L 4274 1393 M1 53 0 4247 1393 L 0 757 4274 1015 L 4327 1107 M1 53 0 4300 1107 L 0 535 4327 840 L 4380 1271 M1
+53 0 4353 1271 L 0 535 4380 1004 L 4433 1600 M1 53 0 4406 1600 L 0 926 4433 1137 L 4486 1226 M1 53 0 4459 1226 L 0 535 4486 958 L
+4539 1175 M1 53 0 4512 1175 L 0 535 4539 907 L 4592 1368 M1 53 0 4565 1368 L 0 756 4592 990 L 4645 1331 M1 53 0 4618 1331 L
+0 757 4645 952 L 4698 1673 M1 53 0 4671 1673 L 0 927 4698 1210 L 4750 1680 M1 53 0 4724 1680 L 0 926 4750 1217 L 4803 1385 M1
+53 0 4777 1385 L 0 1070 4803 850 L 4856 1532 M1 52 0 4830 1532 L 0 1070 4856 997 L 4909 1406 M1 53 0 4882 1406 L 0 757 4909 1028 L
+4962 3063 M1 53 0 4935 3063 L 0 812 4962 2306 L 5014 1432 M1 53 0 4988 1432 L 0 756 5014 1054 L 5067 835 M1 52 0 5041 835 L
+0 323 5067 780 L 5119 1961 M1 53 0 5093 1961 L 0 1071 5119 1426 L 5172 2197 M1 52 0 5146 2197 L 0 1071 5172 1661 L 5225 1079 M1
+53 0 5198 1079 L 0 0 5225 1079 L 5277 1917 M1 52 0 5251 1917 L 0 927 5277 1453 L 5329 1386 M1 53 0 5303 1386 L 0 536 5329 1118 L
+5382 1663 M1 52 0 5356 1663 L 0 757 5382 1284 L 5434 1420 M1 53 0 5408 1420 L 0 535 5434 1152 L 5487 1155 M1 52 0 5461 1155 L
+0 0 5487 1155 L 5539 1691 M1 52 0 5513 1691 L 0 757 5539 1313 L 5591 1157 M1 52 0 5565 1157 L 0 0 5591 1157 L 5644 1426 M1
+53 0 5617 1426 L 0 535 5644 1158 L 5696 1151 M1 52 0 5670 1151 L 0 0 5696 1151 L 5748 1542 M1 52 0 5722 1542 L 0 757 5748 1163 L
+5800 1470 M1 52 0 5774 1470 L 0 757 5800 1091 L 5852 1841 M1 52 0 5826 1841 L 0 1310 5852 1186 L 5904 1522 M1 52 0 5878 1522 L
+0 1070 5904 987 L 5956 1670 M1 53 0 5930 1670 L 0 757 5956 1292 L 6009 1166 M1 52 0 5983 1166 L 0 0 6009 1166 L 6061 1167 M1
+52 0 6035 1167 L 0 0 6061 1167 L 6112 1435 M1 51 0 6087 1435 L 0 535 6112 1168 L 6164 1704 M1 52 0 6138 1704 L 0 757 6164 1325 L
+6216 1704 M1 52 0 6190 1704 L 0 757 6216 1326 L 6268 1703 M1 52 0 6242 1703 L 0 757 6268 1325 L 6320 1439 M1 52 0 6294 1439 L
+0 535 6320 1171 L 6372 1708 M1 52 0 6346 1708 L 0 757 6372 1329 L 6424 1976 M1 51 0 6398 1976 L 0 927 6424 1513 L 6475 1175 M1
+52 0 6449 1175 L 0 0 6475 1175 L 6527 1443 M1 52 0 6501 1443 L 0 535 6527 1176 L 6579 1177 M1 52 0 6553 1177 L 0 0 6579 1177 L
+6630 1177 M1 51 0 6605 1177 L 0 0 6630 1177 L 6682 1714 M1 52 0 6656 1714 L 0 757 6682 1335 L 6734 1982 M1 51 0 6708 1982 L
+0 926 6734 1519 L 6785 1715 M1 52 0 6759 1715 L 0 757 6785 1337 L 6837 1982 M1 51 0 6811 1982 L 0 927 6837 1519 L 6888 1181 M1
+52 0 6862 1181 L 0 0 6888 1181 L 6940 1450 M1 51 0 6914 1450 L 0 535 6940 1183 L 6991 1451 M1 52 0 6965 1451 L 0 535 6991 1184 L
+7042 1452 M1 51 0 7017 1452 L 0 535 7042 1185 L 7094 1186 M1 51 0 7068 1186 L 0 0 7094 1186 L 7145 1187 M1 52 0 7119 1187 L
+0 0 7145 1187 L 7196 1722 M1 51 0 7171 1722 L 0 757 7196 1344 L 7248 1455 M1 51 0 7222 1455 L 0 536 7248 1187 L 7299 1724 M1
+51 0 7273 1724 L 0 757 7299 1346 L 7350 1725 M1 51 0 7324 1725 L 0 757 7350 1347 L 7401 1458 M1 52 0 7375 1458 L 0 535 7401 1191 L
+7452 1459 M1 51 0 7427 1459 L 0 536 7452 1191 L 7503 1459 M1 51 0 7478 1459 L 0 535 7503 1192 L 7554 1461 M1 51 0 7529 1461 L
+0 535 7554 1193 L 7605 1462 M1 51 0 7580 1462 L 0 535 7605 1195 L 7656 1463 M1 51 0 7631 1463 L 0 535 7656 1195 L 7707 1463 M1
+51 0 7682 1463 L 0 535 7707 1195 L 7758 1197 M1 51 0 7733 1197 L 0 0 7758 1197 L 7809 1465 M1 51 0 7784 1465 L 0 535 7809 1198 L
+7860 1466 M1 50 0 7835 1466 L 0 536 7860 1198 L 7911 1735 M1 51 0 7885 1735 L 0 757 7911 1356 L 7962 2003 M1 51 0 7936 2003 L
+0 927 7962 1540 L 8012 1201 M1 51 0 7987 1201 L 0 0 8012 1201 L 8063 1468 M1 51 0 8038 1468 L 0 535 8063 1200 L 8114 1732 M1
+50 0 8089 1732 L 0 757 8114 1353 L 8165 1203 M1 51 0 8139 1203 L 0 0 8165 1203 L 8215 1739 M1 51 0 8190 1739 L 0 756 8215 1361 L
+8266 1738 M1 50 0 8241 1738 L 0 757 8266 1360 L 8316 1741 M1 51 0 8291 1741 L 0 757 8316 1363 L 8367 1472 M1 50 0 8342 1472 L
+0 535 8367 1204 L 8418 1472 M1 51 0 8392 1472 L 0 535 8418 1205 L 8468 1476 M1 50 0 8443 1476 L 0 535 8468 1208 L 8518 1742 M1
+51 0 8493 1742 L 0 757 8518 1363 L 8569 1209 M1 50 0 8544 1209 L 0 0 8569 1209 L 8619 1745 M1 50 0 8594 1745 L 0 757 8619 1366 L
+8670 1478 M1 51 0 8644 1478 L 0 535 8670 1210 L 8720 1437 M1 50 0 8695 1437 L 0 535 8720 1170 L 8770 1459 M1 50 0 8745 1459 L
+0 756 8770 1081 L 8821 1501 M1 51 0 8795 1501 L 0 757 8821 1123 L 8871 1199 M1 50 0 8846 1199 L 0 0 8871 1199 L 8921 1723 M1
+50 0 8896 1723 L 0 757 8921 1344 L 8971 1423 M1 50 0 8946 1423 L 0 535 8971 1155 L 9021 1210 M1 50 0 8996 1210 L 0 0 9021 1210 L
+9071 1216 M1 51 0 9046 1216 L 0 0 9071 1216 L 9122 1474 M1 50 0 9097 1474 L 0 535 9122 1207 L 9172 1486 M1 50 0 9147 1486 L
+0 535 9172 1218 L 9222 1188 M1 50 0 9197 1188 L 0 0 9222 1188 L 9272 1952 M1 50 0 9247 1952 L 0 927 9272 1489 L 9322 1479 M1
+50 0 9297 1479 L 0 535 9322 1211 L 9372 1222 M1 50 0 9347 1222 L 0 0 9372 1222 L 9421 1758 M1 49 0 9397 1758 L 0 757 9421 1380 L
+2 SLW
+ 13.25  pgscale div FS gs    90.00        157.437       1302.628 moveto rotate (counts s) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS ( keV) HVC   7.95 pgscale div FS up (-1) HVC dn  13.25 pgscale div FS gr
+ 13.25  pgscale div FS gs     0.00       4725.857        365.438 moveto rotate (Energy \(keV\)) HVC gr
+0.000 1.000 0.000 setrgbcolor 8396 0 1050 1450 L 0.000 0.000 0.000 setrgbcolor 1 SLW
+  9.36  pgscale div FS gs     0.00       8907.358         61.969 moveto rotate (neolnx 10-Sep-2024 12:50) HVC gr
+0.000 1.000 0.000 setrgbcolor 2 SLW
+PGPLOT restore showpage
+%%PageTrailer
+%%PageBoundingBox: 41 -18 584 791
+
+%%Trailer
+%%BoundingBox: 41 -18 585 791
+%%DocumentFonts: Times-Bold Helvetica
+%%Pages: 4
+%%EOF
