@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------------
+ Fit method        : Classical Levenberg-Marquardt
+ Fit statistic     : C-statistic
+ Fit statistic used:       657.20
+ C-statistic       :       657.20
+ Expected C-stat   :       138.39 +/-        16.81
+ Chi-squared value :       961.10
+ Degrees of freedom:       131
+ W-statistic       :         0.00
+
