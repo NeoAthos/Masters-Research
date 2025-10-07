@@ -1,0 +1,5 @@
+from lightcurves import *
+lc_clean("lcurve.lc", outfile="evt2_bg.gti")
+print_window("lcurve.lc", ["fittopage", True, "orientation","landscape"])
+quit()
+
