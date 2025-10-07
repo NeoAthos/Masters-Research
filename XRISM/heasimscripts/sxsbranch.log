@@ -1,0 +1,15 @@
+STARTLOG: 2024/04/02 12:54:49
+EXECNAME: sxsbranch
+RUNPATH:  /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimscripts
+
+sxsbranch: Calculate branching ratios for simulated infile /HydraA/output/HydraA_GV_v100_100ks.pi
+sxsbranch: INFO: Parameters Acquired.
+sxsbranch: INFO: Start Initialize.
+sxsbranch: INFO: START PARAMETER LIST:
+sxsbranch: INFO: sxsbranch 'infile=/HydraA/output/HydraA_GV_v100_100ks.pi' 'filetype=sim' 'outfile=branch.out' 'countrate=1.0' 'exposure=1000.0' 'pixfrac=pixfrac.txt' 'pixmask=pixmask.txt' 'ctelpixfile=CALDB' 'dtprimary=69.92' 'dtmidhigh=69.92' 'dtlowmid=17.95' 'calpixrate=6.0' 'ctphafrac1=0.006' 'ctphafrac2=0.001' 'debin=0.5' 'enrgthr=0' 'flagmerge=no' 'dtmerge=2.0' 'dtmax=12.0' 'maxenergy=15.0' 'flagburst=no' 'ratburst=30.0' 'tburst=10.0' 'trise=3.0' 'tdecay=60.0' 'tstart=0.0' 'seed=0' 'buffer=-1' 'clobber=no' 'chatter=1' 'logfile=DEFAULT' 'debug=no' 'history=yes' 'mode=ql'
+sxsbranch: INFO: END PARAMETER LIST
+
+sxsbranch: ERROR: During main: ahfits::open() -> unable to open file for writing or reading /HydraA/output/HydraA_GV_v100_100ks.pi [CFITSIO STATUS 104: could not open the named file]
+sxsbranch: Finished SXSBRANCH.
+
+ENDLOG:   61.3141 s

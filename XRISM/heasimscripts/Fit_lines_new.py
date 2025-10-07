@@ -1,0 +1,561 @@
+import numpy as np
+import lmfit
+from lmfit.models import GaussianModel, LinearModel
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+import Spec_lines as lines
+import pprint
+import os
+import csv
+
+#z = 0.00428 #M87
+#T = 2.02 #M87
+
+z = 0.0522 #HydraA
+T = 3.64 #HydraA
+
+#T = 4
+class Spectrum():
+    def __init__(self, specfile):
+        # Initialize the Spectrum object with a specfile
+        self.specfile = specfile
+        
+        # Load data from the specfile using numpy
+        data = np.loadtxt(self.specfile, delimiter=',')
+        
+        # Extract wavelength, wavelength error, count rate, and count rate error from the data
+        self.x = data[:, 0]     # wavelength
+        self.xerr = data[:, 1]  # wavelength error
+        self.y = data[:, 2]     # count rate
+        self.yerr = data[:, 3]  # count rate error
+
+
+
+class fit_line():
+    def __init__(self, Spectrum):
+        # Initialize the fit_line object with a Spectrum object
+        self.spec = Spectrum
+
+    def fit(self, wavelength, bound, z, title, amplitudes=None, centers=None,
+            sigmas=None, ncomp=1, show=False, figname=None):
+        """Fit one or more Gaussians and a linear model to the given data.
+
+        Parameters:
+            wavelength (float): The central wavelength to consider.
+            bound (float): The width of the slice of the wavelength to consider.
+            z (float): Redshift value.
+            title (str): Title for the plot.
+            amplitudes (list or array-like): Amplitude parameters for the Gaussians.
+            centers (list or array-like): Center parameters for the Gaussians.
+            sigmas (list or array-like): Sigma parameters for the Gaussians.
+            ncomp (int, optional): Number of Gaussian components to use in the model. Default is 1.
+            show (bool, optional): Whether to display the plot. Default is False.
+            figname (str, optional): Name of the file to save the plot. Default is None.
+
+        Returns:
+            lmfit.Model: A model with a sum of ncomp Gaussians and a linear model.
+        """
+        # Adjust the wavelength based on the redshift
+        wavelength = wavelength/(1+z)
+        
+        # Extract the data within the specified wavelength range
+        idx = np.where(np.logical_and(self.spec.x >= wavelength - bound, 
+                                      self.spec.x <= wavelength + bound))
+        x = self.spec.x[idx]
+        y = self.spec.y[idx]
+        xerr = self.spec.xerr[idx]
+        yerr = self.spec.yerr[idx]
+
+        if ncomp == 1:
+            # If only one Gaussian component is requested, create a GaussianModel and a LinearModel
+            gauss = GaussianModel(prefix='g1_')
+            linear = LinearModel()
+            model = gauss + linear
+
+            # Set initial parameter hints from the data
+            amplitudes = [np.max(y)-np.min(y)]
+            sigmas = [0.002]
+            centers = [wavelength]
+        else:
+            # Define a function that creates a model with ncomp gaussians
+            def composite_model(ncomp):
+                model = GaussianModel(prefix='g1_')
+                for i in range(ncomp - 1):
+                    model += GaussianModel(prefix='g%s_'%(i+2))
+                return model
+
+            # Create the sum of ncomp Gaussians and a LinearModel
+            model = composite_model(ncomp)
+            model += LinearModel()
+
+        # Set initial parameter guesses
+        params = model.make_params()
+
+        for i in range(ncomp):
+            # Set initial guesses for parameters of the Gaussian components
+            params['g{}_amplitude'.format(i+1)].set(value=amplitudes[i], min=0.001)
+            params['g{}_center'.format(i+1)].set(value=centers[i])
+            params['g{}_sigma'.format(i+1)].set(value=sigmas[i])
+
+        # Set initial values for linear parameters
+        params['slope'].set(vary=True)
+        params['intercept'].set(value=np.min(y), vary=True)
+
+        # Perform the fitting operation using lmfit
+        result = model.fit(y, params, x=x, weights=1/yerr)
+
+        # Plot the data, the fitted model and the residual
+        #fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(8, 6),
+        #                               gridspec_kw={'hspace': 0, 'wspace': 0,
+        #                                            'height_ratios': [2, 1]})
+        fig, (ax1) = plt.subplots(figsize=(8, 6))
+
+
+        ax1.errorbar(x, y, xerr=xerr, yerr=yerr, fmt='.', color='k', alpha=0.5)
+        ax1.plot(x, result.best_fit, 'r-', label='fit')
+        
+        if ncomp > 1:
+            # Plot individual components with the best-fit model
+            comps = result.eval_components(x=x)
+            for i in range(ncomp):
+                prefix = 'g{}_'.format(i + 1)
+                ax1.plot(x, comps[prefix], ls='--', label='Comp {}'.format(i + 1))
+
+        residuals = y - result.best_fit
+        #ax2.axhline(y=0, ls='--', c='grey')
+        #ax2.plot(x, residuals, 'k')
+        ax1.set_ylabel(r'counts s$^{-1}$ keV$^{-1}$')
+        ax1.set_title(title)
+        ax1.legend(fontsize=12)
+        ax1.set_xlabel('Energy (keV)')
+        #ax2.set_ylabel('Residuals')
+        plt.tight_layout()
+        
+        # Save the plot to a file if specified
+        if figname != None:
+            plt.savefig(figname)
+        
+        # Display the plot if requested
+        if show:
+            plt.show()
+
+        # Store the fitting result in the object's attribute
+        self.result = result
+        self.residual = residuals
+
+
+
+    def get_fit_info(self, pout=False, ncomp=1, linename='', linefree=None):
+        """
+        Generates a dictionary of best fit parameter values and their 1-sigma uncertainties.
+
+        Parameters:
+            pout (bool): Whether to print out the results in the terminal. Default: False
+            ncomp (int): Number of Gaussian components used in the fit. Default: 6
+            linename (str): The name of the emission line
+            linefree (list or array-like): The starting and end wavelengths of linefree regions. Default: None
+
+        Returns:
+            output (list): List of lists containing the fit parameter values and their 1-sigma errors for each component.
+                Each inner list contains the following information:
+                - Component number
+                - Area of the line value
+                - Positive error for area
+                - Negative error for area
+                - Center value
+                - Positive error for center
+                - Negative error for center
+                - Sigma value
+                - Positive error for sigma
+                - Negative error for sigma
+                - Velocity dispersion value (calculated as sigma / center * speed of light)
+                - Positive error for velocity dispersion
+                - Negative error for velocity dispersion
+                - significance of detection
+        """
+
+        c = 299792.458 # km/s, speed of light
+        table = []
+        
+        try:
+            # Compute confidence intervals for the fit parameters
+            ci = lmfit.conf_interval(self.result, self.result)
+            # print(ci)
+            
+            for i in range(ncomp):
+                # Extract the confidence intervals for amplitude, center, and sigma
+                amp_conf_int = ci['g{}_amplitude'.format(i+1)]  # This is actually the area/flux of the line
+                cen_conf_int = ci['g{}_center'.format(i+1)]
+                sigma_conf_int = ci['g{}_sigma'.format(i+1)]
+                intercept_conf_int = ci['intercept']
+                slope_conf_int = ci['slope']
+                
+                # Extract the best-fit values and calculate the positive and negative errors
+                amp_val = amp_conf_int[3][1]
+                amp_err_pos = amp_conf_int[4][1] - amp_val
+                amp_err_neg = amp_val - amp_conf_int[2][1]
+                
+                cen_val = cen_conf_int[3][1]
+                cen_err_pos = cen_conf_int[4][1] - cen_val
+                cen_err_neg = cen_val - cen_conf_int[2][1]
+                
+                sigma_val = sigma_conf_int[3][1]
+                sigma_err_pos = sigma_conf_int[4][1] - sigma_val
+                sigma_err_neg = sigma_val - sigma_conf_int[2][1]
+
+                # Calculate velocity dispersion and its positive and negative errors
+                sigma_vel_val = sigma_val / cen_val * c
+                sigma_vel_err_pos = sigma_err_pos / cen_val * c
+                sigma_vel_err_neg = sigma_err_neg / cen_val * c
+
+                # Calculate detection significance
+                peak_val = amp_val/(sigma_val*(2*np.pi)**0.5)  # Converting area of the line to its peak value
+
+                x = self.result.userkws['x']
+                if linefree is not None:
+                    idx = np.where(np.logical_and(x >= linefree[0], 
+                                          x <= linefree[1]))
+                    noise = np.std(self.residual[idx])
+                else:
+                    noise = np.std(self.residual)
+
+                significance = peak_val / noise
+                print("Peak:", peak_val, "Noise:", noise)
+                
+                # Append the fit information for this component to the table
+                table.append([linename+'_'+str(i+1), amp_val, amp_err_pos, amp_err_neg,
+                              cen_val, cen_err_pos, cen_err_neg,
+                              sigma_val, sigma_err_pos, sigma_err_neg,
+                              sigma_vel_val, sigma_vel_err_pos, sigma_vel_err_neg,
+                              significance])
+        
+        except lmfit.minimizer.MinimizerException:
+            # If an exception occurs during the computation of confidence intervals,
+            # use the best-fit values directly
+            for i in range(ncomp):
+                amp_val = self.result.params['g{}_amplitude'.format(i+1)].value
+                cen_val = self.result.params['g{}_center'.format(i+1)].value
+                sigma_val = self.result.params['g{}_sigma'.format(i+1)].value
+                sigma_vel_val = sigma_val / cen_val * c
+
+                # Calculate detection significance
+                peak_val = amp_val/(sigma_val*(2*np.pi)**0.5)  # Converting area of the line to its peak value
+                x = self.result.userkws['x']
+                if linefree is not None:
+                    idx = np.where(np.logical_and(x >= linefree[0], 
+                                          x <= linefree[1]))
+                    noise = np.std(self.residual[idx])
+                else:
+                    noise = np.std(self.residual)
+
+                significance = peak_val / noise
+                print("Peak:", peak_val, "Noise:", noise)
+
+                # Set errors to 0 as confidence intervals could not be computed
+                table.append([linename+'_'+str(i+1), amp_val, 0, 0,
+                              cen_val, 0, 0,
+                              sigma_val, 0, 0,
+                              sigma_vel_val, 0, 0,
+                              significance])
+
+        if pout:
+            # Print the table if pout is True
+            print(*table)
+
+        return table
+
+
+
+    def calculate_lw(self, T, T_err, output, mass=1.2, res=5.0, ncomp=1):
+        """
+        Calculate the thermal, instrumental, and turbulent velocities based on the gas temperature and fitting output.
+
+        Parameters:
+            T (float): The gas temperature in keV.
+            T_err (float): The error in gas temperature in keV.
+            output (list): List containing the fitting parameters.
+            mass (float): The gas particle mass in atomic mass units (amu). Default: 1.2 amu.
+            res (float): Instrumental resolution (FWHM) in eV. Default: 5.0 eV.
+            ncomp (int): Number of Gaussian components used in the fit. Default: 1.
+
+        Returns:
+            output (list): List containing the fitting parameters with appended thermal, instrumental, and turbulent velocities and errors.
+            
+        This function performs the following steps:
+        1. Converts the gas temperature from keV to Joules.
+        2. Converts the gas temperature error from keV to Joules.
+        3. Calculates the gas particle mass in kilograms.
+        4. Initializes arrays for wavelength, total linewidth, and total linewidth error.
+        5. Extracts relevant values from the fitting output and stores them in the corresponding arrays.
+        6. Calculates the thermal rms velocity in one dimension.
+        7. Calculates the error in the thermal rms velocity.
+        8. Calculates the instrumental linewidth.
+        9. Calculates the turbulent rms velocity.
+        10. Calculates the error in the turbulent rms velocity.
+        11. Appends the calculated velocities and errors to the output list for each component.
+        12. Returns the modified output list.
+        """
+        
+        T = T * 1000 * 1.6e-19 # converting keV to Joules
+        T_err = T_err * 1000 * 1.6e-19 # converting keV to Joules
+        mass_kg = mass * 1.66e-27 # gas particle mass in kg
+        c = 299792.458 # km/s, speed of light
+        c_ms = 299792458 # m/s, speed of light
+        mass_e = 9.1093837E-31
+
+        wavelength = np.zeros(ncomp)
+        lw_tot = np.zeros(ncomp)
+        lw_tot_err = np.zeros(ncomp)
+
+        for i in range(ncomp):
+            wavelength[i] = output[i][4] # keV
+            lw_tot[i] = output[i][10] # km/s
+            lw_tot_err[i] = abs((output[i][11]+output[i][12])/2) # km/s
+        
+        # Calculate the thermal rms velocity
+        lw_th = np.sqrt(T / mass_kg) / 1000 # km/s in one dimension
+        #lw_th_eV = mass_kg*c_ms**2*(1/(np.sqrt(1 - ((lw_th*1000)**2)/(c_ms**2))) - 1)*6.242e+18
+        lw_th_eV = ((1/2)*mass_e*(lw_th*1000)**2)/1.602e-19
+        lw_th_err = 0.5 * np.sqrt(1 / mass_kg / T) * T_err / 1000 # km/s
+        #lw_th_err_eV = mass_kg*c_ms**2*(1/(np.sqrt(1 - ((lw_th_err*1000)**2)/(c_ms**2))) - 1)*6.242e+18
+        lw_th_err_eV = ((1/2)*mass_e*(lw_th_err*1000)**2)/1.602e-19
+        
+        # Calculate instrumental linewidth
+        lw_i = ((res/2.355)/(wavelength*1000) * c) # km/s
+        #lw_i_eV = mass_kg*c_ms**2*(1/(np.sqrt(1 - ((lw_i*1000)**2)/(c_ms**2))) - 1)*6.242e+18
+        lw_i_eV = ((1/2)*mass_e*(lw_i*1000)**2)/1.602e-19
+	
+        # Calculate the turbulent rms velocity
+        lw_turb = np.sqrt(lw_tot**2 - lw_th**2 - lw_i**2)
+        print(lw_tot)
+        #lw_turb_eV = mass_kg*c_ms**2*(1/(np.sqrt(1 - ((lw_turb*1000)**2)/(c_ms**2))) - 1)*6.242e+18
+        lw_turb_eV = ((1/2)*mass_e*(lw_turb*1000)**2)/1.602e-19
+        lw_turb_err = abs(lw_tot*lw_tot_err - lw_th*lw_th_err) / lw_turb
+        #lw_turb_err_eV = mass_kg*c_ms**2*(1/(np.sqrt(1 - ((lw_turb_err*1000)**2)/(c_ms**2))) - 1)*6.242e+18
+        lw_turb_err_eV = ((1/2)*mass_e*(lw_turb_err*1000)**2)/1.602e-19
+
+	#Calculate the natural line width
+	
+        for i in range(ncomp):
+            # Append the calculated velocities and errors to the output list
+            output[i].append(lw_th)
+            output[i].append(lw_th_err)
+            output[i].append(lw_i[i])
+            output[i].append(lw_turb[i])
+            output[i].append(lw_turb_err[i])
+            output[i].append(lw_th_eV)
+            output[i].append(lw_th_err_eV)
+            output[i].append(lw_i_eV[i])
+            output[i].append(lw_turb_eV[i])
+            output[i].append(lw_turb_err_eV[i])
+        return output
+
+
+
+def write_outputs_to_csv(line, result, filename):
+    """
+    Writes the output dictionary to a CSV file with the specified filename.
+    If the file already exists, appends the new output directory values on a new line.
+
+    Parameters:
+        line (dict): A dictionary of output values.
+        result (list): List of lists containing the output values for each row.
+        filename (str): The name of the CSV file to write to.
+
+    Returns:
+        None
+    """
+    
+    # Write the output values to a CSV file
+    fieldnames = ['line', 'amp', 'amp_p', 'amp_n', 'center', 'center_p', 'center_n',
+                  'sigma', 'sigma_p', 'sigma_n',
+                  'sigma_vel', 'sigma_vel_p', 'sigma_vel_n', 'significance', 'v_th(km/s)', 'v_th_err(km/s)',
+                  'v_instr(km/s)', 'v_turb(km/s)', 'v_turb_err(km/s)','v_th(eV)', 'v_th_err(eV)',
+                  'v_instr(eV)', 'v_turb(eV)', 'v_turb_err(eV)']
+    
+    # check if the file already exists
+    file_exists = os.path.isfile(filename)
+    
+    with open(filename, 'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        if not file_exists:
+            writer.writerow(fieldnames) # write header row if file didn't exist
+        for row in result:
+            writer.writerow(row)
+
+
+
+def main(specfile, spec, bound, redshift, linename, linewav, pdf_pages,
+         amplitudes=None, sigmas=None, centers=None, ncomp=1, figname=None,
+         T=T, T_err=0.2, mass=1.2, linefree=None):
+    """
+    Fit a single Gaussian + linear component model to a given spectrum and
+    plot the input spectrum and best-fit model.
+
+    Parameters:
+        specfile (str): The input spectrum file path.
+        spec (Spectrum): A Spectrum object containing the spectrum data.
+        bound (float): The width of the slice of the wavelength to consider
+                       for the fitting process.
+        redshift (float): The redshift of the galaxy.
+        linename (str): The name of the emission line.
+        linewav (float): The rest-frame wavelength of the emission line.
+        pdf_pages (PdfPages): A PdfPages instance where the generated plot
+                              will be saved as a new page.
+        amplitudes (list or None): Amplitude parameters for the Gaussians.
+                                   Default: None
+        sigmas (list or None): Sigma parameters for the Gaussians.
+                               Default: None
+        centers (list or None): Center parameters for the Gaussians.
+                                Default: None
+        ncomp (int): The number of Gaussian components to fit.
+                     Default: 6
+        figname (str or None): The name of the output figure file.
+                               Default: None
+        T (float): The gas temperature in keV.
+                   Default: 4
+        T_err (float): The error in gas temperature in keV.
+                       Default: 0.2
+        mass (float): The gas particle mass in atomic mass units (amu).
+                      Default: 1.2
+
+    Returns:
+        None
+
+    The function performs the following tasks:
+    1. Initializes a fit_line object with the given spec parameter.
+    2. Calls the fit method of the fit_line object to fit the model
+       with the provided parameters.
+    3. Saves the generated plot as a new page in the pdf_pages instance.
+    4. Clears the current figure to avoid overlapping plots.
+    5. Retrieves the fit information and prints it to the console.
+    6. Writes the fit information to a CSV file with a .res extension.
+       The output file has the same name as the input spectrum file,
+       but with a .res extension.
+    7. Calculates the velocities using the fit information and prints them.
+    8. Prints a separator line to separate multiple runs of the function.
+    """
+    fitter = fit_line(spec)
+    fitter.fit(linewav, bound, redshift, linename, amplitudes=amplitudes,
+               centers=centers, sigmas=sigmas, ncomp=ncomp)
+
+    # Save the current plot as a new page in the PDF file
+    pdf_pages.savefig(plt.gcf())
+
+    # Clear the current figure to avoid overlapping plots
+    plt.clf()
+
+    # Retrieve the fit information
+    result = fitter.get_fit_info(pout=False, ncomp=ncomp, linename=linename,
+        linefree=linefree)
+    print(linename)
+    print("\n")
+
+    # Calculate velocities using the fit information
+    output = fitter.calculate_lw(T, T_err, result, mass=mass, ncomp=ncomp)
+
+    # Write the fit information to a CSV file
+    write_outputs_to_csv(linename, output, specfile[:-4]+'.res')
+
+    # Print a separator line
+    print("--------------------------------------------\n")
+
+
+#---------------------------------------------------------------
+
+root = 'HydraA'
+specfile = root + '/output/HydraA_GV_v300_100ks_binned.csv'
+
+# Create the spec object
+spec = Spectrum(specfile)
+
+# Delete the existing CSV file with output of spectral fits before
+# creating a new one
+if os.path.isfile(specfile[:-4]+'.res'):
+    os.remove(specfile[:-4]+'.res')
+
+output_pdf = specfile[:-4]+'_MultiLines.pdf'
+
+# Create a PdfPages instance
+pdf_pages = PdfPages(output_pdf)
+
+
+#---------------------------------------------------------------
+
+# Fit OVIII line
+#main(specfile, spec, 0.07, z, 'OVIII', lines.O_VIII, pdf_pages, mass=15.999,
+#    linefree=[0.595/(1+z), 0.6378/(1+z)])
+
+#---------------------------------------------------------------
+
+# Ne X line:
+
+#main(specfile, spec, 0.02, z, 'Ne_X', lines.Ne_X/(1+z), pdf_pages, mass=20.1797,
+#    linefree=[0.999/(1+z), 1.0098/(1+z)])
+
+#---------------------------------------------------------------
+
+# Mg XII line:
+
+#main(specfile, spec, 0.02, z, 'Mg_XII', lines.Mg_XII, pdf_pages, mass=24.305,
+#    linefree=[1.452/(1+z), 1.4627/(1+z)])
+
+#---------------------------------------------------------------
+
+# Si XIV line:
+
+#main(specfile, spec, 0.02, z, 'Si_XIV', lines.Si_XIV, pdf_pages, mass=28.0855,
+#    linefree=[1.983/(1+z), 1.996/(1+z)])
+
+#---------------------------------------------------------------
+
+# Fe lines around 1 keV:
+# The biggest line at rest frame ~1.168 keV is a resonant scattering line
+
+#amplitudes=[3, 6, 3, 13, 8, 13]
+#centers = [1.054/(1+z), 1.084/(1+z), 1.10/(1+z), 1.103/(1+z), 1.1246/(1+z), 1.166/(1+z)]
+#sigmas = [0.005, 0.005, 0.005, 0.005, 0.005, 0.005]
+
+#main(specfile, spec, 0.08, z, 'Fe_XXIV', lines.Fe_XXIV_b, pdf_pages,
+#    amplitudes=amplitudes, centers=centers, sigmas=sigmas, ncomp=6,
+#    mass=55.847, linefree=[1.185/(1+z), 1.2065/(1+z)])
+
+#---------------------------------------------------------------
+
+# Fe K line and other lines around it:
+# The biggest line at rest frame ~6.7 keV is a resonant scattering line
+# past redshift = 0.063001
+amplitudes=[0.5,3.5,1.5,2.5,2,10]
+centers = [6.619/(1+z), 6.64/(1+z), 6.659/(1+z), 6.67/(1+z), 6.685/(1+z), 6.704/(1+z)]
+sigmas = [0.005, 0.01, 0.005, 0.005, 0.005, 0.008]
+
+#main(specfile, spec, 0.08, z, 'Fe_K', lines.Fe_K, pdf_pages,
+#    amplitudes=amplitudes, centers=centers, sigmas=sigmas, ncomp=6,
+#    mass=55.847, linefree=[6.330, 6.360])
+main(specfile, spec, 0.1, z, 'Fe_K', lines.Fe_K, pdf_pages,
+    amplitudes=amplitudes, centers=centers, sigmas=sigmas, ncomp=6,
+    mass=55.847, linefree=[6.728/(1+z), 6.76/(1+z)])
+
+amplitudes=[3.5,2.5,2,10]
+centers = [ 6.64/(1+z), 6.67/(1+z), 6.685/(1+z), 6.704/(1+z)]
+sigmas = [0.01, 0.005, 0.005, 0.008]
+
+#main(specfile, spec, 0.08, z, 'Fe_K', lines.Fe_K, pdf_pages,
+#    amplitudes=amplitudes, centers=centers, sigmas=sigmas, ncomp=6,
+#    mass=55.847, linefree=[6.330, 6.360])
+main(specfile, spec, 0.1, z, 'Fe_K', lines.Fe_K, pdf_pages,
+    amplitudes=amplitudes, centers=centers, sigmas=sigmas, ncomp=4,
+    mass=55.847, linefree=[6.728/(1+z), 6.76/(1+z)])
+
+
+# Close the PDF file
+pdf_pages.close()
+#Wise at al. 2006 HydraA
+
+#100ks up top and 200ks below
+#Sebastian Heinz 2010-2011 Athena
+
+
+#600km/s and 2000km/s CygnusA 100ks
+#100km/s HydraA 100ks
+#Zoom in and double the binning!

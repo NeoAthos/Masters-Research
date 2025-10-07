@@ -1,0 +1,118 @@
+
+  Running HEASim, v. 2018-02-13
+
+
+ Input Calibration files
+   intbackfile  = /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimfiles/xrism/resolve/background/resolve_h5ev_2019a_rslnxb.pha
+   psffile      = /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimfiles/xrism/resolve/psf/sxs_psfimage_20140618.fits
+   vigfile      = /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimfiles/xrism/resolve/vignette/SXT_VIG_140618.txt
+   arffile      = /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimfiles/xrism/resolve/response/resolve_bet_spec_noGV_20190611.arf
+   rmffile      = /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimfiles/xrism/resolve/response/resolve_h5ev_2019a.rmf
+
+ Global simulation info 
+   Pointing Direction (RA, DEC, ROLL): 150.000000, 50.000000, 0.000000
+   Exposure Time (s): 10000.000000
+   Mission:           hitomi
+   Instrument:        sxs
+   dtpileup:          0.000000
+   flagsubex:         0
+   subexposure:       0.000000
+   resample:          1
+   skipfov:           0
+
+ Debugging mode: Disengaged
+
+ Using user input seed = 1234567890
+
+Reading mission database file /home/neolnx/software/Xspec/heasoft-6.31.1/x86_64-pc-linux-gnu-libc2.35/refdata/heasim.mdb ...
+...done.
+
+Reading instrument map file...
+...done.
+
+All calibration files located successfully.
+
+Confirmed that supplied ARF file is a valid ARF file.
+Legacy HEASP reading ARF file into arf_struct.......done.
+
+Confirmed that supplied RMF file is a valid RMF file.
+Legacy HEASP reading RMF file into rmf_struct.......done.
+
+nebin=50000 nebin_rmf=50000
+rmffile!=none
+***** ebin_lo[0]==0
+Checking ARF/RMF compatibility...
+ARF/RMF compatibiilty check passed successfully.
+
+Nonzero RMF Energy Sensitivity: 0.000250 - 24.999750 keV.
+
+Legacy HEASP reading PHA (internal background) file...done.
+Populating ibspec and ib_backscal...done.
+
+Deallocating PHA data...
+...done.
+
+Reading input file...
+Found 1 valid sources in file /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimfiles/testdata/source_data/plaw_test.txt
+...done.
+
+
+Checking if sources fall within hitomi sxs detector (set debug=yes for more detail)...
+Pointing:  RA = 150.000000   Dec = 50.000000
+
+Initializing output FITS file...
+...done.
+
+Reading vignette file...
+...done.
+Reading PSF file...
+   Reading image 0...
+   Reading image 1...
+   Reading image 2...
+   Reading image 3...
+...done.
+
+Initializing Xspec models:
+ Solar Abundance Vector set to angr:  Anders E. & Grevesse N. Geochimica et Cosmochimica Acta 53, 197 (1989)
+ Cross Section Table set to vern:  Verner, Ferland, Korista, and Yakovlev 1996
+Done initializing Xspec models.
+
+Will simulate exposures such that:
+  1 sub-exposures of 10000s
+
+Processing 1 sources...
+    (set "debug=yes" for more detail)...
+
+===== Processing exposure 1 of 1 (0s - 10000s). =====
+
+  Processing source: 0
+
+
+...done processing sources.
+
+
+Removed 0 total (source+background) events that exceeded the PI channel array.
+
+Final number of:
+               source events =      11148
+           background events =        147
+         -------------------------------------
+                total events =      11295
+
+Deallocating bin data...
+...done.
+Deallocating source data...
+...done.
+Deallocating source data...
+...done.
+Deallocating RMF data...
+...done.
+Deallocating ARF data...
+...done.
+Deallocating vignette data...
+...done.
+Deallocating psf data...
+...done.
+
+Heasim finished with no errors, output file: output/astroH_sxi_plaw.fits
+

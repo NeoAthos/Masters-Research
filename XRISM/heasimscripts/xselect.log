@@ -1,0 +1,91 @@
+!xselect 15:02:30 26-Nov-2023
+xsel:SUZAKU > set mission HITOMI
+xsel:HITOMI-SXS > set datamode PX_NORMAL
+xsel:HITOMI-SXS-PX_NORMAL > read events ./output/cluster_beta_tempgradient_sxi.
+fits
+> Enter the Event file dir >[./] ./output/cluster_beta_tempgradient_sxi.fits
+The directory ./output/cluster_beta_tempgradient_sxi.fits/ doesn't exist
+Error in Xselect, no.   -1
+xsel:HITOMI-SXS-PX_NORMAL > read
+DEFAULT             -->  default linking of event and hk names
+HK                  -->  enter only HK files
+EVENTS              -->  enter only event files
+> Enter readin mode >[events] events
+> Enter the Event file dir >[./output/cluster_beta_tempgradient_sxi.fits] /outp
+ut/astroH_sxi_plaw.fits
+The directory /output/astroH_sxi_plaw.fits/ doesn't exist
+Error in Xselect, no.   -1
+xsel:HITOMI-SXS-PX_NORMAL > read
+DEFAULT             -->  default linking of event and hk names
+HK                  -->  enter only HK files
+EVENTS              -->  enter only event files
+> Enter readin mode >[events] events
+> Enter the Event file dir >[/output/astroH_sxi_plaw.fits] /output
+The directory /output/ doesn't exist
+Error in Xselect, no.   -1
+xsel:HITOMI-SXS-PX_NORMAL > read events ./output/astroH_sxi_plaw.fits
+> Enter the Event file dir >[/output] astroH_sxi_plaw.fits
+The directory astroH_sxi_plaw.fits/ doesn't exist
+Error in Xselect, no.   -1
+xsel:HITOMI-SXS-PX_NORMAL > read events
+> Enter the Event file dir >[astroH_sxi_plaw.fits] ./output
+> Enter Event file list >[] astroH_sxi_plaw.fits
+Got new datamode: STANDARD
+> Reset the datamode ? >[yes] yes
+ 
+ Notes: XSELECT set up for      HITOMI
+ Time keyword is TIME       in units of s
+ Default timing binsize =   16.000
+ 
+Setting...
+ Image  keywords   = X          Y           with binning =    1
+ Energy keyword   = PI                     with binning =    1
+ 
+Getting Min and Max for Energy Column...
+Got min and max for PI:     0  49999
+ 
+could not get minimum time resolution of the data read
+MJDREF =  6.0274814086000E+04 with TIMESYS = TT
+ Number of files read in:            1
+obscat.tmp outfile=/home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimscr
+ipts/xsel_read_cat.xsl keywords=@/home/neolnx/software/Xspec/heasoft-6.31.1/x
+rism/heasimscripts/xsel_obslist.def maxlen=11 minlen=0 iform=I8 eform=E8.2 q
+uiet=yes omit=no
+******************** Observation Catalogue ********************
+ 
+Data Directory is: /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimscrip
+ts/output/
+HK Directory is: /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimscripts
+/output/
+.xsl STDOUT @xsel_display.def - prhead = no pagewidth = 128 wrap = yes sho
+wunit = no tdisp = yes
+ 
+ 
+        OBJECT      TELESCOP    INSTRUME    DETNAM      DATAMODE    DATE-OBS   
+         DATE-END
+      1 NOT_FOUND   HITOMI      SXS         NOT_FOUND   STANDARD    2023-11-26T
+19:32:17 2023-11-26T22:18:57
+xsel:HITOMI-SXS-PX_NORMAL > extract spectrum
+NONE qdpfile = NONE fitsbinlc = NONE unbinlc = NONE phafile = xsel_hist.xsl i
+mgfile = NONE timefile = NONE adjustgti=no gstring = NONE usetpixrsel = no time
+order = no xcolf = X ycolf = Y xcolh = NONE ycolh = NONE xfkey = TLMAX yfkey = 
+TLMAX xhkey = TLMAX yhkey = TLMAX phamax = TLMAX specbin = 1 binh = 1 binf = 1 
+binlc = 1.6000000E+01 tcol = TIME ecol = PI ccol = NONE gcol = ITYPE polwcol 
+= NONE gti = GTI events = EVENTS gtitxt = xsel_ascii_out.xsl timeref = 40000
+.00 wtmapb = no stokes = NONE gtinam = GTI exitnow = no clobber=yes
+extractor v6.10    20 Jan 2023
+ Getting FITS WCS Keywords
+ Doing file: /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimscripts/out
+put/astroH_sxi_plaw.fits
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          11295     11295            0         0         0         0
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          11295     11295            0         0         0         0
+   in  9999.6     seconds
+ Spectrum         has    11295 counts for   1.130     counts/sec
+ ... wrote the PHA data Extension
+Wrote spectrum to astroH_sxi_plaw.pi
+xsel:HITOMI-SXS-PX_NORMAL > quit
+> Save this session? >[no] yes
+Session saved, goodbye

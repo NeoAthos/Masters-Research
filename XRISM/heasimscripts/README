@@ -1,0 +1,241 @@
+This directory contains the scripts and supplementary files needed to
+run the examples in the user guide. 
+
+A) To run a simple heasim test case for point source with a power-law
+spectrum:
+
+sh run_sim.sh >& run_sim.log.
+
+This uses the source defintion file 
+
+ahsim/heasim/response/testdata/source_data/plaw_test.txt.
+
+Run details are logged in run_sim.log. An output subdirectory is
+created if it does not exist, and the output file astroH_sxs_plaw.fits
+is placed into that directory.
+
+B) To  run a simple skyback test:
+
+sh run_skyback.sh >& run_skyback.log.
+
+Run details are logged in run_skyback.log, and the skyback output
+files are created in the working directory.
+
+Example B.1 Single point source with a simple spectrum
+
+description: Simulate a bright point source with an absorbed power-law
+spectrum; run for all four Astro-H detectors with an exposure time of
+10 ks.
+
+script: alldetectors.sh
+
+source definition file: pointsource.txt
+
+To run with logging: sh alldetectors.sh >& alldetectors.log
+
+output: alldetectors.log
+        output/astroH_pointsource_sxs.fits
+        output/astroH_pointsource_sxi.fits
+        output/astroH_pointsource_hxi1.fits
+        output/astroH_pointsource_hxi2.fits
+
+Example B.2 Very bright point source simulation split into subexposures
+
+description: Simulate a very bright point source with an absorbed
+power-law spectrum; run for the Astro-H SXI detector with an exposure
+time of 10 ks.
+
+source definition file: brighttsource.txt
+
+To run with logging: sh ptsrc_bright_sxi_optsub.sh >&
+ptsrc_bright_sxi_optsub.log
+
+output: ptsrc_bright_sxi_optsub.log
+        astroH_bright_sxi_optsub.fits
+	
+Example B.3 Single point source with a bursting light curve
+
+description: Simulate a bright point source with a lightcurve of a
+burst beginning 10 s after the start of the 1 ks exposure, with 3
+second risetime, one minute decay time, and ratio of peak-to-quiescent
+flux of 30. Run for SXS, SXI, and HXI1 detectors.
+
+script: run_burst.sh
+
+source definition file: plaw_burst.txt
+
+To run with logging: sh run_burst.sh >& run_burst.log
+
+output: run_burst.log
+        output/astroH_plaw_burst_sxs.fits
+        output/astroH_plaw_burst_sxi.fits
+        output/astroH_plaw_burst_hxi1.fits
+
+Example B.4 Bright bursting source using flux division
+
+description: Simulate a bright point source with a lightcurve of a
+burst beginning 10 s after the start of the 1 ks exposure, with 3
+second risetime, one minute decay time, and ratio of peak-to-quiescent
+flux of 30. Run for SXI, splitting the simulation into 10
+sub-simulations.
+
+script: divide_flux.pl 
+
+source definition file: plaw_bburst.txt
+
+To run with logging: ./divide_flux.pl 10
+
+output: burst.log
+        output/burst.evt.fits
+        output/burst1.evt.fits
+	...
+	output/burst10.evt.fits	
+
+Example B.5 Including Astrophyscal background
+
+description: Simulate a very weak point source for 500 ks, using all
+four Astro-H detectors, with background from diffuse Galactic and
+Local Hot Bubble diffuse emission, an an extragalactic population of
+point sources.
+
+SKYBACK script: skyback_sxi_hxi.sh
+
+To run SKYBACK with logging: sh skyback_sxi_hxi.sh >& skyback_sxi_hxi.log
+
+SKYBACK output: skyback_sxi_hxi.log
+		difcat_cxb_hxi.txt
+		difspec_cxb_hxi.dat
+		pscat_cxb_hxi.txt
+		pszcat_cxb_hxi.txt
+		difcat_cxb_sxi.txt
+		difspec_cxb_sxi.dat
+		pscat_cxb_sxi.txt
+		pszcat_cxb_sxi.txt
+
+HEASIM script: run_astroh_sxi_hxi_sxs_500k.sh
+
+HEASIM source definition file: ps_weak.txt
+
+NOTE: The SKYBACK output files identified above are used as input to
+run_astroh_sxi_hxi_sxs_500k.sh. Hence, the skyback_sxi_hxi.sh script
+should be run prior to this one.
+
+To run HEASIM with logging: 
+sh run_astroh_sxi_hxi_sxs_500k.sh >& run_astroh_sxi_hxi_sxs_500k.log
+
+HEASIM output: run_astroh_sxi_hxi_sxs_500k.log
+               astroH_cxb_sxi.fits
+       	       astroH_cxb_sxs.fits
+               astroH_cxb_hxi1.fits
+               astroH_cxb_hxi2.fits
+
+
+Example B.6  Multiple Point Sources 
+
+description: Simulate a 10 ks SXI observation of three point sources
+with distinct spectra.
+
+script: point_multi.sh
+
+source definition file: point_multi_input.dat
+
+To run with logging: sh point_multi.sh 
+
+output: output/sim1e_sxi_multi.log
+        output/sim1e_sxi_multi.fits
+
+Example B.7  Multiple Point Sources with roll
+
+description: Simulate a 10 ks SXI observation, with a roll angle of 30
+degrees, of three point souces with distinct spectra.
+
+script: point_mult_roll.sh
+
+source definition file: point_multi_input.dat
+
+To run with logging: sh point_multi_roll.sh 
+
+output: output/sim1f_sxi_multi-roll.log
+        output/sim1f_sxi_multi_roll.fits
+
+Example B.8 Extended Source -- Supernova Remnant (SNR) with
+            Spatially-Varying Spectra
+
+description: Simulate 100 ks SXI, SXS, and HXI1 observations of a
+supernova remnant based on separate images of the shell and interior
+of SN1006.  Distinct spectral models are applied to the the two
+regions. The images, sn1006_inner.fits and sn1006_shell.fits are
+assumed to reside in a subdirectory called CXO_image.
+
+script: sim_sn1006_sxi.sh
+
+source definition file: sim_sn1006_sxi.txt
+
+To run with logging: sh sim_sn1006_sxi.sh >& sim_sn1006_sxi.log
+
+output: sim_sn1006_sxi.log
+        output/astroH_sxi_sn1006.fits
+
+Example B.9 Extended Source -- Pulsed Point Source Embedded in
+Extended Source with Distinct Spectrum
+
+description: Simulate 40 ks SXI, SXS, and HXI1 observations of a
+"supernova remnant", modeled as a flat annular source with thermal
+spectrum, with an embedded "pulsar" with 1000 s pulsation, pulse
+fraction of 0.5, and non-thermal spectrum.
+
+script: sim_SNRwPSR.sh
+
+source definition file: sim_SNRwPSR.txt
+
+To run with logging: sh sim_SNRwPSR.sh >& sim_SNRwPSR.log
+
+output: sim_SNRwPSR.log
+        output/astroH_sxi_psr.fits
+
+Example B.10 Extended Source -- Galaxy Cluster with Beta Model Surface
+Brightness Profile and Temperature Gradient
+
+description: Simulate 100 ks SXI observation of a cluster of galaxies
+with a beta-model surface brightness profile and typical temperature
+gradient with a cool core rising to a peak and then falling off at
+large radii.
+
+script: cluster_beta_tempgradient_sxi.sh
+
+source definition file: cluster_beta_tempgradient_sxi.dat
+
+To run with logging: sh cluster_beta_tempgradient_sxi.sh
+
+output: cluster_beta_tempgradient_sxi.log
+        output/cluster_beta_tempgradient_sxi.fits
+
+Example B.11 Extended Source -- Galaxy Cluster Turbulence: User
+Spectrum that Includes Gaussian Broadening
+
+description: Simulate 200 ks SXS observation of an isothermal galaxy
+cluster with a beta-model surface brightness and 200 km/sec of
+turbulence. The spectral model source definition file is a "user" file
+generated using XSPEC.
+
+script: cluster_beta_turbulence_sxs.sh
+
+source definition file: cluster_beta_turbulence_sxs.dat
+
+To run with logging: sh cluster_beta_turbulence_sxs.sh
+
+output: cluster_beta_turbulence_sxs.log
+        output/cluster_beta_turbulence_sxs.fits
+
+
+
+=====
+Support files for Xspec simulation explained in the guide 
+ 
+bbvapec_model_example.xcm single temperature Optically-Thin thermal spectrum
+                          with velocity broadening for extrended source 
+                          model with beta-model
+                   
+dummy.pha                used for simulate a point source with an absorbed 
+                         power law spectrum and relativistic broadening Fe Ka
+                         emisison 
