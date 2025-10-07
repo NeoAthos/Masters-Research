@@ -1,0 +1,59 @@
+## Loading in data
+data 1 bin1L_000154000_det1.pi
+resp 1:1 bin1L_000154000_det1.rmf
+arf 1:1 bin1L_000154000_det1_AGN.arf
+
+# Verify setup
+show data
+show response
+
+## Ignoring outside bounds
+ignore **: **-1.7 10.-**
+ignore bad
+
+model 1:agn TBabs*(powerlaw)
+/*
+newpar agn:1 0.129
+newpar agn:2 2.35
+newpar agn:3 0.002
+freeze agn:1 agn:2
+thaw agn:3
+
+model 2:bvapec1 TBabs*bvapec
+/*
+newpar bvapec1:1 0.129
+newpar bvapec1:2 2.19
+newpar bvapec1:10 0.415431
+newpar bvapec1:11 0.415431
+newpar bvapec1:12 0.415431
+newpar bvapec1:14 0.415431
+newpar bvapec1:15 0.415431
+newpar bvapec1:16 0.004283
+newpar bvapec1:17 150.
+newpar bvapec1:18 0.100602
+freeze bvapec1:1
+thaw bvapec1:2 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:14 bvapec1:15 bvapec1:16 bvapec1:17 bvapec1:18
+
+## Fitting
+abund lpgs
+statistic cstat
+query yes
+parallel leven 20
+fit
+parallel leven 1
+
+## Calculating Error
+parallel error 20
+error 1. agn:3
+error 1. bapec1:2,10-12,14-18
+parallel error 1
+
+## Saving & Plotting
+save model rvp_all_1p8
+show par
+cpd rvp_all_1p8.ps\cps
+setpl rebin 5 10
+setpl xlog off
+setpl ylog on
+setpl energy
+plot data resid

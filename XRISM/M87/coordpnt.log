@@ -1,0 +1,89 @@
+STARTLOG: 2024/08/15 21:18:53
+EXECNAME: coordpnt
+RUNPATH:  /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimscripts/M87/box_upload
+
+coordpnt: INFO: startsysname=SKY; stopsysname=DET
+coordpnt: INFO: startsys_is_radec=1; stopsys_is_radec=0
+coordpnt: INFO: startsys_is_telpol=0; stopsys_is_telpol=0
+coordpnt: INFO: startsys_is_telxy=0; stopsys_is_telxy=0
+coordpnt: INFO: Querying CALDB for TelDef file with these parameters:
+coordpnt: INFO:    TELESCOPE:  XRISM
+coordpnt: INFO:    INSTRUMENT: RESOLVE
+coordpnt: INFO:    DETNAM:     -
+coordpnt: INFO:    FILTER:     -
+coordpnt: INFO:    CODENAME:   TELDEF
+coordpnt: INFO:    START DATE: -
+coordpnt: INFO:    START TIME: -
+coordpnt: INFO:    STOP DATE:  -
+coordpnt: INFO:    STOP TIME:  -
+coordpnt: INFO:    EXPRESSION: -
+coordpnt: INFO: TelDef file = /home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/teldef/xa_rsl_teldef_20190101v003.fits
+coordpnt: INFO: optcoord_sysnum: 2
+coordpnt: INFO: lowest_sys, highest_sys: 0, 4
+coordpnt: INFO: startsysname: SKY
+coordpnt: INFO: startsysnum: 4
+coordpnt: INFO: stopsysname: DET
+coordpnt: INFO: stopsysnum: 2
+coordpnt: INFO: Values of actual pointing parameters:
+coordpnt: INFO: ra: 187.66066
+coordpnt: INFO: dec: 12.357171
+coordpnt: INFO: roll: 300.27738
+coordpnt: INFO: Actual pointing quaternion (attitude):  0.20377657 -0.59285117 -0.15277384 0.76397824
+coordpnt: INFO: Effective values of nominal pointing parameters:
+coordpnt: INFO: ra: 187.66066
+coordpnt: INFO: dec: 12.357171
+coordpnt: INFO: roll: 0
+coordpnt: INFO: WCSdata structure:
+coordpnt: INFO: exists:  1
+coordpnt: INFO: xrefval: 187.66066
+coordpnt: INFO: yrefval: 12.357171
+coordpnt: INFO: xrefpix: 1215.5
+coordpnt: INFO: yrefpix: 1215.5
+coordpnt: INFO: xinc:    -0.00049110668
+coordpnt: INFO: yinc:    0.00049110668
+coordpnt: INFO: rot:     0
+coordpnt: INFO: type:    -TAN
+coordpnt: INFO: Nominal quaternion (attitude):  0.47190371 -0.4126794 -0.512877 0.58648084
+coordpnt: INFO: Looking for MULTISEG transformation:
+coordpnt: INFO: lowsysnum, highsysnum: 2, 4
+coordpnt: INFO: startsysnum, stopsysnum: 4, 2
+coordpnt: INFO: START PARAMETER LIST:
+coordpnt: INFO: coordpnt 'input=187.661035930275,12.3573936274099' 'outfile=NONE' 'telescop=XRISM' 'instrume=RESOLVE' 'ra=187.660662936373' 'dec=12.3571711279165' 'roll=300.277383278993' 'ranom=187.660662936373' 'decnom=12.3571711279165' 'rollnom=0.0' 'teldeffile=/home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/teldef/xa_rsl_teldef_20190101v003.fits' 'startsys=RADEC' 'stopsys=DET' 'multisegpar=NULL' 'rawtodetseg=-1' 'pixeltest=CENTER' 'winoffsetx=0' 'winoffsety=0' 'outx=3.45048096813969' 'outy=3.52246710889374' 'buffer=-1' 'clobber=yes' 'chatter=0' 'logfile=!DEFAULT' 'debug=NO' 'history=YES' 'mode=ql'
+coordpnt: INFO: END PARAMETER LIST
+coordpnt: INFO: POINT:  Starting X,Y: 187.66104, 12.357394
+coordpnt: INFO: startsysnum, stopsysnum: 4, 2
+coordpnt: INFO: conv_to_higher=0, isys=0
+coordpnt: INFO: sys: 3  seg: 0
+coordpnt: INFO: xpix = 0
+coordpnt: INFO: ypix = 0
+coordpnt: INFO: wcs->xrefval = 187.66066
+coordpnt: INFO: wcs->yrefval = 12.357171
+coordpnt: INFO: wcs->xrefpix = 1215.5
+coordpnt: INFO: wcs->yrefpix = 1215.5
+coordpnt: INFO: wcs->xinc -0.00049110668
+= coordpnt: INFO: wcs->yinc 0.00049110668
+= coordpnt: INFO: wcs->rot 0
+= coordpnt: INFO: xpix = 1214.7581
+coordpnt: INFO: ypix = 1215.9531
+coordpnt: INFO: status = 0
+coordpnt: INFO: convert to higher (RADEC):  sys=3
+coordpnt: INFO: prev_x=187.66104; prev_y=12.357394, x=1214.7581, y=1215.9531
+coordpnt: INFO: convert to lower (SKYATT):  sys=3
+coordpnt: INFO: q1->p[0]=0.20377657
+coordpnt: INFO: q1->p[1]=-0.59285117
+coordpnt: INFO: q1->p[2]=-0.15277384
+coordpnt: INFO: q1->p[3]=0.76397824
+coordpnt: INFO: prev_x=1214.7581; prev_y=1215.9531, x=1214.7347, y=1215.0877
+
+coordpnt: INFO: Finished with current conversion: x=1214.7347, y=1215.0877
+coordpnt: INFO: conv_to_higher=0, isys=1
+coordpnt: INFO: sys: 2  seg: 0
+coordpnt: INFO: convert to lower (BASIC):
+coordpnt: INFO: prev_x=1214.7347, prev_y=1215.0877, x=3.4558472, y=3.4762149, sys=2
+coordpnt: INFO: Finished with current conversion: x=3.4558472, y=3.4762149
+coordpnt: INFO: stopsys_is_telpol=0
+coordpnt: INFO: stopsys_is_telxy =0
+coordpnt: INFO: conv_to_higher_tel=0
+coordpnt: OUTX OUTY=    3.45584723     3.47621488
+
+ENDLOG:   0.022855 s

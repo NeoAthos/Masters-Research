@@ -1,0 +1,271 @@
+# STARTLOG: Thu Aug 15 21:18:52 2024
+# EXECNAME: xaarfgen
+# RUNPATH:  /home/neolnx/software/Xspec/heasoft-6.31.1/xrism/heasimscripts/M87/box_upload
+# CMDLINE:  xaarfgen xrtevtfile=raytrace_xa300017010rsl_p0px1000_ptsrc.fits source_ra=187.661035930275 source_dec=12.3573936274099 telescop=XRISM instrume=RESOLVE emapfile=xa300017010rsl_p0px1000.expo regmode=DET regionfile=xa300017010rsl_det_fullarray_miss27.reg sourcetype=POINT rmffile=xa300017010rsl_p0px1000_cl4_Hp_X_comb.rmf erange=0.3 18.0 0 0 outfile=xa300017010rsl_p0px1000_ptsrc.arf numphoton=300000 minphoton=100 teldeffile=CALDB qefile=CALDB contamifile=CALDB obffile=CALDB fwfile=CALDB gatevalvefile=CALDB onaxisffile=CALDB onaxiscfile=CALDB mirrorfile=CALDB obstructfile=CALDB frontreffile=CALDB backreffile=CALDB pcolreffile=CALDB scatterfile=CALDB mode=h clobber=yes seed=7 imgfile=NONE
+INFO   ::Starting.
+INFO   ::
+INFO   ::===========================================================
+INFO   ::                Running xaarfgen
+INFO   ::===========================================================
+INFO   ::
+INFO   ::Querying CALDB for on axis coarse effective area file. 
+INFO   ::Querying CALDB using quzcif with the following parameters:
+INFO   ::  TELESCOPE:    XRISM
+INFO   ::  INSTRUMENT:   RESOLVE
+INFO   ::  DETNAM:       -
+INFO   ::  FILTER:       -
+INFO   ::  CODENAME:     EFFAREACRS
+INFO   ::  DATE:         2024-06-02
+INFO   ::  TIME:         20:00:00
+INFO   ::  EXPRESSION:   -
+INFO   ::  MAXRET:       1
+INFO   ::  RETRIEVE:     no
+INFO   ::
+INFO   ::FTOOLS CMD: quzcif 'MISSION=XRISM' 'INSTRUMENT=RESOLVE' 'DETECTOR=-' 'FILTER=-' 'CODENAME=EFFAREACRS' 'DATE=2024-06-02' 'TIME=20:00:00' 'EXPR=-' 'MAXRET=1' 'RETRIEVE=no'
+INFO   ::/home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/mirror/xa_rsl_telarea_20190101v002.fits 2
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftverify '/home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/mirror/xa_rsl_telarea_20190101v002.fits[2]' 'errreport=e' 'prstat=no'
+INFO   ::verification OK: /home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/mirror/xa_rsl_telarea_20190101v002.fits[2]
+INFO   ::
+INFO   :: 
+INFO   ::START PARAMETER list for xaarfgen
+INFO   :: xaarfgen 'xrtevtfile=raytrace_xa300017010rsl_p0px1000_ptsrc.fits' 'source_ra=187.661035930275' 'source_dec=12.3573936274099' 'nompntpars=43.0 65.0 130.0 43.0 65.0' 'telescop=XRISM' 'instrume=RESOLVE' 'teldeffile=CALDB' 'emapfile=xa300017010rsl_p0px1000.expo' 'qefile=CALDB' 'obffile=CALDB' 'fwfile=CALDB' 'contamifile=CALDB' 'abund=1.0' 'cols=0.0' 'covfac=1.0' 'gatevalvefile=CALDB' 'rmffile=xa300017010rsl_p0px1000_cl4_Hp_X_comb.rmf' 'erange=0.3 18.0 0 0' 'onaxisffile=CALDB' 'onaxiscfile=CALDB' 'polydeg=DEFAULT' 'outfile=xa300017010rsl_p0px1000_ptsrc.arf' 'regmode=DET' 'regionfile=xa300017010rsl_det_fullarray_miss27.reg' 'mirrorfile=CALDB' 'obstructfile=CALDB' 'frontreffile=CALDB' 'backreffile=CALDB' 'pcolreffile=CALDB' 'scatterfile=CALDB' 'numphoton=300000' 'minphoton=100' 'sourcetype=POINT' 'betapars=0.50 0.60 5.0' 'flatradius=10.0' 'imgfile=NONE' 'auxtransfile=NONE' 'seed=7' 'cleanup=NO' 'clobber=YES' 'chatter=1' 'logfile=!DEFAULT' 'debug=NO' 'history=YES' 'mode=h'
+INFO   ::END PARAMETER list for xaarfgen
+INFO   :: 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo' 'H'
+INFO   ::
+INFO   ::Column being read: RANOMXP
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=RANOMXP' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column RANOMXP 
+INFO   ::Column being read: DECNOMXP
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=DECNOMXP' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column DECNOMXP 
+INFO   ::Column being read: PA_NOMXP
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=PA_NOMXP' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column PA_NOMXP 
+INFO   ::Column being read: RA_PNT
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=RA_PNT' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column RA_PNT 
+INFO   ::Column being read: DEC_PNT
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=DEC_PNT' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column DEC_PNT 
+INFO   ::Column being read: OFFAXISLO
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=OFFAXISLO' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column OFFAXISLO 
+INFO   ::Column being read: OFFAXISHI
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=OFFAXISHI' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column OFFAXISHI 
+INFO   ::Column being read: TIMEINTERVAL
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=TIMEINTERVAL' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column TIMEINTERVAL 
+INFO   ::Column being read: FRACTION
+INFO   ::Filename / Extension xa300017010rsl_p0px1000.expo[OFFAXISHIST] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist 'xa300017010rsl_p0px1000.expo[OFFAXISHIST]' 'T' 'columns=FRACTION' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 1 from column FRACTION 
+INFO   ::
+INFO   ::FTOOLS CMD: coordpnt 'input=187.661035930275,12.3573936274099' 'outfile=NONE' 'telescop=XRISM' 'instrume=RESOLVE' 'teldeffile=CALDB' 'startsys=RADEC' 'stopsys=DET' 'ra=187.660662936373' 'dec=12.3571711279165' 'roll=300.277383278993' 'ranom=187.660662936373' 'decnom=12.3571711279165' 'clobber=yes' 'chatter=0'
+INFO   ::
+INFO   ::FTOOLS CMD: pget 'coordpnt' 'outx'
+INFO   ::3.45584723268038
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: pget 'coordpnt' 'outy'
+INFO   ::3.47621488055294
+INFO   ::
+INFO   ::Column being read: ENERGY
+INFO   ::Filename / Extension /home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/mirror/xa_rsl_telarea_20190101v002.fits[2] 
+INFO   ::
+INFO   ::FTOOLS CMD: ftlist '/home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/mirror/xa_rsl_telarea_20190101v002.fits[2]' 'T' 'columns=ENERGY' 'rows=-' 'rownum=No' 'colheader=No'
+INFO   ::
+INFO   ::Read 36 from column ENERGY 
+INFO   ::
+INFO   ::FTOOLS CMD: fcalc 'infile=/home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/mirror/xa_rsl_telarea_20190101v002.fits[2]' 'outfile=arfgencgrid_full.fits' 'clname=ENERGY' 'expr=ENERGY' 'clobber=yes' 'copyall=no' 'copycol=no'
+INFO   ::
+INFO   ::FTOOLS CMD: fthedit 'infile=arfgencgrid_full.fits' 'keyword=EXTNAME' 'operation=ADD' 'value=ENERGYGRID'
+INFO   ::
+INFO   ::FTOOLS CMD: ftcopy 'infile=arfgencgrid_full.fits' 'outfile=arfgencgrid.fits' 'clobber=yes'
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=1' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 36 rows
+INFO   ::  Rows to be deleted = 1
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=1' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 35 rows
+INFO   ::  Rows to be deleted = 1
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=1' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 34 rows
+INFO   ::  Rows to be deleted = 1
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=33' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 33 rows
+INFO   ::  Rows to be deleted = 33
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=32' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 32 rows
+INFO   ::  Rows to be deleted = 32
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=31' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 31 rows
+INFO   ::  Rows to be deleted = 31
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=30' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 30 rows
+INFO   ::  Rows to be deleted = 30
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=29' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 29 rows
+INFO   ::  Rows to be deleted = 29
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=28' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 28 rows
+INFO   ::  Rows to be deleted = 28
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=27' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 27 rows
+INFO   ::  Rows to be deleted = 27
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=26' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 26 rows
+INFO   ::  Rows to be deleted = 26
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=25' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 25 rows
+INFO   ::  Rows to be deleted = 25
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=24' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 24 rows
+INFO   ::  Rows to be deleted = 24
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=23' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 23 rows
+INFO   ::  Rows to be deleted = 23
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: ftdelrow 'infile=arfgencgrid.fits' 'outfile=none' 'rows=22' 'confirm=YES' 'clobber=yes'
+INFO   ::
+INFO   ::Warning: will delete rows in the following Binary table:
+INFO   ::  HDU number 2,  EXTNAME = ENERGYGRID
+INFO   ::  1 columns X 22 rows
+INFO   ::  Rows to be deleted = 22
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: xrtraytrace 'instrume=RESOLVE' 'telescop=XRISM' 'mode=h' 'mirrorfile=CALDB' 'obstructfile=CALDB' 'frontreffile=CALDB' 'backreffile=CALDB' 'pcolreffile=CALDB' 'scatterfile=CALDB' 'numphoton=300000' 'energy=arfgencgrid.fits[ENERGYGRID]' 'seed=7' 'misalign=1 1 1 1 1 1' 'transmode=ALL' 'scattermode=ALL' 'source=POINT' 'betapars=0.50 0.60 5.0' 'flatradius=10.0' 'diagpars=1 1 1 1 1' 'offaxis= 0.23' 'roll= -91.37' 'annulus=-1 10000 0 360.0' 'rectangle = 0 0 -100 -100' 'outeafile=NONE' 'outpsffile=NONE' 'psfpars=1 100 15' 'resultsplanez=0.0' 'resplaneonly=YES' 'outphistfile=raytrace_xa300017010rsl_p0px1000_ptsrc.fits' 'phisttype=BRIEF' 'externobjects=ALL' 'fastmode=YES' 'clobber=NO' 'chatter=1' 'logfile=NONE' 'history=YES'
+INFO   ::xrtraytrace: ************************************
+INFO   ::xrtraytrace:          START XRTRAYTRACE          
+INFO   ::xrtraytrace: ************************************
+INFO   ::xrtraytrace: Setting up telescope structure
+INFO   ::xrtraytrace: Setting up misalignment transformations
+INFO   ::xrtraytrace: Beginning raytracing
+INFO   ::xrtraytrace: Starting run for azimuthal angle = 91.37 degrees, off-axis angle = 0.23 arcmin
+INFO   ::xrtraytrace: Completed 10% (630000 photons)
+INFO   ::xrtraytrace: Completed 20% (1260000 photons)
+INFO   ::xrtraytrace: Completed 30% (1890000 photons)
+INFO   ::xrtraytrace: Completed 40% (2520000 photons)
+INFO   ::xrtraytrace: Completed 50% (3150000 photons)
+INFO   ::xrtraytrace: Completed 60% (3780000 photons)
+INFO   ::xrtraytrace: Completed 70% (4410000 photons)
+INFO   ::xrtraytrace: Completed 80% (5040000 photons)
+INFO   ::xrtraytrace: Completed 90% (5670000 photons)
+INFO   ::xrtraytrace: Completed 100% (6300000 photons)
+INFO   ::xrtraytrace: ************************************
+INFO   ::xrtraytrace:           END XRTRAYTRACE           
+INFO   ::xrtraytrace: ************************************
+INFO   ::
+INFO   ::
+INFO   ::FTOOLS CMD: xaxmaarfgen 'clobber=yes' 'mode=h' 'telescop=XRISM' 'instrume=RESOLVE' 'emapfile=xa300017010rsl_p0px1000.expo' 'qefile=CALDB' 'obffile=CALDB' 'fwfile=CALDB' 'contamifile=CALDB' 'abund=1.0' 'cols=0.0' 'covfac=1.0' 'gatevalvefile=CALDB' 'rmffile=xa300017010rsl_p0px1000_cl4_Hp_X_comb.rmf' 'onaxisffile=CALDB' 'onaxiscfile=/home/neolnx/software/XRISM_caldb//data/xrism/resolve/bcf/mirror/xa_rsl_telarea_20190101v002.fits[2]' 'polydeg=DEFAULT' 'regionfile=@xaarfgen_region.lis' 'xrtevtfile=raytrace_xa300017010rsl_p0px1000_ptsrc.fits' 'auxtransfile=NONE' 'outfile=xa300017010rsl_p0px1000_ptsrc.arf' 'minphoton=100'
+INFO   ::xaxmaarfgen: Fraction of PSF in Detector Area = 0.908317
+INFO   ::xaxmaarfgen: Fraction of PSF inside Region = 0.870469
+INFO   ::
+INFO   ::
+INFO   ::===========================================================
+INFO   ::                Running xaarfgen 
+INFO   :: Final Return Code - 0
+INFO   :: Exit with no errors
+INFO   ::===========================================================
+INFO   ::
+INFO   ::Finished.
+# ENDLOG: Thu Aug 15 22:08:09 2024

@@ -1,0 +1,65 @@
+## Loading in data
+data 1 bin1L_000154000_det1.pi
+resp 1:1 bin1L_000154000_det1.rmf
+arf 1:1 bin1L_000154000_det1_AGN.arf
+
+# Verify setup
+show data
+show response
+
+## Ignoring outside bounds and resonant line
+ignore **: **-1.7 10.-**
+#ignore **: 6.57-6.6
+ignore bad
+
+## Setting models
+model 1:agn TBabs*(powerlaw+zgauss+zgauss)
+/*
+newpar agn:1 0.138
+newpar agn:2 1.8
+newpar agn:3 0.002
+newpar agn:4 6.40147
+newpar agn:5 0.00779
+newpar agn:6 1.70200E-02
+newpar agn:7 4.3e-06
+newpar agn:8 =agn:4 - 0.013
+newpar agn:9 = agn:5
+newpar agn:10 = agn:6
+newpar agn:11 = agn:7*0.5
+freeze agn:1 agn:2 agn:4 agn:5 agn:6 agn:7
+thaw agn:3
+
+model 2:bapec1 TBabs*bapec
+/*
+newpar bapec1:1 0.138
+newpar bapec1:2 4.7369
+newpar bapec1:3 0.415431
+newpar bapec1:4 0.0178534
+newpar bapec1:5 193.548
+newpar bapec1:6 0.100602
+freeze bapec1:1
+thaw bapec1:2 bapec1:3 bapec1:4 bapec1:5 bapec1:6
+
+## Fitting
+abund lpgs
+statistic cstat
+query yes
+parallel leven 20
+fit
+parallel leven 1
+
+## Calculating Error
+parallel error 20
+error 1. agn:3
+error 1. bapec1:2-6
+parallel error 1
+
+## Saving & Plotting
+save model rvp_all_1p8
+show par
+cpd rvp_all_1p8.ps
+setpl rebin 5 10
+setpl xlog off
+setpl ylog on
+setpl energy
+plot data resid
