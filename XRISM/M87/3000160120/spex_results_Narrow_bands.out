@@ -1,0 +1,65 @@
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+ -0.166905         2720.42     -3.080964E-04    0.13
+ -0.167464         2724.81     -8.672178E-04    4.51
+ -0.167031         2721.07     -4.336089E-04    0.78
+ -0.167057         2721.30     -4.593283E-04    1.01
+ -0.167052         2721.26     -4.549772E-04    0.97
+ -0.166289         2719.58      3.080964E-04   -0.72
+ -0.163516         2755.83      3.080994E-03   35.53
+ -0.165057         2727.43      1.540497E-03    7.14
+ -0.165827         2721.66      7.702410E-04    1.37
+ -0.166012         2720.54      5.848557E-04    0.25
+ -0.165920         2720.88      6.775558E-04    0.58
+ -0.165873         2721.33      7.238984E-04    1.03
+ -0.165889         2721.25      7.084906E-04    0.95
+ During the error search a lower fit statistic was encountered.
+ Parameter value    :   -0.16629
+ Lower fit statistic:        2719.58
+ This is the lowest fit statistic so-far. Consider re-fitting.
+ See command file spex_lower_stat.com for start parameters.
+ In that file, the current parameter is frozen. Fit, thaw parameter, fit.
+ Parameter   1    1 z   :  -0.16660     Errors:  -4.54977E-04 ,   7.08491E-04
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   1208.92         2721.32      -106.391        1.02
+   1211.26         2721.24      -104.054        0.95
+   1210.09         2721.28      -105.223        0.99
+   1209.56         2721.30      -105.755        1.00
+   1421.70         2720.15       106.391       -0.15
+   2379.23         2754.59       1063.91       34.30
+ Parameter    3 is at lower limit. Suggestion: fit again
+   1847.27         2696.64       531.957      -23.65
+ Parameter    3 is at lower limit. Suggestion: fit again
+   2073.56         2702.30       758.243      -17.99
+   2226.39         2736.59       911.079       16.30
+   2158.21         2744.74       842.899       24.45
+ Parameter    3 is at lower limit. Suggestion: fit again
+   2115.88         2703.51       800.571      -16.79
+   2134.14         2745.01       818.830       24.72
+ Parameter    3 is at lower limit. Suggestion: fit again
+   2125.01         2703.74       809.700      -16.55
+ During the error search a lower fit statistic was encountered.
+ Parameter value    :     1847.3
+ Lower fit statistic:        2696.64
+ This is the lowest fit statistic so-far. Consider re-fitting.
+ See command file spex_lower_stat.com for start parameters.
+ In that file, the current parameter is frozen. Fit, thaw parameter, fit.
+ Parameter   1    2 vrms:    1315.3     Errors:   -105.75     ,    809.70
+ Parameter        Statistics       Delta          Delta
+   value            value        parameter      statistics
+----------------------------------------------------------
+   0.00000         2720.29       0.00000        0.00
+  1.192093E-06     2719.73      1.192093E-06   -0.57
+  1.192093E-05     2719.73      1.192093E-05   -0.56
+  1.192093E-04     2719.75      1.192093E-04   -0.54
+  1.192093E-03     2719.94      1.192093E-03   -0.35
+  1.192093E-02     2720.15      1.192093E-02   -0.15
+  0.119209         2719.73      0.119209       -0.56
+   1.19209         2719.76       1.19209       -0.53
+   11.9209         2719.86       11.9209       -0.43
+   119.209         2720.86       119.209        0.56
+   238.419         2721.70       238.419        1.41
+   169.219         2721.38       169.219        1.09

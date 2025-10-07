@@ -1,0 +1,1451 @@
+#XSPEC version: 12.13.0
+#Build Date/Time: Tue Nov 22 21:01:32 2022
+#
+!XSPEC12>fit
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl    agn:3:norm  bvapec1:2:kT bvapec1:10:Si  bvapec1:11:S bvapec1:12:Ar bvapec1:13:Ca bvapec1:14:Fe bvapec1:15:Ni bvapec1:16:Re bvapec1:17:Ve bvapec1:18:no
+#16431.5      8094.8       -3    0.00170310       2.05507      0.777278      0.781151      0.735952      0.872978      0.749016      0.883983    0.00418942       77.6337     0.0137734
+#16190.6      9089.62      -4    0.00190970       1.99012       1.09173       1.10703      0.980330       1.28340       1.10781       1.64546    0.00420079       62.6896     0.0129104
+#16158.8      2542.55      -5    0.00184112       2.01223       1.24227       1.26075       1.05890       1.41965       1.24351       1.99120    0.00420350       58.0668     0.0127159
+#16158.4      319.37       -6    0.00182755       2.01820       1.26313       1.28369       1.06277       1.42822       1.25683       1.99958    0.00420323       56.7276     0.0126891
+#16158.4      15.6565      -7    0.00182720       2.01856       1.26358       1.28471       1.06244       1.42836       1.25703       2.00116    0.00420318       56.6095     0.0126863
+#==========================================================================================
+# Variances and Principal Axes
+#             agn:3bvapec1:2bvapec1:10bvapec1:11bvapec1:12bvapec1:13bvapec1:14bvapec1:15bvapec1:16bvapec1:17bvapec1:18  
+# 3.6954E-10| -0.0068  -0.0001  -0.0000  -0.0000   0.0000  -0.0000   0.0000  -0.0000   1.0000  -0.0000  -0.0010  
+# 1.3940E-09|  0.9702   0.0023   0.0001   0.0001   0.0001   0.0000   0.0002   0.0000   0.0068   0.0000   0.2421  
+# 5.4892E-08| -0.2421   0.0039   0.0006   0.0017   0.0008   0.0006   0.0032   0.0000  -0.0007  -0.0000   0.9702  
+# 4.0310E-04| -0.0011   0.9306  -0.0528  -0.1350  -0.0280   0.0034   0.3348   0.0040   0.0000  -0.0001  -0.0048  
+# 5.0771E-03|  0.0004  -0.0328  -0.2075   0.8389  -0.2386  -0.2269   0.3791  -0.0044   0.0000  -0.0001  -0.0020  
+# 5.6315E-03|  0.0006  -0.3229   0.2325  -0.4189  -0.2022  -0.2467   0.7511  -0.0177  -0.0000   0.0005  -0.0001  
+# 8.7259E-03| -0.0002   0.0428   0.2102  -0.0186  -0.8844   0.3770  -0.1711   0.0053   0.0000   0.0001   0.0007  
+# 1.4020E-02| -0.0004   0.1624   0.7148   0.1384  -0.0282  -0.6034  -0.2795   0.0226   0.0000  -0.0003  -0.0002  
+# 2.1999E-02|  0.0004  -0.0132   0.5873   0.2883   0.3440   0.6173   0.2682  -0.0213  -0.0000  -0.0008  -0.0023  
+# 3.8909E-01|  0.0000  -0.0138  -0.0014  -0.0000   0.0081   0.0195   0.0266   0.9993   0.0000  -0.0019  -0.0001  
+# 1.2194E+02| -0.0000   0.0002   0.0006   0.0006   0.0005   0.0004  -0.0001   0.0019   0.0000   1.0000  -0.0000  
+#------------------------------------------------------------------------------------------
+#
+#====================================================================================================================================
+#  Covariance Matrix
+#        1           2           3           4           5           6           7           8           9          10          11   
+#   1.385e-08  -2.799e-06   1.049e-06   2.056e-06   3.463e-06   6.067e-06   7.613e-06   8.780e-06  -1.798e-10  -8.485e-05  -3.484e-08
+#  -2.799e-06   1.413e-03   1.152e-03   8.136e-04  -1.275e-04  -1.016e-03  -2.227e-03  -5.197e-03   9.514e-08   2.992e-02  -5.201e-07
+#   1.049e-06   1.152e-03   1.570e-02   3.687e-03   2.554e-03   2.555e-03   9.049e-04  -4.551e-04   1.049e-07   6.784e-02  -2.778e-05
+#   2.056e-06   8.136e-04   3.687e-03   6.708e-03   1.764e-03   2.329e-03   1.002e-03   4.930e-05   1.058e-07   7.004e-02  -2.324e-05
+#   3.463e-06  -1.275e-04   2.554e-03   1.764e-03   1.001e-02   2.642e-03   2.220e-03   3.087e-03  -7.630e-08   5.496e-02  -2.015e-05
+#   6.067e-06  -1.016e-03   2.555e-03   2.329e-03   2.642e-03   1.550e-02   4.158e-03   7.247e-03  -5.013e-08   5.360e-02  -2.520e-05
+#   7.613e-06  -2.227e-03   9.049e-04   1.002e-03   2.220e-03   4.158e-03   7.161e-03   9.996e-03  -1.542e-07  -1.452e-02  -1.931e-05
+#   8.780e-06  -5.197e-03  -4.551e-04   4.930e-05   3.087e-03   7.247e-03   9.996e-03   3.890e-01   4.864e-08   2.364e-01  -2.290e-05
+#  -1.798e-10   9.514e-08   1.049e-07   1.058e-07  -7.630e-08  -5.013e-08  -1.542e-07   4.864e-08   3.797e-10   1.784e-05  -9.959e-11
+#  -8.485e-05   2.992e-02   6.784e-02   7.004e-02   5.496e-02   5.360e-02  -1.452e-02   2.364e-01   1.784e-05   1.219e+02  -1.005e-04
+#  -3.484e-08  -5.201e-07  -2.778e-05  -2.324e-05  -2.015e-05  -2.520e-05  -1.931e-05  -2.290e-05  -9.959e-11  -1.005e-04   2.028e-07
+#------------------------------------------------------------------------------------------------------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  +/-  1.17674E-04  
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01856      +/-  3.75839E-02  
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.26358      +/-  0.125302     
+#  11    2   bvapec     S                   1.28471      +/-  8.19037E-02  
+#  12    2   bvapec     Ar                  1.06244      +/-  0.100052     
+#  13    2   bvapec     Ca                  1.42836      +/-  0.124509     
+#  14    2   bvapec     Fe                  1.25703      +/-  8.46219E-02  
+#  15    2   bvapec     Ni                  2.00116      +/-  0.623736     
+#  16    2   bvapec     Redshift            4.20318E-03  +/-  1.94847E-05  
+#  17    2   bvapec     Velocity   km/s     56.6095      +/-  11.0427      
+#  18    2   bvapec     norm                1.26863E-02  +/-  4.50364E-04  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                16158.38     using 16599 bins.
+#
+#Test statistic : Chi-Squared                10272.79     using 16599 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 16588 degrees of freedom
+#
+!XSPEC12>parallel leven 1
+#
+!XSPEC12>parallel error 20
+#
+!XSPEC12>error 1. agn:3
+# Parameter   Confidence Range (1)
+#     3   0.00171434   0.00193964    (-0.000112862,0.000112438)
+#
+!XSPEC12>error 1. bvapec1:2,10-18
+# Parameter   Confidence Range (1)
+#     2      1.98397      2.05701    (-0.0345999,0.038435)
+#    10      1.14361      1.39276    (-0.119969,0.129181)
+#    11      1.20513       1.3693    (-0.0796183,0.0845535)
+#    12     0.965244      1.16523    (-0.0971705,0.102811)
+#    13      1.30852      1.55558    (-0.119835,0.127229)
+#    14       1.1803      1.34032    (-0.0767423,0.0832849)
+#    15      1.41187      2.66032    (-0.589592,0.658857)
+#    16   0.00418387   0.00422254    (-1.93118e-05,1.93594e-05)
+#    17      44.9892      67.2759    (-11.6113,10.6754)
+#    18    0.0122341    0.0131362    (-0.00045201,0.000450071)
+#
+!XSPEC12>parallel error 1
+#
+!XSPEC12>save model AGN_plus_TBabs_gdem
+#
+!XSPEC12>tclreadline::readline eofchar ""
+#
+!XSPEC12>tclreadline::readline read {AGN_plus_TBabs_gdem.xcm exists. Replace? (y/n) }
+#
+!XSPEC12>tclreadline::readline eofchar "puts {}; exit"
+#
+!XSPEC12>show par
+#
+#Parameters defined:
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  +/-  1.17674E-04  
+#________________________________________________________________________
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      +/-  3.75839E-02  
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.26358      +/-  0.125302     
+#  11    2   bvapec     S                   1.28475      +/-  8.19037E-02  
+#  12    2   bvapec     Ar                  1.06242      +/-  0.100052     
+#  13    2   bvapec     Ca                  1.42836      +/-  0.124509     
+#  14    2   bvapec     Fe                  1.25704      +/-  8.46219E-02  
+#  15    2   bvapec     Ni                  2.00144      +/-  0.623736     
+#  16    2   bvapec     Redshift            4.20318E-03  +/-  1.94847E-05  
+#  17    2   bvapec     Velocity   km/s     56.6010      +/-  11.0427      
+#  18    2   bvapec     norm                1.26862E-02  +/-  4.50364E-04  
+#________________________________________________________________________
+#
+#
+!XSPEC12>setpl rebin 5 10
+#
+!XSPEC12>setplot rebin 5 10
+#
+!XSPEC12>setpl xlog on
+#
+!XSPEC12>setplot xlog on
+#
+!XSPEC12>setpl ylog on
+#
+!XSPEC12>setplot ylog on
+#
+!XSPEC12>setpl energy
+#
+!XSPEC12>setplot energy
+#
+!XSPEC12>plot data resid
+#
+!XSPEC12>iplot
+#
+!XSPEC12>cpd AGN_plus_TBabs_gdem_Fe.ps/cps
+#
+!XSPEC12>notice all
+# 60000 channels (1,60000) noticed in spectrum #     1
+#
+#All channels noticed
+#Fit statistic  : C-Statistic                45937.16     using 60000 bins.
+#
+#Test statistic : Chi-Squared                12253.94     using 60000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 59989 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>ignore **: **-6. 7.-**
+# 12000 channels (1-12000) ignored in spectrum #     1
+# 46001 channels (14000-60000) ignored in spectrum #     1
+#
+#Fit statistic  : C-Statistic                 2130.08     using 1999 bins.
+#
+#Test statistic : Chi-Squared                 1137.04     using 1999 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1988 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>freeze agn:3 bvapec1:2 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:15 bvapec1:18
+#
+#Fit statistic  : C-Statistic                 2130.08     using 1999 bins.
+#
+#Test statistic : Chi-Squared                 1137.04     using 1999 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1996 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>newpar bvapec1:17 50.
+#
+#Fit statistic  : C-Statistic                 2130.50     using 1999 bins.
+#
+#Test statistic : Chi-Squared                 1136.19     using 1999 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1996 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:17
+#  parameter bvapec1:17 is not frozen.
+#
+!XSPEC12>fit
+# Warning: renorm - no variable model to allow  renormalization
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl bvapec1:14:Fe bvapec1:16:Re bvapec1:17:Ve
+#2128.94      13290.3      -3       1.25802    0.00423037       59.8549
+#2128.93      547.007      -4       1.25997    0.00423134       59.0011
+#========================================
+# Variances and Principal Axes
+#         bvapec1:14bvapec1:16bvapec1:17  
+# 7.1882E-10| -0.0000  -1.0000   0.0000  
+# 1.6686E-03|  1.0000  -0.0000  -0.0002  
+# 1.5022E+02|  0.0002   0.0000   1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.673e-03   1.473e-09   2.495e-02
+#   1.473e-09   7.277e-10   3.646e-05
+#   2.495e-02   3.646e-05   1.502e+02
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.26358      frozen
+#  11    2   bvapec     S                   1.28475      frozen
+#  12    2   bvapec     Ar                  1.06242      frozen
+#  13    2   bvapec     Ca                  1.42836      frozen
+#  14    2   bvapec     Fe                  1.25997      +/-  4.08993E-02  
+#  15    2   bvapec     Ni                  2.00144      frozen
+#  16    2   bvapec     Redshift            4.23134E-03  +/-  2.69752E-05  
+#  17    2   bvapec     Velocity   km/s     59.0011      +/-  12.2563      
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 2128.93     using 1999 bins.
+#
+#Test statistic : Chi-Squared                 1141.95     using 1999 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1996 degrees of freedom
+#
+!XSPEC12>parallel error 20
+#
+!XSPEC12>error 1. bvapec1:14,16,17
+# Parameter   Confidence Range (1)
+#    14      1.21942      1.30133    (-0.0405591,0.0413483)
+#    16   0.00420478   0.00425814    (-2.66104e-05,2.6755e-05)
+#    17      46.0109      71.0845    (-12.9595,12.1141)
+#
+!XSPEC12>save model AGN_plus_TBabs_gdem_Fe
+#
+!XSPEC12>tclreadline::readline eofchar ""
+#
+!XSPEC12>tclreadline::readline read {AGN_plus_TBabs_gdem_Fe.xcm exists. Replace? (y/n) }
+#
+!XSPEC12>tclreadline::readline eofchar "puts {}; exit"
+#
+!XSPEC12>setpl rebin 5 10
+#
+!XSPEC12>setplot rebin 5 10
+#
+!XSPEC12>setpl xlog on
+#
+!XSPEC12>setplot xlog on
+#
+!XSPEC12>setpl ylog on
+#
+!XSPEC12>setplot ylog on
+#
+!XSPEC12>setpl energy
+#
+!XSPEC12>setplot energy
+#
+!XSPEC12>plot data resid
+#
+!XSPEC12>iplot
+#
+!XSPEC12>cpd AGN_plus_TBabs_gdem_Si.ps/cps
+#
+!XSPEC12>notice all
+# 60000 channels (1,60000) noticed in spectrum #     1
+#
+#All channels noticed
+#Fit statistic  : C-Statistic                45939.21     using 60000 bins.
+#
+#Test statistic : Chi-Squared                12262.51     using 60000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 59997 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>ignore **: **-1.8 2.4-**
+#  3601 channels (1-3601) ignored in spectrum #     1
+# 55201 channels (4800-60000) ignored in spectrum #     1
+#
+#Fit statistic  : C-Statistic                 1282.86     using 1198 bins.
+#
+#Test statistic : Chi-Squared                  627.04     using 1198 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1195 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:15 bvapec1:18
+#  parameter agn:3 is already frozen.
+#  parameter bvapec1:2 is already frozen.
+#  parameter bvapec1:11 is already frozen.
+#  parameter bvapec1:12 is already frozen.
+#  parameter bvapec1:13 is already frozen.
+#  parameter bvapec1:15 is already frozen.
+#  parameter bvapec1:18 is already frozen.
+#
+#Fit statistic  : C-Statistic                 1282.86     using 1198 bins.
+#
+#Test statistic : Chi-Squared                  627.04     using 1198 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1196 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:10
+#
+#Fit statistic  : C-Statistic                 1282.86     using 1198 bins.
+#
+#Test statistic : Chi-Squared                  627.04     using 1198 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1195 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>newpar bvapec1:17 50.
+#
+#Fit statistic  : C-Statistic                 1282.88     using 1198 bins.
+#
+#Test statistic : Chi-Squared                  626.92     using 1198 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1195 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:17
+#  parameter bvapec1:17 is not frozen.
+#
+!XSPEC12>fit
+# Warning: renorm - no variable model to allow  renormalization
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl bvapec1:10:Si bvapec1:16:Re bvapec1:17:Ve
+#1280.99      4739.6       -3       1.25584    0.00409728       41.3319
+#1280.94      27.4032      -4       1.27525    0.00409850       70.8156
+#1280.93      82.6538      -5       1.27538    0.00409546       64.9938
+#========================================
+# Variances and Principal Axes
+#         bvapec1:10bvapec1:16bvapec1:17  
+# 9.6982E-09|  0.0000  -1.0000   0.0000  
+# 1.2554E-02|  1.0000   0.0000  -0.0003  
+# 1.0126E+04|  0.0003   0.0000   1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.321e-02   3.960e-07   2.578e+00
+#   3.960e-07   9.825e-09   1.129e-03
+#   2.578e+00   1.129e-03   1.013e+04
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      +/-  0.114935     
+#  11    2   bvapec     S                   1.28475      frozen
+#  12    2   bvapec     Ar                  1.06242      frozen
+#  13    2   bvapec     Ca                  1.42836      frozen
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  2.00144      frozen
+#  16    2   bvapec     Redshift            4.09546E-03  +/-  9.91193E-05  
+#  17    2   bvapec     Velocity   km/s     64.9938      +/-  100.626      
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 1280.93     using 1198 bins.
+#
+#Test statistic : Chi-Squared                  626.60     using 1198 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1195 degrees of freedom
+#
+!XSPEC12>parallel error 20
+#
+!XSPEC12>error 1. bvapec1:10,16,17
+# Parameter   Confidence Range (1)
+#    10      1.16377      1.39293    (-0.111778,0.117381)
+#    16   0.00399807   0.00419427    (-9.81835e-05,9.80221e-05)
+#***Warning: Parameter pegged at hard limit: 0
+#    17            0      141.546    (-65.1778,76.3683)
+#
+!XSPEC12>save model AGN_plus_TBabs_gdem_Si
+#
+!XSPEC12>tclreadline::readline eofchar ""
+#
+!XSPEC12>tclreadline::readline read {AGN_plus_TBabs_gdem_Si.xcm exists. Replace? (y/n) }
+#
+!XSPEC12>tclreadline::readline eofchar "puts {}; exit"
+#
+!XSPEC12>setpl rebin 5 10
+#
+!XSPEC12>setplot rebin 5 10
+#
+!XSPEC12>setpl xlog on
+#
+!XSPEC12>setplot xlog on
+#
+!XSPEC12>setpl ylog on
+#
+!XSPEC12>setplot ylog on
+#
+!XSPEC12>setpl energy
+#
+!XSPEC12>setplot energy
+#
+!XSPEC12>plot data resid
+#
+!XSPEC12>iplot
+#
+!XSPEC12>cpd AGN_plus_TBabs_gdem_S.ps/cps
+#
+!XSPEC12>notice all
+# 60000 channels (1,60000) noticed in spectrum #     1
+#
+#All channels noticed
+#Fit statistic  : C-Statistic                45967.43     using 60000 bins.
+#
+#Test statistic : Chi-Squared                12301.04     using 60000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 59997 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>ignore **: **-2.4 3.0-**
+#  4800 channels (1-4800) ignored in spectrum #     1
+# 54001 channels (6000-60000) ignored in spectrum #     1
+#
+#Fit statistic  : C-Statistic                 1368.59     using 1199 bins.
+#
+#Test statistic : Chi-Squared                 1267.82     using 1199 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 7.30e-02 with 1196 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:12 bvapec1:13 bvapec1:15 bvapec1:18
+#  parameter agn:3 is already frozen.
+#  parameter bvapec1:2 is already frozen.
+#  parameter bvapec1:12 is already frozen.
+#  parameter bvapec1:13 is already frozen.
+#  parameter bvapec1:14 is already frozen.
+#  parameter bvapec1:15 is already frozen.
+#  parameter bvapec1:18 is already frozen.
+#
+#Fit statistic  : C-Statistic                 1368.59     using 1199 bins.
+#
+#Test statistic : Chi-Squared                 1267.82     using 1199 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 7.59e-02 with 1197 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:11
+#
+#Fit statistic  : C-Statistic                 1368.59     using 1199 bins.
+#
+#Test statistic : Chi-Squared                 1267.82     using 1199 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 7.30e-02 with 1196 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>newpar bvapec1:17 50.
+#
+#Fit statistic  : C-Statistic                 1368.03     using 1199 bins.
+#
+#Test statistic : Chi-Squared                 1265.60     using 1199 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 7.93e-02 with 1196 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:17
+#  parameter bvapec1:17 is not frozen.
+#
+!XSPEC12>fit
+# Warning: renorm - no variable model to allow  renormalization
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl  bvapec1:11:S bvapec1:16:Re bvapec1:17:Ve
+#1366.21      7630.14      -3       1.25430    0.00415297       22.0121
+#1366.11      470.535      -4       1.25661    0.00414782       10.8955
+#1366.09      277.169      -5       1.25704    0.00414830      0.853179
+#1366.09      208.7        -6       1.25709    0.00414829      0.369903
+#========================================
+# Variances and Principal Axes
+#         bvapec1:11bvapec1:16bvapec1:17  
+# 1.8193E-09|  0.0000  -1.0000   0.0000  
+# 4.0040E-03|  1.0000   0.0000  -0.0000  
+# 1.1524E+07|  0.0000   0.0000   1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   4.199e-03   1.304e-07   4.744e+01
+#   1.304e-07   2.416e-09   9.855e-03
+#   4.744e+01   9.855e-03   1.152e+07
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      frozen
+#  11    2   bvapec     S                   1.25709      +/-  6.48024E-02  
+#  12    2   bvapec     Ar                  1.06242      frozen
+#  13    2   bvapec     Ca                  1.42836      frozen
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  2.00144      frozen
+#  16    2   bvapec     Redshift            4.14829E-03  +/-  4.91569E-05  
+#  17    2   bvapec     Velocity   km/s     0.369903     +/-  3394.66      
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 1366.09     using 1199 bins.
+#
+#Test statistic : Chi-Squared                 1258.59     using 1199 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.02e-01 with 1196 degrees of freedom
+#
+!XSPEC12>parallel error 20
+#
+!XSPEC12>error 1. bvapec1:11,16,17
+# Parameter   Confidence Range (1)
+#    11        1.202      1.33043    (-0.0551027,0.0733324)
+#    16   0.00410151   0.00419774    (-4.67864e-05,4.9444e-05)
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl  bvapec1:11:S bvapec1:16:Re bvapec1:17:Ve
+#1366.07      1.06701       0       1.26517    0.00414980      0.170770
+#========================================
+# Variances and Principal Axes
+#         bvapec1:11bvapec1:16bvapec1:17  
+# 7.4039E-09|  0.0000  -1.0000   0.0000  
+# 4.0476E-03|  1.0000   0.0000  -0.0000  
+# 6.2162E+07|  0.0000   0.0000   1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   4.243e-03   1.347e-07   1.102e+02
+#   1.347e-07   2.407e-09   2.338e-02
+#   1.102e+02   2.338e-02   6.216e+07
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      frozen
+#  11    2   bvapec     S                   1.26517      +/-  6.51367E-02  
+#  12    2   bvapec     Ar                  1.06242      frozen
+#  13    2   bvapec     Ca                  1.42836      frozen
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  2.00144      frozen
+#  16    2   bvapec     Redshift            4.14980E-03  +/-  4.90644E-05  
+#  17    2   bvapec     Velocity   km/s     0.170770     +/-  7884.28      
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 1366.07     using 1199 bins.
+#
+#Test statistic : Chi-Squared                 1259.61     using 1199 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 9.82e-02 with 1196 degrees of freedom
+#***Warning: New best fit found, fit parameters will be set to new values.
+#    11      1.20256      1.32972    (-0.0625581,0.0646097)
+#    16   0.00410182   0.00419764    (-4.79669e-05,4.78594e-05)
+#***Warning: Parameter pegged at hard limit: 0
+#    17            0      59.0549    (-0.0659614,58.989)
+#
+!XSPEC12>save model AGN_plus_TBabs_gdem_S
+#
+!XSPEC12>tclreadline::readline eofchar ""
+#
+!XSPEC12>tclreadline::readline read {AGN_plus_TBabs_gdem_S.xcm exists. Replace? (y/n) }
+#
+!XSPEC12>tclreadline::readline eofchar "puts {}; exit"
+#
+!XSPEC12>setpl rebin 5 10
+#
+!XSPEC12>setplot rebin 5 10
+#
+!XSPEC12>setpl xlog on
+#
+!XSPEC12>setplot xlog on
+#
+!XSPEC12>setpl ylog on
+#
+!XSPEC12>setplot ylog on
+#
+!XSPEC12>setpl energy
+#
+!XSPEC12>setplot energy
+#
+!XSPEC12>plot data resid
+#
+!XSPEC12>iplot
+#
+!XSPEC12>cpd AGN_plus_TBabs_gdem_Ar.ps/cps
+#
+!XSPEC12>notice all
+# 60000 channels (1,60000) noticed in spectrum #     1
+#
+#All channels noticed
+#Fit statistic  : C-Statistic                45955.14     using 60000 bins.
+#
+#Test statistic : Chi-Squared                12254.97     using 60000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 59997 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>ignore **: **-3.0 3.7-**
+#  6000 channels (1-6000) ignored in spectrum #     1
+# 52601 channels (7400-60000) ignored in spectrum #     1
+#
+#Fit statistic  : C-Statistic                 1633.08     using 1399 bins.
+#
+#Test statistic : Chi-Squared                 1892.00     using 1399 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.20e-17 with 1396 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:11 bvapec1:13 bvapec1:15 bvapec1:18
+#  parameter agn:3 is already frozen.
+#  parameter bvapec1:2 is already frozen.
+#  parameter bvapec1:10 is already frozen.
+#  parameter bvapec1:13 is already frozen.
+#  parameter bvapec1:14 is already frozen.
+#  parameter bvapec1:15 is already frozen.
+#  parameter bvapec1:18 is already frozen.
+#
+#Fit statistic  : C-Statistic                 1633.08     using 1399 bins.
+#
+#Test statistic : Chi-Squared                 1892.00     using 1399 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.39e-17 with 1397 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:12
+#
+#Fit statistic  : C-Statistic                 1633.08     using 1399 bins.
+#
+#Test statistic : Chi-Squared                 1892.00     using 1399 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.20e-17 with 1396 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>newpar bvapec1:17 50.
+#
+#Fit statistic  : C-Statistic                 1633.57     using 1399 bins.
+#
+#Test statistic : Chi-Squared                 1894.40     using 1399 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 8.69e-18 with 1396 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:17
+#  parameter bvapec1:17 is not frozen.
+#
+!XSPEC12>fit
+# Warning: renorm - no variable model to allow  renormalization
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl bvapec1:12:Ar bvapec1:16:Re bvapec1:17:Ve
+#1625.49      16820.2      -3       1.00306    0.00433042       18.2136
+#1624.85      2624.38      -4       1.03888    0.00430070      0.851884
+#1624.83      611.371      -5       1.04114    0.00430428      0.212523
+#1624.83      191.354      -6       1.04127    0.00430394     0.0518087
+#========================================
+# Variances and Principal Axes
+#         bvapec1:12bvapec1:16bvapec1:17  
+# 2.9477E-08|  0.0001   1.0000  -0.0000  
+# 7.8925E-03|  1.0000  -0.0001  -0.0000  
+# 1.8189E+08| -0.0000  -0.0000  -1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   8.419e-03  -3.647e-07   3.093e+02
+#  -3.647e-07   3.152e-09   2.108e-02
+#   3.093e+02   2.108e-02   1.819e+08
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      frozen
+#  11    2   bvapec     S                   1.26517      frozen
+#  12    2   bvapec     Ar                  1.04127      +/-  9.17529E-02  
+#  13    2   bvapec     Ca                  1.42836      frozen
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  2.00144      frozen
+#  16    2   bvapec     Redshift            4.30394E-03  +/-  5.61445E-05  
+#  17    2   bvapec     Velocity   km/s     5.18087E-02  +/-  1.34865E+04  
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 1624.83     using 1399 bins.
+#
+#Test statistic : Chi-Squared                 1877.87     using 1399 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 7.69e-17 with 1396 degrees of freedom
+#
+!XSPEC12>parallel error 20
+#
+!XSPEC12>error 1. bvapec1:12,16,17
+# Parameter   Confidence Range (1)
+#    12     0.969497      1.15243    (-0.0719114,0.111024)
+#    16   0.00425118   0.00435986    (-5.27469e-05,5.59365e-05)
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl bvapec1:12:Ar bvapec1:16:Re bvapec1:17:Ve
+#1624.79      0.687308      1       1.05938    0.00430530    0.00190619
+#========================================
+# Variances and Principal Axes
+#         bvapec1:12bvapec1:16bvapec1:17  
+# 4.7652E-07|  0.0000   1.0000  -0.0000  
+# 8.0566E-03|  1.0000  -0.0000  -0.0000  
+# 3.0854E+09| -0.0000  -0.0000  -1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   8.587e-03  -3.597e-07   1.279e+03
+#  -3.597e-07   3.121e-09   9.081e-02
+#   1.279e+03   9.081e-02   3.085e+09
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      frozen
+#  11    2   bvapec     S                   1.26517      frozen
+#  12    2   bvapec     Ar                  1.05938      +/-  9.26651E-02  
+#  13    2   bvapec     Ca                  1.42836      frozen
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  2.00144      frozen
+#  16    2   bvapec     Redshift            4.30530E-03  +/-  5.58625E-05  
+#  17    2   bvapec     Velocity   km/s     1.90619E-03  +/-  5.55461E+04  
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 1624.79     using 1399 bins.
+#
+#Test statistic : Chi-Squared                 1879.82     using 1399 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 5.96e-17 with 1396 degrees of freedom
+#***Warning: New best fit found, fit parameters will be set to new values.
+#    12     0.971408       1.1505    (-0.0879706,0.0911218)
+#    16   0.00425157   0.00435909    (-5.37349e-05,5.37811e-05)
+#***Warning: Parameter pegged at hard limit: 0
+#
+#***Warning: Number of trials exceeded before bracketing of delta fit-stat.
+#Last attempt: 4.50325, with delta statistic: 0.00560741
+#
+#    17            0      52.9419    (-0.000858763,52.9411)
+#
+!XSPEC12>save model AGN_plus_TBabs_gdem_Ar
+#
+!XSPEC12>tclreadline::readline eofchar ""
+#
+!XSPEC12>tclreadline::readline read {AGN_plus_TBabs_gdem_Ar.xcm exists. Replace? (y/n) }
+#
+!XSPEC12>tclreadline::readline eofchar "puts {}; exit"
+#
+!XSPEC12>setpl rebin 5 10
+#
+!XSPEC12>setplot rebin 5 10
+#
+!XSPEC12>setpl xlog on
+#
+!XSPEC12>setplot xlog on
+#
+!XSPEC12>setpl ylog on
+#
+!XSPEC12>setplot ylog on
+#
+!XSPEC12>setpl energy
+#
+!XSPEC12>setplot energy
+#
+!XSPEC12>plot data resid
+#
+!XSPEC12>iplot
+#
+!XSPEC12>cpd AGN_plus_TBabs_gdem_Ca.ps/cps
+#
+!XSPEC12>notice all
+# 60000 channels (1,60000) noticed in spectrum #     1
+#
+#All channels noticed
+#Fit statistic  : C-Statistic                45980.87     using 60000 bins.
+#
+#Test statistic : Chi-Squared                12306.71     using 60000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 59997 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>ignore **: **-3.7 4.7-**
+#  7400 channels (1-7400) ignored in spectrum #     1
+# 50600 channels (9401-60000) ignored in spectrum #     1
+#
+#Fit statistic  : C-Statistic                 2352.73     using 2000 bins.
+#
+#Test statistic : Chi-Squared                 2361.03     using 2000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 2.47e-08 with 1997 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:15 bvapec1:18
+#  parameter agn:3 is already frozen.
+#  parameter bvapec1:2 is already frozen.
+#  parameter bvapec1:10 is already frozen.
+#  parameter bvapec1:11 is already frozen.
+#  parameter bvapec1:14 is already frozen.
+#  parameter bvapec1:15 is already frozen.
+#  parameter bvapec1:18 is already frozen.
+#
+#Fit statistic  : C-Statistic                 2352.73     using 2000 bins.
+#
+#Test statistic : Chi-Squared                 2361.03     using 2000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 2.69e-08 with 1998 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:13
+#
+#Fit statistic  : C-Statistic                 2352.73     using 2000 bins.
+#
+#Test statistic : Chi-Squared                 2361.03     using 2000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 2.47e-08 with 1997 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>newpar bvapec1:17 50.
+#
+#Fit statistic  : C-Statistic                 2349.79     using 2000 bins.
+#
+#Test statistic : Chi-Squared                 2359.89     using 2000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 2.70e-08 with 1997 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:17
+#  parameter bvapec1:17 is not frozen.
+#
+!XSPEC12>fit
+# Warning: renorm - no variable model to allow  renormalization
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl bvapec1:13:Ca bvapec1:16:Re bvapec1:17:Ve
+#2343.87      9355.46      -3       1.43518    0.00423395       144.375
+#2342.58      2266.15      -4       1.46752    0.00419370       118.264
+#2342.56      563.018      -5       1.47748    0.00420151       120.036
+#2342.56      11.2733      -6       1.47740    0.00420135       119.821
+#========================================
+# Variances and Principal Axes
+#         bvapec1:13bvapec1:16bvapec1:17  
+# 4.6059E-09|  0.0000  -1.0000   0.0000  
+# 1.2058E-02|  1.0000   0.0000  -0.0010  
+# 8.8210E+02|  0.0010   0.0000   1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.295e-02   9.999e-08   8.870e-01
+#   9.999e-08   4.609e-09   5.106e-05
+#   8.870e-01   5.106e-05   8.821e+02
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      frozen
+#  11    2   bvapec     S                   1.26517      frozen
+#  12    2   bvapec     Ar                  1.05938      frozen
+#  13    2   bvapec     Ca                  1.47740      +/-  0.113798     
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  2.00144      frozen
+#  16    2   bvapec     Redshift            4.20135E-03  +/-  6.78900E-05  
+#  17    2   bvapec     Velocity   km/s     119.821      +/-  29.7001      
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 2342.56     using 2000 bins.
+#
+#Test statistic : Chi-Squared                 2365.29     using 2000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.75e-08 with 1997 degrees of freedom
+#
+!XSPEC12>parallel error 20
+#
+!XSPEC12>error 1. bvapec1:13,16,17
+# Parameter   Confidence Range (1)
+#    13      1.36579      1.59283    (-0.111623,0.115415)
+#    16   0.00413353   0.00426885    (-6.78372e-05,6.74806e-05)
+#    17      89.4406      148.819    (-30.3901,28.9882)
+#
+!XSPEC12>save model AGN_plus_TBabs_gdem_Ca
+#
+!XSPEC12>tclreadline::readline eofchar ""
+#
+!XSPEC12>tclreadline::readline read {AGN_plus_TBabs_gdem_Ca.xcm exists. Replace? (y/n) }
+#
+!XSPEC12>tclreadline::readline eofchar "puts {}; exit"
+#
+!XSPEC12>setpl rebin 5 10
+#
+!XSPEC12>setplot rebin 5 10
+#
+!XSPEC12>setpl xlog on
+#
+!XSPEC12>setplot xlog on
+#
+!XSPEC12>setpl ylog on
+#
+!XSPEC12>setplot ylog on
+#
+!XSPEC12>setpl energy
+#
+!XSPEC12>setplot energy
+#
+!XSPEC12>plot data resid
+#
+!XSPEC12>iplot
+#
+!XSPEC12>cpd AGN_plus_TBabs_gdem_Ni.ps/cps
+#
+!XSPEC12>notice all
+# 60000 channels (1,60000) noticed in spectrum #     1
+#
+#All channels noticed
+#Fit statistic  : C-Statistic                45975.09     using 60000 bins.
+#
+#Test statistic : Chi-Squared                12339.37     using 60000 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 59997 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>ignore **: **-7.4 8.2-**
+# 14800 channels (1-14800) ignored in spectrum #     1
+# 43600 channels (16401-60000) ignored in spectrum #     1
+#
+#Fit statistic  : C-Statistic                 1417.92     using 1600 bins.
+#
+#Test statistic : Chi-Squared                  431.66     using 1600 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1597 degrees of freedom
+# Current data and model not fit yet.
+#
+#
+!XSPEC12>freeze agn:3 bvapec1:2 bvapec1:14 bvapec1:10 bvapec1:11 bvapec1:12 bvapec1:13 bvapec1:18
+#  parameter agn:3 is already frozen.
+#  parameter bvapec1:2 is already frozen.
+#  parameter bvapec1:10 is already frozen.
+#  parameter bvapec1:11 is already frozen.
+#  parameter bvapec1:12 is already frozen.
+#  parameter bvapec1:14 is already frozen.
+#  parameter bvapec1:18 is already frozen.
+#
+#Fit statistic  : C-Statistic                 1417.92     using 1600 bins.
+#
+#Test statistic : Chi-Squared                  431.66     using 1600 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1598 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:15
+#
+#Fit statistic  : C-Statistic                 1417.92     using 1600 bins.
+#
+#Test statistic : Chi-Squared                  431.66     using 1600 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1597 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>newpar bvapec1:17 50.
+#
+#Fit statistic  : C-Statistic                 1413.24     using 1600 bins.
+#
+#Test statistic : Chi-Squared                  432.14     using 1600 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1597 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC12>thaw bvapec1:17
+#  parameter bvapec1:17 is not frozen.
+#
+!XSPEC12>fit
+# Warning: renorm - no variable model to allow  renormalization
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl bvapec1:15:Ni bvapec1:16:Re bvapec1:17:Ve
+#1408.24      9928.26      -3       1.48448    0.00396636       24.8904
+#1406.7       3695.32      -4       1.81792    0.00404317       2.64025
+#1406.64      914.217      -5       1.85634    0.00402862      0.686346
+#1406.63      60.4332      -6       1.86007    0.00403156      0.211207
+#========================================
+# Variances and Principal Axes
+#         bvapec1:15bvapec1:16bvapec1:17  
+# 6.4450E-09|  0.0000  -1.0000  -0.0000  
+# 3.2050E-01|  1.0000   0.0000  -0.0000  
+# 6.8088E+06|  0.0000  -0.0000   1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   3.309e-01   6.406e-07   2.659e+02
+#   6.406e-07   6.009e-09  -5.727e-03
+#   2.659e+02  -5.727e-03   6.809e+06
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      frozen
+#  11    2   bvapec     S                   1.26517      frozen
+#  12    2   bvapec     Ar                  1.05938      frozen
+#  13    2   bvapec     Ca                  1.47740      frozen
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  1.86007      +/-  0.575225     
+#  16    2   bvapec     Redshift            4.03156E-03  +/-  7.75209E-05  
+#  17    2   bvapec     Velocity   km/s     0.211207     +/-  2609.38      
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 1406.63     using 1600 bins.
+#
+#Test statistic : Chi-Squared                  428.32     using 1600 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1597 degrees of freedom
+#
+!XSPEC12>parallel error 20
+#
+!XSPEC12>error 1. bvapec1:15,16,17
+# Parameter   Confidence Range (1)
+#    15      1.37992       2.5456    (-0.479414,0.686269)
+#    16   0.00395841   0.00409974    (-7.2537e-05,6.87965e-05)
+#                                   Parameters
+#C-Statistic  |beta|/N    Lvl bvapec1:15:Ni bvapec1:16:Re bvapec1:17:Ve
+#1406.62      2.99302       0       1.93667    0.00402958     0.0657789
+#========================================
+# Variances and Principal Axes
+#         bvapec1:15bvapec1:16bvapec1:17  
+# 3.3201E-03|  0.0000  -1.0000  -0.0000  
+# 3.3201E-01|  1.0000   0.0000  -0.0000  
+# 7.3109E+07|  0.0000  -0.0000   1.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   3.430e-01   6.740e-07   8.972e+02
+#   6.740e-07   5.960e-09  -1.909e-02
+#   8.972e+02  -1.909e-02   7.311e+07
+#------------------------------------
+#
+#========================================================================
+#Model agn:TBabs<1>*powerlaw<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   powerlaw   PhoIndex            2.35000      frozen
+#   3    2   powerlaw   norm                1.82720E-03  frozen
+#________________________________________________________________________
+#
+#
+#========================================================================
+#Model bvapec1:TBabs<1>*bvapec<2> Source No.: 2   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    0.129000     frozen
+#   2    2   bvapec     kT         keV      2.01857      frozen
+#   3    2   bvapec     He                  1.00000      frozen
+#   4    2   bvapec     C                   1.00000      frozen
+#   5    2   bvapec     N                   1.00000      frozen
+#   6    2   bvapec     O                   1.00000      frozen
+#   7    2   bvapec     Ne                  1.00000      frozen
+#   8    2   bvapec     Mg                  1.00000      frozen
+#   9    2   bvapec     Al                  1.00000      frozen
+#  10    2   bvapec     Si                  1.27538      frozen
+#  11    2   bvapec     S                   1.26517      frozen
+#  12    2   bvapec     Ar                  1.05938      frozen
+#  13    2   bvapec     Ca                  1.47740      frozen
+#  14    2   bvapec     Fe                  1.25997      frozen
+#  15    2   bvapec     Ni                  1.93667      +/-  0.585682     
+#  16    2   bvapec     Redshift            4.02958E-03  +/-  7.72005E-05  
+#  17    2   bvapec     Velocity   km/s     6.57789E-02  +/-  8550.36      
+#  18    2   bvapec     norm                1.26862E-02  frozen
+#________________________________________________________________________
+#
+#
+#Fit statistic  : C-Statistic                 1406.62     using 1600 bins.
+#
+#Test statistic : Chi-Squared                  428.55     using 1600 bins.
+#
+#***Warning: Chi-square may not be valid due to bins with zero variance
+#            in spectrum number(s): 1 
+#
+# Null hypothesis probability of 1.00e+00 with 1597 degrees of freedom
+#***Warning: New best fit found, fit parameters will be set to new values.
+#    15      1.38639      2.53657    (-0.550281,0.599894)
+#    16   0.00395861   0.00409935    (-7.09682e-05,6.9772e-05)
+#***Warning: Parameter pegged at hard limit: 0
+#    17            0      44.4897    (-0.0161939,44.4735)
+#
+!XSPEC12>save model AGN_plus_TBabs_gdem_Ni
+#
+!XSPEC12>tclreadline::readline eofchar ""
+#
+!XSPEC12>tclreadline::readline read {AGN_plus_TBabs_gdem_Ni.xcm exists. Replace? (y/n) }
+#
+!XSPEC12>tclreadline::readline eofchar "puts {}; exit"
+#
+!XSPEC12>setpl rebin 5 10
+#
+!XSPEC12>setplot rebin 5 10
+#
+!XSPEC12>setpl xlog on
+#
+!XSPEC12>setplot xlog on
+#
+!XSPEC12>setpl ylog on
+#
+!XSPEC12>setplot ylog on
+#
+!XSPEC12>setpl energy
+#
+!XSPEC12>setplot energy
+#
+!XSPEC12>plot data resid
+#
+!XSPEC12>iplot
+#
+!XSPEC12> quit
+# XSPEC: quit
+#
