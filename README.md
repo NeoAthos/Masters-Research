@@ -14,7 +14,8 @@ This data is then collected into a dashboard to be compared to with other cluste
 <p align="center">
    <img width="956" height="647" alt="Screenshot 2026-08-11 142054" src="https://github.com/user-attachments/assets/8acc5e86-4944-4554-920f-824026e8ff0c" />
 </p>
-These datasheets are created through 
+
+These datasheets are created through the combination of [extracting properties](./CHANDRA/scripts/post_extract/multifit_apec.tcl) from the spectra, [plotting the properties](./CHANDRA/new_scripts/pre_extract/plot_proj.py) with the radius of the cluster and aligning them into a legible [dashboard](./CHANDRA/new_scripts/pre_extract/create_datasheet.py).
    
-2.
-3. 
+## **Simulating XRISM** 
+
