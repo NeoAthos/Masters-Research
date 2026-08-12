@@ -34,3 +34,16 @@ In both cases the Iron-K complex (large emission line around 7keV) appears to be
 </p>
 
 ## **XRISM's First Light (M87)** 
+XRISM successfully launched September 2023, and as such I was added onto a team that worked on first light data, specifically one of the first set of images produced by XRISM aimed at the cluster M87. Working with a global research team I was able to extract the metallicity, temperature and velocity of different metal gases in different regions of the cluster. Through this, measuring redshift of the gases, it was appearant that different arms of the cluster are moving towards us, and different groups of metals move at different rates. Below are the regions extracted and the spectrum of the central region.
+
+
+<p align="center">
+   <img width="569" height="521" alt="Screenshot 2026-08-12 193806" src="https://github.com/user-attachments/assets/a86b23a9-baf4-4f2c-ad8d-c6fca740ece9" />
+   <img width="829" height="537" alt="Screenshot 2026-08-12 193821" src="https://github.com/user-attachments/assets/afd216b5-f94a-4d24-9fdf-c40e4d399238" />
+</p>
+
+The observations of data are extracted from large spreadsheets and simplified through using Excel graphing techniques. While the data provided below only shows the metallicity of the cluster in different regions similar graphs were produced for bulk velocity and turbulent broadening speeds (each calculated with the same curve fitting script). In addition to this the data allowed for quick calculations of accurate jet energetics prior to any other research members' publication.
+
+<p align="center">
+ <img width="796" height="601" alt="Screenshot 2026-08-12 194459" src="https://github.com/user-attachments/assets/c0240412-7765-4e22-ad06-4a073ac84e71" />
+</p>
