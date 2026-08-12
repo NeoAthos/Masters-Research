@@ -26,4 +26,11 @@ Each simulation has a set of variables that can be manuipulated, these are: obse
 <p align="center">
    <img width="914" height="696" alt="Screenshot 2026-08-12 155947" src="https://github.com/user-attachments/assets/1a42fc3a-300f-490a-afe1-0d3f18f7c917" />
 </p>
-In both cases the Iron-K complex (large emission line around 7keV) appears to be strong with and without the gate valve, therefore we can use that complex to observe gas velocity (as higher turbelent velocities broaden these lines) and treat the Fe-K continuum as the baseline for observations. These simulations can have injected velocity speeds as a true value, then we can test if our linear regression algorithms can accurately extract the same value. Since the Iron-K complex is a set of multiple Fe lines the brightest (Fe-K w-line) is defined as the limiter, any observation that can be done within 200 ks and contains at least 150 Fe-K w-line photons will be deemed a possible subject for observation proposals. 
+
+In both cases the Iron-K complex (large emission line around 7keV) appears to be strong with and without the gate valve, therefore we can use that complex to observe gas velocity (as higher turbelent velocities broaden these lines) and treat the Fe-K continuum as the baseline for observations. These simulations can have injected velocity speeds as a true value, then we can test if our linear regression algorithms can accurately extract the same value. Since the Iron-K complex is a set of multiple Fe lines the brightest (Fe-K w-line) is defined as the limiter, any observation that can be done within 200 ks and contains at least 150 Fe-K w-line photons will be deemed a possible subject for observation proposals. Through this there are 4 clusters that produce enough photons and have previously defined lower turbulent velocities which allows us to accurately extract their turbulent speeds through a XRISM observation. The Fe-K complex fit shown below was done through this [non-linear optimization and curve fitting script](./XRISM/heasimscripts/Fit_lines_new.py). 
+
+<p align="center">
+   <img width="1163" height="679" alt="Screenshot 2026-08-12 164313" src="https://github.com/user-attachments/assets/26e15824-516b-4aba-9ddc-173ff3337dbd" />
+</p>
+
+## **XRISM's First Light (M87)** 
